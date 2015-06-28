@@ -133,7 +133,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &15235119
 MeshRenderer:
@@ -224,7 +224,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &128223222
 MeshRenderer:
@@ -315,7 +315,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &350265761
 MeshRenderer:
@@ -432,7 +432,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!1 &417584660
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +479,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &417584663
 MeshRenderer:
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d18b9530574024d9b8e84a13ef9313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   currentBox: {fileID: 428898432}
 --- !u!23 &428396344
 MeshRenderer:
@@ -610,7 +610,7 @@ Transform:
   m_LocalScale: {x: .610051692, y: .610051692, z: .610051692}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &428898432
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &428898435
 MeshRenderer:
@@ -748,7 +748,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &460887685
 MeshRenderer:
@@ -839,7 +839,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &462959184
 MeshRenderer:
@@ -930,7 +930,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &470320977
 MeshRenderer:
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &477014418
 MeshRenderer:
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &477137403
 MeshRenderer:
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &506550056
 MeshRenderer:
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &542671883
 MeshRenderer:
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &577661691
 MeshRenderer:
@@ -1430,6 +1430,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577661688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &617564604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .479999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.67999983
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 401312, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132330, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d2fe295326d129f44a3d66ca3d40d600, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &625229764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d661126b9320f44fb64ba762555398a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   currentBox: {fileID: 1894619577}
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
@@ -1522,7 +1568,7 @@ Transform:
   m_Children:
   - {fileID: 1332222549}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &681811130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,7 +1615,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &681811133
 MeshRenderer:
@@ -1660,7 +1706,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &690500557
 MeshRenderer:
@@ -1751,7 +1797,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &712151072
 MeshRenderer:
@@ -1889,7 +1935,7 @@ Transform:
   - {fileID: 1038521998}
   - {fileID: 460887683}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &774154472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1982,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &774154475
 MeshRenderer:
@@ -2008,7 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e259bf5b4ec76541a83f9d807ade138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   enemies: []
   state: 0
 --- !u!4 &805778238
@@ -2069,7 +2115,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &813558052
 MeshRenderer:
@@ -2160,7 +2206,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &815989430
 MeshRenderer:
@@ -2251,7 +2297,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &816069079
 MeshRenderer:
@@ -2342,7 +2388,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &830252950
 MeshRenderer:
@@ -2433,7 +2479,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &945014181
 MeshRenderer:
@@ -2524,7 +2570,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &945320347
 MeshRenderer:
@@ -2615,7 +2661,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &963851210
 MeshRenderer:
@@ -2706,7 +2752,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &976503641
 MeshRenderer:
@@ -2797,7 +2843,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1034256901
 MeshRenderer:
@@ -2931,7 +2977,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!1 &1138375383
 GameObject:
@@ -2979,7 +3025,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1138375386
 MeshRenderer:
@@ -3024,94 +3070,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1138375383}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1177093356
-GameObject:
+--- !u!1001 &1212402325
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1177093361}
-  - 33: {fileID: 1177093360}
-  - 135: {fileID: 1177093359}
-  - 23: {fileID: 1177093358}
-  - 114: {fileID: 1177093362}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1177093358
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1177093356}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 8f58c960c4664f149b68242a5c19d130, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!135 &1177093359
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1177093356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1177093360
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1177093356}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1177093361
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1177093356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .50999999, y: 0, z: -3.46000004}
-  m_LocalScale: {x: .828377128, y: .828377128, z: .828377128}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
---- !u!114 &1177093362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1177093356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8e839268cc0d7468ffa04e216eab15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentBox: {fileID: 0}
-  text: {fileID: 1495005049}
-  hasMoved: 0
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.38000011
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.55999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .703922033
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .0670363307
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0670363382
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .703921914
+      objectReference: {fileID: 0}
+    - target: {fileID: 494342, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 165444, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2995e66491b1b394cb68fc3eb7f37dc4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1236359617
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3162,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1236359620
 MeshRenderer:
@@ -3249,7 +3253,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1279539452
 MeshRenderer:
@@ -3336,7 +3340,7 @@ Prefab:
     - target: {fileID: 11408638, guid: 131e9e71d3719e64495ef475ebf48cee, type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 1177093362}
+      objectReference: {fileID: 0}
     - target: {fileID: 11408638, guid: 131e9e71d3719e64495ef475ebf48cee, type: 2}
       propertyPath: currentBox
       value: 
@@ -3374,7 +3378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d661126b9320f44fb64ba762555398a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   currentBox: {fileID: 1508887710}
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
@@ -3436,7 +3440,7 @@ Transform:
   m_Children:
   - {fileID: 1871852568}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &1321382334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3475,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1321382336
 MeshRenderer:
@@ -3635,7 +3639,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1370090796
 MeshRenderer:
@@ -3738,7 +3742,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1376210086
 MeshRenderer:
@@ -3829,7 +3833,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1378573311
 MeshRenderer:
@@ -3920,7 +3924,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1399797201
 MeshRenderer:
@@ -4011,7 +4015,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1432128464
 MeshRenderer:
@@ -4102,7 +4106,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1473669112
 MeshRenderer:
@@ -4193,7 +4197,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1482011789
 MeshRenderer:
@@ -4238,80 +4242,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1482011786}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1495005049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1495005052}
-  - 23: {fileID: 1495005051}
-  - 102: {fileID: 1495005050}
-  m_Layer: 0
-  m_Name: You lose_text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!102 &1495005050
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1495005049}
-  m_Text: You lose! :(
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 47
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
---- !u!23 &1495005051
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1495005049}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!4 &1495005052
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1495005049}
-  m_LocalRotation: {x: .703922033, y: .0670363307, z: -.0670363382, w: .703921914}
-  m_LocalPosition: {x: -4.17000008, y: -0, z: 2.43000007}
-  m_LocalScale: {x: .40817824, y: .408178508, z: .408178508}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
 --- !u!1 &1508887710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,7 +4288,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1508887713
 MeshRenderer:
@@ -4449,7 +4379,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1534228254
 MeshRenderer:
@@ -4553,7 +4483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1 &1572882118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,7 +4530,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1572882121
 MeshRenderer:
@@ -4691,7 +4621,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1587323503
 MeshRenderer:
@@ -4840,7 +4770,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1624628168
 MeshRenderer:
@@ -4931,7 +4861,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1666892927
 MeshRenderer:
@@ -5022,7 +4952,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1667151509
 MeshRenderer:
@@ -5113,7 +5043,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1670894691
 MeshRenderer:
@@ -5192,7 +5122,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1671921027
 MeshRenderer:
@@ -5307,7 +5237,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
+  field of view: 28.1557884
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5321,19 +5251,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &1672873670
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672873665}
-  m_LocalRotation: {x: -.676840723, y: -.0695197061, z: .0644572899, w: -.729999244}
-  m_LocalPosition: {x: -.560000002, y: 22.8999996, z: -1.78999996}
+  m_LocalRotation: {x: .0110698771, y: -.96991086, z: .231528863, w: .0744638592}
+  m_LocalPosition: {x: 1.14999998, y: 15.8500004, z: 35.7799988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!1 &1703520149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5380,7 +5309,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1703520152
 MeshRenderer:
@@ -5471,7 +5400,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1740137387
 MeshRenderer:
@@ -5562,7 +5491,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1786676477
 MeshRenderer:
@@ -5653,7 +5582,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1832233735
 MeshRenderer:
@@ -5744,7 +5673,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1842016193
 MeshRenderer:
@@ -5835,7 +5764,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1851025832
 MeshRenderer:
@@ -5999,7 +5928,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1880541621
 MeshRenderer:
@@ -6090,7 +6019,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1883736198
 MeshRenderer:
@@ -6181,7 +6110,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1888713156
 MeshRenderer:
@@ -6272,7 +6201,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1894619580
 MeshRenderer:
@@ -6363,7 +6292,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1898478099
 MeshRenderer:
@@ -6442,7 +6371,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1993406629
 MeshRenderer:
@@ -6545,7 +6474,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &1998770350
 MeshRenderer:
@@ -6636,7 +6565,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2003266172
 MeshRenderer:
@@ -6727,7 +6656,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2004172805
 MeshRenderer:
@@ -6806,7 +6735,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2054724278
 MeshRenderer:
@@ -6909,7 +6838,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2073697343
 MeshRenderer:
@@ -7000,7 +6929,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2087298467
 MeshRenderer:
@@ -7091,7 +7020,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2097989505
 MeshRenderer:
@@ -7182,7 +7111,7 @@ MonoBehaviour:
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
-  playerController: {fileID: 1177093362}
+  playerController: {fileID: 0}
   gameStateMachine: {fileID: 0}
 --- !u!23 &2108608148
 MeshRenderer:
