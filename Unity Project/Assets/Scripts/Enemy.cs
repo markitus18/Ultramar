@@ -13,15 +13,10 @@ public class Enemy : MonoBehaviour
 	[HideInInspector]public bool isMoving;
 	public int direction;
 
+	bool dead;
+
 	public GameStateMachine.UpdateStates ret;
-	// Use this for initialization
-	/*
-	void Start ()
-	{
-	
-	}
-	*/
-	// Update is called once per frame
+
 	void Update ()
 	{
 	
@@ -32,11 +27,19 @@ public class Enemy : MonoBehaviour
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		targetPosition = currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;
+		dead = false;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 
 	public virtual GameStateMachine.UpdateStates UpdateEnemy()
 	{
 		return GameStateMachine.UpdateStates.UPDATE_KEEP;
+	}
+
+	public virtual void Kill()
+	{
+		dead = true;
+		Debug.Log("Killing enemy: " + gameObject.name);
+		gameObject.SetActive(false);
 	}
 }
