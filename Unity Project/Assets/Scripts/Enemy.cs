@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 	[HideInInspector]public Vector3 targetPosition;
 
 	[HideInInspector]public bool isMoving;
-	[HideInInspector]public int direction;
+	public int direction;
 
 	public GameStateMachine.UpdateStates ret;
 	// Use this for initialization

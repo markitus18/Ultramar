@@ -5,7 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_CompletedAssets/Scenes/Level 01.unity
   - enabled: 1
-    path: Assets/Scenes/Starting scene.unity
+    path: Assets/Scenes/Level choice.unity
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+  - enabled: 1
+    path: Assets/Scenes/Level 6.unity
