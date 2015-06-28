@@ -62,7 +62,7 @@ public class Box : MonoBehaviour
 
 	}
 
-	void OnMouseDown()
+	void OnMouseUp()
 	{
 		Debug.Log (name + " clicked");
 		if (gameStateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
