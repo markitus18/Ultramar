@@ -3,24 +3,21 @@ using System.Collections;
 
 public class LevelBox : MonoBehaviour
 {
+	public Level_PlayerController playerController;
+
 	public GameObject upBox;
 	public GameObject downBox;
 	public GameObject rightBox;
 	public GameObject leftBox;
-	public PlayerController playerController;
-	public GameStateMachine gameStateMachine;
-	
+
+	public int levelToLoad;
+
 	Color originalColor;
 	
 	void Start ()
 	{
-		upBox = null;
-		downBox = null;
-		rightBox = null;
-		leftBox = null;
 		//Creating four box-detector rays
-		gameStateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
-		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<Level_PlayerController>();
 		RaycastHit hit;
 		Ray upRay = new Ray(transform.position, Vector3.forward);
 		Ray downRay = new Ray(transform.position, Vector3.back);
@@ -60,17 +57,13 @@ public class LevelBox : MonoBehaviour
 		//Setting variables to start point
 		originalColor = transform.GetComponent<Renderer>().material.color;
 	}
-	
-	void Update ()
-	{
-		
-	}
-	
+
 	void OnMouseDown()
 	{
-		Debug.Log (name + " clicked");
-		if (gameStateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
+		if (playerController.currentBox != gameObject)
 			playerController.MovePlayer(gameObject);
+		else if (playerController.currentBox == gameObject)
+			Application.LoadLevel(levelToLoad);
 	}
 	
 	void OnMouseEnter()
