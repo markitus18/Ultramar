@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (newBox != currentBox && !isMoving)
 			{
-				if (currentBox.GetComponent<Box>().upBox == newBox)
+				if (currentBox.GetComponent<LevelBox>().upBox == newBox)
 				{
 					currentBox = newBox;
 					targetPosition = currentBox.transform.position;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 					hasMoved = false;
 				}
 				
-				else if (currentBox.GetComponent<Box>().downBox == newBox)
+				else if (currentBox.GetComponent<LevelBox>().downBox == newBox)
 				{
 					currentBox = newBox;
 					targetPosition = currentBox.transform.position;
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 					hasMoved = false;
 				}
 				
-				else if (currentBox.GetComponent<Box>().rightBox == newBox)
+				else if (currentBox.GetComponent<LevelBox>().rightBox == newBox)
 				{
 					currentBox = newBox;
 					targetPosition = currentBox.transform.position;
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 					hasMoved = false;
 				}
 				
-				else if (currentBox.GetComponent<Box>().leftBox == newBox)
+				else if (currentBox.GetComponent<LevelBox>().leftBox == newBox)
 				{
 					currentBox = newBox;
 					targetPosition = currentBox.transform.position;

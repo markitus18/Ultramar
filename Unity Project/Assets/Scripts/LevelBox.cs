@@ -14,6 +14,10 @@ public class LevelBox : MonoBehaviour
 	
 	void Start ()
 	{
+		upBox = null;
+		downBox = null;
+		rightBox = null;
+		leftBox = null;
 		//Creating four box-detector rays
 		gameStateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
