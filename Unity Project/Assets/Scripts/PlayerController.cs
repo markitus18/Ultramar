@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Kill()
 	{
+		Debug.Log("Player Killed");
 		pausePlayer = true;
 		text.GetComponent<Renderer>().enabled = true;
 	}
