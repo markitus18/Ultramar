@@ -57,7 +57,7 @@ public class StaticEnemyController : Enemy
 		}
 		else
 		{
-			if (currentBox == playerController.currentBox && playerController.hasMoved)
+			if (currentBox == playerController.currentBox && playerController.hasMoved && !dead)
 				playerController.Kill ();
 			ret = GameStateMachine.UpdateStates.UPDATE_NEXT;
 		}

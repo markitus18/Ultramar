@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GameStateMachine.cs" />
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
+     <Compile Include="Assets\Scripts\New Scene\Box_N.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RandomEnemyController.cs" />
      <Compile Include="Assets\Scripts\RunnerEnemyController.cs" />

@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 	[HideInInspector]public bool isMoving;
 	public int direction;
 
-	bool dead;
+	public bool dead;
 
 	public GameStateMachine.UpdateStates ret;
 
