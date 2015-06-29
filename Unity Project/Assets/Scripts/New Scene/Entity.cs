@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour {
 	Vector3 currentPosition;
 	Vector3 targetPosition;
 
+	GameStateMachine_N.UpdateStates ret;
 	void Start ()
 	{
 		moving = false;
@@ -20,10 +21,12 @@ public class Entity : MonoBehaviour {
 		transform.position = currentPosition;
 	}
 
-	void Update ()
+	public GameStateMachine_N.UpdateStates UpdateEntity ()
 	{
+		ret = GameStateMachine_N.UpdateStates.UPDATE_KEEP;
 		if (moving)
 			Move ();
+		return ret;
 	}
 
 	void Move()
@@ -39,6 +42,7 @@ public class Entity : MonoBehaviour {
 		{
 			currentBox = targetBox;
 			moving = false;
+			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 		}
 	}
 
