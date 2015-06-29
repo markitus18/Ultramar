@@ -4,14 +4,15 @@ using System.Collections;
 public class StaticEnemyC : MonoBehaviour
 {
 	Entity playerEntity;
-	PlayerController playerController;
+	PlayerController_N playerController;
 	Entity entity;
 
 	void Start()
 	{
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
-		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_N>();
 		entity = gameObject.GetComponent<Entity>();
+		entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
 	}
 	public void SetNewBox ()
 	{
@@ -58,7 +59,7 @@ public class StaticEnemyC : MonoBehaviour
 	}
 	public void CheckIfPlayer()
 	{
-		if (entity.currentBox == playerController.currentBox)
+		if (entity.currentBox == playerEntity.currentBox)
 			playerController.Kill ();
 	}
 }

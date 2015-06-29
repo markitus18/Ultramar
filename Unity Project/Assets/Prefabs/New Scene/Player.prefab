@@ -78,6 +78,8 @@ MonoBehaviour:
   targetBox: {fileID: 0}
   movementSpeed: 2
   moving: 0
+  direction: 0
+  ret: 0
 --- !u!114 &11463734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531cfe63aedde2743863c6a50e88312e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseText: {fileID: 0}
+  paused: 0
 --- !u!135 &13556402
 SphereCollider:
   m_ObjectHideFlags: 1

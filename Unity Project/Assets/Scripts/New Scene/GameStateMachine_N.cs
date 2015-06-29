@@ -20,7 +20,8 @@ public class GameStateMachine_N : MonoBehaviour
 	public List<GameObject> enemies;
 	GameObject[] go;
 	public GameStates state;
-	
+	bool start = true;
+
 	void Start ()
 	{
 		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
@@ -50,17 +51,25 @@ public class GameStateMachine_N : MonoBehaviour
 
 	void UpdatePlayer()
 	{
-		if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
+		if (!playerController.gameObject.GetComponent<PlayerController_N>().paused)
 		{
-			state = GameStates.ENEMY_TURN;
-			ResetEnemiesTurn();
-			SetEnemiesBox ();
-			Debug.Log("Enemies turn");
+			if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
+			{
+				state = GameStates.ENEMY_TURN;
+					
+				Debug.Log("Enemies turn");
+			}
 		}
 	}
 	
 	void UpdateEnemies()
 	{
+		if (start)
+		{
+			ResetEnemiesTurn();
+			SetEnemiesBox ();
+			start = false;
+		}
 		Debug.Log("Updating Enemies");
 		int enemiesMax = enemies.Count;
 		int enemiesUpdated = 0;
@@ -78,8 +87,12 @@ public class GameStateMachine_N : MonoBehaviour
 		}
 		if (enemiesUpdated == enemiesMax)
 		{
+			for (int i = 0; i < enemiesMax; i++)
+				if (enemies[i].GetComponent<StaticEnemyC>())
+					enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer();
 			Debug.Log("Enemies max: " + enemiesMax);
 			state = GameStates.PLAYER_TURN;
+			start = true;
 			Debug.Log("Players turn");
 		}
 	}

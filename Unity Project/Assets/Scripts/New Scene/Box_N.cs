@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Box_N : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class Box_N : MonoBehaviour {
 	public GameObject leftBox;
 
 	PlayerController_N playerController;
+	public List<GameObject> enemies;
 
 	Color originalColor;
 

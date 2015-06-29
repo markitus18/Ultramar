@@ -4,11 +4,15 @@ using System.Collections;
 public class PlayerController_N : MonoBehaviour
 {
 	Entity entity;
-	GameObject loseText;
+	public GameObject loseText;
+	public bool paused;
+	GameStateMachine_N stateMachine;
 	// Use this for initialization
 	void Start()
 	{
 		entity = gameObject.GetComponent<Entity>();
+		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
+		paused = false;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +40,7 @@ public class PlayerController_N : MonoBehaviour
 			Debug.Log ("Assigned");
 			entity.targetBox = newBox;
 			entity.moving =  true;
+			CheckEnemy();
 		}
 	}
 
@@ -43,5 +48,21 @@ public class PlayerController_N : MonoBehaviour
 	{
 		Debug.Log("Killing player");
 		loseText.GetComponent<Renderer>().enabled = true;
+		paused = true;
 	}
+
+	void CheckEnemy()
+	{
+		if (entity.targetBox.GetComponent<Box_N>().enemies.Count > 0)
+		{
+			int enemiesMax = entity.targetBox.GetComponent<Box_N>().enemies.Count;
+			for (int i = 0; i < enemiesMax; i++)
+			{
+				Debug.Log("Killing enemy");
+				stateMachine.enemies[i].SetActive(false);
+				stateMachine.enemies.Remove(stateMachine.enemies[i]);
+			}
+		}
+	}
+
 }

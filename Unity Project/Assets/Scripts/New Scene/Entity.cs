@@ -45,6 +45,8 @@ public class Entity : MonoBehaviour {
 			}
 			else
 			{
+				if (gameObject.tag == "Enemy")
+					targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
 				currentBox = targetBox;
 				moving = false;
 				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
