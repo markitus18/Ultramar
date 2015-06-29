@@ -38,18 +38,24 @@ public class GameStateMachine_N : MonoBehaviour
 		switch(state)
 		{
 		case GameStates.PLAYER_TURN:
-			if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
-			{
-				state = GameStates.ENEMY_TURN;
-//				ResetEnemiesTurn();
-				Debug.Log("Enemies turn");
-			}
+			UpdatePlayer();
 			break;
 		case GameStates.ENEMY_TURN:
 			UpdateEnemies ();
 			break;
 		default:
 			break;
+		}
+	}
+
+	void UpdatePlayer()
+	{
+		if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
+		{
+			state = GameStates.ENEMY_TURN;
+			ResetEnemiesTurn();
+			SetEnemiesBox ();
+			Debug.Log("Enemies turn");
 		}
 	}
 	
@@ -60,17 +66,15 @@ public class GameStateMachine_N : MonoBehaviour
 		int enemiesUpdated = 0;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			//Update enemy
-			/*
-			if (enemies[i].GetComponent<StaticEnemyController>())
-				if (enemies[i].GetComponent<StaticEnemyController>().UpdateEnemy() == UpdateStates.UPDATE_NEXT)
-					enemiesUpdated ++;
-			if (enemies[i].GetComponent<RunnerEnemyController>())
-				if (enemies[i].GetComponent<RunnerEnemyController>().UpdateEnemy() == UpdateStates.UPDATE_NEXT)
-					enemiesUpdated ++;
+			if (enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP)
+			{
+				enemies[i].GetComponent<Entity>().Move();
+			}
+			else
+				enemiesUpdated ++;
 			Debug.Log("Updated: " + enemiesUpdated);
 			Debug.Log("Max: " + enemiesMax);
-			*/
+
 		}
 		if (enemiesUpdated == enemiesMax)
 		{
@@ -84,12 +88,20 @@ public class GameStateMachine_N : MonoBehaviour
 		int enemiesMax = enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			/*
-			if (enemies[i].GetComponent<StaticEnemyController>())
-				enemies[i].GetComponent<StaticEnemyController>().ret = UpdateStates.UPDATE_KEEP;
-			if (enemies[i].GetComponent<RunnerEnemyController>())
-				enemies[i].GetComponent<RunnerEnemyController>().ret = UpdateStates.UPDATE_KEEP;
-			*/
+			enemies[i].GetComponent<Entity>().ret = UpdateStates.UPDATE_KEEP;
+		}
+	}
+
+	void SetEnemiesBox()
+	{
+		Debug.Log("Setting enemies boxes");
+		int enemiesMax = enemies.Count;
+		for (int i = 0; i < enemiesMax; i++)
+		{
+			if (enemies[i].GetComponent<StaticEnemyC>())
+				enemies[i].GetComponent<StaticEnemyC>().SetNewBox();
+//			if (enemies[i].GetComponent<RunnerEnemyController>())
+//				enemies[i].GetComponent<RunnerEnemyController>().SetNewBox();
 		}
 	}
 }

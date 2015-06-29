@@ -3,67 +3,62 @@ using System.Collections;
 
 public class StaticEnemyC : MonoBehaviour
 {
-	Entity playerController;
+	Entity playerEntity;
+	PlayerController playerController;
 	Entity entity;
 
 	void Start()
 	{
-		playerController = GameObject.FindWithTag ("Player").GetComponent<Entity>();
+		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 	}
-	public GameStateMachine.UpdateStates SetNewBox ()
+	public void SetNewBox ()
 	{
 		if (entity.ret == GameStateMachine_N.UpdateStates.UPDATE_KEEP)
 		{
-			switch(direction)
+			switch(entity.direction)
 			{
 			case 1:
-				if(playerController.currentBox == entity.currentBox.GetComponent<Box>().upBox)
+				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().upBox)
 				{
-					entity.targetBox = playerController.currentBox;
+					entity.targetBox = playerEntity.currentBox;
+					entity.moving = true;
 				}
 				
 				break;
 				
 			case 2:
-				if(playerController.currentBox == entity.currentBox.GetComponent<Box>().rightBox)
+				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().rightBox)
 				{
-					entity.targetBox = playerController.currentBox;
+					entity.targetBox = playerEntity.currentBox;
+					entity.moving = true;
 				}
 				break;
 				
 			case 3:
-				if(playerController.currentBox == entity.currentBox.GetComponent<Box>().downBox)
+				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().downBox)
 				{
-					entity.targetBox = playerController.currentBox;
+					entity.targetBox = playerEntity.currentBox;
+					entity.moving = true;
 				}
 				break;
 				
 			case 4:
-				if(playerController.currentBox == entity.currentBox.GetComponent<Box>().leftBox)
+				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().leftBox)
 				{
-					entity.targetBox = playerController.currentBox;
+					entity.targetBox = playerEntity.currentBox;
+					entity.moving = true;
 				}
 				break;
 			default:
 				break;
 			}
 		}
-		
-		if (currentPosition != targetPosition)
-		{
-			if (Mathf.Abs (currentPosition.x - targetPosition.x + currentPosition.z - targetPosition.z) < 0.1)
-				currentPosition = targetPosition;
-			else
-				currentPosition += (targetPosition - currentPosition) / 10;
-			transform.position = currentPosition;
-		}
-		else
-		{
-			if (currentBox == playerController.currentBox && playerController.hasMoved && !dead)
-				playerController.Kill ();
-			ret = GameStateMachine.UpdateStates.UPDATE_NEXT;
-		}
-		return ret;
+	}
+	public void CheckIfPlayer()
+	{
+		if (entity.currentBox == playerController.currentBox)
+			playerController.Kill ();
 	}
 }

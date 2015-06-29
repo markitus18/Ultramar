@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController_N : MonoBehaviour
 {
 	Entity entity;
+	GameObject loseText;
 	// Use this for initialization
 	void Start()
 	{
@@ -36,5 +37,11 @@ public class PlayerController_N : MonoBehaviour
 			entity.targetBox = newBox;
 			entity.moving =  true;
 		}
+	}
+
+	public void Kill()
+	{
+		Debug.Log("Killing player");
+		loseText.GetComponent<Renderer>().enabled = true;
 	}
 }

@@ -10,8 +10,10 @@ public class Entity : MonoBehaviour {
 
 	Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
+
 	Vector3 currentPosition;
 	Vector3 targetPosition;
+	public int direction;
 
 	public GameStateMachine_N.UpdateStates ret;
 	void Start ()
@@ -19,6 +21,7 @@ public class Entity : MonoBehaviour {
 		moving = false;
 		currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;
+		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 
 	public GameStateMachine_N.UpdateStates UpdateEntity ()
@@ -29,21 +32,26 @@ public class Entity : MonoBehaviour {
 		return ret;
 	}
 
-	void Move()
+	public void Move()
 	{
-		if (currentPosition != targetBox.transform.position)
+		if (targetBox)
 		{
-			Debug.Log ("Moving");
-			distanceToMove = targetBox.transform.position - currentBox.transform.position;
-			currentPosition += distanceToMove / (10 / movementSpeed);
-			transform.position = currentPosition;
+			if (currentPosition != targetBox.transform.position)
+			{
+				Debug.Log ("Moving");
+				distanceToMove = targetBox.transform.position - currentBox.transform.position;
+				currentPosition += distanceToMove / (10 / movementSpeed);
+				transform.position = currentPosition;
+			}
+			else
+			{
+				currentBox = targetBox;
+				moving = false;
+				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
+			}
 		}
 		else
-		{
-			currentBox = targetBox;
-			moving = false;
 			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
-		}
 	}
 
 	void OnMouseUp()
