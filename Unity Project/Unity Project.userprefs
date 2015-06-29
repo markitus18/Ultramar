@@ -6,7 +6,7 @@
       <File FileName="Assets\Scripts\Box.cs" Line="72" Column="1" />
       <File FileName="Assets\Scripts\Enemy.cs" Line="15" Column="2" />
       <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\New Scene\Entity.cs" Line="39" Column="20" />
+      <File FileName="Assets\Scripts\New Scene\Entity.cs" Line="41" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,6 +9,8 @@ public class Box_N : MonoBehaviour {
 	public GameObject rightBox;
 	public GameObject leftBox;
 
+	PlayerController_N playerController;
+
 	Color originalColor;
 
 	void Start ()
@@ -50,6 +52,8 @@ public class Box_N : MonoBehaviour {
 			}
 		}
 
+		//Setting all variables
+		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_N>();
 		//Saving original color
 		originalColor = transform.GetComponent<Renderer>().material.color;
 	}
@@ -68,5 +72,10 @@ public class Box_N : MonoBehaviour {
 	void OnMouseExit()
 	{
 		transform.GetComponent<Renderer>().material.color = originalColor;
+	}
+
+	void OnMouseUp()
+	{
+		playerController.SetNewBox(gameObject);
 	}
 }

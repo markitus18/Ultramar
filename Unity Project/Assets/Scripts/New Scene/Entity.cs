@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour {
 	public float movementSpeed = 2;
 
 	Vector3 distanceToMove;
-	bool moving;
+	[HideInInspector] public bool moving;
 	Vector3 currentPosition;
 	Vector3 targetPosition;
 
