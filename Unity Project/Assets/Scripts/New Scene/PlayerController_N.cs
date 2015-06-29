@@ -25,7 +25,7 @@ public class PlayerController_N : MonoBehaviour
 		if (entity.currentBox.GetComponent<Box_N>().upBox == newBox)
 			available = true;
 		else if (entity.currentBox.GetComponent<Box_N>().downBox == newBox)
-			available = true;		
+			available = true;
 		else if (entity.currentBox.GetComponent<Box_N>().rightBox == newBox)
 			available = true;
 		else if (entity.currentBox.GetComponent<Box_N>().leftBox == newBox)

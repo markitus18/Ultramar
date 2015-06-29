@@ -13,7 +13,7 @@ public class Entity : MonoBehaviour {
 	Vector3 currentPosition;
 	Vector3 targetPosition;
 
-	GameStateMachine_N.UpdateStates ret;
+	public GameStateMachine_N.UpdateStates ret;
 	void Start ()
 	{
 		moving = false;

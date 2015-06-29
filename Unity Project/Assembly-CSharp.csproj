@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\New Scene\Entity.cs" />
      <Compile Include="Assets\Scripts\New Scene\GameStateMachine_N.cs" />
      <Compile Include="Assets\Scripts\New Scene\PlayerController_N.cs" />
+     <Compile Include="Assets\Scripts\New Scene\StaticEnemyC.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RandomEnemyController.cs" />
      <Compile Include="Assets\Scripts\RunnerEnemyController.cs" />
