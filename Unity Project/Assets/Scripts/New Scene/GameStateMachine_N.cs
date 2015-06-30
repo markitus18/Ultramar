@@ -7,13 +7,14 @@ public class GameStateMachine_N : MonoBehaviour
 	public enum GameStates
 	{
 		PLAYER_TURN,
-		ENEMY_TURN
+		ENEMY_TURN,
+		END,
 	}
 	
 	public enum UpdateStates
 	{
 		UPDATE_KEEP,
-		UPDATE_NEXT,	
+		UPDATE_NEXT,
 	}
 	
 	public Entity playerController;
@@ -56,7 +57,9 @@ public class GameStateMachine_N : MonoBehaviour
 			if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
 			{
 				state = GameStates.ENEMY_TURN;
-					
+				playerController.gameObject.GetComponent<PlayerController_N>().CheckEnemy();
+				if (playerController.gameObject.GetComponent<PlayerController_N>().CheckEnd())
+					state = GameStates.END;
 				Debug.Log("Enemies turn");
 			}
 		}
@@ -70,7 +73,6 @@ public class GameStateMachine_N : MonoBehaviour
 			SetEnemiesBox ();
 			start = false;
 		}
-		Debug.Log("Updating Enemies");
 		int enemiesMax = enemies.Count;
 		int enemiesUpdated = 0;
 		for (int i = 0; i < enemiesMax; i++)
@@ -81,15 +83,12 @@ public class GameStateMachine_N : MonoBehaviour
 			}
 			else
 				enemiesUpdated ++;
-			Debug.Log("Updated: " + enemiesUpdated);
-			Debug.Log("Max: " + enemiesMax);
 
 		}
 		if (enemiesUpdated == enemiesMax)
 		{
-			for (int i = 0; i < enemiesMax; i++)
-				if (enemies[i].GetComponent<StaticEnemyC>())
-					enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer();
+			EndEnemiesTurn();
+
 			Debug.Log("Enemies max: " + enemiesMax);
 			state = GameStates.PLAYER_TURN;
 			start = true;
@@ -105,16 +104,38 @@ public class GameStateMachine_N : MonoBehaviour
 		}
 	}
 
+	void EndEnemiesTurn()
+	{
+		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		for (int i = 0; i < enemiesMax; i++)
+		{
+			if (enemies[i].GetComponent<StaticEnemyC>())
+				enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer();
+			if (enemies[i].GetComponent<RunnerEnemyC>())
+				enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ();
+		}
+		SetRunnersDirection();
+	}
 	void SetEnemiesBox()
 	{
 		Debug.Log("Setting enemies boxes");
-		int enemiesMax = enemies.Count;
+		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			if (enemies[i].GetComponent<StaticEnemyC>())
 				enemies[i].GetComponent<StaticEnemyC>().SetNewBox();
-//			if (enemies[i].GetComponent<RunnerEnemyController>())
-//				enemies[i].GetComponent<RunnerEnemyController>().SetNewBox();
+			if (enemies[i].GetComponent<RunnerEnemyC>())
+				enemies[i].GetComponent<RunnerEnemyC>().SetNewBox();
+		}
+	}
+
+	void SetRunnersDirection()
+	{
+		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		for (int i = 0; i < enemiesMax; i ++)
+		{
+			if (enemies[i].GetComponent<RunnerEnemyC>())
+				enemies[i].GetComponent<RunnerEnemyC>().SetNewBox();
 		}
 	}
 }

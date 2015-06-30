@@ -5,7 +5,7 @@ public class PlayerController_N : MonoBehaviour
 {
 	Entity entity;
 	public GameObject loseText;
-	public bool paused;
+	public GameObject winText;public bool paused;
 	GameStateMachine_N stateMachine;
 	// Use this for initialization
 	void Start()
@@ -24,8 +24,6 @@ public class PlayerController_N : MonoBehaviour
 	public void SetNewBox (GameObject newBox)
 	{
 		Debug.Log ("Checking new box");
-		Debug.Log (newBox);
-		Debug.Log (entity.currentBox.GetComponent<Box_N>().upBox);
 		bool available = false;
 		if (entity.currentBox.GetComponent<Box_N>().upBox == newBox)
 			available = true;
@@ -40,7 +38,6 @@ public class PlayerController_N : MonoBehaviour
 			Debug.Log ("Assigned");
 			entity.targetBox = newBox;
 			entity.moving =  true;
-			CheckEnemy();
 		}
 	}
 
@@ -51,7 +48,7 @@ public class PlayerController_N : MonoBehaviour
 		paused = true;
 	}
 
-	void CheckEnemy()
+	public void CheckEnemy()
 	{
 		if (entity.targetBox.GetComponent<Box_N>().enemies.Count > 0)
 		{
@@ -59,10 +56,23 @@ public class PlayerController_N : MonoBehaviour
 			for (int i = 0; i < enemiesMax; i++)
 			{
 				Debug.Log("Killing enemy");
-				stateMachine.enemies[i].SetActive(false);
-				stateMachine.enemies.Remove(stateMachine.enemies[i]);
+				entity.targetBox.GetComponent<Box_N>().enemies[i].SetActive(false);
+				stateMachine.enemies.Remove(entity.targetBox.GetComponent<Box_N>().enemies[i]);
 			}
 		}
+	}
+
+	public bool CheckEnd()
+	{
+		if (entity.targetBox.name == ("Box_end"))
+		{
+			Debug.Log("End of level");
+			winText.GetComponent<Renderer>().enabled = true;
+			paused = true;
+			return true;
+		}
+		return false;
+
 	}
 
 }

@@ -1,16 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\New Scene\StaticEnemyC.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\New Scene\Box_N.cs">
     <Files>
-      <File FileName="Assets\Scripts\New Scene\GameStateMachine_N.cs" Line="92" Column="1" />
-      <File FileName="Assets\Scripts\New Scene\PlayerController_N.cs" Line="63" Column="58" />
-      <File FileName="Assets\Scripts\New Scene\Box_N.cs" Line="14" Column="34" />
+      <File FileName="Assets\Scripts\New Scene\GameStateMachine_N.cs" Line="56" Column="41" />
+      <File FileName="Assets\Scripts\New Scene\PlayerController_N.cs" Line="50" Column="3" />
+      <File FileName="Assets\Scripts\New Scene\Box_N.cs" Line="28" Column="40" />
       <File FileName="Assets\Scripts\Box.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="28" Column="1" />
-      <File FileName="Assets\Scripts\New Scene\Entity.cs" Line="18" Column="42" />
-      <File FileName="Assets\Scripts\GameStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="104" Column="1" />
-      <File FileName="Assets\Scripts\New Scene\StaticEnemyC.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\New Scene\Entity.cs" Line="57" Column="39" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\New Scene\StaticEnemyC.cs" Line="65" Column="2" />
+      <File FileName="Assets\Scripts\New Scene\RunnerEnemyC.cs" Line="59" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

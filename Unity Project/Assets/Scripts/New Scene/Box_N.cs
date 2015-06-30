@@ -78,6 +78,7 @@ public class Box_N : MonoBehaviour {
 
 	void OnMouseUp()
 	{
+		Debug.Log ("doing something");
 		playerController.SetNewBox(gameObject);
 	}
 }

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
-  movementSpeed: 2
+  movementSpeed: 1
   moving: 0
   direction: 0
   ret: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseText: {fileID: 0}
+  winText: {fileID: 0}
   paused: 0
 --- !u!135 &13556402
 SphereCollider:
