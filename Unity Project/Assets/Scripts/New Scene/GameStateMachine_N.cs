@@ -113,6 +113,8 @@ public class GameStateMachine_N : MonoBehaviour
 				enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer();
 			if (enemies[i].GetComponent<RunnerEnemyC>())
 				enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ();
+			if (enemies[i].GetComponent<ArcherEnemyC>())
+			    enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
 		}
 		SetRunnersDirection();
 	}
