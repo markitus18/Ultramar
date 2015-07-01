@@ -1691,7 +1691,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 472562, guid: 74c4c108970c2fc4785b7bca95896e7e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100644, guid: 74c4c108970c2fc4785b7bca95896e7e, type: 2}
       propertyPath: m_Name
@@ -1701,10 +1701,6 @@ Prefab:
       propertyPath: currentBox
       value: 
       objectReference: {fileID: 842831330}
-    - target: {fileID: 11454096, guid: 74c4c108970c2fc4785b7bca95896e7e, type: 2}
-      propertyPath: startingDirection
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74c4c108970c2fc4785b7bca95896e7e, type: 2}
   m_IsPrefabParent: 0
@@ -3473,26 +3469,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 101658, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
   m_PrefabInternal: {fileID: 1062240350}
---- !u!1 &1036122381 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 125192, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
-  m_PrefabInternal: {fileID: 1374031174}
---- !u!114 &1036122383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1036122381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3b25377669b594dba2dfa657f4f8a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetBoxes:
-  - {fileID: 364859448}
-  - {fileID: 1007617071}
-  - {fileID: 423678342}
-  - {fileID: 711741750}
 --- !u!1001 &1046925752
 Prefab:
   m_ObjectHideFlags: 0
@@ -4462,7 +4438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433658, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 112482, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_Name
@@ -4658,14 +4634,6 @@ Prefab:
       propertyPath: currentBox
       value: 
       objectReference: {fileID: 619265301}
-    - target: {fileID: 11429914, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
-      propertyPath: direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429914, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
-      propertyPath: startingDirection
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
   m_IsPrefabParent: 0
@@ -4922,20 +4890,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 125192, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
-      propertyPath: m_Name
-      value: Enemy_static (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 11499162, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
       propertyPath: currentBox
       value: 
       objectReference: {fileID: 292466278}
-    - target: {fileID: 11499162, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
-      propertyPath: startingDirection
-      value: 1
+    - target: {fileID: 125192, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+      propertyPath: m_Name
+      value: Enemy_static (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11456226, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+    - target: {fileID: 11489236, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+      propertyPath: targetBoxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 364859448}
+    - target: {fileID: 11489236, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+      propertyPath: targetBoxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1007617071}
+    - target: {fileID: 11489236, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+      propertyPath: targetBoxes.Array.data[2]
+      value: 
+      objectReference: {fileID: 423678342}
+    - target: {fileID: 11489236, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
+      propertyPath: targetBoxes.Array.data[3]
+      value: 
+      objectReference: {fileID: 711741750}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1420080581
