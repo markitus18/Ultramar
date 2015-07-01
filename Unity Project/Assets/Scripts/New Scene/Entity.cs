@@ -13,12 +13,20 @@ public class Entity : MonoBehaviour {
 
 	Vector3 currentPosition;
 	Vector3 targetPosition;
-
-	public int direction;
+	public enum enumDirections
+	{
+		up = 1,
+		right,
+		down,
+		left
+	}
+	public enumDirections startingDirection;
+	[HideInInspector] public int direction;
 
 	public GameStateMachine_N.UpdateStates ret;
 	void Start ()
 	{
+		direction = (int)startingDirection;
 		moving = false;
 		currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;

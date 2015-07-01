@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Box_N : MonoBehaviour {
-	//Directions un which you can move
+	//Directions in which you can move
 	public bool up;
 	public bool right;
 	public bool down;
@@ -15,7 +15,7 @@ public class Box_N : MonoBehaviour {
 	public GameObject leftBox;
 
 	PlayerController_N playerController;
-	public List<GameObject> enemies;
+	[HideInInspector] public List<GameObject> enemies;
 
 	Color originalColor;
 

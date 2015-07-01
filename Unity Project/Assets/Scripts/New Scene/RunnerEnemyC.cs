@@ -52,13 +52,13 @@ public class RunnerEnemyC : MonoBehaviour
 			}
 			break;
 		case 4:
-			if(entity.currentBox.GetComponent<Box_N>().downBox)
+			if(entity.currentBox.GetComponent<Box_N>().leftBox)
 			{
-				entity.targetBox = entity.currentBox.GetComponent<Box_N>().downBox;
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().leftBox;
 			}
-			else if (entity.currentBox.GetComponent<Box_N>().upBox)
+			else if (entity.currentBox.GetComponent<Box_N>().rightBox)
 			{
-				entity.targetBox = entity.currentBox.GetComponent<Box_N>().upBox;
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().rightBox;
 				entity.direction = 2;
 			}
 			break;
