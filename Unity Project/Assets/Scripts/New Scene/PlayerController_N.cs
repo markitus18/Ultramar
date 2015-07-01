@@ -25,16 +25,22 @@ public class PlayerController_N : MonoBehaviour
 	{
 		Debug.Log ("Checking new box");
 		bool available = false;
-		if (entity.currentBox.GetComponent<Box_N>().upBox == newBox)
+		if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox) {
 			available = true;
-		else if (entity.currentBox.GetComponent<Box_N>().downBox == newBox)
+			entity.direction = 1;
+		} else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox) {
 			available = true;
-		else if (entity.currentBox.GetComponent<Box_N>().rightBox == newBox)
+			entity.direction = 3;
+		} else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox) {
 			available = true;
-		else if (entity.currentBox.GetComponent<Box_N>().leftBox == newBox)
+			entity.direction = 2;
+		} else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox) {
 			available = true;
+			entity.direction = 4;
+		}
 		if (available)
 		{
+			transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 			Debug.Log ("Assigned");
 			entity.targetBox = newBox;
 			entity.moving =  true;
