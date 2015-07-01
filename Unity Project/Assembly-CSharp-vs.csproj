@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
      <Compile Include="Assets\Scripts\New Scene\ArcherEnemyC.cs" />
+     <Compile Include="Assets\Scripts\New Scene\ArcherEnemyC_David.cs" />
      <Compile Include="Assets\Scripts\New Scene\Box_N.cs" />
      <Compile Include="Assets\Scripts\New Scene\Entity.cs" />
      <Compile Include="Assets\Scripts\New Scene\GameStateMachine_N.cs" />

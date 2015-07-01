@@ -45,29 +45,23 @@ public class Entity : MonoBehaviour {
 
 	public void Move()
 	{
-		if (targetBox)
-		{
-			if (currentPosition != targetBox.transform.position)
-			{
+		if (targetBox) {
+			if (currentPosition != targetBox.transform.position) {
 				distanceToMove = targetBox.transform.position - currentBox.transform.position;
 				currentPosition += distanceToMove / (16 / movementSpeed);
 				transform.position = currentPosition;
-			}
-			else
-			{
-				if (gameObject.tag == "Enemy")
-				{
-					targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
-					currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+			} else {
+				if (gameObject.tag == "Enemy") {
+					targetBox.GetComponent<Box_N> ().enemies.Add (gameObject);
+					currentBox.GetComponent<Box_N> ().enemies.Remove (gameObject);
 				}
 				currentBox = targetBox;
 				moving = false;
 				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 			}
-		}
-		else
-		{
+		} else {
 			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 		}
+
 	}
 }
