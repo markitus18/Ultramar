@@ -18,7 +18,7 @@ public class Box_N : MonoBehaviour {
 	void Start ()
 	{
 		//Assigning linked boxes
-		Debug.Log("Assigning linked boxes");
+//		Debug.Log("Assigning linked boxes");
 		RaycastHit hit;
 		Ray upRay = new Ray(transform.position, Vector3.forward);
 		Ray downRay = new Ray(transform.position, Vector3.back);
@@ -63,22 +63,32 @@ public class Box_N : MonoBehaviour {
 
 	void Update ()
 	{
-	
+		/*if (Input.touchCount != 1 && transform.GetComponent<Renderer> ().material.color == Color.blue) {
+			transform.GetComponent<Renderer> ().material.color = originalColor;
+		}*/
 	}
 
 	void OnMouseEnter()
 	{
-		transform.GetComponent<Renderer>().material.color = Color.blue;
+		//if (Input.touchCount == 1) {
+			transform.GetComponent<Renderer> ().material.color = Color.blue;
+		//}
 	}
 	
 	void OnMouseExit()
 	{
-		transform.GetComponent<Renderer>().material.color = originalColor;
+		//if (Input.touchCount == 1) {
+			transform.GetComponent<Renderer> ().material.color = originalColor;
+		//}
 	}
 
 	void OnMouseUp()
 	{
-		Debug.Log ("doing something");
-		playerController.SetNewBox(gameObject);
+		//if (Input.touchCount == 1) {
+			Debug.Log ("doing something");
+			playerController.SetNewBox (gameObject);
+		//}
 	}
 }
+
+

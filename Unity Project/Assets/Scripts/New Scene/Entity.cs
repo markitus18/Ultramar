@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum directionsEnum
+{   up = 1,
+	right = 2,
+	down = 3,
+	left = 4
+};
+
 public class Entity : MonoBehaviour {
 
 	public GameObject currentBox;
@@ -13,11 +20,26 @@ public class Entity : MonoBehaviour {
 
 	Vector3 currentPosition;
 	Vector3 targetPosition;
+	
 	public int direction;
 
 	public GameStateMachine_N.UpdateStates ret;
+
 	void Start ()
 	{
+		RaycastHit hit;
+		Vector3 SearchFrom = transform.position;
+		SearchFrom.y += 1;
+		Ray DownRay = new Ray(SearchFrom, Vector3.down);
+		
+		if (Physics.Raycast(DownRay, out hit, 1))
+		{
+			if(hit.collider.tag == "Box")
+			{
+				currentBox = hit.transform.gameObject;
+			}
+		}
+
 		moving = false;
 		currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;
