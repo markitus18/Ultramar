@@ -14,6 +14,7 @@ public class PlayerController_N : MonoBehaviour
 		entity = gameObject.GetComponent<Entity>();
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
 		paused = false;
+		entity.currentBox = GameObject.Find ("Box_start");
 	}
 	
 	// Update is called once per frame

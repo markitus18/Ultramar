@@ -5,7 +5,6 @@ public class Level_PlayerController : MonoBehaviour
 {
 	
 	public GameObject currentBox;
-	public GameObject text;
 	
 	Vector3 targetPosition;
 	Vector3 currentPosition;
