@@ -21,7 +21,26 @@ public class ArcherEnemyC : MonoBehaviour
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
 			if (targetBoxes[i] == playerEntity.currentBox)
+			{
 				playerController.Kill();
+				Vector3 vector = targetBoxes[i].transform.position - entity.currentBox.transform.position;
+				if (vector.z != 0)
+				{
+					if (vector.z < 0)
+						entity.direction = 3;
+					else
+						entity.direction = 1;
+				}
+				else if (vector.x != 0)
+				{
+					if (vector.x < 0)
+						entity.direction = 4;
+					else
+						entity.direction = 2;
+				}
+			Debug.Log ("moving direction");
+			entity.transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+			}
 		}
 	}
 }
