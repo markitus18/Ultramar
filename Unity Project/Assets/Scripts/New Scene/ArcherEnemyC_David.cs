@@ -28,7 +28,7 @@ public class ArcherEnemyC_David: MonoBehaviour
 		RaycastHit hit;
 		Ray ray = new Ray (transform.position, Vector3.up);
 		Vector3 searchFromHere = transform.position;
-		searchFromHere.y += 0.1f;
+		searchFromHere.y += 0.05f;
 		switch (entity.direction) {
 		case 1:
 			{
