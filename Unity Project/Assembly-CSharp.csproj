@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\New Scene\ArcherEnemyC.cs" />
      <Compile Include="Assets\Scripts\New Scene\ArcherEnemyC_David.cs" />
      <Compile Include="Assets\Scripts\New Scene\Box_N.cs" />
+     <Compile Include="Assets\Scripts\New Scene\CavalryEnemyC.cs" />
      <Compile Include="Assets\Scripts\New Scene\Entity.cs" />
      <Compile Include="Assets\Scripts\New Scene\GameStateMachine_N.cs" />
      <Compile Include="Assets\Scripts\New Scene\PlayerController_N.cs" />

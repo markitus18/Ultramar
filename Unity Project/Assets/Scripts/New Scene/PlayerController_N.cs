@@ -7,6 +7,7 @@ public class PlayerController_N : MonoBehaviour
 	public GameObject loseText;
 	public GameObject winText;public bool paused;
 	GameStateMachine_N stateMachine;
+	public bool passTurn;
 	// Use this for initialization
 	void Start()
 	{
@@ -23,27 +24,30 @@ public class PlayerController_N : MonoBehaviour
 
 	public void SetNewBox (GameObject newBox)
 	{
-		Debug.Log ("Checking new box");
-		bool available = false;
-		if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox) {
-			available = true;
-			entity.direction = 1;
-		} else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox) {
-			available = true;
-			entity.direction = 3;
-		} else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox) {
-			available = true;
-			entity.direction = 2;
-		} else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox) {
-			available = true;
-			entity.direction = 4;
-		}
-		if (available)
+		if (!entity.moving)
 		{
-			transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
-			Debug.Log ("Assigned");
-			entity.targetBox = newBox;
-			entity.moving =  true;
+			Debug.Log ("Checking new box");
+			bool available = false;
+			if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox) {
+				available = true;
+				entity.direction = 1;
+			} else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox) {
+				available = true;
+				entity.direction = 3;
+			} else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox) {
+				available = true;
+				entity.direction = 2;
+			} else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox) {
+				available = true;
+				entity.direction = 4;
+			}
+			if (available)
+			{
+				transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+				Debug.Log ("Assigned");
+				entity.targetBox = newBox;
+				entity.moving =  true;
+			}
 		}
 	}
 
@@ -83,6 +87,11 @@ public class PlayerController_N : MonoBehaviour
 		}
 		return false;
 
+	}
+	void OnMouseUp()
+	{
+		if (passTurn)
+			stateMachine.state = GameStateMachine_N.GameStates.ENEMY_TURN;
 	}
 
 }
