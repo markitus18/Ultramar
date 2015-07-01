@@ -43,4 +43,12 @@ public class ArcherEnemyC : MonoBehaviour
 			}
 		}
 	}
+
+	public void RemoveTargets()
+	{
+		for (int i = 0; i < targetBoxes.Count; i++)
+		{
+			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box_N>().standardMaterial;
+		}
+	}
 }

@@ -61,6 +61,10 @@ public class PlayerController_N : MonoBehaviour
 			int enemiesMax = entity.targetBox.GetComponent<Box_N>().enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
 			{
+				if (entity.targetBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>())
+				{
+					entity.targetBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
+				}
 				Debug.Log("Killing enemy");
 				entity.targetBox.GetComponent<Box_N>().enemies[i].SetActive(false);
 				stateMachine.enemies.Remove(entity.targetBox.GetComponent<Box_N>().enemies[i]);

@@ -14,6 +14,7 @@ public class Box_N : MonoBehaviour {
 	public GameObject rightBox;
 	public GameObject leftBox;
 
+	public Material standardMaterial;
 	PlayerController_N playerController;
 	[HideInInspector] public List<GameObject> enemies;
 
