@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour {
 
 	Vector3 currentPosition;
 	Vector3 targetPosition;
+
 	public int direction;
 
 	public GameStateMachine_N.UpdateStates ret;
