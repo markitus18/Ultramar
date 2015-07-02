@@ -91,6 +91,9 @@ public class PlayerController_N : MonoBehaviour
 					Debug.Log("Killing enemy");
 					entity.currentBox.GetComponent<Box_N>().enemies[i].SetActive(false);
 					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box_N>().enemies[i]);
+					entity.currentBox.GetComponent<Box_N>().enemies.Remove (entity.currentBox.GetComponent<Box_N>().enemies[i]);
+					i--;
+					enemiesMax --;
 				}
 			}
 		}

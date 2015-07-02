@@ -535,7 +535,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433658, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 433658, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_LocalPosition.y
@@ -563,12 +563,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433658, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11429914, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: currentBox
       value: 
-      objectReference: {fileID: 841913437}
+      objectReference: {fileID: 319516193}
     - target: {fileID: 112482, guid: 24087d4a5b8a03445a290cc13c0e8837, type: 2}
       propertyPath: m_Name
       value: Enemy_static (2)
@@ -642,10 +642,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 162410, guid: 0b1c8cb22b4078f4a974765ead71e2fb, type: 2}
   m_PrefabInternal: {fileID: 824284668}
---- !u!1 &841913437 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 101658, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
-  m_PrefabInternal: {fileID: 94067937}
 --- !u!1 &872747465
 GameObject:
   m_ObjectHideFlags: 0
