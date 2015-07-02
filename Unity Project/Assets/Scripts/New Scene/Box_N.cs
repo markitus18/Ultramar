@@ -17,7 +17,7 @@ public class Box_N : MonoBehaviour {
 	public int boxDistance;
 //	public Material standardMaterial;
 	PlayerController_N playerController;
-	[HideInInspector] public List<GameObject> enemies;
+	/*[HideInInspector]*/ public List<GameObject> enemies;
 
 	public Material standardMaterial;
 	[HideInInspector] public Material originalMaterial;

@@ -23,7 +23,10 @@ public class StaticEnemyC : MonoBehaviour
 			case 1:
 				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().upBox)
 				{
-					entity.targetBox = playerEntity.currentBox;
+					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().upBox.transform.position;
+					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.currentBox.transform.position;
+					entity.currentBox = playerEntity.currentBox;
+					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
 					entity.moving = true;
 				}
 				
@@ -32,7 +35,10 @@ public class StaticEnemyC : MonoBehaviour
 			case 2:
 				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().rightBox)
 				{
-					entity.targetBox = playerEntity.currentBox;
+					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().rightBox.transform.position;
+					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.currentBox.transform.position;
+					entity.currentBox = playerEntity.currentBox;
+					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
 					entity.moving = true;
 				}
 				break;
@@ -40,7 +46,10 @@ public class StaticEnemyC : MonoBehaviour
 			case 3:
 				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().downBox)
 				{
-					entity.targetBox = playerEntity.currentBox;
+					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().downBox.transform.position;
+					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.currentBox.transform.position;
+					entity.currentBox = playerEntity.currentBox;
+					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
 					entity.moving = true;
 				}
 				break;
@@ -48,7 +57,10 @@ public class StaticEnemyC : MonoBehaviour
 			case 4:
 				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().leftBox)
 				{
-					entity.targetBox = playerEntity.currentBox;
+					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().leftBox.transform.position;
+					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.currentBox.transform.position;
+					entity.currentBox = playerEntity.currentBox;
+					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
 					entity.moving = true;
 				}
 				break;
