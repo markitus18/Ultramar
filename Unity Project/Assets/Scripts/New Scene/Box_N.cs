@@ -18,6 +18,7 @@ public class Box_N : MonoBehaviour {
 	PlayerController_N playerController;
 	[HideInInspector] public List<GameObject> enemies;
 
+	public Material standardMaterial;
 	[HideInInspector] public Material originalMaterial;
 	public Material highlightMaterial;
 

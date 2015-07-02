@@ -10,12 +10,15 @@ public class ArcherEnemyC : MonoBehaviour
 
 	public Material targetMaterial;
 	public List<GameObject> targetBoxes;
-	void Start()
+	void Awake()
 	{
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
 			targetBoxes[i].GetComponent<Renderer>().material = targetMaterial;
 		}
+	}
+	void Start()
+	{
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_N>();
 		entity = gameObject.GetComponent<Entity>();
@@ -53,7 +56,8 @@ public class ArcherEnemyC : MonoBehaviour
 	{
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box_N>().originalMaterial;
+			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box_N>().standardMaterial;
+			targetBoxes[i].GetComponent<Box_N>().originalMaterial = targetBoxes[i].GetComponent<Box_N>().standardMaterial;
 		}
 	}
 }
