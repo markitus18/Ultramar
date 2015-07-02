@@ -9,12 +9,18 @@ public class PlayerController_N : MonoBehaviour
 	GameStateMachine_N stateMachine;
 	public bool passTurn;
 	// Use this for initialization
-	void Start()
+
+	void Awake()
 	{
 		entity = gameObject.GetComponent<Entity>();
+		entity.currentBox = GameObject.Find ("Box_start");
+	}
+	void Start()
+	{
+
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
 		paused = false;
-		entity.currentBox = GameObject.Find ("Box_start");
+
 	}
 	
 	// Update is called once per frame

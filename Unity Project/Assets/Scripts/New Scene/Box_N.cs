@@ -25,7 +25,6 @@ public class Box_N : MonoBehaviour {
 	void Start ()
 	{
 		//Assigning linked boxes
-		Debug.Log("Assigning linked boxes");
 		RaycastHit hit;
 		Ray upRay = new Ray(transform.position, Vector3.forward);
 		Ray downRay = new Ray(transform.position, Vector3.back);
