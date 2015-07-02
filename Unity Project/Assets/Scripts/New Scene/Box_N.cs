@@ -14,11 +14,12 @@ public class Box_N : MonoBehaviour {
 	public GameObject rightBox;
 	public GameObject leftBox;
 
-	public Material standardMaterial;
+//	public Material standardMaterial;
 	PlayerController_N playerController;
 	[HideInInspector] public List<GameObject> enemies;
 
-	Color originalColor;
+	[HideInInspector] public Material originalMaterial;
+	public Material highlightMaterial;
 
 	void Start ()
 	{
@@ -62,7 +63,7 @@ public class Box_N : MonoBehaviour {
 		//Setting all variables
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_N>();
 		//Saving original color
-		originalColor = transform.GetComponent<Renderer>().material.color;
+		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
 	
 
@@ -73,12 +74,12 @@ public class Box_N : MonoBehaviour {
 
 	void OnMouseEnter()
 	{
-		transform.GetComponent<Renderer>().material.color = Color.blue;
+		transform.GetComponent<Renderer>().material = highlightMaterial;
 	}
 	
 	void OnMouseExit()
 	{
-		transform.GetComponent<Renderer>().material.color = originalColor;
+		transform.GetComponent<Renderer>().material = originalMaterial;
 	}
 
 	void OnMouseUp()
