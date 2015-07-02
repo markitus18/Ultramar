@@ -35,16 +35,23 @@ public class PlayerController_N : MonoBehaviour
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
-			if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox) {
+			if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox)
+			{
 				available = true;
 				entity.direction = 1;
-			} else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox) {
+			}
+			else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox)
+			{
 				available = true;
 				entity.direction = 3;
-			} else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox) {
+			}
+			else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox)
+			{
 				available = true;
 				entity.direction = 2;
-			} else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox) {
+			}
+			else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox)
+			{
 				available = true;
 				entity.direction = 4;
 			}
@@ -52,8 +59,11 @@ public class PlayerController_N : MonoBehaviour
 			{
 				transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 				Debug.Log ("Assigned");
-				entity.targetBox = newBox;
+				entity.distanceToMove = newBox.transform.position - entity.currentBox.transform.position;
+				entity.currentBox = newBox;
+				entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
 				entity.moving =  true;
+				entity.targetPosition = newBox.transform.position;
 			}
 		}
 	}
@@ -67,25 +77,28 @@ public class PlayerController_N : MonoBehaviour
 
 	public void CheckEnemy()
 	{
-		if (entity.targetBox.GetComponent<Box_N>().enemies.Count > 0)
+		if (entity.currentBox.GetComponent<Box_N>().enemies.Count > 0)
 		{
-			int enemiesMax = entity.targetBox.GetComponent<Box_N>().enemies.Count;
+			int enemiesMax = entity.currentBox.GetComponent<Box_N>().enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
 			{
-				if (entity.targetBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>())
+				if (entity.currentBox.GetComponent<Box_N>().enemies[i].tag != "Player")
 				{
-					entity.targetBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
+					if (entity.currentBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>())
+					{
+						entity.currentBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
+					}
+					Debug.Log("Killing enemy");
+					entity.currentBox.GetComponent<Box_N>().enemies[i].SetActive(false);
+					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box_N>().enemies[i]);
 				}
-				Debug.Log("Killing enemy");
-				entity.targetBox.GetComponent<Box_N>().enemies[i].SetActive(false);
-				stateMachine.enemies.Remove(entity.targetBox.GetComponent<Box_N>().enemies[i]);
 			}
 		}
 	}
 
 	public bool CheckEnd()
 	{
-		if (entity.targetBox.name == ("Box_end"))
+		if (entity.currentBox.name == ("Box_end"))
 		{
 			Debug.Log("End of level");
 			winText.GetComponent<Renderer>().enabled = true;

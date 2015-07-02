@@ -8,11 +8,11 @@ public class Entity : MonoBehaviour {
 
 	public float movementSpeed = 2;
 
-	Vector3 distanceToMove;
+	/*[HideInInspector]*/ public Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
 
 	Vector3 currentPosition;
-	Vector3 targetPosition;
+	[HideInInspector] public Vector3 targetPosition;
 	public enum enumDirections
 	{
 		up = 1,
@@ -45,21 +45,27 @@ public class Entity : MonoBehaviour {
 
 	public void Move()
 	{
-		if (targetBox) {
-			if (currentPosition != targetBox.transform.position) {
-				distanceToMove = targetBox.transform.position - currentBox.transform.position;
+		if (moving)
+		{
+			if (currentPosition != targetPosition)
+			{
+//				distanceToMove = targetPosition - currentBox.transform.position;
 				currentPosition += distanceToMove / (16 / movementSpeed);
 				transform.position = currentPosition;
-			} else {
-				if (gameObject.tag == "Enemy") {
+			}
+			else
+			{
+				if (gameObject.tag == "Enemy")
+				{
 					targetBox.GetComponent<Box_N> ().enemies.Add (gameObject);
 					currentBox.GetComponent<Box_N> ().enemies.Remove (gameObject);
 				}
-				currentBox = targetBox;
 				moving = false;
 				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 			}
-		} else {
+		}
+		else
+		{
 			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 		}
 
