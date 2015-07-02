@@ -14,6 +14,7 @@ public class Box_N : MonoBehaviour {
 	public GameObject rightBox;
 	public GameObject leftBox;
 
+	public int boxDistance;
 //	public Material standardMaterial;
 	PlayerController_N playerController;
 	[HideInInspector] public List<GameObject> enemies;
@@ -31,28 +32,28 @@ public class Box_N : MonoBehaviour {
 		Ray rightRay = new Ray(transform.position, Vector3.right);
 		Ray leftRay = new Ray(transform.position, Vector3.left);
 
-		if (Physics.Raycast(upRay, out hit, 4) && upBox == null && up==true)
+		if (Physics.Raycast(upRay, out hit, boxDistance) && upBox == null && up==true)
 		{
 			if(hit.collider.tag == "Box")
 			{
 				upBox = hit.transform.gameObject;
 			}
 		}
-		if (Physics.Raycast(downRay, out hit, 4) && downBox == null && up==down)
+		if (Physics.Raycast(downRay, out hit, boxDistance) && downBox == null && up==down)
 		{
 			if(hit.collider.tag == "Box")
 			{
 				downBox = hit.transform.gameObject;
 			}
 		}
-		if (Physics.Raycast(rightRay, out hit, 4) && rightBox == null && right==true)
+		if (Physics.Raycast(rightRay, out hit, boxDistance) && rightBox == null && right==true)
 		{
 			if(hit.collider.tag == "Box")
 			{
 				rightBox = hit.transform.gameObject;
 			}
 		}
-		if (Physics.Raycast(leftRay, out hit, 4) && leftBox == null && left==true)
+		if (Physics.Raycast(leftRay, out hit, boxDistance) && leftBox == null && left==true)
 		{
 			if(hit.collider.tag == "Box")
 			{
