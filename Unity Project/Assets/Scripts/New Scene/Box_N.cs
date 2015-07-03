@@ -23,7 +23,7 @@ public class Box_N : MonoBehaviour {
 	[HideInInspector] public Material originalMaterial;
 	public Material highlightMaterial;
 
-	void Start ()
+	void Awake ()
 	{
 		//Assigning linked boxes
 		RaycastHit hit;

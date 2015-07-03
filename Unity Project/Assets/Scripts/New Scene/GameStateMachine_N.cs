@@ -132,6 +132,7 @@ public class GameStateMachine_N : MonoBehaviour
 				enemies[i].GetComponent<RunnerEnemyC>().SetNewBox();
 			if (enemies[i].GetComponent<CavalryEnemyC>())
 				enemies[i].GetComponent<CavalryEnemyC>().SetNewBox();
+				
 		}
 	}
 
@@ -141,7 +142,7 @@ public class GameStateMachine_N : MonoBehaviour
 		for (int i = 0; i < enemiesMax; i ++)
 		{
 			if (enemies[i].GetComponent<RunnerEnemyC>())
-				enemies[i].GetComponent<RunnerEnemyC>().SetNewBox();
+				enemies[i].GetComponent<RunnerEnemyC>().SetNewDirection();
 			if (enemies[i].GetComponent<CavalryEnemyC>())
 				enemies[i].GetComponent<CavalryEnemyC>().SetNewBox();
 		}

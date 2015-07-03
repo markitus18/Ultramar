@@ -13,14 +13,11 @@ public class PlayerController_N : MonoBehaviour
 	void Awake()
 	{
 		entity = gameObject.GetComponent<Entity>();
-		entity.currentBox = GameObject.Find ("Box_start");
 	}
 	void Start()
 	{
-
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
 		paused = false;
-
 	}
 	
 	// Update is called once per frame

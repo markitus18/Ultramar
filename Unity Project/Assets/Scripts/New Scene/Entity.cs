@@ -27,11 +27,15 @@ public class Entity : MonoBehaviour
 	[HideInInspector] public int direction;
 
 	[HideInInspector] public GameStateMachine_N.UpdateStates ret;
-	void Start ()
+
+	void Awake()
 	{
 		direction = (int)startingDirection;
-		moving = false;
 		currentPosition = currentBox.transform.position;
+	}
+	void Start ()
+	{
+		moving = false;
 		previousBox = currentBox;
 		transform.position = currentPosition;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);

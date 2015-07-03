@@ -1,17 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\New Scene\StaticEnemyC.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\New Scene\GameStateMachine_N.cs">
     <Files>
-      <File FileName="Assets\Scripts\New Scene\Box_N.cs" Line="20" Column="23" />
+      <File FileName="Assets\Scripts\New Scene\RunnerEnemyC.cs" Line="34" Column="1" />
+      <File FileName="Assets\Scripts\New Scene\Entity.cs" Line="34" Column="51" />
+      <File FileName="Assets\Scripts\New Scene\Box_N.cs" Line="79" Column="3" />
       <File FileName="Assets\Scripts\New Scene\ArcherEnemyC.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\New Scene\PlayerController_N.cs" Line="95" Column="10" />
-      <File FileName="Assets\Scripts\New Scene\StaticEnemyC.cs" Line="33" Column="11" />
+      <File FileName="Assets\Scripts\New Scene\PlayerController_N.cs" Line="32" Column="4" />
+      <File FileName="Assets\Scripts\New Scene\StaticEnemyC.cs" Line="24" Column="63" />
+      <File FileName="Assets\Scripts\New Scene\CavalryEnemyC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\New Scene\GameStateMachine_N.cs" Line="145" Column="48" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>i</Value>
-          <Value>entity.currentBox.GetComponent&lt;Box_N&gt;().enemies</Value>
+          <Value>entity.direction</Value>
+          <Value>boxAsigned</Value>
+          <Value>currentBox</Value>
         </State>
       </Pad>
     </Pads>
