@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
 
 	public Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
+	bool boxAsigned;
 
 	Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
@@ -57,7 +58,6 @@ public class Entity : MonoBehaviour
 		{
 			if (currentPosition != targetPosition)
 			{
-//				distanceToMove = targetPosition - currentBox.transform.position;
 				currentPosition += distanceToMove / (16 / movementSpeed);
 				transform.position = currentPosition;
 			}
@@ -74,5 +74,51 @@ public class Entity : MonoBehaviour
 			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 		}
 
+	}
+
+	public void SetNewBox ()
+	{
+		boxAsigned = false;
+		while (!boxAsigned)
+		{
+			switch(direction)
+			{
+			case 1:
+				targetPosition =  currentBox.GetComponent<Box_N>().upBox.transform.position;
+				distanceToMove = targetPosition - currentBox.transform.position;
+				currentBox = currentBox.GetComponent<Box_N>().upBox;
+				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+				moving = true;
+				boxAsigned = true;
+				break;
+			case 2:
+				targetPosition =  currentBox.GetComponent<Box_N>().rightBox.transform.position;
+				distanceToMove = targetPosition - currentBox.transform.position;
+				currentBox = currentBox.GetComponent<Box_N>().rightBox;
+				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+				moving = true;
+				boxAsigned = true;
+				break;
+			case 3:
+				targetPosition =  currentBox.GetComponent<Box_N>().downBox.transform.position;
+				distanceToMove = targetPosition - currentBox.transform.position;
+				currentBox = currentBox.GetComponent<Box_N>().downBox;
+				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+				moving = true;
+				boxAsigned = true;
+				break;
+			case 4:
+				targetPosition = currentBox.GetComponent<Box_N>().leftBox.transform.position;
+				distanceToMove = targetPosition - currentBox.transform.position;
+				currentBox = currentBox.GetComponent<Box_N>().leftBox;
+				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+				moving = true;
+				boxAsigned = true;
+				break;
+			default:
+				break;
+			}
+		}
+		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 }

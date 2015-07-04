@@ -7,7 +7,7 @@ public class CavalryEnemyC : MonoBehaviour {
 	PlayerController_N playerController;
 	Entity entity;
 	public MovementDirection movementDirection;
-	bool boxAsigned;
+	bool directionAsigned;
 	public enum MovementDirection
 	{
 		clockwise,
@@ -15,24 +15,25 @@ public class CavalryEnemyC : MonoBehaviour {
 	}
 	void Start()
 	{
-		boxAsigned = false;
+		directionAsigned = false;
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_N>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
 	}
-	public void SetNewBox ()
+
+	public void SetNewDirection()
 	{
-		boxAsigned = false;
-		while (!boxAsigned)
+		directionAsigned = false;
+		while (!directionAsigned)
 		{
 			switch(entity.direction)
 			{
 			case 1:
 				if(entity.currentBox.GetComponent<Box_N>().upBox)
 				{
-					entity.targetBox = entity.currentBox.GetComponent<Box_N>().upBox;
-					boxAsigned = true;
+					entity.direction = 1;
+					directionAsigned = true;
 				}
 				else
 				{
@@ -62,8 +63,8 @@ public class CavalryEnemyC : MonoBehaviour {
 			case 2:
 				if(entity.currentBox.GetComponent<Box_N>().rightBox)
 				{
-					entity.targetBox = entity.currentBox.GetComponent<Box_N>().rightBox;
-					boxAsigned = true;
+					entity.direction = 2;
+					directionAsigned = true;
 				}
 				else
 				{
@@ -96,8 +97,8 @@ public class CavalryEnemyC : MonoBehaviour {
 			case 3:
 				if(entity.currentBox.GetComponent<Box_N>().downBox)
 				{
-					entity.targetBox = entity.currentBox.GetComponent<Box_N>().downBox;
-					boxAsigned = true;
+					entity.direction = 3;
+					directionAsigned = true;
 				}
 				else
 				{
@@ -130,8 +131,8 @@ public class CavalryEnemyC : MonoBehaviour {
 			case 4:
 				if(entity.currentBox.GetComponent<Box_N>().leftBox)
 				{
-					entity.targetBox = entity.currentBox.GetComponent<Box_N>().leftBox;
-					boxAsigned = true;
+					entity.direction = 4;
+					directionAsigned = true;
 				}
 				else
 				{
