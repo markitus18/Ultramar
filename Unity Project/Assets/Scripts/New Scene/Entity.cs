@@ -12,7 +12,6 @@ public class Entity : MonoBehaviour
 
 	public Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
-	bool boxAsigned;
 
 	Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
@@ -78,46 +77,38 @@ public class Entity : MonoBehaviour
 
 	public void SetNewBox ()
 	{
-		boxAsigned = false;
-		while (!boxAsigned)
+		switch(direction)
 		{
-			switch(direction)
-			{
-			case 1:
-				targetPosition =  currentBox.GetComponent<Box_N>().upBox.transform.position;
-				distanceToMove = targetPosition - currentBox.transform.position;
-				currentBox = currentBox.GetComponent<Box_N>().upBox;
-				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-				moving = true;
-				boxAsigned = true;
-				break;
-			case 2:
-				targetPosition =  currentBox.GetComponent<Box_N>().rightBox.transform.position;
-				distanceToMove = targetPosition - currentBox.transform.position;
-				currentBox = currentBox.GetComponent<Box_N>().rightBox;
-				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-				moving = true;
-				boxAsigned = true;
-				break;
-			case 3:
-				targetPosition =  currentBox.GetComponent<Box_N>().downBox.transform.position;
-				distanceToMove = targetPosition - currentBox.transform.position;
-				currentBox = currentBox.GetComponent<Box_N>().downBox;
-				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-				moving = true;
-				boxAsigned = true;
-				break;
-			case 4:
-				targetPosition = currentBox.GetComponent<Box_N>().leftBox.transform.position;
-				distanceToMove = targetPosition - currentBox.transform.position;
-				currentBox = currentBox.GetComponent<Box_N>().leftBox;
-				currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-				moving = true;
-				boxAsigned = true;
-				break;
-			default:
-				break;
-			}
+		case 1:
+			currentBox = currentBox.GetComponent<Box_N>().upBox;
+			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+			targetPosition = currentBox.transform.position;
+			distanceToMove = targetPosition - previousBox.transform.position;
+			moving = true;
+			break;
+		case 2:
+			currentBox = currentBox.GetComponent<Box_N>().rightBox;
+			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+			targetPosition = currentBox.transform.position;
+			distanceToMove = targetPosition - previousBox.transform.position;
+			moving = true;
+			break;
+		case 3:
+			currentBox = currentBox.GetComponent<Box_N>().downBox;
+			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+			targetPosition = currentBox.transform.position;
+			distanceToMove = targetPosition - previousBox.transform.position;
+			moving = true;
+			break;
+		case 4:
+			currentBox = currentBox.GetComponent<Box_N>().leftBox;
+			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+			targetPosition = currentBox.transform.position;
+			distanceToMove = targetPosition - previousBox.transform.position;
+			moving = true;
+			break;
+		default:
+			break;
 		}
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
