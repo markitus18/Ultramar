@@ -13,7 +13,8 @@ public class Entity : MonoBehaviour
 	public Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
 
-	Vector3 currentPosition;
+	[HideInInspector] public Vector3 previousPosition;
+	[HideInInspector] public Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
 
 	public enum enumDirections
@@ -37,6 +38,7 @@ public class Entity : MonoBehaviour
 	{
 		moving = false;
 		previousBox = currentBox;
+		previousPosition = currentPosition;
 		transform.position = currentPosition;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
@@ -65,6 +67,7 @@ public class Entity : MonoBehaviour
 				previousBox.GetComponent<Box_N> ().enemies.Remove(gameObject);
 				previousBox = currentBox;
 				moving = false;
+				previousPosition = currentPosition;
 				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
 			}
 		}
@@ -82,29 +85,29 @@ public class Entity : MonoBehaviour
 		case 1:
 			currentBox = currentBox.GetComponent<Box_N>().upBox;
 			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			targetPosition = currentBox.transform.position;
-			distanceToMove = targetPosition - previousBox.transform.position;
+			currentBox.GetComponent<Box_N>().UpdatePositions();
+			distanceToMove = targetPosition - previousPosition;
 			moving = true;
 			break;
 		case 2:
 			currentBox = currentBox.GetComponent<Box_N>().rightBox;
 			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			targetPosition = currentBox.transform.position;
-			distanceToMove = targetPosition - previousBox.transform.position;
+			currentBox.GetComponent<Box_N>().UpdatePositions();
+			distanceToMove = targetPosition - previousPosition;
 			moving = true;
 			break;
 		case 3:
 			currentBox = currentBox.GetComponent<Box_N>().downBox;
 			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			targetPosition = currentBox.transform.position;
-			distanceToMove = targetPosition - previousBox.transform.position;
+			currentBox.GetComponent<Box_N>().UpdatePositions();
+			distanceToMove = targetPosition - previousPosition;
 			moving = true;
 			break;
 		case 4:
 			currentBox = currentBox.GetComponent<Box_N>().leftBox;
 			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			targetPosition = currentBox.transform.position;
-			distanceToMove = targetPosition - previousBox.transform.position;
+			currentBox.GetComponent<Box_N>().UpdatePositions();
+			distanceToMove = targetPosition - previousPosition;
 			moving = true;
 			break;
 		default:

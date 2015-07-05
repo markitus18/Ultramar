@@ -88,4 +88,23 @@ public class Box_N : MonoBehaviour {
 		Debug.Log ("doing something");
 		playerController.SetNewBox(gameObject);
 	}
+
+	public void UpdatePositions()
+	{
+		switch(enemies.Count)
+		{
+		case 1:
+			enemies[0].GetComponent<Entity>().targetPosition = gameObject.transform.position;
+			enemies[0].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[0].transform.position;
+			break;
+		case 2:
+			enemies[0].GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
+			enemies[1].GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
+			enemies[0].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[0].transform.position;
+			enemies[1].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[1].transform.position;
+			break;
+		default:
+			break;
+		}
+	}
 }

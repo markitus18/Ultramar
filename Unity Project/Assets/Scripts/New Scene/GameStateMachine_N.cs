@@ -77,6 +77,8 @@ public class GameStateMachine_N : MonoBehaviour
 		int enemiesUpdated = 0;
 		for (int i = 0; i < enemiesMax; i++)
 		{
+			if (enemies[i].GetComponent<StaticEnemyC>())
+				enemies[i].GetComponent<StaticEnemyC>().UpdateMoving();
 			if (enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP)
 			{
 				enemies[i].GetComponent<Entity>().Move();
