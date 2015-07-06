@@ -23,14 +23,9 @@ public class StaticEnemyC : MonoBehaviour
 			{
 				entity.targetBox = entity.currentBox.GetComponent<Box_N>().upBox;
 				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
-				/*
-				entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().upBox.transform.position;
-				entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
-				entity.currentBox = playerEntity.currentBox;
-				entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-				entity.moving = true;
-				*/
 			}
+			else
+				entity.targetBox = entity.currentBox;
 			
 			break;
 			
@@ -40,6 +35,8 @@ public class StaticEnemyC : MonoBehaviour
 				entity.targetBox = entity.currentBox.GetComponent<Box_N>().rightBox;
 				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
 			}
+			else
+				entity.targetBox = entity.currentBox;
 			break;
 			
 		case 3:
@@ -48,6 +45,8 @@ public class StaticEnemyC : MonoBehaviour
 				entity.targetBox = entity.currentBox.GetComponent<Box_N>().downBox;
 				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
 			}
+			else
+				entity.targetBox = entity.currentBox;
 			break;
 			
 		case 4:
@@ -56,6 +55,8 @@ public class StaticEnemyC : MonoBehaviour
 				entity.targetBox = entity.currentBox.GetComponent<Box_N>().leftBox;
 				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
 			}
+			else
+				entity.targetBox = entity.currentBox;
 			break;
 		default:
 			break;

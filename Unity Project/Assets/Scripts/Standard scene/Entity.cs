@@ -64,7 +64,6 @@ public class Entity : MonoBehaviour
 			}
 			else
 			{
-				currentBox.GetComponent<Box_N> ().enemies.Remove(gameObject);
 				currentBox = targetBox;
 				moving = false;
 				previousPosition = currentPosition;
