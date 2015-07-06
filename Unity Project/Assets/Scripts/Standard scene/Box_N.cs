@@ -94,7 +94,7 @@ public class Box_N : MonoBehaviour {
 		switch(enemies.Count)
 		{
 		case 1:
-			if (enemies[0] = enemy)
+			if (enemies[0] == enemy)
 			{
 				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position;
 				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
@@ -105,7 +105,7 @@ public class Box_N : MonoBehaviour {
 			}
 			break;
 		case 2:
-			if (enemies[0] = enemy)
+			if (enemies[0] == enemy)
 			{
 				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
 				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
@@ -114,7 +114,7 @@ public class Box_N : MonoBehaviour {
 					enemy.GetComponent<Entity>().moving = true;
 				}
 			}
-			else if (enemies[1] = enemy)
+			else if (enemies[1] == enemy)
 			{
 				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
 				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
