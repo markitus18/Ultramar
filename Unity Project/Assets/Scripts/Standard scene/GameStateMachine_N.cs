@@ -59,7 +59,11 @@ public class GameStateMachine_N : MonoBehaviour
 
 	void UpdatePlayer()
 	{
-		if (!playerController.gameObject.GetComponent<PlayerController_N>().paused)
+		if (playerController.gameObject.GetComponent<PlayerController_N>().autoPassTurn)
+		{
+			state = GameStates.ENEMY_START;
+		}
+		else if (!playerController.gameObject.GetComponent<PlayerController_N>().paused)
 		{
 			if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
 			{

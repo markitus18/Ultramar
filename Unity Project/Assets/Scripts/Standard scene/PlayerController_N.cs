@@ -8,6 +8,7 @@ public class PlayerController_N : MonoBehaviour
 	public GameObject winText;public bool paused;
 	GameStateMachine_N stateMachine;
 	public bool passTurn;
+	public bool autoPassTurn;
 	// Use this for initialization
 
 	void Awake()
@@ -19,16 +20,10 @@ public class PlayerController_N : MonoBehaviour
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
 		paused = false;
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
 
 	public void SetNewBox (GameObject newBox)
 	{
-		if (!entity.moving)
+		if (!entity.moving && !paused)
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
@@ -74,7 +69,7 @@ public class PlayerController_N : MonoBehaviour
 
 	public void CheckEnemy()
 	{
-		if (1 == 1/*entity.currentBox.GetComponent<Box_N>().enemies.Count > 0*/)
+		if (entity.currentBox.GetComponent<Box_N>().enemies.Count > 0)
 		{
 			int enemiesMax = entity.currentBox.GetComponent<Box_N>().enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
@@ -110,7 +105,7 @@ public class PlayerController_N : MonoBehaviour
 	}
 	void OnMouseUp()
 	{
-		if (passTurn)
+		if (passTurn && stateMachine.state == GameStateMachine_N.GameStates.PLAYER_TURN)
 			stateMachine.state = GameStateMachine_N.GameStates.ENEMY_START;
 	}
 
