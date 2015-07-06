@@ -50,14 +50,14 @@
      <Compile Include="Assets\Scripts\Camera\CameraMovement2.cs" />
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
-     <Compile Include="Assets\Scripts\New Scene\ArcherEnemyC.cs" />
-     <Compile Include="Assets\Scripts\New Scene\Box_N.cs" />
-     <Compile Include="Assets\Scripts\New Scene\CavalryEnemyC.cs" />
-     <Compile Include="Assets\Scripts\New Scene\Entity.cs" />
-     <Compile Include="Assets\Scripts\New Scene\GameStateMachine_N.cs" />
-     <Compile Include="Assets\Scripts\New Scene\PlayerController_N.cs" />
-     <Compile Include="Assets\Scripts\New Scene\RunnerEnemyC.cs" />
-     <Compile Include="Assets\Scripts\New Scene\StaticEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\ArcherEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\Box_N.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\CavalryEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\Entity.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\GameStateMachine_N.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\PlayerController_N.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\RunnerEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\StaticEnemyC.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

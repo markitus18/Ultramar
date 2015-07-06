@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Level_PlayerController : MonoBehaviour
 {
-	
+	/*
 	public GameObject currentBox;
 	
 	Vector3 targetPosition;
@@ -87,4 +87,5 @@ public class Level_PlayerController : MonoBehaviour
 			hasMoved = true;
 		}
 	}
+	*/
 }

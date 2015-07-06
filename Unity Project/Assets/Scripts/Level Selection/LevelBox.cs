@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LevelBox : MonoBehaviour
 {
+	/*
 	public Level_PlayerController playerController;
 
 	public GameObject upBox;
@@ -75,4 +76,5 @@ public class LevelBox : MonoBehaviour
 	{
 		transform.GetComponent<Renderer>().material.color = originalColor;
 	}
+	*/
 }
