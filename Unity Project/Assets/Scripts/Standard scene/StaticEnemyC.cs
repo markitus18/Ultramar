@@ -16,64 +16,52 @@ public class StaticEnemyC : MonoBehaviour
 	}
 	public void SetNewBox ()
 	{
-		if (entity.ret == GameStateMachine_N.UpdateStates.UPDATE_KEEP)
+		switch(entity.direction)
 		{
-			switch(entity.direction)
+		case 1:
+			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().upBox)
 			{
-			case 1:
-				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().upBox)
-				{
-					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().upBox.transform.position;
-					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
-					entity.currentBox = playerEntity.currentBox;
-					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-					entity.moving = true;
-				}
-				
-				break;
-				
-			case 2:
-				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().rightBox)
-				{
-					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().rightBox.transform.position;
-					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
-					entity.currentBox = playerEntity.currentBox;
-					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-					entity.moving = true;
-				}
-				break;
-				
-			case 3:
-				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().downBox)
-				{
-					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().downBox.transform.position;
-					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
-					entity.currentBox = playerEntity.currentBox;
-					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-					entity.moving = true;
-				}
-				break;
-				
-			case 4:
-				if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().leftBox)
-				{
-					entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().leftBox.transform.position;
-					entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
-					entity.currentBox = playerEntity.currentBox;
-					entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-					entity.moving = true;
-				}
-				break;
-			default:
-				break;
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().upBox;
+				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
+				/*
+				entity.targetPosition =  entity.currentBox.GetComponent<Box_N>().upBox.transform.position;
+				entity.distanceToMove = playerEntity.currentBox.transform.position - entity.transform.position;
+				entity.currentBox = playerEntity.currentBox;
+				entity.currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
+				entity.moving = true;
+				*/
 			}
+			
+			break;
+			
+		case 2:
+			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().rightBox)
+			{
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().rightBox;
+				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
+			}
+			break;
+			
+		case 3:
+			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().downBox)
+			{
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().downBox;
+				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
+			}
+			break;
+			
+		case 4:
+			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box_N>().leftBox)
+			{
+				entity.targetBox = entity.currentBox.GetComponent<Box_N>().leftBox;
+				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
+			}
+			break;
+		default:
+			break;
 		}
 	}
-	public void UpdateMoving()
-	{
-		if (entity.targetPosition != entity.currentPosition)
-			entity.moving = true;
-	}
+
 	public void CheckIfPlayer()
 	{
 		if (entity.currentBox == playerEntity.currentBox)

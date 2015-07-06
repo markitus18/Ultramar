@@ -89,19 +89,40 @@ public class Box_N : MonoBehaviour {
 		playerController.SetNewBox(gameObject);
 	}
 
-	public void UpdatePositions()
+	public void UpdatePosition(GameObject enemy)
 	{
 		switch(enemies.Count)
 		{
 		case 1:
-			enemies[0].GetComponent<Entity>().targetPosition = gameObject.transform.position;
-			enemies[0].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[0].transform.position;
+			if (enemies[0] = enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position;
+				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
+				{
+					enemy.GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[0].transform.position;
+					enemy.GetComponent<Entity>().moving = true;
+				}
+			}
 			break;
 		case 2:
-			enemies[0].GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
-			enemies[1].GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
-			enemies[0].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[0].transform.position;
-			enemies[1].GetComponent<Entity>().distanceToMove = enemies[0].GetComponent<Entity>().targetPosition - enemies[1].transform.position;
+			if (enemies[0] = enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
+				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
+				{
+					enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemies[0].transform.position;
+					enemy.GetComponent<Entity>().moving = true;
+				}
+			}
+			else if (enemies[1] = enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
+				if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
+				{
+					enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemy.transform.position;
+					enemy.GetComponent<Entity>().moving = true;
+				}
+			}
 			break;
 		default:
 			break;

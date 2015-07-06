@@ -74,7 +74,7 @@ public class PlayerController_N : MonoBehaviour
 
 	public void CheckEnemy()
 	{
-		if (entity.currentBox.GetComponent<Box_N>().enemies.Count > 0)
+		if (1 == 1/*entity.currentBox.GetComponent<Box_N>().enemies.Count > 0*/)
 		{
 			int enemiesMax = entity.currentBox.GetComponent<Box_N>().enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
@@ -111,7 +111,7 @@ public class PlayerController_N : MonoBehaviour
 	void OnMouseUp()
 	{
 		if (passTurn)
-			stateMachine.state = GameStateMachine_N.GameStates.ENEMY_TURN;
+			stateMachine.state = GameStateMachine_N.GameStates.ENEMY_START;
 	}
 
 }
