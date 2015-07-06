@@ -83,35 +83,25 @@ public class Entity : MonoBehaviour
 		switch(direction)
 		{
 		case 1:
-			currentBox = currentBox.GetComponent<Box_N>().upBox;
-			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().UpdatePositions();
-			distanceToMove = targetPosition - previousPosition;
-			moving = true;
+			currentBox = currentBox.GetComponent<Box_N>().upBox; moving = true;
 			break;
 		case 2:
-			currentBox = currentBox.GetComponent<Box_N>().rightBox;
-			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().UpdatePositions();
-			distanceToMove = targetPosition - previousPosition;
-			moving = true;
+			currentBox = currentBox.GetComponent<Box_N>().rightBox; moving = true;
 			break;
 		case 3:
-			currentBox = currentBox.GetComponent<Box_N>().downBox;
-			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().UpdatePositions();
-			distanceToMove = targetPosition - previousPosition;
-			moving = true;
+			currentBox = currentBox.GetComponent<Box_N>().downBox; moving = true;
 			break;
 		case 4:
-			currentBox = currentBox.GetComponent<Box_N>().leftBox;
-			currentBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().UpdatePositions();
-			distanceToMove = targetPosition - previousPosition;
-			moving = true;
+			currentBox = currentBox.GetComponent<Box_N>().leftBox; moving = true;
 			break;
 		default:
 			break;
+		}
+		if (moving)
+		{
+			currentBox.GetComponent<Box_N> ().enemies.Add (gameObject);
+			currentBox.GetComponent<Box_N> ().UpdatePositions ();
+			distanceToMove = targetPosition - previousPosition;
 		}
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
