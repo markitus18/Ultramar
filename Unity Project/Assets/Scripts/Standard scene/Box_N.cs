@@ -109,6 +109,20 @@ public class Box_N : MonoBehaviour {
 				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
 			}
 			break;
+		case 3:
+			if (enemies[0] == enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
+			}
+			else if (enemies[1] == enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
+			}
+			else if (enemies[2] == enemy)
+			{
+				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(-0.5f, 0, 0);
+			}
+			break;
 		default:
 			break;
 		}
