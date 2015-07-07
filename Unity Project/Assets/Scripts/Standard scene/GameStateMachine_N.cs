@@ -90,6 +90,7 @@ public class GameStateMachine_N : MonoBehaviour
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			enemies[i].GetComponent<Entity>().ret = UpdateStates.UPDATE_KEEP;
+			enemies[i].GetComponent<Entity>().targetAssigned = false;
 		}
 	}
 
