@@ -66,12 +66,6 @@ public class Box_N : MonoBehaviour {
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
-	
-
-	void Update ()
-	{
-	
-	}
 
 	void OnMouseEnter()
 	{
