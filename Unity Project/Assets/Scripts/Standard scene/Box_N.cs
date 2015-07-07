@@ -15,7 +15,8 @@ public class Box_N : MonoBehaviour {
 	public GameObject leftBox;
 
 	public int boxDistance;
-	public float entityDistance;
+	public float entityDistanceX;
+	public float entityDistanceZ;
 //	public Material standardMaterial;
 	PlayerController_N playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
@@ -86,57 +87,56 @@ public class Box_N : MonoBehaviour {
 
 	public void UpdatePosition(GameObject enemy)
 	{
-		if (!enemy.GetComponent<Entity>().targetAssigned)
+		int groups = Mathf.CeilToInt((float)enemies.Count / 2);
+		int sign;
+		if (groups % 2 == 1)
 		{
-			int groups = Mathf.CeilToInt((float)enemies.Count / 2);
-			int sign;
-			if (groups % 2 == 1)
+			for (int i = 0; i < groups; i++)
 			{
-				for (int i = 0; i < groups; i++)
+				sign = (i % 2 == 0) ?  -1 : 1;
+
+ 				if ((i * 2) + 1 < enemies.Count)
 				{
-					sign = (i % 2 == 0) ?  -1 : 1;
+					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistanceZ;
+					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistanceZ;
 
-					if ((i * 2) + 1 < enemies.Count)
-					{
-						enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistance;
-						enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistance;
+					float l = Mathf.CeilToInt(i / 2);
+					float k = entityDistanceX * Mathf.CeilToInt((float)i / 2);
+					float m = entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign;
 
-						enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-						enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-					}
-					else
-					{
-						enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z;
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
+					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
+				}
+				else
+				{
+					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z;
 
-						float l = Mathf.CeilToInt(i / 2);
-						float m = (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-						float k = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-						enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
 
-					}
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
+
 				}
 			}
-			else if (groups % 2 == 0)
+		}
+		else if (groups % 2 == 0)
+		{
+			for (int i = 0; i < groups; i++)
 			{
-				for (int i = 0; i < groups; i++)
+				sign = (i % 2 == 0) ?  -1 : 1;
+				if ((i * 2) + 1 < enemies.Count)
 				{
-					sign = (i % 2 == 0) ?  -1 : 1;
-					
-					if ((i * 2) + 1 < enemies.Count)
-					{
-						enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistance;
-						enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistance;
-						
-						enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * (i / 2) * Mathf.CeilToInt(i / 2) * sign);
-						enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-					}
-					else
-					{
-						enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z;
-						enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistance * Mathf.CeilToInt(i / 2) * sign);
-					}
+					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistanceZ;
+					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistanceZ;
+
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
+					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
+				}
+				else
+				{
+					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z;
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
 				}
 			}
+		}
 		/*
 		switch(enemies.Count)
 		{
@@ -174,11 +174,10 @@ public class Box_N : MonoBehaviour {
 			break;
 		}
 		*/
-			if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
-			{
-				enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemy.transform.position;
-				enemy.GetComponent<Entity>().moving = true;
-			}
+		if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
+		{
+			enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemy.transform.position;
+			enemy.GetComponent<Entity>().moving = true;
 		}
 	}
 }
