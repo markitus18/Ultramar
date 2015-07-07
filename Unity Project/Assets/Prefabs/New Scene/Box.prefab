@@ -94,8 +94,8 @@ MonoBehaviour:
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
   boxDistance: 8
-  entityDistanceX: 1
-  entityDistanceZ: .5
+  entityDistanceX: .899999976
+  entityDistanceZ: .449999988
   enemies: []
   standardMaterial: {fileID: 2100000, guid: 838a12eb39a240d4fa62ac504bb8a3f0, type: 2}
   originalMaterial: {fileID: 0}

@@ -51,11 +51,12 @@ public class PlayerController_N : MonoBehaviour
 			{
 				transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 				Debug.Log ("Assigned");
-				entity.distanceToMove = newBox.transform.position - entity.currentBox.transform.position;
-				entity.currentBox = newBox;
-				entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
-				entity.moving =  true;
 				entity.targetPosition = newBox.transform.position;
+				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
+				entity.targetBox = newBox;
+				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
+				entity.currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+				entity.moving = true;
 			}
 		}
 	}
