@@ -18,7 +18,7 @@ public class DestructiveWall : MonoBehaviour
 
 	void Start ()
 	{
-
+		gameObject.GetComponent<Collider>().enabled = true;
 		//Setting boxes
 		RaycastHit hit;
 		Ray positiveRay;
@@ -36,9 +36,6 @@ public class DestructiveWall : MonoBehaviour
 
 		if (Physics.Raycast(positiveRay, out hit, box.boxDistance))
 		{
-			if (hit.transform.tag == "DestructiveWall") {
-				Physics.IgnoreCollision(hit.collider, GetComponent<Collider>()); 
-			}
 			if(hit.collider.tag == "Box")
 			{
 				box1 = hit.transform.gameObject;
@@ -46,15 +43,13 @@ public class DestructiveWall : MonoBehaviour
 		}
 		if (Physics.Raycast(negativeRay, out hit, box.boxDistance))
 		{
-			if (hit.transform.tag == "DestructiveWall") {
-				Physics.IgnoreCollision(hit.collider, GetComponent<Collider>()); 
-			}
 			if(hit.collider.tag == "Box")
 			{
 				box2 = hit.transform.gameObject;
 			}
 		}
-		
+
+		split = false;		
 	}
 
 	void SplitBoxes()
@@ -70,11 +65,12 @@ public class DestructiveWall : MonoBehaviour
 			box1.GetComponent<Box>().leftBox = null;
 			box2.GetComponent<Box>().rightBox = null;
 		}
+		split = true;
 	}
 
 	void OnMouseUp()
 	{
-		Debug.Log("Mouse up");
-		SplitBoxes ();
+		if (!split)
+			SplitBoxes ();
 	}
 }
