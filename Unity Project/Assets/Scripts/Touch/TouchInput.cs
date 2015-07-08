@@ -13,13 +13,14 @@ public class TouchInput : MonoBehaviour
 
 	void Start ()
 	{
-
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
 #if UNITY_EDITOR
+		if (Input.touchCount < 1)
+		{
 		if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0) )
 		{
 			touchesOld = new GameObject[touchList.Count];
@@ -58,6 +59,7 @@ public class TouchInput : MonoBehaviour
 				  }
 			
 			}
+		}
 		}
 #endif
 		if (Input.touchCount > 0)
