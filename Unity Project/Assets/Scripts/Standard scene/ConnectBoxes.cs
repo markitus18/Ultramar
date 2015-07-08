@@ -14,7 +14,7 @@ public class ConnectBoxes : MonoBehaviour
 	
 	public blockingDirection2 direction;
 	public Box box;
-	bool split;
+	bool join;
 	
 	void Start ()
 	{
@@ -49,10 +49,10 @@ public class ConnectBoxes : MonoBehaviour
 			}
 		}
 		
-		split = false;		
+		join = false;		
 	}
 	
-	public void SplitBoxes()
+	public void JoinBoxes()
 	{
 		Debug.Log("Splitting boxes");
 		if (direction == blockingDirection2.vertical)
@@ -65,6 +65,6 @@ public class ConnectBoxes : MonoBehaviour
 			box1.GetComponent<Box>().leftBox = box2;
 			box2.GetComponent<Box>().rightBox = box1;
 		}
-		split = true;
+		join = true;
 	}
 }

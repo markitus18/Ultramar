@@ -50,8 +50,9 @@
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Box.cs" />
-     <Compile Include="Assets\Scripts\Standard scene\ConectBoxes.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\ConnectBoxes.cs" />
      <Compile Include="Assets\Scripts\Standard scene\DestroyStatue.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\DestroyWall.cs" />
      <Compile Include="Assets\Scripts\Standard scene\DisconectBoxes.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" />
