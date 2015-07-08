@@ -410,7 +410,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1183395720}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &211157492 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101658, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
@@ -928,7 +928,7 @@ Transform:
   - {fileID: 2047892507}
   - {fileID: 253011340}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &661168344
 Prefab:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ Transform:
   - {fileID: 824284669}
   - {fileID: 16233662}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &977805383 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101658, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
@@ -1532,7 +1532,7 @@ Transform:
   m_Children:
   - {fileID: 1964161168}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &1124810585
 Prefab:
   m_ObjectHideFlags: 0
@@ -1604,11 +1604,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2124868115}
   - {fileID: 189337265}
   - {fileID: 1755679126}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &1211954446
 Prefab:
   m_ObjectHideFlags: 0
@@ -2043,7 +2042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1444389228
 Prefab:
   m_ObjectHideFlags: 0
@@ -2321,7 +2320,7 @@ Transform:
   - {fileID: 849788258}
   - {fileID: 1598223858}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1691610930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,7 +2495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1183395720}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1776627763 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101658, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
@@ -2997,7 +2996,7 @@ Transform:
   m_Children:
   - {fileID: 1715126483}
   - {fileID: 1863616656}
-  m_Father: {fileID: 1183395720}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &2135567654 stripped
 GameObject:

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestructiveWall : MonoBehaviour
+public class DisconectBoxes : MonoBehaviour
 {
 	public enum blockingDirection
 	{

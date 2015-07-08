@@ -73,27 +73,44 @@ public class Entity : MonoBehaviour
 
 	public void SetNewBox ()
 	{
+		bool assigned = false;
 		switch(direction)
 		{
 		case 1:
-			targetBox = currentBox.GetComponent<Box>().upBox;
-			targetBox.GetComponent<Box>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+			if (currentBox.GetComponent<Box>().upBox)
+			{
+				targetBox = currentBox.GetComponent<Box>().upBox;
+				targetBox.GetComponent<Box>().enemies.Add (gameObject);
+				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+				assigned = true;
+			}
 			break;
 		case 2:
-			targetBox = currentBox.GetComponent<Box>().rightBox;
-			targetBox.GetComponent<Box>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+			if (currentBox.GetComponent<Box>().rightBox)
+			{
+				targetBox = currentBox.GetComponent<Box>().rightBox;
+				targetBox.GetComponent<Box>().enemies.Add (gameObject);
+				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+				assigned = true;
+			}
 			break;
 		case 3:
-			targetBox = currentBox.GetComponent<Box>().downBox;
-			targetBox.GetComponent<Box>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+			if (currentBox.GetComponent<Box>().downBox)
+			{
+				targetBox = currentBox.GetComponent<Box>().downBox;
+				targetBox.GetComponent<Box>().enemies.Add (gameObject);
+				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+				assigned = true;
+			}
 			break;
 		case 4:
-			targetBox = currentBox.GetComponent<Box>().leftBox;
-			targetBox.GetComponent<Box>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+			if (currentBox.GetComponent<Box>().leftBox)
+			{
+				targetBox = currentBox.GetComponent<Box>().leftBox;
+				targetBox.GetComponent<Box>().enemies.Add (gameObject);
+				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+				assigned = true;
+			}
 			break;
 		default:
 			break;

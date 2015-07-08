@@ -4,7 +4,7 @@ using System.Collections;
 public class DestroyStatue : MonoBehaviour
 {
 	public GameObject finalBox;
-	public DestructiveWall linkerBox;
+	public DisconectBoxes linkerBox;
 
 	void OnMouseUp()
 	{
