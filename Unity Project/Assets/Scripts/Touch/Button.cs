@@ -10,24 +10,23 @@ public class Button : MonoBehaviour
 
 	void Start ()
 	{
-
+		mat = transform.GetComponent<Renderer>().material;
 	}
 
 	void OnTouchDown ()
 	{
-
+		mat.color = selectedColor;
 	}
 	void OnTouchUp ()
 	{
-		
+		mat.color = defaultColor;	
 	}
 	void OnTouchStay ()
 	{
-		
 	}
 	void OnTouchExit ()
 	{
-		
+		mat.color = defaultColor;	
 	}
 
 }

@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Standard scene\ArcherEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Box.cs" />
      <Compile Include="Assets\Scripts\Standard scene\CavalryEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\DestructiveWall.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Entity.cs" />
      <Compile Include="Assets\Scripts\Standard scene\GameStateMachine.cs" />
      <Compile Include="Assets\Scripts\Standard scene\PlayerController.cs" />
