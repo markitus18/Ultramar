@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController_N : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 	Entity entity;
 	public GameObject loseText;
 	public GameObject winText;public bool paused;
-	GameStateMachine_N stateMachine;
+	GameStateMachine stateMachine;
 	public bool passTurn;
 	public bool autoPassTurn;
 	// Use this for initialization
@@ -17,7 +17,7 @@ public class PlayerController_N : MonoBehaviour
 	}
 	void Start()
 	{
-		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine_N>();
+		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 		paused = false;
 	}
 
@@ -27,22 +27,22 @@ public class PlayerController_N : MonoBehaviour
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
-			if (entity.currentBox.GetComponent<Box_N> ().upBox == newBox)
+			if (entity.currentBox.GetComponent<Box> ().upBox == newBox)
 			{
 				available = true;
 				entity.direction = 1;
 			}
-			else if (entity.currentBox.GetComponent<Box_N> ().downBox == newBox)
+			else if (entity.currentBox.GetComponent<Box> ().downBox == newBox)
 			{
 				available = true;
 				entity.direction = 3;
 			}
-			else if (entity.currentBox.GetComponent<Box_N> ().rightBox == newBox)
+			else if (entity.currentBox.GetComponent<Box> ().rightBox == newBox)
 			{
 				available = true;
 				entity.direction = 2;
 			}
-			else if (entity.currentBox.GetComponent<Box_N> ().leftBox == newBox)
+			else if (entity.currentBox.GetComponent<Box> ().leftBox == newBox)
 			{
 				available = true;
 				entity.direction = 4;
@@ -54,8 +54,8 @@ public class PlayerController_N : MonoBehaviour
 				entity.targetPosition = newBox.transform.position;
 				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
 				entity.targetBox = newBox;
-				entity.targetBox.GetComponent<Box_N>().enemies.Add(gameObject);
-				entity.currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
+				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 				entity.moving = true;
 			}
 		}
@@ -70,21 +70,21 @@ public class PlayerController_N : MonoBehaviour
 
 	public void CheckEnemy()
 	{
-		if (entity.currentBox.GetComponent<Box_N>().enemies.Count > 0)
+		if (entity.currentBox.GetComponent<Box>().enemies.Count > 0)
 		{
-			int enemiesMax = entity.currentBox.GetComponent<Box_N>().enemies.Count;
+			int enemiesMax = entity.currentBox.GetComponent<Box>().enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
 			{
-				if (entity.currentBox.GetComponent<Box_N>().enemies[i].tag != "Player")
+				if (entity.currentBox.GetComponent<Box>().enemies[i].tag != "Player")
 				{
-					if (entity.currentBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>())
+					if (entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>())
 					{
-						entity.currentBox.GetComponent<Box_N>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
+						entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
 					}
 					Debug.Log("Killing enemy");
-					entity.currentBox.GetComponent<Box_N>().enemies[i].SetActive(false);
-					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box_N>().enemies[i]);
-					entity.currentBox.GetComponent<Box_N>().enemies.Remove (entity.currentBox.GetComponent<Box_N>().enemies[i]);
+					entity.currentBox.GetComponent<Box>().enemies[i].SetActive(false);
+					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box>().enemies[i]);
+					entity.currentBox.GetComponent<Box>().enemies.Remove (entity.currentBox.GetComponent<Box>().enemies[i]);
 					i--;
 					enemiesMax --;
 				}
@@ -106,8 +106,8 @@ public class PlayerController_N : MonoBehaviour
 	}
 	void OnMouseUp()
 	{
-		if (passTurn && stateMachine.state == GameStateMachine_N.GameStates.PLAYER_TURN)
-			stateMachine.state = GameStateMachine_N.GameStates.ENEMY_START;
+		if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
+			stateMachine.state = GameStateMachine.GameStates.ENEMY_START;
 	}
 
 }

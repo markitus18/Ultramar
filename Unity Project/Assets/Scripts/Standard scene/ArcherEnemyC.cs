@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ArcherEnemyC : MonoBehaviour
 {
 	Entity playerEntity;
-	PlayerController_N playerController;
+	PlayerController playerController;
 	Entity entity;
 
 	public Material targetMaterial;
@@ -20,9 +20,9 @@ public class ArcherEnemyC : MonoBehaviour
 	void Start()
 	{
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
-		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_N>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
-		entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
+		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
 	public void CheckPlayer()
 	{
@@ -56,8 +56,8 @@ public class ArcherEnemyC : MonoBehaviour
 	{
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box_N>().standardMaterial;
-			targetBoxes[i].GetComponent<Box_N>().originalMaterial = targetBoxes[i].GetComponent<Box_N>().standardMaterial;
+			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box>().standardMaterial;
+			targetBoxes[i].GetComponent<Box>().originalMaterial = targetBoxes[i].GetComponent<Box>().standardMaterial;
 		}
 	}
 }

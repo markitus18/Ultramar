@@ -4,7 +4,7 @@ using System.Collections;
 public class CavalryEnemyC : MonoBehaviour {
 
 	Entity playerEntity;
-	PlayerController_N playerController;
+	PlayerController playerController;
 	Entity entity;
 	public MovementDirection movementDirection;
 	bool directionAsigned;
@@ -17,9 +17,9 @@ public class CavalryEnemyC : MonoBehaviour {
 	{
 		directionAsigned = false;
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
-		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_N>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
-		entity.currentBox.GetComponent<Box_N>().enemies.Add(gameObject);
+		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
 
 	public void SetNewDirection()
@@ -30,7 +30,7 @@ public class CavalryEnemyC : MonoBehaviour {
 			switch(entity.direction)
 			{
 			case 1:
-				if(entity.currentBox.GetComponent<Box_N>().upBox)
+				if(entity.currentBox.GetComponent<Box>().upBox)
 				{
 					entity.direction = 1;
 					directionAsigned = true;
@@ -39,7 +39,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				{
 					if (movementDirection == MovementDirection.clockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().rightBox)
+						if (entity.currentBox.GetComponent<Box>().rightBox)
 						{
 							entity.direction = 2;
 						}
@@ -51,7 +51,7 @@ public class CavalryEnemyC : MonoBehaviour {
 					}
 					else if (movementDirection == MovementDirection.counterclockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().leftBox)
+						if (entity.currentBox.GetComponent<Box>().leftBox)
 						{
 							entity.direction = 4;
 						}
@@ -61,7 +61,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				}
 				break;
 			case 2:
-				if(entity.currentBox.GetComponent<Box_N>().rightBox)
+				if(entity.currentBox.GetComponent<Box>().rightBox)
 				{
 					entity.direction = 2;
 					directionAsigned = true;
@@ -70,7 +70,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				{
 					if (movementDirection == MovementDirection.clockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().downBox)
+						if (entity.currentBox.GetComponent<Box>().downBox)
 						{
 							entity.direction = 3;
 						}
@@ -82,7 +82,7 @@ public class CavalryEnemyC : MonoBehaviour {
 					}
 					else if (movementDirection == MovementDirection.counterclockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().upBox)
+						if (entity.currentBox.GetComponent<Box>().upBox)
 						{
 							entity.direction = 1;
 						}
@@ -95,7 +95,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				}
 				break;
 			case 3:
-				if(entity.currentBox.GetComponent<Box_N>().downBox)
+				if(entity.currentBox.GetComponent<Box>().downBox)
 				{
 					entity.direction = 3;
 					directionAsigned = true;
@@ -104,7 +104,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				{
 					if (movementDirection == MovementDirection.clockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().leftBox)
+						if (entity.currentBox.GetComponent<Box>().leftBox)
 						{
 							entity.direction = 4;
 						}
@@ -116,7 +116,7 @@ public class CavalryEnemyC : MonoBehaviour {
 					}
 					else if (movementDirection == MovementDirection.counterclockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().rightBox)
+						if (entity.currentBox.GetComponent<Box>().rightBox)
 						{
 							entity.direction = 2;
 						}
@@ -129,7 +129,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				}
 				break;
 			case 4:
-				if(entity.currentBox.GetComponent<Box_N>().leftBox)
+				if(entity.currentBox.GetComponent<Box>().leftBox)
 				{
 					entity.direction = 4;
 					directionAsigned = true;
@@ -138,7 +138,7 @@ public class CavalryEnemyC : MonoBehaviour {
 				{
 					if (movementDirection == MovementDirection.clockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().upBox)
+						if (entity.currentBox.GetComponent<Box>().upBox)
 						{
 							entity.direction = 1;
 						}
@@ -150,7 +150,7 @@ public class CavalryEnemyC : MonoBehaviour {
 					}
 					else if (movementDirection == MovementDirection.counterclockwise)
 					{
-						if (entity.currentBox.GetComponent<Box_N>().downBox)
+						if (entity.currentBox.GetComponent<Box>().downBox)
 						{
 							entity.direction = 3;
 						}

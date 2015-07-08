@@ -50,11 +50,11 @@
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
      <Compile Include="Assets\Scripts\Standard scene\ArcherEnemyC.cs" />
-     <Compile Include="Assets\Scripts\Standard scene\Box_N.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\Box.cs" />
      <Compile Include="Assets\Scripts\Standard scene\CavalryEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Entity.cs" />
-     <Compile Include="Assets\Scripts\Standard scene\GameStateMachine_N.cs" />
-     <Compile Include="Assets\Scripts\Standard scene\PlayerController_N.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\GameStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Standard scene\RunnerEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\StaticEnemyC.cs" />
  <Reference Include="UnityEngine.UI">

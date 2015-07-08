@@ -2,23 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Box_N : MonoBehaviour {
+public class Box : MonoBehaviour {
 	//Directions in which you can move
 	public bool up;
 	public bool right;
 	public bool down;
 	public bool left;
 	//Linked boxes
-	public GameObject upBox;
-	public GameObject downBox;
-	public GameObject rightBox;
-	public GameObject leftBox;
+	[HideInInspector] public GameObject upBox;
+	[HideInInspector] public GameObject downBox;
+	[HideInInspector] public GameObject rightBox;
+	[HideInInspector] public GameObject leftBox;
 
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
 //	public Material standardMaterial;
-	PlayerController_N playerController;
+	PlayerController playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
 
 	public Material standardMaterial;
@@ -64,7 +64,7 @@ public class Box_N : MonoBehaviour {
 		}
 
 		//Setting all variables
-		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_N>();
+		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
@@ -100,10 +100,6 @@ public class Box_N : MonoBehaviour {
 					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistanceZ;
 					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistanceZ;
 
-//					float l = Mathf.CeilToInt(i / 2);
-//					float k = entityDistanceX * Mathf.CeilToInt((float)i / 2);
-//					float m = entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign;
-
 					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
 					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
 				}
@@ -137,43 +133,7 @@ public class Box_N : MonoBehaviour {
 				}
 			}
 		}
-		/*
-		switch(enemies.Count)
-		{
-		case 1:
-			if (enemies[0] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position;
-			}
-			break;
-		case 2:
-			if (enemies[0] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
-			}
-			else if (enemies[1] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
-			}
-			break;
-		case 3:
-			if (enemies[0] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, 0.5f);
-			}
-			else if (enemies[1] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(0, 0, -0.5f);
-			}
-			else if (enemies[2] == enemy)
-			{
-				enemy.GetComponent<Entity>().targetPosition = gameObject.transform.position + new Vector3(-0.5f, 0, 0);
-			}
-			break;
-		default:
-			break;
-		}
-		*/
+		
 		if (enemy.GetComponent<Entity>().targetPosition != enemy.GetComponent<Entity>().currentPosition)
 		{
 			enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemy.transform.position;

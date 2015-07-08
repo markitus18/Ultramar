@@ -1,17 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\Box_N.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\GameStateMachine_N.cs">
     <Files>
-      <File FileName="Assets\Scripts\Standard scene\GameStateMachine_N.cs" Line="62" Column="55" />
-      <File FileName="Assets\Scripts\Standard scene\StaticEnemyC.cs" Line="59" Column="42" />
-      <File FileName="Assets\Scripts\Standard scene\Entity.cs" Line="101" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\RunnerEnemyC.cs" Line="76" Column="28" />
-      <File FileName="Assets\Scripts\Standard scene\PlayerController_N.cs" Line="12" Column="21" />
-      <File FileName="Assets\Scripts\Standard scene\Box_N.cs" Line="123" Column="96" />
+      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="144" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\StaticEnemyC.cs" Line="19" Column="27" />
+      <File FileName="Assets\Scripts\Standard scene\Entity.cs" Line="68" Column="4" />
+      <File FileName="Assets\Scripts\Standard scene\RunnerEnemyC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\ArcherEnemyC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\CavalryEnemyC.cs" Line="176" Column="2" />
+      <File FileName="Assets\Scripts\Standard scene\GameStateMachine_N.cs" Line="5" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
+        <State>
+          <Value>groups</Value>
+          <Value>sign</Value>
+          <Value>i</Value>
+          <Value>l</Value>
+          <Value>m</Value>
+          <Value>k</Value>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameStateMachine_N : MonoBehaviour
+public class GameStateMachine : MonoBehaviour
 {
 	public enum GameStates
 	{
@@ -16,7 +16,7 @@ public class GameStateMachine_N : MonoBehaviour
 	public enum UpdateStates
 	{
 		UPDATE_KEEP,
-		UPDATE_NEXT,
+		UPDATEEXT,
 	}
 	
 	public Entity playerController;
@@ -59,17 +59,17 @@ public class GameStateMachine_N : MonoBehaviour
 
 	void UpdatePlayer()
 	{
-		if (playerController.gameObject.GetComponent<PlayerController_N>().autoPassTurn)
+		if (playerController.gameObject.GetComponent<PlayerController>().autoPassTurn)
 		{
 			state = GameStates.ENEMY_START;
 		}
-		else if (!playerController.gameObject.GetComponent<PlayerController_N>().paused)
+		else if (!playerController.gameObject.GetComponent<PlayerController>().paused)
 		{
-			if (playerController.UpdateEntity() == UpdateStates.UPDATE_NEXT)
+			if (playerController.UpdateEntity() == UpdateStates.UPDATEEXT)
 			{
 				state = GameStates.ENEMY_START;
-				playerController.gameObject.GetComponent<PlayerController_N>().CheckEnemy();
-				if (playerController.gameObject.GetComponent<PlayerController_N>().CheckEnd())
+				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();
+				if (playerController.gameObject.GetComponent<PlayerController>().CheckEnd())
 					state = GameStates.END;
 				Debug.Log("Enemies turn");
 			}
@@ -97,7 +97,7 @@ public class GameStateMachine_N : MonoBehaviour
 	void SetEnemiesBox()
 	{
 		Debug.Log("Setting enemies boxes");
-		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			if (enemies[i].GetComponent<StaticEnemyC>())
@@ -109,7 +109,7 @@ public class GameStateMachine_N : MonoBehaviour
 
 	void SetEnemiesPositions()
 	{
-		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			enemies[i].GetComponent<Entity>().SetNewPosition ();
@@ -140,7 +140,7 @@ public class GameStateMachine_N : MonoBehaviour
 
 	void EndEnemiesTurn()
 	{
-		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			if (enemies[i].GetComponent<StaticEnemyC>())
@@ -158,7 +158,7 @@ public class GameStateMachine_N : MonoBehaviour
 	
 	void SetDirection()
 	{
-		int enemiesMax = gameObject.GetComponent<GameStateMachine_N>().enemies.Count;
+		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i ++)
 		{
 			if (enemies[i].GetComponent<RunnerEnemyC>())

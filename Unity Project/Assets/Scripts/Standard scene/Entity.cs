@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Entity : MonoBehaviour
 {
-
-	public GameObject previousBox;
 	public GameObject currentBox;
 	public GameObject targetBox;
 
@@ -13,7 +11,6 @@ public class Entity : MonoBehaviour
 	public Vector3 distanceToMove;
 	[HideInInspector] public bool moving;
 	[HideInInspector] public bool targetAssigned;
-	[HideInInspector] public Vector3 previousPosition;
 	[HideInInspector] public Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
 
@@ -27,7 +24,7 @@ public class Entity : MonoBehaviour
 	public enumDirections startingDirection;
 	[HideInInspector] public int direction;
 
-	[HideInInspector] public GameStateMachine_N.UpdateStates ret;
+	[HideInInspector] public GameStateMachine.UpdateStates ret;
 
 	void Awake()
 	{
@@ -37,15 +34,13 @@ public class Entity : MonoBehaviour
 	void Start ()
 	{
 		moving = false;
-		previousBox = currentBox;
-		previousPosition = currentPosition;
 		transform.position = currentPosition;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 
-	public GameStateMachine_N.UpdateStates UpdateEntity ()
+	public GameStateMachine.UpdateStates UpdateEntity ()
 	{
-		ret = GameStateMachine_N.UpdateStates.UPDATE_KEEP;
+		ret = GameStateMachine.UpdateStates.UPDATE_KEEP;
 		if (moving)
 		{
 			Move ();
@@ -66,13 +61,12 @@ public class Entity : MonoBehaviour
 			{
 				currentBox = targetBox;
 				moving = false;
-				previousPosition = currentPosition;
-				ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
+				ret = GameStateMachine.UpdateStates.UPDATEEXT;
 			}
 		}
 		else
 		{
-			ret = GameStateMachine_N.UpdateStates.UPDATE_NEXT;
+			ret = GameStateMachine.UpdateStates.UPDATEEXT;
 		}
 
 	}
@@ -82,24 +76,24 @@ public class Entity : MonoBehaviour
 		switch(direction)
 		{
 		case 1:
-			targetBox = currentBox.GetComponent<Box_N>().upBox;
-			targetBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+			targetBox = currentBox.GetComponent<Box>().upBox;
+			targetBox.GetComponent<Box>().enemies.Add (gameObject);
+			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 			break;
 		case 2:
-			targetBox = currentBox.GetComponent<Box_N>().rightBox;
-			targetBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+			targetBox = currentBox.GetComponent<Box>().rightBox;
+			targetBox.GetComponent<Box>().enemies.Add (gameObject);
+			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 			break;
 		case 3:
-			targetBox = currentBox.GetComponent<Box_N>().downBox;
-			targetBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+			targetBox = currentBox.GetComponent<Box>().downBox;
+			targetBox.GetComponent<Box>().enemies.Add (gameObject);
+			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 			break;
 		case 4:
-			targetBox = currentBox.GetComponent<Box_N>().leftBox;
-			targetBox.GetComponent<Box_N>().enemies.Add (gameObject);
-			currentBox.GetComponent<Box_N>().enemies.Remove (gameObject);
+			targetBox = currentBox.GetComponent<Box>().leftBox;
+			targetBox.GetComponent<Box>().enemies.Add (gameObject);
+			currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 			break;
 		default:
 			break;
@@ -110,6 +104,6 @@ public class Entity : MonoBehaviour
 	public void SetNewPosition()
 	{
 		if (targetBox)
-			targetBox.GetComponent<Box_N>().UpdatePosition (gameObject);
+			targetBox.GetComponent<Box>().UpdatePosition (gameObject);
 	}
 }
