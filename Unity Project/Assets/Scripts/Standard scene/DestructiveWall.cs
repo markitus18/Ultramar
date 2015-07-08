@@ -18,7 +18,7 @@ public class DestructiveWall : MonoBehaviour
 
 	void Start ()
 	{
-		gameObject.GetComponent<Collider>().enabled = true;
+		//gameObject.GetComponent<Collider>().enabled = true;
 		//Setting boxes
 		RaycastHit hit;
 		Ray positiveRay;
@@ -52,7 +52,7 @@ public class DestructiveWall : MonoBehaviour
 		split = false;		
 	}
 
-	void SplitBoxes()
+	public void SplitBoxes()
 	{
 		Debug.Log("Splitting boxes");
 		if (direction == blockingDirection.vertical)
@@ -67,10 +67,11 @@ public class DestructiveWall : MonoBehaviour
 		}
 		split = true;
 	}
-
+	/*
 	void OnMouseUp()
 	{
 		if (!split)
 			SplitBoxes ();
 	}
+	*/
 }
