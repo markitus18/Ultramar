@@ -1,24 +1,80 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestructiveWall : MonoBehaviour {
+public class DestructiveWall : MonoBehaviour
+{
+	public enum blockingDirection
+	{
+		vertical,
+		horizontal
+	}
 
 	public GameObject box1;
 	public GameObject box2;
 
-	public int direction;
+	public blockingDirection direction;
+	public Box box;
+	bool split;
 
 	void Start ()
 	{
+
+		//Setting boxes
 		RaycastHit hit;
-		Ray upRay = new Ray(transform.position, Vector3.forward);
-		Ray downRay = new Ray(transform.position, Vector3.back);
-		Ray rightRay = new Ray(transform.position, Vector3.right);
-		Ray leftRay = new Ray(transform.position, Vector3.left);
+		Ray positiveRay;
+		Ray negativeRay;
+		if (direction == blockingDirection.vertical)
+		{
+			positiveRay = new Ray(transform.position, Vector3.forward);
+			negativeRay = new Ray(transform.position, Vector3.back);
+		}
+		else
+		{
+			positiveRay = new Ray(transform.position, Vector3.right);
+			negativeRay = new Ray(transform.position, Vector3.left);
+		}
+
+		if (Physics.Raycast(positiveRay, out hit, box.boxDistance))
+		{
+			if (hit.transform.tag == "DestructiveWall") {
+				Physics.IgnoreCollision(hit.collider, GetComponent<Collider>()); 
+			}
+			if(hit.collider.tag == "Box")
+			{
+				box1 = hit.transform.gameObject;
+			}
+		}
+		if (Physics.Raycast(negativeRay, out hit, box.boxDistance))
+		{
+			if (hit.transform.tag == "DestructiveWall") {
+				Physics.IgnoreCollision(hit.collider, GetComponent<Collider>()); 
+			}
+			if(hit.collider.tag == "Box")
+			{
+				box2 = hit.transform.gameObject;
+			}
+		}
+		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void SplitBoxes()
+	{
+		Debug.Log("Splitting boxes");
+		if (direction == blockingDirection.vertical)
+		{
+			box1.GetComponent<Box>().downBox = null;
+			box2.GetComponent<Box>().upBox = null;
+		}
+		else
+		{
+			box1.GetComponent<Box>().leftBox = null;
+			box2.GetComponent<Box>().rightBox = null;
+		}
+	}
+
+	void OnMouseUp()
+	{
+		Debug.Log("Mouse up");
+		SplitBoxes ();
 	}
 }

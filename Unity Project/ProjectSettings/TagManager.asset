@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - box
   - Box
+  - DestructiveWall
   layers:
   - Default
   - TransparentFX
