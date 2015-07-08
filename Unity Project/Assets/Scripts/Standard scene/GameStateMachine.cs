@@ -132,26 +132,33 @@ public class GameStateMachine : MonoBehaviour
 		}
 		if (enemiesUpdated == enemiesMax)
 		{
-			state = GameStates.ENEMY_END;
-			Debug.Log("Enemies max: " + enemiesMax);
+			if (CheckPlayerKill ())
+				state = GameStates.END;
+			else
+				state = GameStates.ENEMY_END;
 		}
 	}
 
-
-	void EndEnemiesTurn()
+	bool CheckPlayerKill()
 	{
+		bool ret = false;
 		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
 			if (enemies[i].GetComponent<StaticEnemyC>())
-				enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer();
+				if (enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer()) ret = true;
 			if (enemies[i].GetComponent<RunnerEnemyC>())
-				enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ();
+				if (enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ()) ret = true;
 			if (enemies[i].GetComponent<ArcherEnemyC>())
-			    enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
+				if (enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer()) ret = true;
 			if (enemies[i].GetComponent<CavalryEnemyC>())
-				enemies[i].GetComponent<CavalryEnemyC>().CheckIfPlayer();
+				if (enemies[i].GetComponent<CavalryEnemyC>().CheckIfPlayer()) ret = true;
 		}
+		return ret;
+	}
+	void EndEnemiesTurn()
+	{
+
 		SetDirection();
 		state = GameStates.PLAYER_TURN;
 	}

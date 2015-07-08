@@ -24,12 +24,14 @@ public class ArcherEnemyC : MonoBehaviour
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
-	public void CheckPlayer()
+	public bool CheckPlayer()
 	{
+		bool ret = false;
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
 			if (targetBoxes[i] == playerEntity.currentBox)
 			{
+				ret = true;
 				playerController.Kill();
 				Vector3 vector = targetBoxes[i].transform.position - entity.currentBox.transform.position;
 				if (vector.z != 0)
@@ -50,6 +52,7 @@ public class ArcherEnemyC : MonoBehaviour
 			entity.transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 			}
 		}
+		return ret;
 	}
 
 	public void RemoveTargets()

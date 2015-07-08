@@ -63,9 +63,13 @@ public class StaticEnemyC : MonoBehaviour
 		}
 	}
 
-	public void CheckIfPlayer()
+	public bool CheckIfPlayer()
 	{
 		if (entity.currentBox == playerEntity.currentBox)
+		{
 			playerController.Kill ();
+			return true;
+		}
+		return false;
 	}
 }

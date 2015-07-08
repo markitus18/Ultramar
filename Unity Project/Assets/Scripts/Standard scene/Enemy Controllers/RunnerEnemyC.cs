@@ -64,9 +64,13 @@ public class RunnerEnemyC : MonoBehaviour
 		}
 		transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 	}
-public void CheckIfPlayer()
-{
-	if (entity.currentBox == playerEntity.currentBox)
-		playerController.Kill ();
-}
+	public bool CheckIfPlayer()
+	{
+		if (entity.currentBox == playerEntity.currentBox)
+		{
+			playerController.Kill ();
+			return true;
+		}
+		return false;
+	}
 }
