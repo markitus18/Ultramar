@@ -100,9 +100,9 @@ public class Box_N : MonoBehaviour {
 					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistanceZ;
 					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistanceZ;
 
-					float l = Mathf.CeilToInt(i / 2);
-					float k = entityDistanceX * Mathf.CeilToInt((float)i / 2);
-					float m = entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign;
+//					float l = Mathf.CeilToInt(i / 2);
+//					float k = entityDistanceX * Mathf.CeilToInt((float)i / 2);
+//					float m = entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign;
 
 					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);
 					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + (entityDistanceX * Mathf.CeilToInt((float)i / 2) * sign);

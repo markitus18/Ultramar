@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\PauseManager.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraMovement2.cs" />
      <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
      <Compile Include="Assets\Scripts\Standard scene\ArcherEnemyC.cs" />
