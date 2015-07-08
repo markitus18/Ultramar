@@ -123,13 +123,13 @@ public class Box : MonoBehaviour {
 					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z + entityDistanceZ;
 					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z - entityDistanceZ;
 
-					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
-					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.FloorToInt((float)i / 2)) * sign);
+					enemies[(i * 2)+ 1].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.FloorToInt((float)i / 2)) * sign);
 				}
 				else
 				{
 					enemies[i * 2].GetComponent<Entity>().targetPosition.z = gameObject.transform.position.z;
-					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.CeilToInt((float)i / 2)) * sign);
+					enemies[i * 2].GetComponent<Entity>().targetPosition.x = gameObject.transform.position.x + ((entityDistanceX * 0.5f + entityDistanceX * Mathf.FloorToInt((float)i / 2)) * sign);
 				}
 			}
 		}
