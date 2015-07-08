@@ -23,6 +23,7 @@ public class Button : MonoBehaviour
 	}
 	void OnTouchStay ()
 	{
+		mat.color = selectedColor;
 	}
 	void OnTouchExit ()
 	{

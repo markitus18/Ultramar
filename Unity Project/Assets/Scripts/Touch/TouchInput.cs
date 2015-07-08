@@ -9,11 +9,6 @@ public class TouchInput : MonoBehaviour
 
 	private List<GameObject> touchList = new List<GameObject>();
 	private GameObject[] touchesOld;
-	public Camera mainCam;
-
-	void Start ()
-	{
-	}
 
 	// Update is called once per frame
 	void Update ()
@@ -27,7 +22,7 @@ public class TouchInput : MonoBehaviour
 			touchList.CopyTo(touchesOld);
 			touchList.Clear();
 
-			Ray ray = mainCam.ScreenPointToRay (Input.mousePosition);
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
 				RaycastHit hit;
 				
@@ -71,7 +66,7 @@ public class TouchInput : MonoBehaviour
 			foreach (Touch touch in Input.touches)
 			{
 
-				Ray ray = mainCam.ScreenPointToRay (touch.position);
+				Ray ray = Camera.main.ScreenPointToRay (touch.position);
 				RaycastHit hit;
 
 				if (Physics.Raycast (ray, out hit, touchInputMask))

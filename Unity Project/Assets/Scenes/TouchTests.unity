@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: 0, g: 1, b: .0896551609, a: 0}
+  selectedColor: {r: 0, g: .0482759476, b: 1, a: 0}
 --- !u!23 &257355005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: .239807308, g: .238970593, b: .25, a: 0}
 --- !u!23 &284748655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: 1, g: .641379237, b: 0, a: 0}
+  selectedColor: {r: 0, g: 1, b: .131034374, a: 0}
 --- !u!23 &614691683
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: .882352948, g: .839040697, b: .5968858, a: 0}
 --- !u!23 &1372517067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: 1, g: .765517235, b: 0, a: 0}
 --- !u!23 &1430818289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: .944827676, g: 1, b: 0, a: 0}
 --- !u!23 &1522470808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .862069011, g: 1, b: 0, a: 0}
+  selectedColor: {r: .696551323, g: 0, b: 1, a: 0}
 --- !u!23 &1607492340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: .442026675, g: .544117689, b: .344074428, a: 0}
 --- !u!23 &1656100369
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .944827557, g: 0, b: 1, a: 0}
+  selectedColor: {r: 0, g: 1, b: .958620548, a: 0}
 --- !u!23 &2025347448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  selectedColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  selectedColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!23 &2043214563
 MeshRenderer:
   m_ObjectHideFlags: 0
