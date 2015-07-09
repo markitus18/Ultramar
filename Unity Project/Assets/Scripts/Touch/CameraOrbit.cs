@@ -53,7 +53,7 @@ public class CameraOrbit : MonoBehaviour
 		{
 			var rotationT = rotationDamping * Time.deltaTime;
 			var currentXRotation = Mathf.LerpAngle (transform.eulerAngles.x, height, rotationT);
-			var currentYRotation = Mathf.LerpAngle (transform.eulerAngles.y, 0 /*wantedRotationAngle*/, rotationT);
+			var currentYRotation = Mathf.LerpAngle (transform.eulerAngles.y, 90 /*wantedRotationAngle*/, rotationT);
 			
 			transform.eulerAngles = new Vector3 (x = currentXRotation, y = currentYRotation, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
