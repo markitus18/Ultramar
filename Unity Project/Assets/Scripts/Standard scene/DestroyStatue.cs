@@ -6,7 +6,7 @@ public class DestroyStatue : MonoBehaviour
 	public GameObject finalBox;
 	public DisconectBoxes linkerBox;
 
-	void OnMouseUp()
+	void OnTouchUp()
 	{
 		finalBox.SetActive(true);
 		linkerBox.SplitBoxes();

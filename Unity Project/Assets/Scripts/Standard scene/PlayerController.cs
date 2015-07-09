@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 		return false;
 
 	}
-	void OnMouseUp()
+	void OnTouchUp()
 	{
 		if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
 			stateMachine.state = GameStateMachine.GameStates.ENEMY_START;

@@ -68,7 +68,7 @@ public class DisconectBoxes : MonoBehaviour
 		split = true;
 	}
 	/*
-	void OnMouseUp()
+	void OnTouchUp()
 	{
 		if (!split)
 			SplitBoxes ();

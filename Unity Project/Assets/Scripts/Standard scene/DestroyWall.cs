@@ -11,7 +11,7 @@ public class DestroyWall : MonoBehaviour
 	{
 		gameObject.GetComponent<Collider>().enabled = true;
 	}
-	void OnMouseUp()
+	void OnTouchUp()
 	{
 		Debug.Log ("mosue up");
 		finalBox.SetActive(true);

@@ -69,19 +69,20 @@ public class Box : MonoBehaviour {
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
 
-	void OnMouseEnter()
+	void OnTouchStay()
 	{
 		transform.GetComponent<Renderer>().material = highlightMaterial;
 	}
 	
-	void OnMouseExit()
+	void OnTouchExit()
 	{
 		transform.GetComponent<Renderer>().material = originalMaterial;
 	}
 
-	void OnMouseUp()
+	void OnTouchUp()
 	{
 		Debug.Log ("doing something");
+		transform.GetComponent<Renderer>().material = originalMaterial;
 		playerController.SetNewBox(gameObject);
 	}
 
