@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Standard scene\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Standard scene\StaticEnemyC.cs" />
      <Compile Include="Assets\Scripts\Touch\Button.cs" />
+     <Compile Include="Assets\Scripts\Touch\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Touch\TouchInput.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
