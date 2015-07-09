@@ -36,22 +36,24 @@ public class CameraOrbit : MonoBehaviour
 	
 	void LateUpdate()
 	{
-		if (cameraLookAtTarget == null) {
+		if (cameraLookAtTarget == null)
+		{
 			return;
 		}
 		
-		if (Input.GetMouseButton (1)) {
+		if (Input.GetMouseButton (1))
+		{
 			x = ClampAngle (x - (Input.GetAxis ("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
 			y = ClampAngle (y + (Input.GetAxis ("Mouse X") * ySpeed * 0.02f), yMinLimit, yMaxLimit);
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
-		} else {
-			var wantedRotationAngle = 0;//cameraLookAtTarget.eulerAngles.y;
-			
+		}
+		else
+		{
 			var rotationT = rotationDamping * Time.deltaTime;
 			var currentXRotation = Mathf.LerpAngle (transform.eulerAngles.x, height, rotationT);
-			var currentYRotation = Mathf.LerpAngle (transform.eulerAngles.y, wantedRotationAngle, rotationT);
+			var currentYRotation = Mathf.LerpAngle (transform.eulerAngles.y, 0 /*wantedRotationAngle*/, rotationT);
 			
 			transform.eulerAngles = new Vector3 (x = currentXRotation, y = currentYRotation, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
