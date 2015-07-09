@@ -73,7 +73,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 99b963121657f754d8bae70dc41c9c4b, type: 2}
+  - {fileID: 2100000, guid: 17e4d536aa8a1bb428bdc13b714c6043, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -163,8 +163,12 @@ MonoBehaviour:
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
   movementSpeed: 2
+  distanceToMove: {x: 0, y: 0, z: 0}
   moving: 0
-  startingDirection: 3
+  targetAssigned: 0
+  currentPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  startingDirection: 4
   direction: 1
   ret: 0
 --- !u!114 &11463758
