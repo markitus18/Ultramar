@@ -16,10 +16,10 @@ public class Entity : MonoBehaviour
 
 	public enum enumDirections
 	{
-		left = 1,
-		up,
+		up = 1,
 		right,
-		down
+		down,
+		left,
 	}
 	public enumDirections startingDirection;
 	[HideInInspector] public int direction;
