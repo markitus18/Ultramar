@@ -11,7 +11,7 @@ public class CameraOrbit : MonoBehaviour
 	public float heightDamping = 0.5f;
 	[Range(0,150)] public float distance = 30.0f;
 	[Range(0,360)]public float startingY = 90;
-	[Range(0,180)]public float yMovementLimit = 45;
+	[Range(0,90)]public float yMovementLimit = 45;
 	[Range(0,80)]public float xMinLimit = 45;
 	[Range(0, 80)]public float xMaxLimit = 80;
 	public float xSpeed = 75;
@@ -43,8 +43,15 @@ public class CameraOrbit : MonoBehaviour
 		
 		if (Input.GetMouseButton (1))
 		{
+			if (startingY + yMovementLimit > 360 || startingY - yMovementLimit < 0)
+			{
+				y = ClampAngle (y + 180 + (Input.GetAxis ("Mouse X") * ySpeed * 0.02f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
+			}
+			else
+			{
+				y = ClampAngle (y + (Input.GetAxis ("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
+			}
 			x = ClampAngle (x - (Input.GetAxis ("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
-			y = ClampAngle (y + (Input.GetAxis ("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
