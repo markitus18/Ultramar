@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Touch\CameraOrbit.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\GameStateMachine.cs">
     <Files>
-      <File FileName="Assets\Scripts\Touch\CameraOrbit.cs" Line="53" Column="93" />
+      <File FileName="Assets\Scripts\Standard scene\GameStateMachine.cs" Line="62" Column="81" />
+      <File FileName="Assets\Scripts\Touch\CameraOrbit.cs" Line="53" Column="5" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
