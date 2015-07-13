@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.00999999, y: .0250000004, z: -1.92999995}
+  m_LocalPosition: {x: 2.5, y: 0, z: -5}
   m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
   m_Children:
   - {fileID: 436098}
@@ -135,14 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousBox: {fileID: 0}
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
   movementSpeed: 1
   distanceToMove: {x: 0, y: 0, z: 0}
   moving: 0
+  targetAssigned: 0
+  currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
-  startingDirection: 3
+  startingDirection: 1
   direction: 0
   ret: 0
 --- !u!114 &11463734
@@ -153,13 +154,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 170560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 531cfe63aedde2743863c6a50e88312e, type: 3}
+  m_Script: {fileID: 11500000, guid: c764e6eeec43d114ab9cbc119241793c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseText: {fileID: 162410, guid: 0b1c8cb22b4078f4a974765ead71e2fb, type: 2}
-  winText: {fileID: 174408, guid: 2f38f369cc6e1534cb032a4c1cfeb12d, type: 2}
+  loseText: {fileID: 0}
+  winText: {fileID: 0}
   paused: 0
-  passTurn: 1
+  passTurn: 0
+  autoPassTurn: 0
 --- !u!135 &13556402
 SphereCollider:
   m_ObjectHideFlags: 1
