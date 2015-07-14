@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: -5}
+  m_LocalPosition: {x: 8, y: 0, z: -8}
   m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
   m_Children:
   - {fileID: 436098}
@@ -72,7 +72,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2bae54c4565aa940a4557636447aa3c, type: 2}
+  - {fileID: 2100000, guid: 44d46243171654f4399d309213cbc33b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   targetAssigned: 0
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
-  startingDirection: 1
+  startingDirection: 3
   direction: 0
   ret: 0
 --- !u!114 &11463734
@@ -160,7 +160,7 @@ MonoBehaviour:
   loseText: {fileID: 0}
   winText: {fileID: 0}
   paused: 0
-  passTurn: 0
+  passTurn: 1
   autoPassTurn: 0
 --- !u!135 &13556402
 SphereCollider:

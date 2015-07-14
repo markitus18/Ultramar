@@ -41,7 +41,7 @@ public class CameraOrbit : MonoBehaviour
 			return;
 		}
 		
-		if (Input.GetMouseButton (1))
+		if (Input.GetMouseButton (1) || Input.touchCount == 2)
 		{
 			if (startingY + yMovementLimit > 360 || startingY - yMovementLimit < 0)
 			{
