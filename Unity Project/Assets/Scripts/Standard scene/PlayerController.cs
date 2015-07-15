@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 		Debug.Log("Killing player");
 		loseText.GetComponent<Renderer>().enabled = true;
 		paused = true;
+		Application.LoadLevel (Application.loadedLevelName);
 	}
 
 	public void CheckEnemy()
