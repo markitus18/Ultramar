@@ -53,17 +53,17 @@ public class GameStateMachine_L : MonoBehaviour
 
 	void UpdatePlayer()
 	{
-		if (playerController.gameObject.GetComponent<PlayerController>().autoPassTurn)
+		if (playerController.gameObject.GetComponent<PlayerController_L>().autoPassTurn)
 		{
 			state = GameStates_L.ENEMY_START;
 		}
-		else if (!playerController.gameObject.GetComponent<PlayerController>().paused)
+		else if (!playerController.gameObject.GetComponent<PlayerController_L>().paused)
 		{
 			if (playerController.UpdateEntity() == GameStateMachine.UpdateStates.UPDATEEXT)
 			{
 				state = GameStates_L.ENEMY_START;
-				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();
-				if (playerController.gameObject.GetComponent<PlayerController>().CheckEnd())
+				playerController.gameObject.GetComponent<PlayerController_L>().CheckEnemy();
+				if (playerController.gameObject.GetComponent<PlayerController_L>().CheckEnd())
 					state = GameStates_L.END;
 				Debug.Log("Enemies turn");
 			}

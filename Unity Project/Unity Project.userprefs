@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level Selection\Box.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\PlayerController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level Selection\Box.cs" Line="5" Column="19" />
-      <File FileName="Assets\Scripts\Touch\CameraOrbit.cs" Line="44" Column="56" />
+      <File FileName="Assets\Scripts\Level Selection\GameStateMachine_L.cs" Line="62" Column="79" />
+      <File FileName="Assets\Scripts\Standard scene\PlayerController.cs" Line="30" Column="60" />
+      <File FileName="Assets\Scripts\Level Selection\Box_L.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

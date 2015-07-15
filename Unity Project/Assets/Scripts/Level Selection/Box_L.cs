@@ -10,16 +10,16 @@ public class Box_L : MonoBehaviour
 	public bool down;
 	public bool left;
 	//Linked boxes
-	[HideInInspector] public GameObject upBox;
-	[HideInInspector] public GameObject downBox;
-	[HideInInspector] public GameObject rightBox;
-	[HideInInspector] public GameObject leftBox;
+/*	[HideInInspector]*/ public GameObject upBox;
+/*	[HideInInspector] */public GameObject downBox;
+/*	[HideInInspector] */public GameObject rightBox;
+/*	[HideInInspector] */public GameObject leftBox;
 
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
 //	public Material standardMaterial;
-	PlayerController playerController;
+	PlayerController_L playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
 
 	public Material standardMaterial;
@@ -65,7 +65,7 @@ public class Box_L : MonoBehaviour
 		}
 
 		//Setting all variables
-		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
+		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_L>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
