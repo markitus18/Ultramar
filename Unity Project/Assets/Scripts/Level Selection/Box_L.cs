@@ -18,6 +18,7 @@ public class Box_L : MonoBehaviour
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
+	public GameObject button;
 //	public Material standardMaterial;
 	PlayerController_L playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
@@ -141,5 +142,15 @@ public class Box_L : MonoBehaviour
 			enemy.GetComponent<Entity>().distanceToMove = enemy.GetComponent<Entity>().targetPosition - enemy.transform.position;
 			enemy.GetComponent<Entity>().moving = true;
 		}
+	}
+
+	public void OnBoxEnter()
+	{
+		button.SetActive (true);
+	}
+
+	public void OnBoxExit()
+	{
+		button.SetActive (false);
 	}
 }

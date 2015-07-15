@@ -5,7 +5,8 @@ public class PlayerController_L : MonoBehaviour
 {
 	Entity entity;
 	public GameObject loseText;
-	public GameObject winText;public bool paused;
+	public GameObject winText;
+	public bool paused;
 	GameStateMachine stateMachine;
 	public bool passTurn;
 	public bool autoPassTurn;
@@ -55,7 +56,9 @@ public class PlayerController_L : MonoBehaviour
 				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
 				entity.targetBox = newBox;
 				entity.targetBox.GetComponent<Box_L>().enemies.Add(gameObject);
+				entity.targetBox.GetComponent<Box_L>().OnBoxEnter();
 				entity.currentBox.GetComponent<Box_L>().enemies.Remove (gameObject);
+				entity.currentBox.GetComponent<Box_L>().OnBoxExit();
 				entity.moving = true;
 			}
 		}
@@ -70,28 +73,6 @@ public class PlayerController_L : MonoBehaviour
 
 	public void CheckEnemy()
 	{
-		/*
-		if (entity.currentBox.GetComponent<Box>().enemies.Count > 0)
-		{
-			int enemiesMax = entity.currentBox.GetComponent<Box>().enemies.Count;
-			for (int i = 0; i < enemiesMax; i++)
-			{
-				if (entity.currentBox.GetComponent<Box>().enemies[i].tag != "Player")
-				{
-					if (entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>())
-					{
-						entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
-					}
-					Debug.Log("Killing enemy");
-					entity.currentBox.GetComponent<Box>().enemies[i].SetActive(false);
-					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box>().enemies[i]);
-					entity.currentBox.GetComponent<Box>().enemies.Remove (entity.currentBox.GetComponent<Box>().enemies[i]);
-					i--;
-					enemiesMax --;
-				}
-			}
-		}
-		*/
 	}
 
 	public bool CheckEnd()
@@ -106,10 +87,4 @@ public class PlayerController_L : MonoBehaviour
 		return false;
 
 	}
-	void OnTouchUp()
-	{
-		if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
-			stateMachine.state = GameStateMachine.GameStates.ENEMY_START;
-	}
-
 }
