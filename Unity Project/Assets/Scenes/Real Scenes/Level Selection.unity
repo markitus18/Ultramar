@@ -288,7 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 650658753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 890ee1ba5acbdb54a92391bc012c2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentBox: {fileID: 1368694455}
@@ -299,7 +299,7 @@ MonoBehaviour:
   targetAssigned: 0
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
-  startingDirection: 3
+  startingDirection: 1
   direction: 0
   ret: 0
 --- !u!23 &650658757

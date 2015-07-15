@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController_L : MonoBehaviour
 {
-	Entity entity;
+	Entity_L entity;
 	public GameObject loseText;
 	public GameObject winText;
 	public bool paused;
@@ -14,7 +14,7 @@ public class PlayerController_L : MonoBehaviour
 
 	void Awake()
 	{
-		entity = gameObject.GetComponent<Entity>();
+		entity = gameObject.GetComponent<Entity_L>();
 	}
 	void Start()
 	{

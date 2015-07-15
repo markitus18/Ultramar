@@ -19,14 +19,14 @@ public class GameStateMachine_L : MonoBehaviour
 		UPDATE_NEXT,
 	}
 	
-	public Entity playerController;
+	public Entity_L playerController;
 	public List<GameObject> enemies;
 	GameObject[] go;
 	public GameStates_L state;
 
 	void Start ()
 	{
-		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<Entity_L>();
 		state = GameStates_L.PLAYER_TURN;
 		go = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject enemy in go)
