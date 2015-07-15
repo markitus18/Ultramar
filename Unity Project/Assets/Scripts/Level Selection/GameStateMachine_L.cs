@@ -22,6 +22,7 @@ public class GameStateMachine_L : MonoBehaviour
 	public Entity_L playerController;
 	public List<GameObject> enemies;
 	public GameStates_L state; 
+	public bool unlockLevels;
 
 	void Start ()
 	{
@@ -42,6 +43,8 @@ public class GameStateMachine_L : MonoBehaviour
 		default:
 			break;
 		}
+		if (unlockLevels)
+			ApplicationModel.unlockedLevel = 5;
 	}
 
 	void UpdatePlayer()
