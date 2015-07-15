@@ -47,8 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\PauseManager.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\LevelBox.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\Level_PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Level Selection\Box_L.cs" />
+     <Compile Include="Assets\Scripts\Level Selection\GameStateMachine_L.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Box.cs" />
      <Compile Include="Assets\Scripts\Standard scene\ConnectBoxes.cs" />
      <Compile Include="Assets\Scripts\Standard scene\DestroyStatue.cs" />
