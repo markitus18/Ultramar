@@ -11,13 +11,14 @@ GameObject:
   - 33: {fileID: 3398672}
   - 64: {fileID: 6465976}
   - 23: {fileID: 2328292}
+  - 114: {fileID: 11404258}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &115060
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +32,7 @@ GameObject:
   - 23: {fileID: 2353136}
   - 114: {fileID: 11497456}
   m_Layer: 0
-  m_Name: Box (2)
+  m_Name: 3
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,6 +177,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11404258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57d460c24de57a46873c3ce5f9893c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: 0
 --- !u!114 &11497456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,6 +213,7 @@ MonoBehaviour:
   entityDistanceZ: .449999988
   button: {fileID: 101578}
   enemies: []
+  level: 3
   standardMaterial: {fileID: 2100000, guid: 838a12eb39a240d4fa62ac504bb8a3f0, type: 2}
   originalMaterial: {fileID: 0}
   highlightMaterial: {fileID: 2100000, guid: be47dd182821d894bbead0af1d4e0c08, type: 2}

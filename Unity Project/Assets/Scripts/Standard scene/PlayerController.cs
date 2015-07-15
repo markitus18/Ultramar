@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("End of level");
 			winText.GetComponent<Renderer>().enabled = true;
 			paused = true;
+			stateMachine.state = GameStateMachine.GameStates.END;
 			return true;
 		}
 		return false;

@@ -167,6 +167,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   enemies: []
   state: 0
+  level: 1
 --- !u!4 &90154067
 Transform:
   m_ObjectHideFlags: 0

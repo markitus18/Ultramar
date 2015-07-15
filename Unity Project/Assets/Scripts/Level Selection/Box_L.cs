@@ -10,10 +10,10 @@ public class Box_L : MonoBehaviour
 	public bool down;
 	public bool left;
 	//Linked boxes
-/*	[HideInInspector]*/ public GameObject upBox;
-/*	[HideInInspector] */public GameObject downBox;
-/*	[HideInInspector] */public GameObject rightBox;
-/*	[HideInInspector] */public GameObject leftBox;
+	[HideInInspector] public GameObject upBox;
+	[HideInInspector] public GameObject downBox;
+	[HideInInspector] public GameObject rightBox;
+	[HideInInspector] public GameObject leftBox;
 
 	public int boxDistance;
 	public float entityDistanceX;
@@ -22,7 +22,7 @@ public class Box_L : MonoBehaviour
 //	public Material standardMaterial;
 	PlayerController_L playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
-
+	public int level;
 	public Material standardMaterial;
 	[HideInInspector] public Material originalMaterial;
 	public Material highlightMaterial;
@@ -69,6 +69,11 @@ public class Box_L : MonoBehaviour
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_L>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
+	}
+
+	void Start()
+	{
+		button.GetComponent<LevelNumber>().levelToLoad = level;
 	}
 
 	void OnTouchStay()

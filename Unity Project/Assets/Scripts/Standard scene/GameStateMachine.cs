@@ -24,6 +24,8 @@ public class GameStateMachine : MonoBehaviour
 	GameObject[] go;
 	public GameStates state;
 
+	public int level;
+
 	void Start ()
 	{
 		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
@@ -51,6 +53,9 @@ public class GameStateMachine : MonoBehaviour
 			break;
 		case GameStates.ENEMY_END:
 			EndEnemiesTurn ();
+			break;
+		case GameStates.END:
+			LoadLevelSelection();
 			break;
 		default:
 			break;
@@ -173,5 +178,14 @@ public class GameStateMachine : MonoBehaviour
 			if (enemies[i].GetComponent<CavalryEnemyC>())
 				enemies[i].GetComponent<CavalryEnemyC>().SetNewDirection();
 		}
+	}
+
+	void LoadLevelSelection()
+	{
+		if (ApplicationModel.maxLevel == level)
+		{
+			ApplicationModel.maxLevel++;
+		}
+		Application.LoadLevel (0);
 	}
 }
