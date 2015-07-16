@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Entity_L : MonoBehaviour
 {
+	public GameObject lastBox;
 	public GameObject currentBox;
 	public GameObject targetBox;
 
@@ -13,6 +14,8 @@ public class Entity_L : MonoBehaviour
 	[HideInInspector] public bool targetAssigned;
 	[HideInInspector] public Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
+
+	int currentLvl = 1;
 
 	public enum enumDirections
 	{
@@ -26,13 +29,11 @@ public class Entity_L : MonoBehaviour
 
 	[HideInInspector] public GameStateMachine.UpdateStates ret;
 
-	void Awake()
-	{
-		direction = (int)startingDirection;
-		currentPosition = currentBox.transform.position;
-	}
 	void Start ()
 	{
+		SetCurrentBox ();
+		direction = (int)startingDirection;
+		currentPosition = currentBox.transform.position;
 		moving = false;
 		transform.position = currentPosition;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
@@ -72,56 +73,42 @@ public class Entity_L : MonoBehaviour
 
 	}
 
-	public void SetNewBox ()
-	{
-		bool assigned = false;
-		switch(direction)
-		{
-		case 1:
-			if (currentBox.GetComponent<Box>().upBox)
-			{
-				targetBox = currentBox.GetComponent<Box>().upBox;
-				targetBox.GetComponent<Box>().enemies.Add (gameObject);
-				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
-			}
-			break;
-		case 2:
-			if (currentBox.GetComponent<Box>().rightBox)
-			{
-				targetBox = currentBox.GetComponent<Box>().rightBox;
-				targetBox.GetComponent<Box>().enemies.Add (gameObject);
-				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
-			}
-			break;
-		case 3:
-			if (currentBox.GetComponent<Box>().downBox)
-			{
-				targetBox = currentBox.GetComponent<Box>().downBox;
-				targetBox.GetComponent<Box>().enemies.Add (gameObject);
-				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
-			}
-			break;
-		case 4:
-			if (currentBox.GetComponent<Box>().leftBox)
-			{
-				targetBox = currentBox.GetComponent<Box>().leftBox;
-				targetBox.GetComponent<Box>().enemies.Add (gameObject);
-				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
-			}
-			break;
-		default:
-			break;
-		}
-		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
-	}
-
 	public void SetNewPosition()
 	{
 		if (targetBox)
 			targetBox.GetComponent<Box>().UpdatePosition (gameObject);
+	}
+
+	void SetCurrentBox()
+	{
+		currentBox = GameObject.Find("Box_start2");
+		lastBox = currentBox;
+		int k = ApplicationModel.unlockedLevel;
+		int i = 0;
+		Box_L boxie = currentBox.GetComponent<Box_L>();
+		while (currentLvl < ApplicationModel.unlockedLevel && i < 40)
+		{
+			if (currentBox.GetComponent<Box_L>().upBox && currentBox.GetComponent<Box_L>().upBox != lastBox)
+			{
+				lastBox = currentBox;
+				currentBox = currentBox.GetComponent<Box_L>().upBox;
+			}
+			else if (currentBox.GetComponent<Box_L>().leftBox && currentBox.GetComponent<Box_L>().leftBox != lastBox)
+			{
+				lastBox = currentBox;
+				currentBox = currentBox.GetComponent<Box_L>().leftBox;
+			}
+			else if (currentBox.GetComponent<Box_L>().rightBox && currentBox.GetComponent<Box_L>().rightBox != lastBox)
+			{
+				lastBox = currentBox;
+				currentBox = currentBox.GetComponent<Box_L>().rightBox;
+			}
+			else if (currentBox.GetComponent<Box_L>().downBox && currentBox.GetComponent<Box_L>().downBox != lastBox)
+			{
+				lastBox = currentBox;
+				currentBox = currentBox.GetComponent<Box_L>().downBox;
+			}
+			currentLvl++;
+		}
 	}
 }

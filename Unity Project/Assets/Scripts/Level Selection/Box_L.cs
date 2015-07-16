@@ -10,10 +10,10 @@ public class Box_L : MonoBehaviour
 	public bool down;
 	public bool left;
 	//Linked boxes
-	[HideInInspector] public GameObject upBox;
-	[HideInInspector] public GameObject downBox;
-	[HideInInspector] public GameObject rightBox;
-	[HideInInspector] public GameObject leftBox;
+/*	[HideInInspector] */public GameObject upBox;
+	/*[HideInInspector] */public GameObject downBox;
+	/*[HideInInspector] */public GameObject rightBox;
+	/*[HideInInspector]*/ public GameObject leftBox;
 
 	public int boxDistance;
 	public float entityDistanceX;
