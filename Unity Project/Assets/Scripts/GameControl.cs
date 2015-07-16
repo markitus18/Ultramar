@@ -28,7 +28,9 @@ public class GameControl : MonoBehaviour
 	{
 		if(GUI.Button (new Rect(10, 10, 100, 30), "Save Game"))
 			Save ();
-		GUI.Label (new Rect(10, 30, 10, 30), unlockedLevel.ToString ());
+		if(GUI.Button (new Rect(10, 40, 100, 30), "Reset Game"))
+			Reset ();
+		GUI.Label (new Rect(10, 80, 120, 50), "Unlocked levels: " + unlockedLevel.ToString ());
 	}
 
 	public void Save()
@@ -54,6 +56,14 @@ public class GameControl : MonoBehaviour
 
 			unlockedLevel = data.unlockedLevel;
 		}
+	}
+
+	public void Reset()
+	{
+		if (File.Exists (Application.persistentDataPath + "/gameData.dat"))
+			File.Delete (Application.persistentDataPath + "/gameData.dat");
+		unlockedLevel = 1;
+		Application.LoadLevel (0);
 	}
 
 	[Serializable]
