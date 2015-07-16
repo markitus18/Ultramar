@@ -1,10 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level Selection\Entity_L.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level Selection\PlayerController_L.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\Level Selection\Entity_L.cs" Line="85" Column="24" />
+      <File FileName="Assets\Scripts\Level Selection\PlayerController_L.cs" Line="42" Column="5" />
+      <File FileName="Assets\Scripts\Level Selection\Entity_L.cs" Line="82" Column="22" />
       <File FileName="Assets\Scripts\Level Selection\Box_L.cs" Line="16" Column="23" />
+      <File FileName="Assets\Scripts\GameControl.cs" Line="65" Column="21" />
+      <File FileName="Assets\Scripts\Level Selection\GameStateMachine_L.cs" Line="47" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\Entity.cs" Line="76" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\GameStateMachine.cs" Line="178" Column="49" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -18,9 +22,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\Marc\Game_Developement\Unity_Projects\Ultramar\Unity Project\Assets\Scripts\Level Selection\Entity_L.cs" line="88" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
