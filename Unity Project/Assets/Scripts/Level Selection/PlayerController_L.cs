@@ -28,22 +28,22 @@ public class PlayerController_L : MonoBehaviour
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
-			if (entity.currentBox.GetComponent<Box_L> ().upBox == newBox && newBox.GetComponent<Box_L>().level <= ApplicationModel.unlockedLevel)
+			if (entity.currentBox.GetComponent<Box_L> ().upBox == newBox && newBox.GetComponent<Box_L>().level <= GameControl.control.unlockedLevel)
 			{
 				available = true;
 				entity.direction = 1;
 			}
-			else if (entity.currentBox.GetComponent<Box_L> ().downBox == newBox && newBox.GetComponent<Box_L>().level <= ApplicationModel.unlockedLevel)
+			else if (entity.currentBox.GetComponent<Box_L> ().downBox == newBox && newBox.GetComponent<Box_L>().level <= GameControl.control.unlockedLevel)
 			{
 				available = true;
 				entity.direction = 3;
 			}
-			else if (entity.currentBox.GetComponent<Box_L> ().rightBox == newBox && newBox.GetComponent<Box_L>().level <= ApplicationModel.unlockedLevel)
+			else if (entity.currentBox.GetComponent<Box_L> ().rightBox == newBox && newBox.GetComponent<Box_L>().level <= GameControl.control.unlockedLevel)
 			{
 				available = true;
 				entity.direction = 2;
 			}
-			else if (entity.currentBox.GetComponent<Box_L> ().leftBox == newBox && newBox.GetComponent<Box_L>().level <= ApplicationModel.unlockedLevel)
+			else if (entity.currentBox.GetComponent<Box_L> ().leftBox == newBox && newBox.GetComponent<Box_L>().level <= GameControl.control.unlockedLevel)
 			{
 				available = true;
 				entity.direction = 4;

@@ -83,10 +83,7 @@ public class Entity_L : MonoBehaviour
 	{
 		currentBox = GameObject.Find("Box_start2");
 		lastBox = currentBox;
-		int k = ApplicationModel.unlockedLevel;
-		int i = 0;
-		Box_L boxie = currentBox.GetComponent<Box_L>();
-		while (currentLvl < ApplicationModel.unlockedLevel && i < 40)
+		while (currentLvl < GameControl.control.unlockedLevel)
 		{
 			if (currentBox.GetComponent<Box_L>().upBox && currentBox.GetComponent<Box_L>().upBox != lastBox)
 			{

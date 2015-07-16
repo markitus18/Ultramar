@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\PauseManager.cs" />
-     <Compile Include="Assets\Scripts\ApplicationModel.cs" />
+     <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Box_L.cs" />
      <Compile Include="Assets\Scripts\Level Selection\Entity_L.cs" />
      <Compile Include="Assets\Scripts\Level Selection\GameStateMachine_L.cs" />

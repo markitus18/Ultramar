@@ -44,7 +44,7 @@ public class GameStateMachine_L : MonoBehaviour
 			break;
 		}
 		if (unlockLevels)
-			ApplicationModel.unlockedLevel = 5;
+			GameControl.control.unlockedLevel = 5;
 	}
 
 	void UpdatePlayer()
