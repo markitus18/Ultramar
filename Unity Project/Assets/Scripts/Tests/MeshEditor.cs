@@ -6,6 +6,7 @@ public class MeshEditor : MonoBehaviour {
 	// Use this for initialization
 
 	bool up = true;
+	int change = 0;
 	void Start () {
 	
 	}
@@ -23,21 +24,26 @@ public class MeshEditor : MonoBehaviour {
 			if (up)
 			{
 				if (i % 2 == 0)
-					vertices[i] += Vector3.up * Time.deltaTime;
+					vertices[i] += (Vector3.up / 6) * Time.deltaTime;
 				else
-					vertices[i] += Vector3.down * Time.deltaTime;
+					vertices[i] += (Vector3.down / 6)* Time.deltaTime;
 				i++;
 			}
 			else
 			{
 				if (i % 2 == 0)
-					vertices[i] += Vector3.down * Time.deltaTime;
+					vertices[i] += (Vector3.down / 6) * Time.deltaTime;
 				else
-					vertices[i] += Vector3.up * Time.deltaTime;
+					vertices[i] += (Vector3.up / 6) * Time.deltaTime;
 			i++;
 			}
 		}
-		up = !up;
+		change++;
+		if (change > 60)
+		{
+			up = !up;
+			change = 0;
+		}
 		mesh.vertices = vertices;
 	}
 }
