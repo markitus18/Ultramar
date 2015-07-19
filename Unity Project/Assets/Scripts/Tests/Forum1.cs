@@ -25,6 +25,7 @@ public class Forum1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CalcWave();
+		mesh.RecalculateNormals();
 	}
 	
 	void CalcWave()
@@ -40,5 +41,10 @@ public class Forum1 : MonoBehaviour {
 			vertices[i] = v;
 		}
 		mesh.vertices = vertices;
+	}
+
+	void SetNormals()
+	{
+
 	}
 }
