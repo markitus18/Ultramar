@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: fb26d85af5c517b418f4c0960d9b473e
-timeCreated: 1435514635
+guid: 1e198dc445677e04b832e9181311d97e
+timeCreated: 1437260610
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: tRex
     400000: //RootNode
-    400002: tRex
-    2300000: tRex
-    3300000: tRex
-    4300000: tRex
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane1
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -53,8 +52,8 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 0
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
-    tangentImportMode: 1
+    normalImportMode: 0
+    tangentImportMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -69,7 +68,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

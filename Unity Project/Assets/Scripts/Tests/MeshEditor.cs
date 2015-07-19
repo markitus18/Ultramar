@@ -6,6 +6,7 @@ public class MeshEditor : MonoBehaviour {
 	// Use this for initialization
 
 	bool up = true;
+	int state = 1;
 	int change = 0;
 	void Start () {
 	
@@ -21,28 +22,32 @@ public class MeshEditor : MonoBehaviour {
 
 		while (i < vertices.Length)
 		{
-			if (up)
+		if (state == 1 || state == 4)
 			{
 				if (i % 2 == 0)
 					vertices[i] += (Vector3.up / 6) * Time.deltaTime;
 				else
 					vertices[i] += (Vector3.down / 6)* Time.deltaTime;
+				normals[i] = Vector3.up;
 				i++;
 			}
-			else
+
+		else if (state == 2 || state == 3)
 			{
 				if (i % 2 == 0)
 					vertices[i] += (Vector3.down / 6) * Time.deltaTime;
 				else
 					vertices[i] += (Vector3.up / 6) * Time.deltaTime;
+				normals[i] = Vector3.up;
 			i++;
 			}
 		}
-		change++;
-		if (change > 60)
+		change ++;
+		if (change == 60)
 		{
-			up = !up;
 			change = 0;
+			if (++state == 5)
+				state = 1;
 		}
 		mesh.vertices = vertices;
 	}

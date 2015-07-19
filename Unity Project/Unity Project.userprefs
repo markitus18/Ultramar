@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tests\Mesh edition.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tests\Forum1.cs">
     <Files>
-      <File FileName="Assets\Scripts\Tests\Mesh edition.cs" Line="4" Column="18" />
+      <File FileName="Assets\Scripts\Tests\MeshEditor.cs" Line="45" Column="13" />
+      <File FileName="Assets\Scripts\Tests\Forum1.cs" Line="31" Column="3" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
