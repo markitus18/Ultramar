@@ -25,7 +25,7 @@ public class Forum1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CalcWave();
-		mesh.RecalculateNormals();
+	//	mesh.RecalculateNormals();
 	}
 	
 	void CalcWave()
