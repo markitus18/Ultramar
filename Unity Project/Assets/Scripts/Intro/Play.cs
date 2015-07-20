@@ -3,10 +3,16 @@ using System.Collections;
 
 public class Play : MonoBehaviour
 {
-	public int levelToLoad;
-	
-	void OnTouchUp()
+	void Start()
 	{
-		Application.LoadLevel (levelToLoad);
+	}
+
+	void Update()
+	{
+	}
+
+	void OnTouchDown()
+	{
+		Debug.Log ("Play");
 	}
 }
