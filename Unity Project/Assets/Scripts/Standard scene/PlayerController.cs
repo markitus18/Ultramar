@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 	public bool passTurn;
 	public bool autoPassTurn;
 	Vector2 touchStartPos;
-	bool touching;
+	public bool touching;
 	// Use this for initialization
 
 	void Awake()
@@ -23,6 +23,22 @@ public class PlayerController : MonoBehaviour
 		paused = false;
 	}
 
+	void Update ()
+	{
+		if (Input.touchCount== 0 && Input.touchSupported)
+		{
+			touching = false;
+		}
+#if UNITY_EDITOR
+
+		if (Input.GetMouseButtonUp(0))
+		{
+			touching = false;
+		}
+
+#endif
+	}
+
 	public void OnTouchDown ()
 	{
 		if (Input.touchCount == 1) 
@@ -31,13 +47,13 @@ public class PlayerController : MonoBehaviour
 			touchStartPos.x = Input.touches [0].position.x;
 			touchStartPos.y = Input.touches [0].position.y;
 		}
-		#if UNITY_EDITOR
+#if UNITY_EDITOR
 		
 		touching = true;
 		touchStartPos.x = Input.mousePosition.x;
 		touchStartPos.y = Input.mousePosition.y;
 		
-		# endif
+# endif
 	}
 
 	public void OnTouchUp ()
@@ -49,7 +65,6 @@ public class PlayerController : MonoBehaviour
 	{
 		if (touching == true && Input.touchCount == 1)
 		{
-			touching = false;
 			float deltaY = Input.touches[0].position.y - touchStartPos.y;
 			float deltaX = Input.touches[0].position.x - touchStartPos.x;
 			if (Mathf.Abs (deltaX) > 3 || Mathf.Abs (deltaY) > 3)
@@ -81,7 +96,6 @@ public class PlayerController : MonoBehaviour
 #if UNITY_EDITOR
 		if (touching == true)
 		{
-			touching = false;
 			float deltaY = Input.mousePosition.y - touchStartPos.y;
 			float deltaX = Input.mousePosition.x - touchStartPos.x;
 			if (Mathf.Abs (deltaX) > 3 || Mathf.Abs (deltaY) > 3)

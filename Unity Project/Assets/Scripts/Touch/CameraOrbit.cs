@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraOrbit : MonoBehaviour
 {
@@ -18,12 +19,14 @@ public class CameraOrbit : MonoBehaviour
 	public float ySpeed = 120;
 	private float x = 0.0f;
 	private float y = 0.0f;
+	PlayerController playerController;
 
 	void Start()
 	{
 		var angles = gameObject.transform.eulerAngles;
 		x = angles.x;
 		y = angles.y;
+		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 	}
 	float ClampAngle(float angle, float min, float max)
 	{
@@ -41,7 +44,7 @@ public class CameraOrbit : MonoBehaviour
 			return;
 		}
 		
-		if (Input.GetMouseButton (1) || Input.touchCount == 2)
+		if (Input.GetMouseButton (0) && playerController.touching == false)
 		{
 			if (startingY + yMovementLimit > 360 || startingY - yMovementLimit < 0)
 			{
