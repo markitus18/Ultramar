@@ -9,10 +9,10 @@ public class Box : MonoBehaviour {
 	public bool down;
 	public bool left;
 	//Linked boxes
-	[HideInInspector] public GameObject upBox;
-	[HideInInspector] public GameObject downBox;
-	[HideInInspector] public GameObject rightBox;
-	[HideInInspector] public GameObject leftBox;
+	public GameObject upBox;
+	public GameObject downBox;
+	public GameObject rightBox;
+	public GameObject leftBox;
 
 	public int boxDistance;
 	public float entityDistanceX;
@@ -71,19 +71,19 @@ public class Box : MonoBehaviour {
 
 	void OnTouchStay()
 	{
-		transform.GetComponent<Renderer>().material = highlightMaterial;
+		//transform.GetComponent<Renderer>().material = highlightMaterial;
 	}
 	
 	void OnTouchExit()
 	{
-		transform.GetComponent<Renderer>().material = originalMaterial;
+		//transform.GetComponent<Renderer>().material = originalMaterial;
 	}
 
 	void OnTouchUp()
 	{
-		Debug.Log ("doing something");
+		/*Debug.Log ("doing something");
 		transform.GetComponent<Renderer>().material = originalMaterial;
-		playerController.SetNewBox(gameObject);
+		playerController.SetNewBox(gameObject);*/
 	}
 
 	public void UpdatePosition(GameObject enemy)

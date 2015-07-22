@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 	GameStateMachine stateMachine;
 	public bool passTurn;
 	public bool autoPassTurn;
+	Vector2 touchStartPos;
+	bool touching;
 	// Use this for initialization
 
 	void Awake()
@@ -19,6 +21,98 @@ public class PlayerController : MonoBehaviour
 	{
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 		paused = false;
+	}
+
+	public void OnTouchDown ()
+	{
+		if (Input.touchCount == 1) 
+		{
+			touching = true;
+			touchStartPos.x = Input.touches [0].position.x;
+			touchStartPos.y = Input.touches [0].position.y;
+		}
+		#if UNITY_EDITOR
+		
+		touching = true;
+		touchStartPos.x = Input.mousePosition.x;
+		touchStartPos.y = Input.mousePosition.y;
+		
+		# endif
+	}
+
+	public void OnTouchUp ()
+	{
+		touching = false;
+	}
+
+	public void OnTouchExit()
+	{
+		if (touching == true && Input.touchCount == 1)
+		{
+			touching = false;
+			float deltaY = Input.touches[0].position.y - touchStartPos.y;
+			float deltaX = Input.touches[0].position.x - touchStartPos.x;
+			if (Mathf.Abs (deltaX) > 3 || Mathf.Abs (deltaY) > 3)
+			{
+				if (Mathf.Abs (deltaX) > Mathf.Abs(deltaY))
+				{
+					if (deltaX < 0)
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+					}
+					else
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+					}
+				}
+				else
+				{
+					if (deltaY < 0)
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+					}
+					else
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+					}
+				}
+			}
+		}
+#if UNITY_EDITOR
+		if (touching == true)
+		{
+			touching = false;
+			float deltaY = Input.mousePosition.y - touchStartPos.y;
+			float deltaX = Input.mousePosition.x - touchStartPos.x;
+			if (Mathf.Abs (deltaX) > 3 || Mathf.Abs (deltaY) > 3)
+			{
+				if (Mathf.Abs (deltaX) > Mathf.Abs(deltaY))
+				{
+					if (deltaX < 0)
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+					}
+					else
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+					}
+				}
+				else
+				{
+					if (deltaY < 0)
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+					}
+					else
+					{
+						SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+					}
+				}
+			}
+		}
+
+
+# endif
 	}
 
 	public void SetNewBox (GameObject newBox)
@@ -106,10 +200,10 @@ public class PlayerController : MonoBehaviour
 		return false;
 
 	}
-	void OnTouchUp()
+	/*void OnTouchUp()
 	{
 		if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
 			stateMachine.state = GameStateMachine.GameStates.ENEMY_START;
-	}
+	}*/
 
 }
