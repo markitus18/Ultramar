@@ -123,7 +123,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116658}
-  m_Mesh: {fileID: 4300000, guid: fb26d85af5c517b418f4c0960d9b473e, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 403670757f942e443915b50e895f715c, type: 3}
 --- !u!114 &11425898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,7 +172,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 9.86249542
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
