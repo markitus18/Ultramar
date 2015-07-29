@@ -59,6 +59,15 @@ public class PlayerController : MonoBehaviour
 	public void OnTouchUp ()
 	{
 		touching = false;
+#if UNITY_EDITOR
+		float deltaY = Input.mousePosition.y - touchStartPos.y;
+		float deltaX = Input.mousePosition.x - touchStartPos.x;
+		if (deltaX < 5 && deltaY < 5 && deltaX > -5 && deltaY > -5)
+		{
+			if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
+				stateMachine.state = GameStateMachine.GameStates.ENEMY_START;
+		}
+#endif
 	}
 
 	public void OnTouchExit()
@@ -216,10 +225,5 @@ public class PlayerController : MonoBehaviour
 		return false;
 
 	}
-	/*void OnTouchUp()
-	{
-		if (passTurn && stateMachine.state == GameStateMachine.GameStates.PLAYER_TURN)
-			stateMachine.state = GameStateMachine.GameStates.ENEMY_START;
-	}*/
 
 }
