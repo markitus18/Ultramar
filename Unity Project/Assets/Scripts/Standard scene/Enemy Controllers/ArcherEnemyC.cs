@@ -60,8 +60,8 @@ public class ArcherEnemyC : MonoBehaviour
 	{
 		for (int i = 0; i < targetBoxes.Count; i++)
 		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box>().standardMaterial;
-			targetBoxes[i].GetComponent<Box>().originalMaterial = targetBoxes[i].GetComponent<Box>().standardMaterial;
+			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box>().originalMaterial;
+			targetBoxes[i].GetComponent<Box>().originalMaterial = targetBoxes[i].GetComponent<Box>().originalMaterial;
 		}
 	}
 }

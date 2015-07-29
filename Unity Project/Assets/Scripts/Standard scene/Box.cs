@@ -17,11 +17,10 @@ public class Box : MonoBehaviour {
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
-//	public Material standardMaterial;
 	PlayerController playerController;
+
 	/*[HideInInspector]*/ public List<GameObject> enemies;
 
-	public Material standardMaterial;
 	[HideInInspector] public Material originalMaterial;
 
 	void Awake ()
