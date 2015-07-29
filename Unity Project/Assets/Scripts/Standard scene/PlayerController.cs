@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
 	public void SetNewBox (GameObject newBox)
 	{
-		if (!entity.moving && !paused)
+		if (!entity.moving && !paused && newBox)
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
@@ -168,6 +168,8 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
+
+
 
 	public void Kill()
 	{
