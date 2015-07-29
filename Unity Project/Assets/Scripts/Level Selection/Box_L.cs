@@ -23,9 +23,6 @@ public class Box_L : MonoBehaviour
 	PlayerController_L playerController;
 	/*[HideInInspector]*/ public List<GameObject> enemies;
 	public int level;
-	public Material standardMaterial;
-	[HideInInspector] public Material originalMaterial;
-	public Material highlightMaterial;
 
 	void Awake ()
 	{
@@ -67,30 +64,11 @@ public class Box_L : MonoBehaviour
 
 		//Setting all variables
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController_L>();
-		//Saving original color
-		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
 
 	void Start()
 	{
 		button.GetComponent<LevelNumber>().levelToLoad = level;
-	}
-
-	void OnTouchStay()
-	{
-		transform.GetComponent<Renderer>().material = highlightMaterial;
-	}
-	
-	void OnTouchExit()
-	{
-		transform.GetComponent<Renderer>().material = originalMaterial;
-	}
-
-	void OnTouchUp()
-	{
-		Debug.Log ("doing something");
-		transform.GetComponent<Renderer>().material = originalMaterial;
-		playerController.SetNewBox(gameObject);
 	}
 
 	public void UpdatePosition(GameObject enemy)

@@ -23,7 +23,6 @@ public class Box : MonoBehaviour {
 
 	public Material standardMaterial;
 	[HideInInspector] public Material originalMaterial;
-	public Material highlightMaterial;
 
 	void Awake ()
 	{
@@ -71,23 +70,6 @@ public class Box : MonoBehaviour {
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
 		playerCollider.enabled = true;
-	}
-
-	void OnTouchStay()
-	{
-		//transform.GetComponent<Renderer>().material = highlightMaterial;
-	}
-	
-	void OnTouchExit()
-	{
-		//transform.GetComponent<Renderer>().material = originalMaterial;
-	}
-
-	void OnTouchUp()
-	{
-		/*Debug.Log ("doing something");
-		transform.GetComponent<Renderer>().material = originalMaterial;
-		playerController.SetNewBox(gameObject);*/
 	}
 
 	public void UpdatePosition(GameObject enemy)

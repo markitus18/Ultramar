@@ -12,10 +12,6 @@ public class ArcherEnemyC : MonoBehaviour
 	public List<GameObject> targetBoxes;
 	void Awake()
 	{
-		for (int i = 0; i < targetBoxes.Count; i++)
-		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetMaterial;
-		}
 	}
 	void Start()
 	{
@@ -23,6 +19,11 @@ public class ArcherEnemyC : MonoBehaviour
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
+
+		for (int i = 0; i < targetBoxes.Count; i++)
+		{
+			targetBoxes[i].GetComponent<Renderer>().material = targetMaterial;
+		}
 	}
 	public bool CheckPlayer()
 	{

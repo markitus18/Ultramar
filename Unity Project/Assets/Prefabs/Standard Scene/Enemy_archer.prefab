@@ -56,8 +56,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.220397, y: 9.60347096e-17, z: -8.65003681}
+  m_LocalRotation: {x: 0, y: .716997147, z: 0, w: .697076082}
+  m_LocalPosition: {x: -15.9741688, y: .0250000004, z: 15.9860115}
   m_LocalScale: {x: .800000012, y: .400000006, z: .800000012}
   m_Children:
   - {fileID: 423346}
@@ -97,7 +97,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 99b963121657f754d8bae70dc41c9c4b, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -160,10 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3b25377669b594dba2dfa657f4f8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMaterial: {fileID: 0}
+  targetMaterial: {fileID: 2100000, guid: 7d1158634e32ad34a8456b81a5d09e18, type: 2}
   targetBoxes:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &11499162
@@ -177,12 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousBox: {fileID: 0}
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
   movementSpeed: 2
   distanceToMove: {x: 0, y: 0, z: 0}
   moving: 0
+  targetAssigned: 0
+  currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   startingDirection: 1
   direction: 3
