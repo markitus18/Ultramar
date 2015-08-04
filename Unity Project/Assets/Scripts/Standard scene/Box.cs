@@ -41,12 +41,20 @@ public class Box : MonoBehaviour {
 			{
 				upBox = hit.transform.gameObject;
 			}
+			else if(hit.collider.tag == "DynamicWall")
+			{
+				hit.transform.GetComponent<DynamicWall>().UpHit(transform.gameObject);
+			}
 		}
 		if (Physics.Raycast(downRay, out hit, boxDistance) && downBox == null && up==down)
 		{
 			if(hit.collider.tag == "Box")
 			{
 				downBox = hit.transform.gameObject;
+			}
+			else if(hit.collider.tag == "DynamicWall")
+			{
+				hit.transform.GetComponent<DynamicWall>().DownHit(transform.gameObject);
 			}
 		}
 		if (Physics.Raycast(rightRay, out hit, boxDistance) && rightBox == null && right==true)
@@ -55,12 +63,20 @@ public class Box : MonoBehaviour {
 			{
 				rightBox = hit.transform.gameObject;
 			}
+			else if(hit.collider.tag == "DynamicWall")
+			{
+				hit.transform.GetComponent<DynamicWall>().RightHit(transform.gameObject);
+			}
 		}
 		if (Physics.Raycast(leftRay, out hit, boxDistance) && leftBox == null && left==true)
 		{
 			if(hit.collider.tag == "Box")
 			{
 				leftBox = hit.transform.gameObject;
+			}
+			else if(hit.collider.tag == "DynamicWall")
+			{
+				hit.transform.GetComponent<DynamicWall>().LeftHit(transform.gameObject);
 			}
 		}
 

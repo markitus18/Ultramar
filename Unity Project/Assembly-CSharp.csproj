@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Standard scene\DestroyStatue.cs" />
      <Compile Include="Assets\Scripts\Standard scene\DestroyWall.cs" />
      <Compile Include="Assets\Scripts\Standard scene\DisconectBoxes.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\DynamicWall.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\RunnerEnemyC.cs" />
