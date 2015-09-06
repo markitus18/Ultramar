@@ -60,9 +60,9 @@ public class CameraOrbit : MonoBehaviour
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
 		}
 		#endif
-		if (Input.touchCount == 1 (0) && playerController.touching == false)
+		/*if (Input.touchCount == 1 (0) && playerController.touching == false)
 		{
-			/*
+
 
 			////// Touch version of camera orbit goes here
 
@@ -78,8 +78,8 @@ public class CameraOrbit : MonoBehaviour
 			x = ClampAngle (x - (Input.GetAxis ("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
-			transform.position = cameraLookAtTarget.position - (transform.forward * distance);*/
-		}
+			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
+		}*/
 
 
 		else

@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\Box.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Touch\CameraOrbit.cs">
     <Files>
-      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="79" Column="40" />
-      <File FileName="Assets\Scripts\Touch\TouchInput.cs" Line="44" Column="43" />
+      <File FileName="Assets\Scripts\Touch\CameraOrbit.cs" Line="69" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" Line="94" Column="47" />
+      <File FileName="Assets\Scripts\Standard scene\DynamicWall.cs" Line="17" Column="12" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
