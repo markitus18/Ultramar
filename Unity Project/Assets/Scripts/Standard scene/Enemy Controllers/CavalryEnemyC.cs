@@ -45,7 +45,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.counterclockwise;
+							//movementDirection = MovementDirection.counterclockwise;
 							entity.direction = 4;
 						}
 					}
@@ -56,7 +56,10 @@ public class CavalryEnemyC : MonoBehaviour {
 							entity.direction = 4;
 						}
 						else
-							movementDirection = MovementDirection.clockwise;
+						{
+							entity.direction = 2;
+							//movementDirection = MovementDirection.clockwise;
+						}
 					}
 				}
 				break;
@@ -76,7 +79,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.counterclockwise;
+							//movementDirection = MovementDirection.counterclockwise;
 							entity.direction = 1;
 						}
 					}
@@ -88,7 +91,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.clockwise;
+							//movementDirection = MovementDirection.clockwise;
 							entity.direction = 3;
 						}
 					}
@@ -110,7 +113,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.counterclockwise;
+							//movementDirection = MovementDirection.counterclockwise;
 							entity.direction = 2;
 						}
 					}
@@ -122,7 +125,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.clockwise;
+							//movementDirection = MovementDirection.clockwise;
 							entity.direction = 4;
 						}
 					}
@@ -144,7 +147,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.counterclockwise;
+						//	movementDirection = MovementDirection.counterclockwise;
 							entity.direction = 3;
 						}
 					}
@@ -156,7 +159,7 @@ public class CavalryEnemyC : MonoBehaviour {
 						}
 						else
 						{
-							movementDirection = MovementDirection.clockwise;
+						//	movementDirection = MovementDirection.clockwise;
 							entity.direction = 1;
 						}
 					}
