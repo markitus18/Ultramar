@@ -97,7 +97,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 99b963121657f754d8bae70dc41c9c4b, type: 2}
+  - {fileID: 2100000, guid: 17e4d536aa8a1bb428bdc13b714c6043, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -172,12 +172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousBox: {fileID: 0}
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
   movementSpeed: 2
   distanceToMove: {x: 0, y: 0, z: 0}
   moving: 0
+  targetAssigned: 0
+  currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   startingDirection: 3
   direction: 3
@@ -193,6 +194,10 @@ Prefab:
       propertyPath: startingDirection
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17e4d536aa8a1bb428bdc13b714c6043, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116534}
