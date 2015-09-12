@@ -1,19 +1,15 @@
 fileFormatVersion: 2
-guid: c10822e88edfcea499da5e4c2890ae8f
-timeCreated: 1442047314
+guid: 26903ba769b137740b1a746d14dbf5b4
+timeCreated: 1442013383
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: PhotometricLight001
-    100004: Plane001
     400000: //RootNode
-    400002: PhotometricLight001
-    400004: Plane001
-    2300000: Plane001
-    3300000: Plane001
-    4300000: Plane001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Object001
   materials:
     importMaterials: 1
     materialName: 0
