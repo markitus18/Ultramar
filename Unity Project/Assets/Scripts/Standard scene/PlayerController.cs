@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
 			}
 			if (available)
 			{
-				transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+				transform.eulerAngles = new Vector3(270, 90 * (entity.direction - 1), 0);
 				Debug.Log ("Assigned");
 				entity.targetPosition = newBox.transform.position;
 				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;

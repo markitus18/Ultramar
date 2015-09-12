@@ -28,7 +28,7 @@ public class Box : MonoBehaviour {
 		//Assigning linked boxes
 		Collider playerCollider;
 		playerCollider = GameObject.FindWithTag ("Player").GetComponent<Collider>();
-		playerCollider.enabled = false;
+//		playerCollider.enabled = false;
 		RaycastHit hit;
 		Ray upRay = new Ray(transform.position, Vector3.forward);
 		Ray downRay = new Ray(transform.position, Vector3.back);
@@ -84,7 +84,7 @@ public class Box : MonoBehaviour {
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
-		playerCollider.enabled = true;
+//		playerCollider.enabled = true;
 	}
 
 	public void UpdatePosition(GameObject enemy)

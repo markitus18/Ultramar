@@ -35,7 +35,7 @@ public class Entity : MonoBehaviour
 	{
 		moving = false;
 		transform.position = currentPosition;
-		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
+		transform.eulerAngles = new Vector3(270, 90 * (direction - 1), 0);
 	}
 
 	public GameStateMachine.UpdateStates UpdateEntity ()
@@ -115,7 +115,7 @@ public class Entity : MonoBehaviour
 		default:
 			break;
 		}
-		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
+		transform.eulerAngles = new Vector3(270, 90 * (direction - 1), 0);
 	}
 
 	public void SetNewPosition()
