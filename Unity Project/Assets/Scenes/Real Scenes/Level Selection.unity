@@ -173,6 +173,30 @@ Prefab:
       propertyPath: m_Name
       value: Box_L (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: up
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404258, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: levelToLoad
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: boxDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_IsPrefabParent: 0
@@ -277,6 +301,30 @@ Prefab:
       propertyPath: m_Name
       value: Box_L (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: up
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404258, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: levelToLoad
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: boxDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_IsPrefabParent: 0
@@ -324,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBox: {fileID: 1447382707}
+  currentBox: {fileID: 1632791995}
   targetBox: {fileID: 0}
   movementSpeed: 2
   distanceToMove: {x: 0, y: 0, z: 0}
@@ -457,6 +505,30 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 33be15c59f0bae442a13dd1d6425a8e9, type: 2}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: up
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404258, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: levelToLoad
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: boxDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_IsPrefabParent: 0
@@ -693,6 +765,26 @@ Prefab:
       propertyPath: m_Name
       value: Box_start2
       objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: up
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: boxDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_IsPrefabParent: 0
@@ -835,9 +927,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 650658754}
   m_RootOrder: 0
---- !u!1 &1447382707 stripped
+--- !u!1 &1632791995 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 127912, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+  m_PrefabParentObject: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_PrefabInternal: {fileID: 1368694453}
 --- !u!4 &1633007344 stripped
 Transform:
@@ -902,6 +994,30 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bc5293b4a13ebf84b9fe338db063727d, type: 2}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: right
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: up
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404258, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: levelToLoad
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+      propertyPath: boxDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_IsPrefabParent: 0
