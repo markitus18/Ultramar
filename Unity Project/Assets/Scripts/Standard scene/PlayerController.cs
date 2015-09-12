@@ -36,9 +36,17 @@ public class PlayerController : MonoBehaviour
 			touching = false;
 		}
 
+		if (Input.GetKeyUp("up"))
+			SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+		if (Input.GetKeyUp("down"))
+			SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+		if (Input.GetKeyUp("left"))
+			SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+		if (Input.GetKeyUp("right"))
+			SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
 #endif
 	}
-
+	
 	public void OnTouchDown ()
 	{
 		if (Input.touchCount == 1) 
