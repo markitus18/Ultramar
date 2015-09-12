@@ -19,14 +19,14 @@ public class GameStateMachine_L : MonoBehaviour
 		UPDATE_NEXT,
 	}
 	
-	public Entity_L playerController;
+	public Entity playerController;
 	public List<GameObject> enemies;
 	public GameStates_L state; 
 	public bool unlockLevels;
 
 	void Start ()
 	{
-		playerController = GameObject.FindWithTag("Player").GetComponent<Entity_L>();
+		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
 		state = GameStates_L.PLAYER_TURN;
 	}
 
@@ -49,17 +49,17 @@ public class GameStateMachine_L : MonoBehaviour
 
 	void UpdatePlayer()
 	{
-		if (playerController.gameObject.GetComponent<PlayerController_L>().autoPassTurn)
+		if (playerController.gameObject.GetComponent<PlayerController>().autoPassTurn)
 		{
 			state = GameStates_L.ENEMY_START;
 		}
-		else if (!playerController.gameObject.GetComponent<PlayerController_L>().paused)
+		else if (!playerController.gameObject.GetComponent<PlayerController>().paused)
 		{
 			if (playerController.UpdateEntity() == GameStateMachine.UpdateStates.UPDATEEXT)
 			{
 				state = GameStates_L.ENEMY_START;
-				playerController.gameObject.GetComponent<PlayerController_L>().CheckEnemy();
-				if (playerController.gameObject.GetComponent<PlayerController_L>().CheckEnd())
+				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();
+				if (playerController.gameObject.GetComponent<PlayerController>().CheckEnd())
 					state = GameStates_L.END;
 				Debug.Log("Enemies turn");
 			}
