@@ -22,7 +22,7 @@ public class Entity : MonoBehaviour
 		left,
 	}
 	public enumDirections startingDirection;
-	[HideInInspector] public int direction;
+	/*[HideInInspector]*/ public int direction;
 
 	[HideInInspector] public GameStateMachine.UpdateStates ret;
 
