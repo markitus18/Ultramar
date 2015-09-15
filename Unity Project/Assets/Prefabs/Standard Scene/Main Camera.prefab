@@ -88,8 +88,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .122778676, y: -2.87235469e-19, z: -.0323398784}
+  m_LocalRotation: {x: .0372664072, y: .260798931, z: -.0281424094, w: .964263022}
+  m_LocalPosition: {x: 1.44000006, y: .50999999, z: 1.27999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421918}
@@ -101,8 +101,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190268}
-  m_LocalRotation: {x: .422618419, y: 0, z: 0, w: .906307697}
-  m_LocalPosition: {x: -4.11000061, y: 9.89000034, z: -7.9000001}
+  m_LocalRotation: {x: .162948474, y: -.865667105, z: .309046119, w: .358551055}
+  m_LocalPosition: {x: 9.09000015, y: 11.0299997, z: 9.81999969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433296}
@@ -139,7 +139,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
+  field of view: 39.6388969
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -274,13 +274,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLookAtTarget: {fileID: 408506}
-  height: 50
-  rotationDamping: 1
-  heightDamping: .5
-  distance: 20
-  startingY: 0
+  height: 35
+  rotationDamping: 2
+  heightDamping: 1
+  distance: 17
+  startingY: 260
   yMovementLimit: 45
-  xMinLimit: 45
+  xMinLimit: 20
   xMaxLimit: 80
   xSpeed: 75
   ySpeed: 120
