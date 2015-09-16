@@ -68,9 +68,7 @@ public class PlayerController : MonoBehaviour
             {
                 direction = 2 + directionVariation;
             }
-
-            if (direction < 1)
-            { direction += 4; }
+            
             if (direction > 4)
             { direction -= 4; }
             if (direction == 1)
@@ -188,8 +186,8 @@ public class PlayerController : MonoBehaviour
 # endif
        
         direction += directionVariation;
-        if (direction < 1)
-        { direction += 4; }
+        if (direction > 4)
+        { direction -= 4; }
         if (direction == 1)
             SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
         if (direction == 2)
