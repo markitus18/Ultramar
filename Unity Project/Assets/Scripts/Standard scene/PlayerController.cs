@@ -201,17 +201,7 @@ public class PlayerController : MonoBehaviour
 
 	public void SetNewBox (GameObject newBox)
 	{
-        if (directionVariation == 0)
-        { Debug.Log("DirectionVariation = 0"); }
-        else if (directionVariation == -1)
-        { Debug.Log("DirectionVariation = -1"); }
-        else if (directionVariation == -2)
-        { Debug.Log("DirectionVariation = -2"); }
-        else if (directionVariation == -3)
-        { Debug.Log("DirectionVariation = -3"); }
-        else
-        { Debug.Log("DirectionVariation ??"); }
-
+    
         if (!entity.moving && !paused && newBox)
 		{
 			Debug.Log ("Checking new box");
