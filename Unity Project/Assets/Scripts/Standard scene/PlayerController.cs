@@ -5,12 +5,17 @@ public class PlayerController : MonoBehaviour
 {
 	Entity entity;
 	public GameObject loseText;
-	public GameObject winText;public bool paused;
+	public GameObject winText;
+    public bool paused;
 	GameStateMachine stateMachine;
+    CameraOrbit CameraScript;
 	public bool passTurn;
 	public bool autoPassTurn;
 	Vector2 touchStartPos;
 	public bool touching;
+
+    int direction;
+    int directionVariation;
 	// Use this for initialization
 
 	void Awake()
@@ -20,12 +25,20 @@ public class PlayerController : MonoBehaviour
 	void Start()
 	{
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
-		paused = false;
-	}
+        CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
+        paused = false;
+       
+    }
 
 	void Update ()
 	{
-		if (Input.touchCount== 0 && Input.touchSupported)
+        //Setting the variation amount for the player controller drag
+        if (CameraScript.startingY > 45 && CameraScript.startingY < 135) { directionVariation = 1; }
+        else if (CameraScript.startingY > 135 && CameraScript.startingY < 225) { directionVariation = 2; }
+        else if (CameraScript.startingY > 225 && CameraScript.startingY < 315) { directionVariation = 3; }
+        else { directionVariation = 0; }
+
+        if (Input.touchCount== 0 && Input.touchSupported)
 		{
 			touching = false;
 		}
@@ -36,19 +49,48 @@ public class PlayerController : MonoBehaviour
 			touching = false;
 		}
 
-		if (Input.GetKeyUp("up"))
-			SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
-		if (Input.GetKeyUp("down"))
-			SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
-		if (Input.GetKeyUp("left"))
-			SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
-		if (Input.GetKeyUp("right"))
-			SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+        if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp("left") || Input.GetKeyUp("right"))
+        {
+            if (Input.GetKeyUp("up"))
+            {
+                direction = 1 + directionVariation;
+            }
+            if (Input.GetKeyUp("down"))
+            {
+                direction = 3 + directionVariation;
+            }
+            if (Input.GetKeyUp("left"))
+            {
+                direction = 4 + directionVariation;
+            }
+
+            if (Input.GetKeyUp("right"))
+            {
+                direction = 2 + directionVariation;
+            }
+
+            if (direction < 1)
+            { direction += 4; }
+            if (direction > 4)
+            { direction -= 4; }
+            if (direction == 1)
+                SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+            if (direction == 2)
+                SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+            if (direction == 3)
+                SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+            if (direction == 4)
+                SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+        }
 #endif
-	}
+    }
 	
 	public void OnTouchDown ()
 	{
+        if (CameraScript.startingY > 45 && CameraScript.startingY < 135) { directionVariation = -1; }
+        else if (CameraScript.startingY < 225) { directionVariation = -2; }
+        else if (CameraScript.startingY < 315) { directionVariation = -3; }
+        else { directionVariation = 0; }
 		if (Input.touchCount == 1) 
 		{
 			touching = true;
@@ -86,29 +128,29 @@ public class PlayerController : MonoBehaviour
 			float deltaX = Input.touches[0].position.x - touchStartPos.x;
 			if (Mathf.Abs (deltaX) > 3 || Mathf.Abs (deltaY) > 3)
 			{
-				if (Mathf.Abs (deltaX) > Mathf.Abs(deltaY))
-				{
-					if (deltaX < 0)
-					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
-					}
-					else
-					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
-					}
-				}
-				else
-				{
-					if (deltaY < 0)
-					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
-					}
-					else
-					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
-					}
-				}
-			}
+                if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
+                {
+                    if (deltaX < 0)
+                    {
+                        direction = 4;
+                    }
+                    else
+                    {
+                        direction = 2;
+                    }
+                }
+                else
+                {
+                    if (deltaY < 0)
+                    {
+                        direction = 3;
+                    }
+                    else
+                    {
+                        direction = 1;
+                    }
+                }
+            }
 		}
 #if UNITY_EDITOR
 		if (touching == true)
@@ -121,22 +163,22 @@ public class PlayerController : MonoBehaviour
 				{
 					if (deltaX < 0)
 					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+                        direction = 4;
 					}
 					else
 					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+                        direction = 2;
 					}
 				}
 				else
 				{
 					if (deltaY < 0)
 					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+						direction = 3;
 					}
 					else
 					{
-						SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+						direction = 1;
 					}
 				}
 			}
@@ -144,11 +186,35 @@ public class PlayerController : MonoBehaviour
 
 
 # endif
-	}
+       
+        direction += directionVariation;
+        if (direction < 1)
+        { direction += 4; }
+        if (direction == 1)
+            SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+        if (direction == 2)
+            SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+        if (direction == 3)
+            SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+        if (direction == 4)
+            SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+
+    }
 
 	public void SetNewBox (GameObject newBox)
 	{
-		if (!entity.moving && !paused && newBox)
+        if (directionVariation == 0)
+        { Debug.Log("DirectionVariation = 0"); }
+        else if (directionVariation == -1)
+        { Debug.Log("DirectionVariation = -1"); }
+        else if (directionVariation == -2)
+        { Debug.Log("DirectionVariation = -2"); }
+        else if (directionVariation == -3)
+        { Debug.Log("DirectionVariation = -3"); }
+        else
+        { Debug.Log("DirectionVariation ??"); }
+
+        if (!entity.moving && !paused && newBox)
 		{
 			Debug.Log ("Checking new box");
 			bool available = false;
