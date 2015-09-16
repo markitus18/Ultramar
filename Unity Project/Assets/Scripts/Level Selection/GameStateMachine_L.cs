@@ -23,6 +23,8 @@ public class GameStateMachine_L : MonoBehaviour
 	public List<GameObject> enemies;
 	public GameStates_L state; 
 	public bool unlockLevels;
+	public List<GameObject> planes;
+	int currentLevel;
 
 	void Start ()
 	{
@@ -68,6 +70,7 @@ public class GameStateMachine_L : MonoBehaviour
 
 	void StartEnemiesTurn()
 	{
+
 		state = GameStates_L.PLAYER_TURN;
 	}
 	/*

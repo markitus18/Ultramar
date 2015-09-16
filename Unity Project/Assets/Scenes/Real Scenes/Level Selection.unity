@@ -114,10 +114,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f89d52d682f27b45ad9fa93de3d406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  playerController: {fileID: 650658755}
   enemies: []
   state: 0
-  unlockLevels: 0
+  unlockLevels: 1
+  planes:
+  - {fileID: 1632791995}
+  - {fileID: 434857325}
+  - {fileID: 1958782682}
+  - {fileID: 404668972}
+  - {fileID: 1984726431}
 --- !u!4 &90154067
 Transform:
   m_ObjectHideFlags: 0
@@ -204,6 +210,14 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 497446, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
   m_PrefabInternal: {fileID: 264892218}
+--- !u!1 &404668972 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+  m_PrefabInternal: {fileID: 869671991}
+--- !u!1 &434857325 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+  m_PrefabInternal: {fileID: 264892218}
 --- !u!1001 &455397340
 Prefab:
   m_ObjectHideFlags: 0
@@ -246,6 +260,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 875a585189ac76f40b53dc959650f618, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &470122544 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 408506, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+  m_PrefabInternal: {fileID: 903452598}
 --- !u!1001 &547944497
 Prefab:
   m_ObjectHideFlags: 0
@@ -622,7 +640,7 @@ Prefab:
     - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: cameraLookAtTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 470122544}
     - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: distance
       value: 21.7999992
@@ -779,7 +797,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
       propertyPath: m_Name
-      value: Box_start2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11496768, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
       propertyPath: up
@@ -1110,3 +1128,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1958782682 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+  m_PrefabInternal: {fileID: 547944497}
+--- !u!1 &1984726431 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115060, guid: 1f24bbaa176510b4eb8be9475c61a004, type: 2}
+  m_PrefabInternal: {fileID: 1646760887}
