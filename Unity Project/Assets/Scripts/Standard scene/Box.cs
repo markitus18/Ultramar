@@ -26,7 +26,9 @@ public class Box : MonoBehaviour {
 	void Awake ()
 	{
 		//Assigning linked boxes
+# if !UNITY_EDITOR
 		gameObject.GetComponent<MeshRenderer>().enabled = false;
+#endif
 		Collider playerCollider;
 		playerCollider = GameObject.FindWithTag ("Player").GetComponent<Collider>();
 //		playerCollider.enabled = false;
