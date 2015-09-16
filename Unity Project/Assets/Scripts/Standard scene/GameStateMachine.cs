@@ -186,6 +186,6 @@ public class GameStateMachine : MonoBehaviour
 		{
 			GameControl.control.unlockedLevel++;
 		}
-		Application.LoadLevel (0);
+		Application.LoadLevel (GameControl.control.unlockedLevel);
 	}
 }

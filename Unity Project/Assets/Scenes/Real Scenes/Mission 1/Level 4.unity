@@ -1507,6 +1507,18 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: height
+      value: 31.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: distance
+      value: 24.8999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: startingY
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
   m_IsPrefabParent: 0
@@ -2496,7 +2508,7 @@ Transform:
   - {fileID: 1723071282}
   - {fileID: 844334525}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &1279945580
 Prefab:
   m_ObjectHideFlags: 0
