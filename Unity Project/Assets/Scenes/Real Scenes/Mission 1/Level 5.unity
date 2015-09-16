@@ -2483,6 +2483,18 @@ Prefab:
       propertyPath: right
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11451200, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
+      propertyPath: downBox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451200, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
+      propertyPath: leftBox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451200, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
+      propertyPath: originalMaterial
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be5080da8cd6ae645b8d6d6d14802e38, type: 2}
   m_IsPrefabParent: 0
