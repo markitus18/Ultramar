@@ -182,10 +182,10 @@ public class GameStateMachine : MonoBehaviour
 
 	void LoadLevelSelection()
 	{
-		if (GameControl.control.unlockedLevel == level)
+		if (GameControl.control.unlockedLevel == level && GameControl.control.unlockedLevel < 5)
 		{
 			GameControl.control.unlockedLevel++;
 		}
-		Application.LoadLevel (GameControl.control.unlockedLevel);
+		Application.LoadLevel (level + 1);
 	}
 }
