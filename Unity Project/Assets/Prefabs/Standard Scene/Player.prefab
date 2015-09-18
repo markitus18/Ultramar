@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: -10, y: 0, z: -2.5}
-  m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
+  m_LocalPosition: {x: -10, y: 0, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418766}
   m_Father: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   targetAssigned: 0
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
-  startingDirection: 3
+  startingDirection: 2
   direction: 0
   ret: 0
 --- !u!114 &11463734
