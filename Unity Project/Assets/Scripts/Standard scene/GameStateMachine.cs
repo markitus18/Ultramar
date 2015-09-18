@@ -16,7 +16,7 @@ public class GameStateMachine : MonoBehaviour
 	public enum UpdateStates
 	{
 		UPDATE_KEEP,
-		UPDATEEXT,
+		UPDATENEXT,
 	}
 	
 	public Entity playerController;
@@ -70,7 +70,7 @@ public class GameStateMachine : MonoBehaviour
 		}
 		else if (!playerController.gameObject.GetComponent<PlayerController>().paused)
 		{
-			if (playerController.UpdateEntity() == UpdateStates.UPDATEEXT)
+			if (playerController.UpdateEntity() == UpdateStates.UPDATENEXT)
 			{
 				state = GameStates.ENEMY_START;
 				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();

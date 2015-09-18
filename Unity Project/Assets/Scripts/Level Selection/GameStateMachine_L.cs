@@ -57,7 +57,7 @@ public class GameStateMachine_L : MonoBehaviour
 		}
 		else if (!playerController.gameObject.GetComponent<PlayerController>().paused)
 		{
-			if (playerController.UpdateEntity() == GameStateMachine.UpdateStates.UPDATEEXT)
+			if (playerController.UpdateEntity() == GameStateMachine.UpdateStates.UPDATENEXT)
 			{
 				state = GameStates_L.ENEMY_START;
 				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();

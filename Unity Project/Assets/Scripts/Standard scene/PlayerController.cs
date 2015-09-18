@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 	}
 	void Start()
 	{
+		gameObject.GetComponent<Collider>().enabled = true;
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
         CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
         paused = false;

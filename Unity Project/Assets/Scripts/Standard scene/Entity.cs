@@ -61,12 +61,12 @@ public class Entity : MonoBehaviour
 			{
 				currentBox = targetBox;
 				moving = false;
-				ret = GameStateMachine.UpdateStates.UPDATEEXT;
+				ret = GameStateMachine.UpdateStates.UPDATENEXT;
 			}
 		}
 		else
 		{
-			ret = GameStateMachine.UpdateStates.UPDATEEXT;
+			ret = GameStateMachine.UpdateStates.UPDATENEXT;
 		}
 
 	}

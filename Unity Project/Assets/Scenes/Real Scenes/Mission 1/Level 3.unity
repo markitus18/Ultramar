@@ -702,10 +702,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11425898, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: currentBox
-      value: 
-      objectReference: {fileID: 850817603}
     - target: {fileID: 11463734, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
       propertyPath: loseText
       value: 
@@ -714,6 +710,10 @@ Prefab:
       propertyPath: winText
       value: 
       objectReference: {fileID: 2086691892}
+    - target: {fileID: 11425898, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
+      propertyPath: currentBox
+      value: 
+      objectReference: {fileID: 850817603}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
   m_IsPrefabParent: 0
@@ -3090,7 +3090,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1971271038}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3252,6 +3252,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: height
+      value: 40.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: distance
+      value: 27.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: startingY
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
