@@ -44,10 +44,10 @@ public class Box : MonoBehaviour {
 		}
 		if (Physics.Raycast(downRay, out hit, boxDistance) && downBox == null && down==true)
 		{
-		//	if(hit.collider.tag == "Box")
-	//		{
+			if(hit.collider.tag == "Box")
+			{
 				downBox = hit.transform.gameObject;
-	//		}
+			}
 		}
 		if (Physics.Raycast(rightRay, out hit, boxDistance) && rightBox == null && right==true)
 		{
@@ -68,7 +68,7 @@ public class Box : MonoBehaviour {
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
-//		playerCollider.enabled = true;
+
 	}
 
 	public void UpdatePosition(GameObject enemy)
