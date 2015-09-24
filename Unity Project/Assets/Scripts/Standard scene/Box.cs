@@ -68,7 +68,6 @@ public class Box : MonoBehaviour {
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
-
 	}
 
 	public void UpdatePosition(GameObject enemy)

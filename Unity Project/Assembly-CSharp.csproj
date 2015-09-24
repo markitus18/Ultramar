@@ -62,10 +62,10 @@
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\RunnerEnemyC.cs" />
+     <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\StaticEnemyC.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Entity.cs" />
      <Compile Include="Assets\Scripts\Standard scene\GameStateMachine.cs" />
      <Compile Include="Assets\Scripts\Standard scene\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Standard scene\StaticEnemyC.cs" />
      <Compile Include="Assets\Scripts\Tests\Forum1.cs" />
      <Compile Include="Assets\Scripts\Tests\MeshEditor.cs" />
      <Compile Include="Assets\Scripts\Touch\Button.cs" />

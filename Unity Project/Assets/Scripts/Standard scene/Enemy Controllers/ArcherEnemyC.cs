@@ -8,60 +8,50 @@ public class ArcherEnemyC : MonoBehaviour
 	PlayerController playerController;
 	Entity entity;
 
-	public Material targetMaterial;
-	public List<GameObject> targetBoxes;
+	private Ray shootRay;
+
 	void Awake()
 	{
+		entity = gameObject.GetComponent<Entity>();
+		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity> ();
+		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController> ();
 	}
 	void Start()
 	{
+		switch (entity.startingDirection)
+		{
+		case(Entity.enumDirections.up):
+			shootRay = new Ray(transform.position, Vector3.forward);
+			break;
+		case(Entity.enumDirections.down):
+			shootRay = new Ray(transform.position, Vector3.back);
+			break;
+		case(Entity.enumDirections.right):
+			shootRay = new Ray(transform.position, Vector3.right);
+			break;
+		case(Entity.enumDirections.left):
+			shootRay = new Ray(transform.position, Vector3.left);
+			break;
+		}
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
 
-		for (int i = 0; i < targetBoxes.Count; i++)
-		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetMaterial;
-		}
 	}
 	public bool CheckPlayer()
 	{
 		bool ret = false;
-		for (int i = 0; i < targetBoxes.Count; i++)
+
+		RaycastHit hit;
+		if (Physics.Raycast(shootRay, out hit, 10000))
 		{
-			if (targetBoxes[i] == playerEntity.currentBox)
+			if(hit.collider.tag == "Player")
 			{
-				ret = true;
-				playerController.Kill();
-				Vector3 vector = targetBoxes[i].transform.position - entity.currentBox.transform.position;
-				if (vector.z != 0)
-				{
-					if (vector.z < 0)
-						entity.direction = 3;
-					else
-						entity.direction = 1;
-				}
-				else if (vector.x != 0)
-				{
-					if (vector.x < 0)
-						entity.direction = 4;
-					else
-						entity.direction = 2;
-				}
-			Debug.Log ("moving direction");
-			entity.transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+					ret = true;
 			}
 		}
 		return ret;
 	}
-
-	public void RemoveTargets()
-	{
-		for (int i = 0; i < targetBoxes.Count; i++)
-		{
-			targetBoxes[i].GetComponent<Renderer>().material = targetBoxes[i].GetComponent<Box>().originalMaterial;
-			targetBoxes[i].GetComponent<Box>().originalMaterial = targetBoxes[i].GetComponent<Box>().originalMaterial;
-		}
-	}
 }
+

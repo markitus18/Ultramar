@@ -260,10 +260,6 @@ public class PlayerController : MonoBehaviour
 			{
 				if (entity.currentBox.GetComponent<Box>().enemies[i].tag != "Player")
 				{
-					if (entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>())
-					{
-						entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<ArcherEnemyC>().RemoveTargets();
-					}
 					Debug.Log("Killing enemy");
 					entity.currentBox.GetComponent<Box>().enemies[i].SetActive(false);
 					stateMachine.enemies.Remove(entity.currentBox.GetComponent<Box>().enemies[i]);
