@@ -36,8 +36,8 @@ public class CameraOrbit : MonoBehaviour
 			angle -= 360;
 		return Mathf.Clamp(angle, min, max);
 	}
-	
-	void Update()
+
+	void LateUpdate()
 	{
 		if (cameraLookAtTarget == null)
 		{
@@ -45,29 +45,37 @@ public class CameraOrbit : MonoBehaviour
 		}
 		if (Input.GetMouseButton (0) && playerController.touching == false)
 		{
-			if (startingY + yMovementLimit > 360 || startingY - yMovementLimit < 0)
-			{
-				y = ClampAngle (y + 180 + (Input.GetAxis("Mouse Y") * ySpeed * 0.02f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
-			}
-			else
-			{
-				y = ClampAngle (y + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
-			}
+            if (startingY - yMovementLimit < 0)
+            {
+                y = ClampAngle(y + 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
+            }
+            else if (startingY + yMovementLimit > 360)
+            {
+                y = ClampAngle(y - 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+            }
+            else
+            {
+                y = ClampAngle(y + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
+            }
 			x = ClampAngle (x - (Input.GetAxis("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
 		}
-		else if (Input.touchCount != 0 && playerController.touching == false)
+		else if (Input.touchCount == 1 && playerController.touching == false)
 		{
 
             ////// Touch version of camera orbit goes here
        
 
-			if (startingY + yMovementLimit > 360 || startingY - yMovementLimit < 0)
+			if (startingY - yMovementLimit < 0)
 			{
-				y = ClampAngle (y + 180 + (Input.touches[0].deltaPosition.y * ySpeed * 0.000001f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
+				y = ClampAngle (y + 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
 			}
+            else if (startingY + yMovementLimit > 360)
+            {
+                y = ClampAngle(y - 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+            }
 			else
 			{
 				y = ClampAngle (y + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - yMovementLimit, startingY + yMovementLimit);
