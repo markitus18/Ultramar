@@ -66,21 +66,26 @@ public class CameraOrbit : MonoBehaviour
 		{
 
             ////// Touch version of camera orbit goes here
-       
 
-			if (startingY - yMovementLimit < 0)
-			{
-				y = ClampAngle (y + 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
-			}
-            else if (startingY + yMovementLimit > 360)
+            if (Input.touches[0].deltaPosition.x > -1 && Input.touches[0].deltaPosition.x < 1)
             {
-                y = ClampAngle(y - 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+                if (startingY - yMovementLimit < 0)
+                {
+                    y = ClampAngle(y + 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
+                }
+                else if (startingY + yMovementLimit > 360)
+                {
+                    y = ClampAngle(y - 180 + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+                }
+                else
+                {
+                    y = ClampAngle(y + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - yMovementLimit, startingY + yMovementLimit);
+                }
             }
-			else
-			{
-				y = ClampAngle (y + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - yMovementLimit, startingY + yMovementLimit);
-			}
-			x = ClampAngle (x - (Input.touches[0].deltaPosition.y * xSpeed * 0.000001f), xMinLimit, xMaxLimit);
+            if (Input.touches[0].deltaPosition.y > -1 && Input.touches[0].deltaPosition.y < 1)
+            {
+                x = ClampAngle(x - (Input.touches[0].deltaPosition.y * xSpeed * 0.000001f), xMinLimit, xMaxLimit);
+            }
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
