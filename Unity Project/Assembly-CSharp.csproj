@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\PauseManager.cs" />
+     <Compile Include="Assets\PlayMovie.cs" />
      <Compile Include="Assets\Scripts\Camera\RotationAroundObj.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\Intro\GUIController.cs" />

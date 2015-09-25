@@ -20,6 +20,7 @@ public class CameraOrbit : MonoBehaviour
 	private float x = 0.0f;
 	private float y = 0.0f;
 	PlayerController playerController;
+    public bool movingCamera = false;
 
 	void Start()
 	{
@@ -66,8 +67,7 @@ public class CameraOrbit : MonoBehaviour
 		{
 
             ////// Touch version of camera orbit goes here
-
-            if (Input.touches[0].deltaPosition.x > -1 && Input.touches[0].deltaPosition.x < 1)
+            if (movingCamera == true)
             {
                 if (startingY - yMovementLimit < 0)
                 {
@@ -80,11 +80,14 @@ public class CameraOrbit : MonoBehaviour
                 else
                 {
                     y = ClampAngle(y + (Input.touches[0].deltaPosition.x * ySpeed * 0.000001f), startingY - yMovementLimit, startingY + yMovementLimit);
+
                 }
-            }
-            if (Input.touches[0].deltaPosition.y > -1 && Input.touches[0].deltaPosition.y < 1)
-            {
+
                 x = ClampAngle(x - (Input.touches[0].deltaPosition.y * xSpeed * 0.000001f), xMinLimit, xMaxLimit);
+            }
+            else
+            {
+                movingCamera = true;
             }
 			
 			transform.eulerAngles = new Vector3 (x, y, 0.0f);
@@ -102,6 +105,8 @@ public class CameraOrbit : MonoBehaviour
 			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
 			
 			transform.LookAt (cameraLookAtTarget);
+
+            movingCamera = false;
 		}
 	}
 

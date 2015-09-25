@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 		gameObject.GetComponent<Collider>().enabled = true;
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
         CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
+
         paused = false;
        
     }
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
 	public void OnTouchExit()
 	{
-		if (touching == true && Input.touchCount == 1)
+		if (touching == true && Input.touchCount == 1 && CameraScript.movingCamera == false)
 		{
 			float deltaY = Input.touches[0].position.y - touchStartPos.y;
 			float deltaX = Input.touches[0].position.x - touchStartPos.x;
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
             }
 		}
 #if UNITY_EDITOR
-		if (touching == true)
+		if (touching == true && CameraScript.movingCamera == false)
 		{
 			float deltaY = Input.mousePosition.y - touchStartPos.y;
 			float deltaX = Input.mousePosition.x - touchStartPos.x;
