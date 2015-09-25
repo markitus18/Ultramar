@@ -26,9 +26,7 @@ public class Box : MonoBehaviour {
 	void Awake ()
 	{
 		//Assigning linked boxes
-# if !UNITY_EDITOR
 		gameObject.GetComponent<MeshRenderer>().enabled = false;
-#endif
 		RaycastHit hit;
 		Ray upRay = new Ray(transform.position, Vector3.forward);
 		Ray downRay = new Ray(transform.position, Vector3.back);
