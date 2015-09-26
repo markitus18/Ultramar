@@ -1,0 +1,15 @@
+Camera (?)
+
+Transition between scenes
+
+Mission and level selection design
+
+Add sounds
+
+Player death and player win
+
+Edit movement (?)
+
+Archers
+
+Archers: ray
