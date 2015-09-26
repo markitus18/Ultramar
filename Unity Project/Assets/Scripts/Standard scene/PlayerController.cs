@@ -248,8 +248,8 @@ public class PlayerController : MonoBehaviour
 	{
 		Debug.Log("Killing player");
 		loseText.GetComponent<Renderer>().enabled = true;
+		stateMachine.state = GameStateMachine.GameStates.END_LOOSE;
 		paused = true;
-		Application.LoadLevel (Application.loadedLevelName);
 	}
 
 	public void CheckEnemy()
@@ -279,7 +279,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("End of level");
 			winText.GetComponent<Renderer>().enabled = true;
 			paused = true;
-			stateMachine.state = GameStateMachine.GameStates.END;
+			stateMachine.state = GameStateMachine.GameStates.END_WIN;
 			return true;
 		}
 		return false;

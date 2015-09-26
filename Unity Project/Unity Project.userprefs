@@ -1,12 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Things to do.txt">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\GameStateMachine.cs">
     <Files>
-      <File FileName="Assets\Things to do.txt" Line="19" Column="30" />
-      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\GameStateMachine.cs" Line="2" Column="26" />
+      <File FileName="Assets\Things to do.txt" Line="29" Column="11" />
+      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" Line="57" Column="29" />
+      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="20" Column="36" />
       <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\RunnerEnemyC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\Entity.cs" Line="34" Column="67" />
+      <File FileName="Assets\Scripts\Standard scene\PlayerController.cs" Line="252" Column="34" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

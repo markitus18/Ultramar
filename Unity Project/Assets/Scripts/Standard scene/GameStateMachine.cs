@@ -10,7 +10,8 @@ public class GameStateMachine : MonoBehaviour
 		ENEMY_START,
 		ENEMY_MOVE,
 		ENEMY_END,
-		END,
+		END_WIN,
+		END_LOOSE,
 	}
 	
 	public enum UpdateStates
@@ -54,9 +55,11 @@ public class GameStateMachine : MonoBehaviour
 		case GameStates.ENEMY_END:
 			EndEnemiesTurn ();
 			break;
-		case GameStates.END:
+		case GameStates.END_WIN:
 			LoadLevelSelection();
 			break;
+		case GameStates.END_LOOSE:
+			Application.LoadLevel (Application.loadedLevelName);
 		default:
 			break;
 		}
@@ -182,10 +185,10 @@ public class GameStateMachine : MonoBehaviour
 
 	void LoadLevelSelection()
 	{
-		if (GameControl.control.unlockedLevel == level && GameControl.control.unlockedLevel < 5)
+		if (GameControl.control.unlockedLevel == level)
 		{
 			GameControl.control.unlockedLevel++;
 		}
-		Application.LoadLevel (level + 1);
+		Application.LoadLevel (level + 1) //here is where level selection will go;
 	}
 }
