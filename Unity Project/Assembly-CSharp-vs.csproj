@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Touch\Button.cs" />
      <Compile Include="Assets\Scripts\Touch\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Touch\TouchInput.cs" />
+     <None Include="Assets\Things to do.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -13,3 +13,7 @@ Edit movement (?)
 Archers
 
 Archers: ray
+
+Camera movement at level start
+
+Camera bluff at some distance

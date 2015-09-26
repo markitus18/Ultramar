@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\Enemy Controllers\RunnerEnemyC.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Things to do.txt">
     <Files>
-      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" Line="11" Column="9" />
-      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="27" Column="3" />
+      <File FileName="Assets\Things to do.txt" Line="19" Column="30" />
+      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Standard scene\Box.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\CavalryEnemyC.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\RunnerEnemyC.cs" Line="1" Column="1" />
     </Files>
