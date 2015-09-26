@@ -30,12 +30,12 @@ public class Entity : MonoBehaviour
 	{
 		direction = (int)startingDirection;
 		currentPosition = currentBox.transform.position;
+		transform.position = currentPosition;
+		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 	void Start ()
 	{
 		moving = false;
-		transform.position = currentPosition;
-		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
 	}
 
 	public GameStateMachine.UpdateStates UpdateEntity ()

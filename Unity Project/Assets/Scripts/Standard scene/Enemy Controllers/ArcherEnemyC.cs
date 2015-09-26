@@ -20,6 +20,8 @@ public class ArcherEnemyC : MonoBehaviour
 	}
 	void Start()
 	{
+		shootRay = new Ray(transform.position, transform.forward * archerRange);
+		/*
 		switch (entity.startingDirection)
 		{
 		case(Entity.enumDirections.up):
@@ -35,6 +37,7 @@ public class ArcherEnemyC : MonoBehaviour
 			shootRay = new Ray(transform.position, Vector3.left * archerRange);
 			break;
 		}
+		*/
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
@@ -46,12 +49,13 @@ public class ArcherEnemyC : MonoBehaviour
 		bool ret = false;
 
 		RaycastHit hit;
-		Debug.DrawRay(transform.position, transform.position + new Vector3 (1, 0, 0), Color.white, 5.0f);
+		Debug.DrawRay(transform.position, transform.forward * archerRange, Color.red, 5.0f);
 		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
 			if(hit.collider.tag == "Player")
 			{
-					ret = true;
+				playerController.Kill();
+				ret = true;
 			}
 		}
 		return ret;
