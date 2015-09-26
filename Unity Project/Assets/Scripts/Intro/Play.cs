@@ -14,6 +14,6 @@ public class Play : MonoBehaviour
 	void OnTouchDown()
 	{
 		Debug.Log ("Play");
-		Application.LoadLevel (2);
+		Application.LoadLevel (1);
 	}
 }

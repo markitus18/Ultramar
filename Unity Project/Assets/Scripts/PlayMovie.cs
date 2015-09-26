@@ -8,9 +8,10 @@ public class PlayMovie : MonoBehaviour {
     {
         //public string  Path;
 
-        Handheld.PlayFullScreenMovie("StreamingAssets / Cinematica01.mp4", Color.black, FullScreenMovieControlMode.Minimal, FullScreenMovieScalingMode.AspectFit);
-	
-	}
+        Handheld.PlayFullScreenMovie("Cinematica01.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+        Application.LoadLevel(2);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
