@@ -17,3 +17,13 @@ Archers: ray
 Camera movement at level start
 
 Camera bluff at some distance
+
+Menus
+
+Starting screen
+
+Add scene sounds
+
+Add units sounds
+
+Cinematics
