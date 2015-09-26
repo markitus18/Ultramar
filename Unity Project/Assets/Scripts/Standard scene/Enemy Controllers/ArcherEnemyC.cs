@@ -8,6 +8,8 @@ public class ArcherEnemyC : MonoBehaviour
 	PlayerController playerController;
 	Entity entity;
 
+	public int archerRange;
+
 	private Ray shootRay;
 
 	void Awake()
@@ -21,16 +23,16 @@ public class ArcherEnemyC : MonoBehaviour
 		switch (entity.startingDirection)
 		{
 		case(Entity.enumDirections.up):
-			shootRay = new Ray(transform.position, Vector3.forward);
+			shootRay = new Ray(transform.position, Vector3.forward * archerRange);
 			break;
 		case(Entity.enumDirections.down):
-			shootRay = new Ray(transform.position, Vector3.back);
+			shootRay = new Ray(transform.position, Vector3.back * archerRange);
 			break;
 		case(Entity.enumDirections.right):
-			shootRay = new Ray(transform.position, Vector3.right);
+			shootRay = new Ray(transform.position, new Vector3(1, 0, 0) * archerRange);
 			break;
 		case(Entity.enumDirections.left):
-			shootRay = new Ray(transform.position, Vector3.left);
+			shootRay = new Ray(transform.position, Vector3.left * archerRange);
 			break;
 		}
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
@@ -44,7 +46,8 @@ public class ArcherEnemyC : MonoBehaviour
 		bool ret = false;
 
 		RaycastHit hit;
-		if (Physics.Raycast(shootRay, out hit, 10000))
+		Debug.DrawRay(transform.position, transform.position + new Vector3 (1, 0, 0), Color.white, 5.0f);
+		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
 			if(hit.collider.tag == "Player")
 			{
