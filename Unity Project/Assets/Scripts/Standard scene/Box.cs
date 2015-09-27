@@ -68,6 +68,10 @@ public class Box : MonoBehaviour {
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}
 
+	void Start()
+	{
+		gameObject.GetComponent<Collider>().enabled = false;
+	}
 	public void UpdatePosition(GameObject enemy)
 	{
 		int groups = Mathf.CeilToInt((float)enemies.Count / 2);

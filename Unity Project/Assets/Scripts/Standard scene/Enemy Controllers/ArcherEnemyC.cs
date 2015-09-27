@@ -47,17 +47,21 @@ public class ArcherEnemyC : MonoBehaviour
 	public bool CheckPlayer()
 	{
 		bool ret = false;
-
 		RaycastHit hit;
-		Debug.DrawRay(transform.position, transform.forward * archerRange, Color.red, 5.0f);
+		Debug.DrawRay(transform.position, transform.forward * archerRange, Color.red, 1.0f);
 		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
+
 			if(hit.collider.tag == "Player")
 			{
-				playerController.Kill();
-				ret = true;
+				Debug.Log ("Player Hit");
+		//		playerController.Kill();
+		//		ret = true;
 			}
 		}
+		else
+			Debug.DrawRay(transform.position, transform.forward * archerRange, Color.green, 1.0f);
+		
 		return ret;
 	}
 }

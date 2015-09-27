@@ -60,6 +60,7 @@ public class GameStateMachine : MonoBehaviour
 			break;
 		case GameStates.END_LOOSE:
 			Application.LoadLevel (Application.loadedLevelName);
+			break;
 		default:
 			break;
 		}
@@ -78,7 +79,7 @@ public class GameStateMachine : MonoBehaviour
 				state = GameStates.ENEMY_START;
 				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();
 				if (playerController.gameObject.GetComponent<PlayerController>().CheckEnd())
-					state = GameStates.END;
+					state = GameStates.END_WIN;
 				Debug.Log("Enemies turn");
 			}
 		}
@@ -141,7 +142,7 @@ public class GameStateMachine : MonoBehaviour
 		if (enemiesUpdated == enemiesMax)
 		{
 			if (CheckPlayerKill ())
-				state = GameStates.END;
+				state = GameStates.END_LOOSE;
 			else
 				state = GameStates.ENEMY_END;
 		}
@@ -189,6 +190,6 @@ public class GameStateMachine : MonoBehaviour
 		{
 			GameControl.control.unlockedLevel++;
 		}
-		Application.LoadLevel (level + 1) //here is where level selection will go;
+		Application.LoadLevel (level + 1); //here is where level selection will go;
 	}
 }
