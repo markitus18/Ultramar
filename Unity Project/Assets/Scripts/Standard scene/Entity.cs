@@ -35,6 +35,7 @@ public class Entity : MonoBehaviour
 	}
 	void Start ()
 	{
+		gameObject.GetComponent<Collider>().enabled = true;
 		moving = false;
 	}
 
