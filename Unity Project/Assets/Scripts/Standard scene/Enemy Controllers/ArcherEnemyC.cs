@@ -54,13 +54,18 @@ public class ArcherEnemyC : MonoBehaviour
 
 			if(hit.collider.tag == "Player")
 			{
+
 				Debug.Log ("Player Hit");
-		//		playerController.Kill();
-		//		ret = true;
+				playerController.Kill();
+				ret = true;
+			}
+			else if(hit.collider.tag == "Enemy")
+			{
+				Debug.Log ("Enemy Hit");
+				Debug.DrawRay(hit.point, transform.forward * archerRange, Color.green, 1.0f);
 			}
 		}
-		else
-			Debug.DrawRay(transform.position, transform.forward * archerRange, Color.green, 1.0f);
+
 		
 		return ret;
 	}

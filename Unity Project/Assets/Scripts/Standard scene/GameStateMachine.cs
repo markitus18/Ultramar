@@ -24,6 +24,7 @@ public class GameStateMachine : MonoBehaviour
 	public List<GameObject> enemies;
 	GameObject[] go;
 	public GameStates state;
+	float delayTime;
 
 	public int level;
 
@@ -59,7 +60,7 @@ public class GameStateMachine : MonoBehaviour
 			LoadLevelSelection();
 			break;
 		case GameStates.END_LOOSE:
-			Application.LoadLevel (Application.loadedLevelName);
+			EndLoose ();
 			break;
 		default:
 			break;
@@ -142,7 +143,10 @@ public class GameStateMachine : MonoBehaviour
 		if (enemiesUpdated == enemiesMax)
 		{
 			if (CheckPlayerKill ())
+			{
+				delayTime = Time.time;
 				state = GameStates.END_LOOSE;
+			}
 			else
 				state = GameStates.ENEMY_END;
 		}
@@ -191,5 +195,11 @@ public class GameStateMachine : MonoBehaviour
 			GameControl.control.unlockedLevel++;
 		}
 		Application.LoadLevel (level + 1); //here is where level selection will go;
+	}
+
+	void EndLoose()
+	{
+		if (Time.time >= delayTime + 1)
+			Application.LoadLevel (Application.loadedLevelName);
 	}
 }
