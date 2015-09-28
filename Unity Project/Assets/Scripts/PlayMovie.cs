@@ -14,10 +14,12 @@ public class PlayMovie : MonoBehaviour {
         //public string  Path;
 #if !UNITY_EDITOR
         Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
-        Application.LoadLevel(2);
+         int toLoad = Application.loadedLevel;
+            Application.LoadLevel(toLoad+1);
 #endif
 #if UNITY_EDITOR
-       GetComponent<Renderer>().material.mainTexture = movie;
+        GetComponent<Renderer>().material.mainTexture = movie;
+        GetComponent<AudioSource>().Play();
         movie.Play();
 
 #endif
