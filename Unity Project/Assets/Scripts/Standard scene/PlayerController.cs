@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	public bool autoPassTurn;
 	Vector2 touchStartPos;
 	public bool touching;
+    public bool lockCam;
 
     int direction;
     int directionVariation;
@@ -42,13 +43,15 @@ public class PlayerController : MonoBehaviour
         if (Input.touchCount== 0 && Input.touchSupported)
 		{
 			touching = false;
-		}
+            lockCam = false;
+        }
 #if UNITY_EDITOR
 
 		if (Input.GetMouseButtonUp(0))
 		{
 			touching = false;
-		}
+            lockCam = false;
+        }
 
         if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp("left") || Input.GetKeyUp("right"))
         {
@@ -93,12 +96,13 @@ public class PlayerController : MonoBehaviour
 		if (Input.touchCount == 1) 
 		{
 			touching = true;
-			touchStartPos.x = Input.touches [0].position.x;
+            lockCam = true;
+            touchStartPos.x = Input.touches [0].position.x;
 			touchStartPos.y = Input.touches [0].position.y;
 		}
 #if UNITY_EDITOR
-		
-		touching = true;
+        lockCam = true;
+        touching = true;
 		touchStartPos.x = Input.mousePosition.x;
 		touchStartPos.y = Input.mousePosition.y;
 		
@@ -107,7 +111,8 @@ public class PlayerController : MonoBehaviour
 
 	public void OnTouchUp ()
 	{
-		touching = false;
+        lockCam = false;
+        touching = false;
 #if UNITY_EDITOR
 		float deltaY = Input.mousePosition.y - touchStartPos.y;
 		float deltaX = Input.mousePosition.x - touchStartPos.x;
@@ -184,20 +189,22 @@ public class PlayerController : MonoBehaviour
 		}
 
 
-# endif
-       
-        direction += directionVariation;
-        if (direction > 4)
-        { direction -= 4; }
-        if (direction == 1)
-            SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
-        if (direction == 2)
-            SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
-        if (direction == 3)
-            SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
-        if (direction == 4)
-            SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
-
+#endif
+        if (CameraScript.movingCamera == false && touching == true)
+        {
+            direction += directionVariation;
+            if (direction > 4)
+            { direction -= 4; }
+            if (direction == 1)
+                SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+            if (direction == 2)
+                SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+            if (direction == 3)
+                SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+            if (direction == 4)
+                SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
+            touching = false;
+        }
     }
 
 	public void SetNewBox (GameObject newBox)

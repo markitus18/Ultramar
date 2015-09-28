@@ -44,26 +44,33 @@ public class CameraOrbit : MonoBehaviour
 		{
 			return;
 		}
-		if (Input.GetMouseButton (0) && playerController.touching == false)
+		if (Input.GetMouseButton (0) && playerController.lockCam == false)
 		{
-            if (startingY - yMovementLimit < 0)
+            if (movingCamera == true)
             {
-                y = ClampAngle(y + 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
-            }
-            else if (startingY + yMovementLimit > 360)
-            {
-                y = ClampAngle(y - 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+                if (startingY - yMovementLimit < 0)
+                {
+                    y = ClampAngle(y + 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY + 180 - yMovementLimit, startingY + 180 + yMovementLimit) - 180;
+                }
+                else if (startingY + yMovementLimit > 360)
+                {
+                    y = ClampAngle(y - 180 + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - 180 - yMovementLimit, startingY - 180 + yMovementLimit) + 180;
+                }
+                else
+                {
+                    y = ClampAngle(y + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
+                }
+                x = ClampAngle(x - (Input.GetAxis("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
+
+                transform.eulerAngles = new Vector3(x, y, 0.0f);
+                transform.position = cameraLookAtTarget.position - (transform.forward * distance);
             }
             else
             {
-                y = ClampAngle(y + (Input.GetAxis("Mouse X") * ySpeed * 0.02f), startingY - yMovementLimit, startingY + yMovementLimit);
+                movingCamera = true;
             }
-			x = ClampAngle (x - (Input.GetAxis("Mouse Y") * xSpeed * 0.02f), xMinLimit, xMaxLimit);
-			
-			transform.eulerAngles = new Vector3 (x, y, 0.0f);
-			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
-		}
-		else if (Input.touchCount == 1 && playerController.touching == false)
+        }
+		else if (Input.touchCount == 1 && playerController.lockCam  == false)
 		{
 
             ////// Touch version of camera orbit goes here
@@ -84,14 +91,16 @@ public class CameraOrbit : MonoBehaviour
                 }
 
                 x = ClampAngle(x - (Input.touches[0].deltaPosition.y * xSpeed * 0.000001f), xMinLimit, xMaxLimit);
+
+                transform.eulerAngles = new Vector3(x, y, 0.0f);
+                transform.position = cameraLookAtTarget.position - (transform.forward * distance);
             }
             else
             {
                 movingCamera = true;
             }
 			
-			transform.eulerAngles = new Vector3 (x, y, 0.0f);
-			transform.position = cameraLookAtTarget.position - (transform.forward * distance);
+			
 		}
 
 
