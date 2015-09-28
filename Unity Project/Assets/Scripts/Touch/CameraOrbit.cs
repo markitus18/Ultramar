@@ -22,12 +22,17 @@ public class CameraOrbit : MonoBehaviour
 	PlayerController playerController;
     public bool movingCamera = false;
 
+    public int introCameraSlowness = 1000;
+
+    float startingDampingVar = 0;
+
 	void Start()
 	{
 		var angles = gameObject.transform.eulerAngles;
 		x = angles.x;
 		y = angles.y;
-		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
+        startingDampingVar = rotationDamping;
+        playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 	}
 	float ClampAngle(float angle, float min, float max)
 	{
@@ -106,7 +111,15 @@ public class CameraOrbit : MonoBehaviour
 
 		else
 		{
-			var rotationT = rotationDamping * Time.deltaTime;
+            if (startingDampingVar > 0)
+            {
+                startingDampingVar -= rotationDamping / introCameraSlowness;
+            }
+            else
+            {
+                startingDampingVar = 0;
+            }
+			var rotationT = (rotationDamping - startingDampingVar) * Time.deltaTime;
 			var currentXRotation = Mathf.LerpAngle (transform.eulerAngles.x, height, rotationT);
 			var currentYRotation = Mathf.LerpAngle (transform.eulerAngles.y, startingY, rotationT);
 			
