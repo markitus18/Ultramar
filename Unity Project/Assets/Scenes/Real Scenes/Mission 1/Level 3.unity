@@ -3612,19 +3612,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .258819073
+      value: .257932395
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -.079891488
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: .0214068703
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .965925813
+      value: .962616265
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalPosition.y

@@ -1619,6 +1619,26 @@ Prefab:
       propertyPath: m_ClearFlags
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: introCameraSlowness
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .349297643
+      objectReference: {fileID: 0}
+    - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.0671391413
+      objectReference: {fileID: 0}
+    - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.00727478694
+      objectReference: {fileID: 0}
+    - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .934575081
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
   m_IsPrefabParent: 0
