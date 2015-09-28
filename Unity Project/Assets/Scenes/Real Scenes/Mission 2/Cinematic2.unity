@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movie: {fileID: 15200000, guid: f9c1f2525738fb642bca5910055356fa, type: 3}
-  Title: 
+  Title: cinematica2_480p.mp4
 --- !u!82 &1199314848
 AudioSource:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: afd9161cdc1a2724b873bb020af5c56c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b9f4a255ff5ea22468ca9e7ed06eb693, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
