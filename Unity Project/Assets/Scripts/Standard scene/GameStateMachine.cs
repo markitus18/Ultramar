@@ -194,8 +194,9 @@ public class GameStateMachine : MonoBehaviour
 		{
 			GameControl.control.unlockedLevel++;
 		}
-		Application.LoadLevel (level + 1); //here is where level selection will go;
-	}
+        int toLoad = Application.loadedLevel;
+        Application.LoadLevel(toLoad + 1); //here is where level selection will go;
+    }
 
 	void EndLoose()
 	{

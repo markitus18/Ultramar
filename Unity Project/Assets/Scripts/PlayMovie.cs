@@ -3,28 +3,23 @@ using System.Collections;
 
 public class PlayMovie : MonoBehaviour {
 
+#if UNITY_EDITOR
     public MovieTexture movie;
+#endif
+    public System.String Title;
 
     // Use this for initialization
     void Start()
     {
         //public string  Path;
 #if !UNITY_EDITOR
-        Handheld.PlayFullScreenMovie("Cinematica01.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+        Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
         Application.LoadLevel(2);
 #endif
 #if UNITY_EDITOR
-        /* ZeroPos.x = ZeroPos.y = 0;
-         ZeroPos.width = Screen.width;
-         ZeroPos.height = Screen.height;
-         UnityEngine.Texture
-
-         GUI.DrawTexture(ZeroPos, "Cinematica01.mp4", ScaleMode.ScaleToFit);*/
-
        GetComponent<Renderer>().material.mainTexture = movie;
         movie.Play();
 
-        
 #endif
 
     }
@@ -32,9 +27,12 @@ public class PlayMovie : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
         if (!movie.isPlaying)
         {
-            Application.LoadLevel(2);
+            int toLoad = Application.loadedLevel;
+            Application.LoadLevel(toLoad+1);
         }
+#endif
     }
 }
