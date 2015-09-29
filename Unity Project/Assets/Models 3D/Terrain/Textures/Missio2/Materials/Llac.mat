@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Llac
-  m_Shader: {fileID: 10721, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 10764, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -22,7 +22,7 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: 8ac482cd59dea9c4691c00039d851960, type: 3}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+          m_Offset: {x: 1, y: 1}
       data:
         first:
           name: _BumpMap
@@ -93,6 +93,48 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _FrontTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BackTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _LeftTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RightTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _UpTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DownTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -148,6 +190,10 @@ Material:
         second: 3
       data:
         first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
           name: _Stencil
         second: 0
       data:
@@ -186,8 +232,12 @@ Material:
       data:
         first:
           name: _EmisColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
+        second: {r: 1, g: 1, b: 1, a: 0}
       data:
         first:
           name: _Specular
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .669117689, g: .54611814, b: .54611814, a: .5}
