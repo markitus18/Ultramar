@@ -132,11 +132,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 100644}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: .600000024
-  m_Height: 2.4000001
+  m_Enabled: 1
+  m_Radius: .0500000007
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.20000005, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
