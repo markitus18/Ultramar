@@ -4,20 +4,28 @@ using System.Collections;
 public class PanelManager : MonoBehaviour {
 	
 	public GameObject panel;
-
-	public GameObject disabledImage;
-	public GameObject soundButton;
+	public GameObject musicButton;
+	bool panelOpened = false;
 
 	public void OpenPanel()
 	{
-		panel.SetActive (true);
+		musicButton.SetActive (true);
+		panelOpened = true;
 	}
 
 	public void ClosePanel()
 	{
-		panel.SetActive(false);
+		musicButton.SetActive (false);
+		panelOpened = false;
 	}
 
+	public void DeployedClicked()
+	{
+		if (!panelOpened)
+			OpenPanel();
+		else
+			ClosePanel ();
+	}
 	public void UpdateVolume()
 	{
 
