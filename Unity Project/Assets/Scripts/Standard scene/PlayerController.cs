@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 	Vector2 touchStartPos;
 	public bool touching;
     public bool lockCam;
+    public bool ended;
 
     int direction;
     int directionVariation;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
 	}
 	void Start()
 	{
+        ended = false;
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
         CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 
@@ -45,6 +47,12 @@ public class PlayerController : MonoBehaviour
 			touching = false;
             lockCam = false;
         }
+
+        if(ended == true && GetComponent<AudioSource>().isPlaying == false)
+        {
+            stateMachine.state = GameStateMachine.GameStates.END_WIN; 
+        }
+
 #if UNITY_EDITOR
 
 		if (Input.GetMouseButtonUp(0))
@@ -283,8 +291,9 @@ public class PlayerController : MonoBehaviour
 		if (entity.currentBox.name == ("Box_end"))
 		{
 			Debug.Log("End of level");
-			winText.GetComponent<Renderer>().enabled = true;
+			GetComponent<AudioSource>().Play();
 			paused = true;
+            ended = true;
 			return true;
 		}
 		return false;

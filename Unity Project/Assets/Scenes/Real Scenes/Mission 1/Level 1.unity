@@ -446,10 +446,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11425898, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: currentBox
-      value: 
-      objectReference: {fileID: 1768537208}
     - target: {fileID: 11463734, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
       propertyPath: loseText
       value: 
@@ -458,22 +454,10 @@ Prefab:
       propertyPath: winText
       value: 
       objectReference: {fileID: 1851426926}
-    - target: {fileID: 181308, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11463734, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
-      propertyPath: passTurn
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11425898, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
+      propertyPath: currentBox
+      value: 
+      objectReference: {fileID: 1768537208}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
   m_IsPrefabParent: 0
