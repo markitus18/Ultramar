@@ -43,8 +43,8 @@ public class ArcherEnemyC : MonoBehaviour
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
-		lineRenderer.SetPosition(0, gameObject.transform.position);
-		lineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange);
+		lineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
+		lineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + new Vector3 (0, 1.8f, 0));
 	}
 	public bool CheckPlayer()
 	{
