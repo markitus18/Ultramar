@@ -20,14 +20,20 @@ public class CameraOrbit : MonoBehaviour
 	private float x = 0.0f;
 	private float y = 0.0f;
 	PlayerController playerController;
-    public bool movingCamera = false;
+    public bool movingCamera = true;
 
     public int introCameraSlowness = 1000;
 
     float startingDampingVar = 0;
 
+    public bool readyToStart;
+
+    public float currentY;
+
 	void Start()
 	{
+        readyToStart = false;
+        movingCamera = true;
 		var angles = gameObject.transform.eulerAngles;
 		x = angles.x;
 		y = angles.y;
@@ -45,11 +51,11 @@ public class CameraOrbit : MonoBehaviour
 
 	void LateUpdate()
 	{
-		if (cameraLookAtTarget == null)
+        if (cameraLookAtTarget == null)
 		{
 			return;
 		}
-		if (Input.GetMouseButton (0) && playerController.lockCam == false)
+		if (Input.GetMouseButton (0) && playerController.lockCam == false && readyToStart == true)
 		{
             if (movingCamera == true)
             {
@@ -75,7 +81,7 @@ public class CameraOrbit : MonoBehaviour
                 movingCamera = true;
             }
         }
-		else if (Input.touchCount == 1 && playerController.lockCam  == false)
+		else if (Input.touchCount == 1 && playerController.lockCam  == false && readyToStart == true)
 		{
 
             ////// Touch version of camera orbit goes here
@@ -107,8 +113,6 @@ public class CameraOrbit : MonoBehaviour
 			
 			
 		}
-
-
 		else
 		{
             if (startingDampingVar > 0)
@@ -128,8 +132,19 @@ public class CameraOrbit : MonoBehaviour
 			
 			transform.LookAt (cameraLookAtTarget);
 
-            movingCamera = false;
+            if (readyToStart == true)
+            {
+                movingCamera = false;
+            }
 		}
-	}
+        if (readyToStart == false)
+        {
+            if (Mathf.Abs(transform.eulerAngles.y - startingY) < 1)
+            {
+                movingCamera = false;
+                readyToStart = true;
+            }
+        }
+    }
 
 } //End class

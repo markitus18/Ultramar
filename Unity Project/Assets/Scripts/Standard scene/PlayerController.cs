@@ -60,37 +60,39 @@ public class PlayerController : MonoBehaviour
 			touching = false;
             lockCam = false;
         }
-
-        if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp("left") || Input.GetKeyUp("right"))
+        if (CameraScript.movingCamera == false)
         {
-            if (Input.GetKeyUp("up"))
+            if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp("left") || Input.GetKeyUp("right"))
             {
-                direction = 1 + directionVariation;
-            }
-            if (Input.GetKeyUp("down"))
-            {
-                direction = 3 + directionVariation;
-            }
-            if (Input.GetKeyUp("left"))
-            {
-                direction = 4 + directionVariation;
-            }
+                if (Input.GetKeyUp("up"))
+                {
+                    direction = 1 + directionVariation;
+                }
+                if (Input.GetKeyUp("down"))
+                {
+                    direction = 3 + directionVariation;
+                }
+                if (Input.GetKeyUp("left"))
+                {
+                    direction = 4 + directionVariation;
+                }
 
-            if (Input.GetKeyUp("right"))
-            {
-                direction = 2 + directionVariation;
+                if (Input.GetKeyUp("right"))
+                {
+                    direction = 2 + directionVariation;
+                }
+
+                if (direction > 4)
+                { direction -= 4; }
+                if (direction == 1)
+                    SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
+                if (direction == 2)
+                    SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
+                if (direction == 3)
+                    SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
+                if (direction == 4)
+                    SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
             }
-            
-            if (direction > 4)
-            { direction -= 4; }
-            if (direction == 1)
-                SetNewBox(entity.currentBox.GetComponent<Box>().upBox);
-            if (direction == 2)
-                SetNewBox(entity.currentBox.GetComponent<Box>().rightBox);
-            if (direction == 3)
-                SetNewBox(entity.currentBox.GetComponent<Box>().downBox);
-            if (direction == 4)
-                SetNewBox(entity.currentBox.GetComponent<Box>().leftBox);
         }
 #endif
     }
