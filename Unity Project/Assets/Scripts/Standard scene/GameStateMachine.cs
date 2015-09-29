@@ -201,6 +201,6 @@ public class GameStateMachine : MonoBehaviour
 	void EndLoose()
 	{
 		if (Time.time >= delayTime + 1)
-			Application.LoadLevel (Application.loadedLevelName);
+			Application.LoadLevel (Application.loadedLevel);
 	}
 }
