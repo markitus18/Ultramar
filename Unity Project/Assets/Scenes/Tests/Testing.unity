@@ -1382,14 +1382,6 @@ Prefab:
       propertyPath: currentBox
       value: 
       objectReference: {fileID: 4505942}
-    - target: {fileID: 12031166, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
-      propertyPath: m_Parameters.startWidth
-      value: .300000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 12031166, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
-      propertyPath: m_Parameters.endWidth
-      value: .300000012
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3faa35ada3049eb41a21af76db077624, type: 2}
   m_IsPrefabParent: 0

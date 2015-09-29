@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3b25377669b594dba2dfa657f4f8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerRange: 1000
+  archerRange: 35
 --- !u!114 &11499162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -154,8 +154,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: .300000012
+    endWidth: .300000012
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
