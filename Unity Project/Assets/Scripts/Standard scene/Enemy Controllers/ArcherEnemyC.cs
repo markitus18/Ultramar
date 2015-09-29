@@ -7,7 +7,7 @@ public class ArcherEnemyC : MonoBehaviour
 	Entity playerEntity;
 	PlayerController playerController;
 	Entity entity;
-
+	LineRenderer lineRenderer;
 	public int archerRange;
 
 	private Ray shootRay;
@@ -17,6 +17,7 @@ public class ArcherEnemyC : MonoBehaviour
 		entity = gameObject.GetComponent<Entity>();
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity> ();
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController> ();
+		lineRenderer = gameObject.GetComponent<LineRenderer>();
 	}
 	void Start()
 	{
@@ -42,7 +43,8 @@ public class ArcherEnemyC : MonoBehaviour
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
-
+		lineRenderer.SetPosition(0, gameObject.transform.position);
+		lineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange);
 	}
 	public bool CheckPlayer()
 	{
