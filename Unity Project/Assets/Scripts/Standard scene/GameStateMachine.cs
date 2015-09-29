@@ -25,7 +25,7 @@ public class GameStateMachine : MonoBehaviour
 	GameObject[] go;
 	public GameStates state;
 	float delayTime;
-
+	public bool FullGame = false;
 	public int level;
 
 	void Start ()
@@ -196,7 +196,10 @@ public class GameStateMachine : MonoBehaviour
 			GameControl.control.unlockedLevel++;
 		}
         int toLoad = Application.loadedLevel;
-        Application.LoadLevel(toLoad + 1); //here is where level selection will go;
+		if (!FullGame && toLoad == 3)
+			Application.LoadLevel(0);
+		else
+       		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
     }
 
 	void EndLoose()

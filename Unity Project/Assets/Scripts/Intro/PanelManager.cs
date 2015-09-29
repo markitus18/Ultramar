@@ -32,12 +32,10 @@ public class PanelManager : MonoBehaviour {
 		if (AudioListener.volume == 1)
 		{
 			AudioListener.volume = 0;
-//			soundButton.GetComponent<Image>() = disabledImage;
 		}
 		else
 		{
 			AudioListener.volume = 1;
-	//		soundButton.GetComponent<Image>() = disabledImage;
 		}
 	}
 

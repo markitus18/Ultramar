@@ -263,7 +263,7 @@ public class PlayerController : MonoBehaviour
 	public void Kill()
 	{
 		Debug.Log("Killing player");
-		loseText.GetComponent<Renderer>().enabled = true;
+		//loseText.GetComponent<Renderer>().enabled = true;
 		stateMachine.state = GameStateMachine.GameStates.END_LOOSE;
 		paused = true;
 	}
