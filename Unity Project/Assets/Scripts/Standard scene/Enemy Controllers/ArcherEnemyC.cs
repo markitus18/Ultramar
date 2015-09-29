@@ -7,7 +7,8 @@ public class ArcherEnemyC : MonoBehaviour
 	Entity playerEntity;
 	PlayerController playerController;
 	Entity entity;
-	LineRenderer lineRenderer;
+	public LineRenderer redLineRenderer;
+	public LineRenderer greenLineRenderer;
 	public int archerRange;
 
 	private Ray shootRay;
@@ -17,34 +18,15 @@ public class ArcherEnemyC : MonoBehaviour
 		entity = gameObject.GetComponent<Entity>();
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity> ();
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController> ();
-		lineRenderer = gameObject.GetComponent<LineRenderer>();
 	}
 	void Start()
 	{
 		shootRay = new Ray(transform.position, transform.forward * archerRange);
-		/*
-		switch (entity.startingDirection)
-		{
-		case(Entity.enumDirections.up):
-			shootRay = new Ray(transform.position, Vector3.forward * archerRange);
-			break;
-		case(Entity.enumDirections.down):
-			shootRay = new Ray(transform.position, Vector3.back * archerRange);
-			break;
-		case(Entity.enumDirections.right):
-			shootRay = new Ray(transform.position, new Vector3(1, 0, 0) * archerRange);
-			break;
-		case(Entity.enumDirections.left):
-			shootRay = new Ray(transform.position, Vector3.left * archerRange);
-			break;
-		}
-		*/
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
-		lineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
-		lineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + new Vector3 (0, 1.8f, 0));
+		CheckPlayer();
 	}
 	public bool CheckPlayer()
 	{
@@ -53,10 +35,10 @@ public class ArcherEnemyC : MonoBehaviour
 		Debug.DrawRay(transform.position, transform.forward * archerRange, Color.red, 1.0f);
 		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
-
+			redLineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
+			redLineRenderer.SetPosition(1, hit.point + new Vector3(0, 1.8f, 0));
 			if(hit.collider.tag == "Player")
 			{
-
 				Debug.Log ("Player Hit");
 				playerController.Kill();
 				ret = true;
@@ -64,9 +46,16 @@ public class ArcherEnemyC : MonoBehaviour
 			else if(hit.collider.tag == "Enemy")
 			{
 				Debug.Log ("Enemy Hit");
-				Debug.DrawRay(hit.point, transform.forward * archerRange, Color.green, 1.0f);
+				greenLineRenderer.SetPosition(0, hit.point + new Vector3 (0, 1.8f, 0));
+				greenLineRenderer.SetPosition(1, hit.point + transform.forward * (archerRange - (hit.point.x - transform.position.x)) + new Vector3(0, 1.8f, 0));
 			}
 		}
+		else
+		{
+			redLineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
+			redLineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + new Vector3 (0, 1.8f, 0));
+		}
+
 
 		
 		return ret;

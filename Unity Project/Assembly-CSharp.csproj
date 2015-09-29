@@ -52,12 +52,6 @@
      <Compile Include="Assets\Scripts\Intro\GUIController.cs" />
      <Compile Include="Assets\Scripts\Intro\PanelManager.cs" />
      <Compile Include="Assets\Scripts\Intro\Play.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\Box_L.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\Entity_L.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\GameStateMachine_L.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\LevelNumber.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\PlayerController_L.cs" />
-     <Compile Include="Assets\Scripts\Level Selection\ShowLevel.cs" />
      <Compile Include="Assets\Scripts\PlayMovie.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Box.cs" />
      <Compile Include="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" />
