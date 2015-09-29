@@ -55,7 +55,7 @@ public class Entity : MonoBehaviour
 		{
 			if (currentPosition != targetPosition)
 			{
-				currentPosition += distanceToMove / (16 / movementSpeed);
+				currentPosition += distanceToMove / movementSpeed;
 				transform.position = currentPosition;
 			}
 			else
