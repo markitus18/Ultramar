@@ -7,6 +7,7 @@ public class ArcherEnemyC : MonoBehaviour
 	Entity playerEntity;
 	PlayerController playerController;
 	Entity entity;
+	Vector3 vectorHeight = new Vector3 (0, 1.8f, 0);
 	public LineRenderer redLineRenderer;
 	public LineRenderer greenLineRenderer;
 	public int archerRange;
@@ -21,7 +22,7 @@ public class ArcherEnemyC : MonoBehaviour
 	}
 	void Start()
 	{
-		shootRay = new Ray(transform.position, transform.forward * archerRange);
+		shootRay = new Ray(transform.position, transform.forward * archerRange + vectorHeight);
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
@@ -32,11 +33,10 @@ public class ArcherEnemyC : MonoBehaviour
 	{
 		bool ret = false;
 		RaycastHit hit;
-		Debug.DrawRay(transform.position, transform.forward * archerRange, Color.red, 1.0f);
 		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
-			redLineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
-			redLineRenderer.SetPosition(1, hit.point + new Vector3(0, 1.8f, 0));
+			redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
+			redLineRenderer.SetPosition(1, hit.point + vectorHeight - new Vector3(0, hit.point.y, 0));
 			if(hit.collider.tag == "Player")
 			{
 				Debug.Log ("Player Hit");
@@ -46,14 +46,14 @@ public class ArcherEnemyC : MonoBehaviour
 			else if(hit.collider.tag == "Enemy")
 			{
 				Debug.Log ("Enemy Hit");
-				greenLineRenderer.SetPosition(0, hit.point + new Vector3 (0, 1.8f, 0));
-				greenLineRenderer.SetPosition(1, hit.point + transform.forward * (archerRange - (hit.point.x - transform.position.x)) + new Vector3(0, 1.8f, 0));
+				greenLineRenderer.SetPosition(0, hit.point + vectorHeight - new Vector3 (0, hit.point.y, 0));
+				greenLineRenderer.SetPosition(1, new Vector3(0, -hit.point.y, 0) + hit.point + transform.forward * (archerRange - ((hit.point.x - transform.position.x) + (hit.point.z - transform.position.z))) + vectorHeight);
 			}
 		}
 		else
 		{
-			redLineRenderer.SetPosition(0, gameObject.transform.position + new Vector3 (0, 1.8f, 0));
-			redLineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + new Vector3 (0, 1.8f, 0));
+			redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
+			redLineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + vectorHeight);
 		}
 
 
