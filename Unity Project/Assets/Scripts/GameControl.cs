@@ -23,7 +23,7 @@ public class GameControl : MonoBehaviour
 		}
 		Load ();
 	}
-
+	/*
 	void OnGUI()
 	{
 		if(GUI.Button (new Rect(10, 10, 100, 30), "Save Game"))
@@ -32,7 +32,7 @@ public class GameControl : MonoBehaviour
 			Reset ();
 		GUI.Label (new Rect(10, 80, 120, 50), "Unlocked levels: " + unlockedLevel.ToString ());
 	}
-
+	*/
 	public void Save()
 	{
 		BinaryFormatter bf = new BinaryFormatter();
