@@ -651,7 +651,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: .409999996
   m_Range: 10
   m_SpotAngle: 30
@@ -680,7 +680,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 916653399}
-  m_LocalRotation: {x: .137884304, y: -.43417713, z: -.386368632, w: -.801995993}
+  m_LocalRotation: {x: .137884289, y: -.434177071, z: -.386368573, w: -.801995873}
   m_LocalPosition: {x: -4.04327297, y: .103518516, z: 2.06578588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1340,7 +1340,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_BackGroundColor: {r: .447058827, g: .447058827, b: .447058827, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1348,8 +1348,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: .300000012
-  far clip plane: 1000
-  field of view: 68.7897415
+  far clip plane: 200
+  field of view: 54.2407761
   orthographic: 0
   orthographic size: 2
   m_Depth: -1
@@ -1370,8 +1370,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1746187648}
-  m_LocalRotation: {x: .698235035, y: 0, z: 0, w: .715868592}
-  m_LocalPosition: {x: 1.32000005, y: 4.34000015, z: -1.76999998}
+  m_LocalRotation: {x: .477525592, y: .00365027809, z: .00718341349, w: .878580928}
+  m_LocalPosition: {x: -.90200001, y: 1.27181828, z: -1.94099998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1902289333}
@@ -1409,7 +1409,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: .689196587
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1551,7 +1551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!102 &1902289331
 TextMesh:
   serializedVersion: 3
@@ -1650,7 +1650,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 62c398e59cf0c664aa7194dd52076d92, type: 2}
+  - {fileID: 2100000, guid: b7c34acdb08b30d4a95755b1b1b75805, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
