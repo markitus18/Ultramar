@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
-  movementSpeed: 1
+  movementSpeed: 20
   distanceToMove: {x: 0, y: 0, z: 0}
   moving: 0
   targetAssigned: 0
