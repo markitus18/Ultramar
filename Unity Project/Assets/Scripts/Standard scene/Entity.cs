@@ -74,7 +74,6 @@ public class Entity : MonoBehaviour
 
 	public void SetNewBox ()
 	{
-		bool assigned = false;
 		switch(direction)
 		{
 		case 1:
@@ -83,7 +82,6 @@ public class Entity : MonoBehaviour
 				targetBox = currentBox.GetComponent<Box>().upBox;
 				targetBox.GetComponent<Box>().enemies.Add (gameObject);
 				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
 			}
 			break;
 		case 2:
@@ -92,7 +90,6 @@ public class Entity : MonoBehaviour
 				targetBox = currentBox.GetComponent<Box>().rightBox;
 				targetBox.GetComponent<Box>().enemies.Add (gameObject);
 				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
 			}
 			break;
 		case 3:
@@ -101,7 +98,6 @@ public class Entity : MonoBehaviour
 				targetBox = currentBox.GetComponent<Box>().downBox;
 				targetBox.GetComponent<Box>().enemies.Add (gameObject);
 				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
 			}
 			break;
 		case 4:
@@ -110,7 +106,6 @@ public class Entity : MonoBehaviour
 				targetBox = currentBox.GetComponent<Box>().leftBox;
 				targetBox.GetComponent<Box>().enemies.Add (gameObject);
 				currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				assigned = true;
 			}
 			break;
 		default:

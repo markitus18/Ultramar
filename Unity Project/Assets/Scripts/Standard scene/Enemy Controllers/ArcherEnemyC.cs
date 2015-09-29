@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ArcherEnemyC : MonoBehaviour
 {
-	Entity playerEntity;
+	//Entity playerEntity;
 	PlayerController playerController;
 	Entity entity;
 	Vector3 vectorHeight = new Vector3 (0, 1.8f, 0);
@@ -17,13 +17,12 @@ public class ArcherEnemyC : MonoBehaviour
 	void Awake()
 	{
 		entity = gameObject.GetComponent<Entity>();
-		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity> ();
+		//playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity> ();
 		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController> ();
 	}
 	void Start()
 	{
 		shootRay = new Ray(transform.position, transform.forward * archerRange + vectorHeight);
-		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
 		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);

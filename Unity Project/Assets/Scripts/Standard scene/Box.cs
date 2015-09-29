@@ -17,7 +17,7 @@ public class Box : MonoBehaviour {
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
-	PlayerController playerController;
+//	PlayerController playerController;
 
 	/*[HideInInspector]*/ public List<GameObject> enemies;
 
@@ -63,7 +63,7 @@ public class Box : MonoBehaviour {
 		}
 
 		//Setting all variables
-		playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
+		//playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController>();
 		//Saving original color
 		originalMaterial = transform.GetComponent<Renderer>().material;
 	}

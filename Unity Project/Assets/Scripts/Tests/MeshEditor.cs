@@ -5,7 +5,7 @@ public class MeshEditor : MonoBehaviour {
 
 	// Use this for initialization
 
-	bool up = true;
+	//bool up = true;
 	int state = 1;
 	int change = 0;
 	void Start () {
