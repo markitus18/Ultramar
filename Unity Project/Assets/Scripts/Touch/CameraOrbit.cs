@@ -139,7 +139,7 @@ public class CameraOrbit : MonoBehaviour
 		}
         if (readyToStart == false)
         {
-            if (Mathf.Abs(transform.eulerAngles.y - startingY) < 1)
+            if (Mathf.Abs(transform.eulerAngles.y - startingY) < 7)
             {
                 movingCamera = false;
                 readyToStart = true;
