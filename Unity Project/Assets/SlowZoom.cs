@@ -19,7 +19,7 @@ public class SlowZoom : MonoBehaviour {
         // The step size is equal to speed times frame time.
         if (speed < maxSpeed)
         {
-            speed += maxSpeed / 2000;
+            speed += maxSpeed / 500;
         }
 
 
