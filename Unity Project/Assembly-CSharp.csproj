@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Tests\MeshEditor.cs" />
      <Compile Include="Assets\Scripts\Touch\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Touch\TouchInput.cs" />
+     <Compile Include="Assets\ShowFPS.cs" />
      <Compile Include="Assets\SlowZoom.cs" />
      <None Include="Assets\Things to do.txt" />
  <Reference Include="UnityEngine.UI">
