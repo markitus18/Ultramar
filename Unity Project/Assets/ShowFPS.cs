@@ -22,6 +22,7 @@ public class ShowFPS : MonoBehaviour {
 
     void Start()
     {
+       
         if (!GetComponent<GUIText>())
         {
             Debug.Log("UtilityFramesPerSecond needs a GUIText component!");
