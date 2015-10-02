@@ -1344,7 +1344,7 @@ Transform:
   - {fileID: 655763587}
   - {fileID: 2066384993}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &903452598
 Prefab:
   m_ObjectHideFlags: 0
@@ -1382,7 +1382,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408506, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 173748, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Name
@@ -1402,31 +1402,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .192168951
+      value: .173616469
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.246714532
+      value: -.50808239
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .0891093239
+      value: .162801862
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .945654571
+      value: .827771246
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.8800001
+      value: 10.8800287
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.26000023
+      value: 8.25997925
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -19.9500008
+      value: -19.9499989
       objectReference: {fileID: 0}
     - target: {fileID: 2072306, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: field of view
@@ -3142,18 +3142,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLookAtTarget: {fileID: 656176080}
-  height: 19
+  height: 27
   rotationDamping: 2
   heightDamping: 1
   distance: 25
-  startingY: 21
+  startingY: 8
   yMovementLimit: 50
   xMinLimit: 15
   xMaxLimit: 80
   xSpeed: 60
   ySpeed: 120
   movingCamera: 0
-  introCameraSlowness: 1000
+  introCameraSlowness: 750
   readyToStart: 0
   currentY: 0
 --- !u!1001 &2066384992

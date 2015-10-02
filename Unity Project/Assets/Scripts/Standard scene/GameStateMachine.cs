@@ -196,9 +196,6 @@ public class GameStateMachine : MonoBehaviour
 			GameControl.control.unlockedLevel++;
 		}
         int toLoad = Application.loadedLevel;
-		if (!FullGame && toLoad == 3)
-			Application.LoadLevel(0);
-		else
        		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
     }
 
