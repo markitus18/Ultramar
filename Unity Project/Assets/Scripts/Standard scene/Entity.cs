@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Entity : MonoBehaviour
 {
-	public GameObject currentBox;
+	GameObject startingBox;
+    public GameObject currentBox;
 	public GameObject targetBox;
 
 	public float movementSpeed = 2;
@@ -26,8 +27,18 @@ public class Entity : MonoBehaviour
 
 	[HideInInspector] public GameStateMachine.UpdateStates ret;
 
+    public void Reset ()
+    {
+        currentBox = startingBox;
+        direction = (int)startingDirection;
+        currentPosition = currentBox.transform.position;
+        transform.position = currentPosition;
+        transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
+    }
+
 	void Awake()
 	{
+        startingBox = currentBox;
 		direction = (int)startingDirection;
 		currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;

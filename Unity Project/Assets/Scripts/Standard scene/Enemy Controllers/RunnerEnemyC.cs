@@ -68,7 +68,7 @@ public class RunnerEnemyC : MonoBehaviour
 	{
 		if (entity.currentBox == playerEntity.currentBox)
 		{
-			playerController.Kill ();
+			playerController.Kill (enemiesEnum.runnerEnemy);
 			return true;
 		}
 		return false;

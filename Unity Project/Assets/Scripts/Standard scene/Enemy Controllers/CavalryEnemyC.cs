@@ -175,7 +175,7 @@ public class CavalryEnemyC : MonoBehaviour {
 	{
 		if (entity.currentBox == playerEntity.currentBox)
 		{
-			playerController.Kill ();
+			playerController.Kill (enemiesEnum.cavalryEnemy);
 			return true;
 		}
 		return false;

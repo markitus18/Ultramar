@@ -9,7 +9,7 @@ public class ArcherEnemyC : MonoBehaviour
 	Entity entity;
 	Vector3 vectorHeight = new Vector3 (0, 1.8f, 0);
 	public LineRenderer redLineRenderer;
-	public LineRenderer greenLineRenderer;
+	//public LineRenderer greenLineRenderer;
 	public int archerRange;
 
 	private Ray shootRay;
@@ -39,14 +39,14 @@ public class ArcherEnemyC : MonoBehaviour
 			if(hit.collider.tag == "Player")
 			{
 				Debug.Log ("Player Hit");
-				playerController.Kill();
+				playerController.Kill(enemiesEnum.archerEnemy);
 				ret = true;
 			}
 			else if(hit.collider.tag == "Enemy")
 			{
 				Debug.Log ("Enemy Hit");
-				greenLineRenderer.SetPosition(0, hit.point + vectorHeight - new Vector3 (0, hit.point.y, 0));
-				greenLineRenderer.SetPosition(1, new Vector3(0, -hit.point.y, 0) + hit.point + transform.forward * (archerRange - ((hit.point.x - transform.position.x) + (hit.point.z - transform.position.z))) + vectorHeight);
+				//greenLineRenderer.SetPosition(0, hit.point + vectorHeight - new Vector3 (0, hit.point.y, 0));
+				//greenLineRenderer.SetPosition(1, new Vector3(0, -hit.point.y, 0) + hit.point + transform.forward * (archerRange - ((hit.point.x - transform.position.x) + (hit.point.z - transform.position.z))) + vectorHeight);
 			}
 		}
 		else

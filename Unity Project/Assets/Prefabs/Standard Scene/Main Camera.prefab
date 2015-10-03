@@ -133,7 +133,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: .838235259, g: .838235259, b: .838235259, a: .0196078438}
+  m_BackGroundColor: {r: .941176474, g: 1, b: 1, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -223,7 +223,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d06b054b0cd7e264fb71164ba0bd6da7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .200000003
+  m_Volume: .100000001
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -292,7 +292,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: afd9161cdc1a2724b873bb020af5c56c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .600000024
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   xSpeed: 65
   ySpeed: 100
   movingCamera: 1
-  introCameraSlowness: 2000
+  introCameraSlowness: 750
   readyToStart: 0
   currentY: 0
 --- !u!114 &11436796

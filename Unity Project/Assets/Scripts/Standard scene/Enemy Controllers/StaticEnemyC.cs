@@ -67,7 +67,7 @@ public class StaticEnemyC : MonoBehaviour
 	{
 		if (entity.currentBox == playerEntity.currentBox)
 		{
-			playerController.Kill ();
+			playerController.Kill (enemiesEnum.staticEnemy);
 			return true;
 		}
 		return false;

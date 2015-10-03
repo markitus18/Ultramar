@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum enemiesEnum
+{
+    staticEnemy,
+    runnerEnemy,
+    archerEnemy,
+    cavalryEnemy
+}
+
 public class PlayerController : MonoBehaviour
 {
 	Entity entity;
@@ -18,12 +26,16 @@ public class PlayerController : MonoBehaviour
 
     int direction;
     int directionVariation;
-	// Use this for initialization
+    // Use this for initialization
 
-	void Awake()
+    public AudioSource swordKill;
+    public AudioSource arrwoKill;
+
+    void Awake()
 	{
 		entity = gameObject.GetComponent<Entity>();
-	}
+
+    }
 	void Start()
 	{
         ended = false;
@@ -246,7 +258,7 @@ public class PlayerController : MonoBehaviour
 			}
 			if (available)
 			{
-				transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+				//transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 				Debug.Log ("Assigned");
 				entity.targetPosition = newBox.transform.position;
 				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
@@ -260,9 +272,17 @@ public class PlayerController : MonoBehaviour
 
 
 
-	public void Kill()
+	public void Kill(enemiesEnum enemyWhoKilled)
 	{
 		Debug.Log("Killing player");
+        if (enemyWhoKilled == enemiesEnum.archerEnemy)
+        {
+            arrwoKill.Play();
+        }
+        else
+        {
+            swordKill.Play();
+        }
 		//loseText.GetComponent<Renderer>().enabled = true;
 		stateMachine.state = GameStateMachine.GameStates.END_LOOSE;
 		paused = true;

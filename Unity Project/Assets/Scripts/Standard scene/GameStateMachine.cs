@@ -12,6 +12,7 @@ public class GameStateMachine : MonoBehaviour
 		ENEMY_END,
 		END_WIN,
 		END_LOOSE,
+        END_MENU
 	}
 	
 	public enum UpdateStates
@@ -21,6 +22,7 @@ public class GameStateMachine : MonoBehaviour
 	}
 	
 	public Entity playerController;
+    public PlayerController playerScript;
 	public List<GameObject> enemies;
 	GameObject[] go;
 	public GameStates state;
@@ -31,7 +33,8 @@ public class GameStateMachine : MonoBehaviour
 	void Start ()
 	{
 		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
-		state = GameStates.PLAYER_TURN;
+        playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        state = GameStates.PLAYER_TURN;
 		go = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject enemy in go)
 		{
@@ -42,29 +45,36 @@ public class GameStateMachine : MonoBehaviour
 
 	void Update ()
 	{
-		switch(state)
-		{
-		case GameStates.PLAYER_TURN:
-			UpdatePlayer();
-			break;
-		case GameStates.ENEMY_START:
-			StartEnemiesTurn ();
-			break;
-		case GameStates.ENEMY_MOVE:
-			MoveEnemies ();
-			break;
-		case GameStates.ENEMY_END:
-			EndEnemiesTurn ();
-			break;
-		case GameStates.END_WIN:
-			LoadLevelSelection();
-			break;
-		case GameStates.END_LOOSE:
-			EndLoose ();
-			break;
-		default:
-			break;
-		}
+        switch (state)
+        {
+            case GameStates.PLAYER_TURN:
+                UpdatePlayer();
+                break;
+            case GameStates.ENEMY_START:
+                StartEnemiesTurn();
+                break;
+            case GameStates.ENEMY_MOVE:
+                MoveEnemies();
+                break;
+            case GameStates.ENEMY_END:
+                EndEnemiesTurn();
+                break;
+            case GameStates.END_WIN:
+                LoadLevelSelection();
+                break;
+            case GameStates.END_LOOSE:
+                EndLoose();
+                break;
+            case GameStates.END_MENU:
+                {
+                    state = GameStates.PLAYER_TURN;
+                    playerScript.paused = false;
+                    break;
+                   
+                }
+            default:
+                break;
+        }
 	}
 
 	void UpdatePlayer()
@@ -201,7 +211,15 @@ public class GameStateMachine : MonoBehaviour
 
 	void EndLoose()
 	{
-		if (Time.time >= delayTime + 1)
-			Application.LoadLevel (Application.loadedLevel);
+        if (Time.time >= delayTime + 1)
+        {
+            int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
+            for (int i = 0; i < enemiesMax; i++)
+            {
+                enemies[i].GetComponent<Entity>().Reset();
+            }
+            playerController.GetComponent<Entity>().Reset();
+            state = GameStates.END_MENU;
+        }
 	}
 }
