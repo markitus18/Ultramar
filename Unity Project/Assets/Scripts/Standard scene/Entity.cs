@@ -30,10 +30,10 @@ public class Entity : MonoBehaviour
 
     public void Reset ()
     {
+		currentBox.GetComponent<Box>().enemies.Remove(gameObject);
         if (!gameObject.GetComponent<PlayerController>())
         {
 			gameObject.SetActive(true);
-            currentBox.GetComponent<Box>().enemies.Remove(gameObject);
             startingBox.GetComponent<Box>().enemies.Add(gameObject);
 			targetBox = null;
         }
