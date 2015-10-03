@@ -668,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1cce58193c87845b3a231a466b9c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2800000, guid: 053ababd4e7c53140be8760cea4e9e04, type: 3}
+  image: {fileID: 2800000, guid: 1ce38acd7d0765a48a458ee42e608d74, type: 3}
+  tickOpacityLoose: .00999999978
 --- !u!4 &596194551 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4415bf6869181ca48adb0fdb6750c069, type: 3}
