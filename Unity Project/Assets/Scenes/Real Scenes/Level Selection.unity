@@ -163,7 +163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &193594225 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 623e5a1957f8b5444854f2379b351f6b, type: 3}
@@ -320,6 +320,91 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fb9d118acf23b34b9dc069267aed5bb, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &399774911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 399774916}
+  - 20: {fileID: 399774915}
+  - 124: {fileID: 399774914}
+  - 92: {fileID: 399774913}
+  - 81: {fileID: 399774912}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &399774912
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399774911}
+  m_Enabled: 1
+--- !u!92 &399774913
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399774911}
+  m_Enabled: 1
+--- !u!124 &399774914
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399774911}
+  m_Enabled: 1
+--- !u!20 &399774915
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399774911}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .941176474, g: 1, b: 1, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 40
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
+--- !u!4 &399774916
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399774911}
+  m_LocalRotation: {x: .554611862, y: 0, z: 0, w: .832109153}
+  m_LocalPosition: {x: -2.50999999, y: 17.2800007, z: -6.07000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1001 &455397340
 Prefab:
   m_ObjectHideFlags: 0
@@ -741,7 +826,7 @@ Transform:
   - {fileID: 869671992}
   - {fileID: 1039401204}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &903452598
 Prefab:
   m_ObjectHideFlags: 0
@@ -983,10 +1068,10 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1137926703}
-  downBox: {fileID: 1727451721}
-  rightBox: {fileID: 0}
-  leftBox: {fileID: 0}
+  upBox: {fileID: 0}
+  downBox: {fileID: 0}
+  rightBox: {fileID: 1137926703}
+  leftBox: {fileID: 1727451721}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -1255,10 +1340,10 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1045625992}
+  upBox: {fileID: 0}
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
-  leftBox: {fileID: 0}
+  leftBox: {fileID: 1045625992}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -2188,8 +2273,8 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1843147254}
-  downBox: {fileID: 1727451721}
+  upBox: {fileID: 1727451721}
+  downBox: {fileID: 1843147254}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
   boxDistance: 5
@@ -2290,9 +2375,9 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1677531984}
-  downBox: {fileID: 1045625992}
-  rightBox: {fileID: 0}
+  upBox: {fileID: 0}
+  downBox: {fileID: 1677531984}
+  rightBox: {fileID: 1045625992}
   leftBox: {fileID: 0}
   boxDistance: 5
   entityDistanceX: 0
@@ -2543,8 +2628,8 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 0}
-  downBox: {fileID: 1677531984}
+  upBox: {fileID: 1677531984}
+  downBox: {fileID: 0}
   rightBox: {fileID: 0}
   leftBox: {fileID: 0}
   boxDistance: 5

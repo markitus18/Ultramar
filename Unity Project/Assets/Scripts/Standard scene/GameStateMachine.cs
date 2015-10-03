@@ -10,9 +10,9 @@ public class GameStateMachine : MonoBehaviour
 		ENEMY_START,
 		ENEMY_MOVE,
 		ENEMY_END,
-		END_WIN,
-		END_LOOSE,
-        END_MENU
+		MENU_WIN,
+		MENU_LOOSE,
+        RESET	
 	}
 	
 	public enum UpdateStates
@@ -59,19 +59,15 @@ public class GameStateMachine : MonoBehaviour
             case GameStates.ENEMY_END:
                 EndEnemiesTurn();
                 break;
-            case GameStates.END_WIN:
+            case GameStates.MENU_WIN:
                 LoadLevelSelection();
                 break;
-            case GameStates.END_LOOSE:
+            case GameStates.MENU_LOOSE:
                 EndLoose();
                 break;
-            case GameStates.END_MENU:
-                {
-                    state = GameStates.PLAYER_TURN;
-                    playerScript.paused = false;
-                    break;
-                   
-                }
+            case GameStates.RESET:
+				ResetGame();
+				break;
             default:
                 break;
         }
@@ -163,7 +159,7 @@ public class GameStateMachine : MonoBehaviour
 			if (CheckPlayerKill ())
 			{
 				delayTime = Time.time;
-				state = GameStates.END_LOOSE;
+				state = GameStates.MENU_LOOSE;
 			}
 			else
 				state = GameStates.ENEMY_END;
@@ -223,16 +219,25 @@ public class GameStateMachine : MonoBehaviour
 
 	void EndLoose()
 	{
-        if (Time.time >= delayTime + 1)
-        {
-            int enemiesMax = enemies.Count;
-            for (int i = 0; i < enemiesMax; i++)
-            {
-				enemies[i].SetActive(true);
-                enemies[i].GetComponent<Entity>().Reset();
-            }
-            playerController.GetComponent<Entity>().Reset();
-            state = GameStates.END_MENU;
-        }
+
+    	state = GameStates.RESET;
+        
 	}
+
+	void ResetGame()
+	{
+		if (Time.time >= delayTime + 1)
+		{
+			int enemiesMax = enemies.Count;
+			for (int i = 0; i < enemiesMax; i++)
+			{
+				enemies[i].SetActive(true);
+				enemies[i].GetComponent<Entity>().Reset();
+			}
+			playerController.GetComponent<Entity>().Reset();
+			state = GameStates.PLAYER_TURN;
+			playerScript.paused = false;
+		}
+	}
+
 }

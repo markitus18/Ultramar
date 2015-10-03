@@ -2,20 +2,29 @@
 using System.Collections;
 
 public class PanelManager : MonoBehaviour {
-	
-	public GameObject panel;
+
 	public GameObject musicButton;
+	public GameObject replayButton;
+	GameStateMachine gameStateMachine;
 	bool panelOpened = false;
 
+	void Start()
+	{
+		gameStateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
+	}
 	public void OpenPanel()
 	{
 		musicButton.SetActive (true);
+		if (replayButton)
+			replayButton.SetActive (true);
 		panelOpened = true;
 	}
 
 	public void ClosePanel()
 	{
 		musicButton.SetActive (false);
+		if (replayButton)
+			replayButton.SetActive (false);
 		panelOpened = false;
 	}
 
@@ -46,6 +55,11 @@ public class PanelManager : MonoBehaviour {
 		else
 			Application.LoadLevel (2);
 
+	}
+
+	public void Reset()
+	{
+		gameStateMachine.state = GameStateMachine.GameStates.RESET;
 	}
 
 }

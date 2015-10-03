@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if(ended == true && GetComponent<AudioSource>().isPlaying == false)
         {
-            stateMachine.state = GameStateMachine.GameStates.END_WIN; 
+            stateMachine.state = GameStateMachine.GameStates.MENU_WIN; 
         }
 
 #if UNITY_EDITOR
@@ -285,7 +285,7 @@ public class PlayerController : MonoBehaviour
             swordKill.Play();
         }
 		//loseText.GetComponent<Renderer>().enabled = true;
-		stateMachine.state = GameStateMachine.GameStates.END_LOOSE;
+		stateMachine.state = GameStateMachine.GameStates.MENU_LOOSE;
 		paused = true;
 	}
 
