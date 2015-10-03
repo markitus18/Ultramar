@@ -12,8 +12,8 @@ public class PlayMovie : MonoBehaviour {
     void Start()
     {
         //public string  Path;
-#if !UNITY_EDITOR
-        Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
+//#if !UNITY_EDITOR
+        Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
          int toLoad = Application.loadedLevel;
             Application.LoadLevel(toLoad+1);
 #endif
