@@ -157,7 +157,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162122}
-  m_Mesh: {fileID: 4300000, guid: f7539b1822c9bce4dbe18d894e5faa1d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8d55fa7377cf8264685d77fabc88dda8, type: 3}
 --- !u!82 &8220582
 AudioSource:
   m_ObjectHideFlags: 1
@@ -432,7 +432,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: fb26d85af5c517b418f4c0960d9b473e, type: 3}
+      objectReference: {fileID: 4300000, guid: 8d55fa7377cf8264685d77fabc88dda8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170560}
