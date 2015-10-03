@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class PanelManager : MonoBehaviour {
-
-	public GameControl gameControl;
+	
 	public GameObject panel;
 	public GameObject musicButton;
 	bool panelOpened = false;
@@ -42,7 +41,7 @@ public class PanelManager : MonoBehaviour {
 
 	public void Play()
 	{
-		if (gameControl.firstTime)
+		if (GameControl.gameControl.firstTime)
 			Application.LoadLevel (1);
 		else
 			Application.LoadLevel (2);
