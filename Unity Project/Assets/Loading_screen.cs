@@ -12,8 +12,8 @@ public class Loading_screen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     
     void OnGUI()
@@ -22,6 +22,16 @@ public class Loading_screen : MonoBehaviour {
         GuiColor.r = GuiColor.g = GuiColor.b = 1.0f;
         GuiColor.a = 0.5f;
         GUI.color = GuiColor;
+
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), image);
+
+        /*if (GuiColor.a > 0)
+        {
+            GuiColor.a -= 0.01f;
+        }
+        else
+        {
+            GuiColor.a = 0.0f;
+        }*/
     }
 }
