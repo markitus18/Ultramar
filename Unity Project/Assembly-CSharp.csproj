@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Disable_if_not_Unity.cs" />
+     <Compile Include="Assets\Loading_screen.cs" />
      <Compile Include="Assets\MaxFPS.cs" />
      <Compile Include="Assets\PauseManager.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
