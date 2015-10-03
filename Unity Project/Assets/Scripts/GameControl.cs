@@ -73,5 +73,6 @@ public class GameControl : MonoBehaviour
 	class GameData
 	{
 		public int unlockedLevel;
+		public bool firstTime;
 	}
 }
