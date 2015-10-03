@@ -189,7 +189,7 @@ public class GameStateMachine : MonoBehaviour
 	
 	void SetDirection()
 	{
-		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
+		int enemiesMax = enemies.Count;
 		for (int i = 0; i < enemiesMax; i ++)
 		{
 			if (enemies[i].GetComponent<RunnerEnemyC>())
@@ -213,7 +213,7 @@ public class GameStateMachine : MonoBehaviour
 	{
         if (Time.time >= delayTime + 1)
         {
-            int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
+            int enemiesMax = enemies.Count;
             for (int i = 0; i < enemiesMax; i++)
             {
                 enemies[i].GetComponent<Entity>().Reset();

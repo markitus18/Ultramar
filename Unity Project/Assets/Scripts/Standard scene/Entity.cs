@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Entity : MonoBehaviour
 {
-	GameObject startingBox;
+	public GameObject startingBox;
     public GameObject currentBox;
 	public GameObject targetBox;
 
@@ -31,8 +31,10 @@ public class Entity : MonoBehaviour
     {
         if (!gameObject.GetComponent<PlayerController>())
         {
+			gameObject.SetActive(true);
             currentBox.GetComponent<Box>().enemies.Remove(gameObject);
             startingBox.GetComponent<Box>().enemies.Add(gameObject);
+			targetBox = null;
         }
         moving = false;
         currentBox = startingBox;
@@ -52,6 +54,7 @@ public class Entity : MonoBehaviour
 	}
 	void Start ()
 	{
+		currentBox = startingBox;
 		gameObject.GetComponent<Collider>().enabled = true;
 		moving = false;
 	}
