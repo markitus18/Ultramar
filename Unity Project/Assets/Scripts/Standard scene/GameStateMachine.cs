@@ -110,8 +110,11 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesMax = enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			enemies[i].GetComponent<Entity>().ret = UpdateStates.UPDATE_KEEP;
-			enemies[i].GetComponent<Entity>().targetAssigned = false;
+			if (enemies[i].GetComponent<Entity>().active)
+			{
+				enemies[i].GetComponent<Entity>().ret = UpdateStates.UPDATE_KEEP;
+				enemies[i].GetComponent<Entity>().targetAssigned = false;
+			}
 		}
 	}
 
@@ -121,10 +124,13 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			if (enemies[i].GetComponent<StaticEnemyC>())
-				enemies[i].GetComponent<StaticEnemyC>().SetNewBox();
-			if (enemies[i].GetComponent<RunnerEnemyC>() || enemies[i].GetComponent<CavalryEnemyC>())
-				enemies[i].GetComponent<Entity>().SetNewBox();	
+			if (enemies[i].GetComponent<Entity>().active)
+			{
+				if (enemies[i].GetComponent<StaticEnemyC>())
+					enemies[i].GetComponent<StaticEnemyC>().SetNewBox();
+				if (enemies[i].GetComponent<RunnerEnemyC>() || enemies[i].GetComponent<CavalryEnemyC>())
+					enemies[i].GetComponent<Entity>().SetNewBox();	
+			}
 		}
 	}
 
@@ -170,20 +176,22 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			if (enemies[i].GetComponent<StaticEnemyC>())
-				if (enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer()) ret = true;
-			if (enemies[i].GetComponent<RunnerEnemyC>())
-				if (enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ()) ret = true;
-			if (enemies[i].GetComponent<ArcherEnemyC>())
-				if (enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer()) ret = true;
-			if (enemies[i].GetComponent<CavalryEnemyC>())
-				if (enemies[i].GetComponent<CavalryEnemyC>().CheckIfPlayer()) ret = true;
+			if (enemies[i].GetComponent<Entity>().active)
+			{
+				if (enemies[i].GetComponent<StaticEnemyC>())
+					if (enemies[i].GetComponent<StaticEnemyC>().CheckIfPlayer()) ret = true;
+				if (enemies[i].GetComponent<RunnerEnemyC>())
+					if (enemies[i].GetComponent<RunnerEnemyC>().CheckIfPlayer ()) ret = true;
+				if (enemies[i].GetComponent<ArcherEnemyC>())
+					if (enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer()) ret = true;
+				if (enemies[i].GetComponent<CavalryEnemyC>())
+					if (enemies[i].GetComponent<CavalryEnemyC>().CheckIfPlayer()) ret = true;
+			}
 		}
 		return ret;
 	}
 	void EndEnemiesTurn()
 	{
-
 		SetDirection();
 		state = GameStates.PLAYER_TURN;
 	}
@@ -193,10 +201,13 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesMax = enemies.Count;
 		for (int i = 0; i < enemiesMax; i ++)
 		{
-			if (enemies[i].GetComponent<RunnerEnemyC>())
-				enemies[i].GetComponent<RunnerEnemyC>().SetNewDirection();
-			if (enemies[i].GetComponent<CavalryEnemyC>())
-				enemies[i].GetComponent<CavalryEnemyC>().SetNewDirection();
+			if (enemies[i].GetComponent<Entity>().active)
+			{
+				if (enemies[i].GetComponent<RunnerEnemyC>())
+					enemies[i].GetComponent<RunnerEnemyC>().SetNewDirection();
+				if (enemies[i].GetComponent<CavalryEnemyC>())
+					enemies[i].GetComponent<CavalryEnemyC>().SetNewDirection();
+			}
 		}
 	}
 
@@ -217,6 +228,7 @@ public class GameStateMachine : MonoBehaviour
             int enemiesMax = enemies.Count;
             for (int i = 0; i < enemiesMax; i++)
             {
+				enemies[i].SetActive(true);
                 enemies[i].GetComponent<Entity>().Reset();
             }
             playerController.GetComponent<Entity>().Reset();
