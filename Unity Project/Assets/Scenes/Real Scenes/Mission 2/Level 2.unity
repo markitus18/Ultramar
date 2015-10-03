@@ -1368,6 +1368,14 @@ Prefab:
       propertyPath: distance
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c518fb09fa2a154984aa0511022cb89, type: 3}
+    - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 56aee6676b0e66244ba4501300307ce7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
   m_IsPrefabParent: 0
@@ -2858,6 +2866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingBox: {fileID: 0}
   currentBox: {fileID: 1944268075}
   targetBox: {fileID: 0}
   movementSpeed: 2
