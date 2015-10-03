@@ -1646,6 +1646,19 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &903452602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903452599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1cce58193c87845b3a231a466b9c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2800000, guid: afd0d92383c6b3e408d3732855a9c0df, type: 3}
+  tickOpacityLoose: .0199999996
 --- !u!1 &923846178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +2968,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 196480, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
   m_IsPrefabParent: 0
@@ -3283,6 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c20e8f92521224da9d0417f3f6722e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loading: 0
   cameraLookAtTarget: {fileID: 656176080}
   height: 27
   rotationDamping: 2

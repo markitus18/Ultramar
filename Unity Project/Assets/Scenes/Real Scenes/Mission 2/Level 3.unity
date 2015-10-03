@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  playerScript: {fileID: 0}
   enemies: []
   state: 0
   FullGame: 0
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c20e8f92521224da9d0417f3f6722e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loading: 0
   cameraLookAtTarget: {fileID: 0}
   height: 35
   rotationDamping: 2
@@ -750,6 +752,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1206907887}
   - 82: {fileID: 1206907886}
+  - 114: {fileID: 1206907888}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: Untagged
@@ -839,6 +842,19 @@ Transform:
   - {fileID: 173525940}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &1206907888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206907885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1cce58193c87845b3a231a466b9c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2800000, guid: afd0d92383c6b3e408d3732855a9c0df, type: 3}
+  tickOpacityLoose: .0199999996
 --- !u!1001 &1223679781
 Prefab:
   m_ObjectHideFlags: 0
@@ -1031,6 +1047,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403832, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 196480, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
