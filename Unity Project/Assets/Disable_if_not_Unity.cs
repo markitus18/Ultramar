@@ -5,7 +5,7 @@ public class Disable_if_not_Unity : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-#if !UNITY_EDITOR
+#if UNITY_EDITOR
         gameObject.SetActive(false);
 #endif
     }
