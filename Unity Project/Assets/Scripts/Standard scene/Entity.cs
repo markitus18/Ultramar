@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
 	[HideInInspector] public Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
 
+	[HideInInspector] public bool active;
 	public enum enumDirections
 	{
 		up = 1,
@@ -36,6 +37,7 @@ public class Entity : MonoBehaviour
             startingBox.GetComponent<Box>().enemies.Add(gameObject);
 			targetBox = null;
         }
+		active = true;
         moving = false;
         currentBox = startingBox;
         direction = (int)startingDirection;
@@ -54,6 +56,7 @@ public class Entity : MonoBehaviour
 	}
 	void Start ()
 	{
+		active = true;
 		currentBox = startingBox;
 		gameObject.GetComponent<Collider>().enabled = true;
 		moving = false;
