@@ -41,7 +41,7 @@ public class PanelManager : MonoBehaviour {
 
 	public void Play()
 	{
-		if (GameControl.gameControl.firstTime)
+		if (GameControl.control.firstTime)
 			Application.LoadLevel (1);
 		else
 			Application.LoadLevel (2);
