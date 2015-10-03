@@ -650,6 +650,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 196480, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3420bc2da87d86744b1ac139a9d55edd, type: 2}
   m_IsPrefabParent: 0
@@ -669,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: 1ce38acd7d0765a48a458ee42e608d74, type: 3}
-  tickOpacityLoose: .00999999978
+  tickOpacityLoose: .0199999996
 --- !u!4 &596194551 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4415bf6869181ca48adb0fdb6750c069, type: 3}
