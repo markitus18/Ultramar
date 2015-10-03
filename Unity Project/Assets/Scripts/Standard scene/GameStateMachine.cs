@@ -144,7 +144,7 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesUpdated = 0;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			if (enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP && enemies[i].GetComponent<Entity>.active)
+			if ((enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP) && (enemies[i].GetComponent<Entity>().active == true))
 			{
 				enemies[i].GetComponent<Entity>().Move();
 			}
