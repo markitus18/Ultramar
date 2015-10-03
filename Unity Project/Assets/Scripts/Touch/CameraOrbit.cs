@@ -6,6 +6,8 @@ public class CameraOrbit : MonoBehaviour
 {
 
 		//camera variables
+    public bool loading;
+
 	public Transform cameraLookAtTarget = null;
 	[Range(0,80)] public float height = 0.0f;
 	public float rotationDamping = 1.0f;
@@ -32,6 +34,7 @@ public class CameraOrbit : MonoBehaviour
 
 	void Start()
 	{
+        loading = true;
         readyToStart = false;
         movingCamera = true;
 		var angles = gameObject.transform.eulerAngles;
@@ -113,7 +116,7 @@ public class CameraOrbit : MonoBehaviour
 			
 			
 		}
-		else
+		else if (loading == false)
 		{
             if (startingDampingVar > 0)
             {
