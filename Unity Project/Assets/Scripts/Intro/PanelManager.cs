@@ -39,4 +39,12 @@ public class PanelManager : MonoBehaviour {
 		}
 	}
 
+	public void Play()
+	{
+		if (firstTime)
+			Application.LoadLevel (1);
+		else
+			Application.LoadLevel (2);
+	}
+
 }

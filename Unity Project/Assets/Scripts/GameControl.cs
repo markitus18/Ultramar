@@ -9,6 +9,7 @@ public class GameControl : MonoBehaviour
 	public static GameControl control;
 
 	public int unlockedLevel = 1;
+	public bool firstTime = true;
 
 	void Awake ()
 	{
@@ -40,6 +41,7 @@ public class GameControl : MonoBehaviour
 
 		GameData data = new GameData();
 		data.unlockedLevel = unlockedLevel;
+		data.firstTime = firstTime;
 
 		bf.Serialize (file, data);
 		file.Close ();
@@ -62,6 +64,7 @@ public class GameControl : MonoBehaviour
 	{
 		if (File.Exists (Application.persistentDataPath + "/gameData.dat"))
 			File.Delete (Application.persistentDataPath + "/gameData.dat");
+		firstTime = false;
 		unlockedLevel = 1;
 		Application.LoadLevel (0);
 	}
