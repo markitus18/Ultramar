@@ -3160,7 +3160,7 @@ MonoBehaviour:
   xSpeed: 60
   ySpeed: 120
   movingCamera: 0
-  introCameraSlowness: 750
+  introCameraSlowness: 600
   readyToStart: 0
   currentY: 0
 --- !u!1001 &2066384992
