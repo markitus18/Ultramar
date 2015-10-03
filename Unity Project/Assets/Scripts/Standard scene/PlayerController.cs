@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject winText;
     public bool paused;
 	GameStateMachine stateMachine;
-    CameraOrbit CameraScript;
+    public CameraOrbit CameraScript;
 	public bool passTurn;
 	public bool autoPassTurn;
 	Vector2 touchStartPos;
@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
 	{
         ended = false;
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
-        CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
+		if (!CameraScript)
+     	   CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 
         paused = false;
        
