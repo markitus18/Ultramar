@@ -2007,6 +2007,10 @@ Prefab:
       propertyPath: readyToStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: xMinLimit
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
     - {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
