@@ -21,6 +21,7 @@ public class StaticEnemyC : MonoBehaviour
 		case 1:
 			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box>().upBox)
 			{
+				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 				entity.targetBox = entity.currentBox.GetComponent<Box>().upBox;
 				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
 			}
@@ -32,6 +33,7 @@ public class StaticEnemyC : MonoBehaviour
 		case 2:
 			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box>().rightBox)
 			{
+				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 				entity.targetBox = entity.currentBox.GetComponent<Box>().rightBox;
 				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
 			}
@@ -42,6 +44,7 @@ public class StaticEnemyC : MonoBehaviour
 		case 3:
 			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box>().downBox)
 			{
+				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 				entity.targetBox = entity.currentBox.GetComponent<Box>().downBox;
 				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
 			}
@@ -52,6 +55,7 @@ public class StaticEnemyC : MonoBehaviour
 		case 4:
 			if(playerEntity.currentBox == entity.currentBox.GetComponent<Box>().leftBox)
 			{
+				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
 				entity.targetBox = entity.currentBox.GetComponent<Box>().leftBox;
 				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
 			}
