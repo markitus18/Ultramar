@@ -29,6 +29,12 @@ public class Entity : MonoBehaviour
 
     public void Reset ()
     {
+        if (!gameObject.GetComponent<PlayerController>())
+        {
+            currentBox.GetComponent<Box>().enemies.Remove(gameObject);
+            startingBox.GetComponent<Box>().enemies.Add(gameObject);
+        }
+        moving = false;
         currentBox = startingBox;
         direction = (int)startingDirection;
         currentPosition = currentBox.transform.position;
