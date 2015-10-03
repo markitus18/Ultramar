@@ -33,6 +33,9 @@ public class PlayMovie : MonoBehaviour {
         if (!movie.isPlaying)
         {
             int toLoad = Application.loadedLevel;
+			if (toLoad == 1)
+				GameControl.control.firstTime = false;
+			GameControl.control.Save ();
             Application.LoadLevel(toLoad+1);
         }
 #endif

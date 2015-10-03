@@ -452,6 +452,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 875a585189ac76f40b53dc959650f618, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &227713293 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618,
+    type: 2}
+  m_PrefabInternal: {fileID: 227713292}
+  m_Script: {fileID: 11500000, guid: 68f770083c60433408e2d22a77c5f9a8, type: 3}
 --- !u!1 &249930229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995349290363c084ab06f149b29b7231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameControl: {fileID: 227713293}
   panel: {fileID: 1372550473}
   musicButton: {fileID: 1901058294}
 --- !u!1 &1198275170

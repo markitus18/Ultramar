@@ -57,6 +57,7 @@ public class GameControl : MonoBehaviour
 			file.Close ();
 
 			unlockedLevel = data.unlockedLevel;
+			firstTime = data.firstTime;
 		}
 	}
 
