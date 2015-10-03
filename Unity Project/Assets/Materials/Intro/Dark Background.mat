@@ -95,7 +95,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .280000001
+        second: .510999978
       data:
         first:
           name: _ZWrite
