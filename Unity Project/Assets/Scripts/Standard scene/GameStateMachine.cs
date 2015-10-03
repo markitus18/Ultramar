@@ -133,7 +133,8 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesMax = gameObject.GetComponent<GameStateMachine>().enemies.Count;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			enemies[i].GetComponent<Entity>().SetNewPosition ();
+			if (enemies[i].GetComponent<Entity>().active)
+				enemies[i].GetComponent<Entity>().SetNewPosition ();
 		}
 	}
 
@@ -143,7 +144,7 @@ public class GameStateMachine : MonoBehaviour
 		int enemiesUpdated = 0;
 		for (int i = 0; i < enemiesMax; i++)
 		{
-			if (enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP)
+			if (enemies[i].GetComponent<Entity>().ret == UpdateStates.UPDATE_KEEP && enemies[i].GetComponent<Entity>.active)
 			{
 				enemies[i].GetComponent<Entity>().Move();
 			}

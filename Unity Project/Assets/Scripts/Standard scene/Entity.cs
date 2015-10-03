@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
 	[HideInInspector] public Vector3 currentPosition;
 	[HideInInspector] public Vector3 targetPosition;
 
+	[HideInInspector] public bool active
 	public enum enumDirections
 	{
 		up = 1,
