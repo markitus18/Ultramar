@@ -220,13 +220,17 @@ public class GameStateMachine : MonoBehaviour
 	{
 		if (Time.time >= delayTime + 1)
 		{
-			int enemiesMax = enemies.Count;
+            playerController.GetComponent<Entity>().Reset();
+            int enemiesMax = enemies.Count;
 			for (int i = 0; i < enemiesMax; i++)
 			{
 				enemies[i].SetActive(true);
 				enemies[i].GetComponent<Entity>().Reset();
-			}
-			playerController.GetComponent<Entity>().Reset();
+                if (enemies[i].GetComponent<ArcherEnemyC>())
+                {
+                    enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
+                }
+            }
 			playerScript.ended = false;
 			state = GameStates.PLAYER_TURN;
 			playerScript.paused = false;
