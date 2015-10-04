@@ -95,17 +95,17 @@ public class PanelManager : MonoBehaviour {
 
 	public void CloseWinPanel()
 	{
-		if (!winPanel.activeSelf)
+		if (winPanel.activeSelf)
 		{
-			winPanel.SetActive(true);
+			winPanel.SetActive(false);
 		}
 	}
 
 	public void CloseLoosePanel()
 	{
-		if (!loosePanel.activeSelf)
+		if (loosePanel.activeSelf)
 		{
-			loosePanel.SetActive(true);
+			loosePanel.SetActive(false);
 		}
 	}
 
