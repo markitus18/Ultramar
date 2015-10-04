@@ -5,11 +5,13 @@ public class PanelManager : MonoBehaviour {
 
 	public GameObject musicButton;
 	public GameObject replayButton;
+	public GameObject backButton;
 	GameStateMachine gameStateMachine;
 	bool panelOpened = false;
 
 	void Start()
 	{
+		if (GameObject.Find("Game Manager"))
 		gameStateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 	}
 	public void OpenPanel()
@@ -17,6 +19,8 @@ public class PanelManager : MonoBehaviour {
 		musicButton.SetActive (true);
 		if (replayButton)
 			replayButton.SetActive (true);
+		if (backButton)
+			backButton.SetActive (true);
 		panelOpened = true;
 	}
 
@@ -25,6 +29,8 @@ public class PanelManager : MonoBehaviour {
 		musicButton.SetActive (false);
 		if (replayButton)
 			replayButton.SetActive (false);
+		if (backButton)
+			backButton.SetActive (true);
 		panelOpened = false;
 	}
 
@@ -51,15 +57,20 @@ public class PanelManager : MonoBehaviour {
 	public void Play()
 	{
 		if (GameControl.control.firstTime)
-			Application.LoadLevel (1);
-		else
 			Application.LoadLevel (2);
+		else
+			Application.LoadLevel (1);
 
 	}
 
 	public void Reset()
 	{
 		gameStateMachine.state = GameStateMachine.GameStates.RESET;
+	}
+
+	public void Back()
+	{
+		Application.LoadLevel ("Level Selection");
 	}
 
 }
