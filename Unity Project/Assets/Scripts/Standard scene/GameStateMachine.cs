@@ -40,8 +40,7 @@ public class GameStateMachine : MonoBehaviour
 		foreach (GameObject enemy in go)
 		{
 			enemies.Add(enemy);
-		}
-		
+		}	
 	}
 
 	void Update ()
@@ -211,20 +210,11 @@ public class GameStateMachine : MonoBehaviour
 	void LoadWinMenu()
 	{
 		panelManager.OpenWinPanel();
-		/*
-		if (GameControl.control.unlockedLevel == level)
-		{
-			GameControl.control.unlockedLevel++;
-		}
-        int toLoad = Application.loadedLevel;
-       		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
-       		*/
     }
 
 	void LoadLooseMenu()
 	{
 		panelManager.OpenLoosePanel();
-    //	state = GameStates.RESET;
         
 	}
 
