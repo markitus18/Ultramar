@@ -198,7 +198,7 @@ MonoBehaviour:
   enemies: []
   state: 0
   FullGame: 0
-  level: 2
+  level: 1
 --- !u!4 &90154067
 Transform:
   m_ObjectHideFlags: 0
