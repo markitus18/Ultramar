@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
             lockCam = false;
         }
 
-        if(ended == true && GetComponent<AudioSource>().isPlaying == false)
+        if(ended == true)
         {
             stateMachine.state = GameStateMachine.GameStates.MENU_WIN; 
         }
