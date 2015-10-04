@@ -86,8 +86,6 @@ public class GameStateMachine : MonoBehaviour
 				state = GameStates.ENEMY_START;
 				playerController.gameObject.GetComponent<PlayerController>().CheckEnemy();
                 playerController.gameObject.GetComponent<PlayerController>().CheckEnd();
-                /*if (playerController.gameObject.GetComponent<PlayerController>().CheckEnd())
-					state = GameStates.END_WIN;*/
 				Debug.Log("Enemies turn");
 			}
 		}
