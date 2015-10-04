@@ -6,6 +6,8 @@ public class PanelManager : MonoBehaviour {
 	public GameObject musicButton;
 	public GameObject replayButton;
 	public GameObject backButton;
+	public GameObject winPanel;
+	public GameObject loosePanel;
 	GameStateMachine gameStateMachine;
 	bool panelOpened = false;
 
@@ -71,6 +73,28 @@ public class PanelManager : MonoBehaviour {
 	public void Back()
 	{
 		Application.LoadLevel ("Level Selection");
+	}
+
+	public void OpenWinPanel()
+	{
+		if (!winPanel.activeSelf)
+		{
+			winPanel.SetActive(true);
+		}
+	}
+
+	public void OpenLoosePanel()
+	{
+		if (!loosePanel.activeSelf)
+		{
+			loosePanel.SetActive(true);
+		}
+	}
+
+	public void NextLevel()
+	{
+		int toLoad = Application.loadedLevel;
+		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
 	}
 
 }

@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &111866
 GameObject:
   m_ObjectHideFlags: 1
@@ -583,7 +583,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11435478}
-        m_MethodName: DeployedClicked
+        m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -687,7 +687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11435478}
-        m_MethodName: DeployedClicked
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: dc0f6547262c7b244b41343e6b2af7f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc1ba1f9b8737de4ebfe6f8366da491d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -786,7 +786,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11435478}
-        m_MethodName: DeployedClicked
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -871,7 +871,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11435478}
-        m_MethodName: DeployedClicked
+        m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 2efa4d8ecd8b38e4dbb50af6a6bef151, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 630f11acdb0b36d41a59fb1c4b34ea1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -918,6 +918,8 @@ MonoBehaviour:
   musicButton: {fileID: 145182}
   replayButton: {fileID: 186684}
   backButton: {fileID: 159852}
+  winPanel: {fileID: 176274}
+  loosePanel: {fileID: 111248}
 --- !u!114 &11436876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,7 +986,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11435478}
-        m_MethodName: DeployedClicked
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1061,7 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: bcc993e24d83d9243a0122c274f3f465, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e73225c77fe74c478df714355f4e92a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1129,7 +1131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 46d7f5a42965cbf4abaa78af86a91b19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98bce18a054e5e6439016603e9e832f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1362,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: bcc993e24d83d9243a0122c274f3f465, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e73225c77fe74c478df714355f4e92a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1383,7 +1385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: dc0f6547262c7b244b41343e6b2af7f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc1ba1f9b8737de4ebfe6f8366da491d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1456,7 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: bcc993e24d83d9243a0122c274f3f465, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e73225c77fe74c478df714355f4e92a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1495,7 +1497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: dc0f6547262c7b244b41343e6b2af7f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc1ba1f9b8737de4ebfe6f8366da491d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

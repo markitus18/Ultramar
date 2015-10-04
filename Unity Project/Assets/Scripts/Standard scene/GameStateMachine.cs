@@ -24,6 +24,7 @@ public class GameStateMachine : MonoBehaviour
 	public Entity playerController;
     public PlayerController playerScript;
 	public List<GameObject> enemies;
+	public PanelManager panelManager;
 	GameObject[] go;
 	public GameStates state;
 	float delayTime;
@@ -209,12 +210,15 @@ public class GameStateMachine : MonoBehaviour
 
 	void LoadWinMenu()
 	{
+		panelManager.OpenWinPanel();
+		/*
 		if (GameControl.control.unlockedLevel == level)
 		{
 			GameControl.control.unlockedLevel++;
 		}
         int toLoad = Application.loadedLevel;
        		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
+       		*/
     }
 
 	void LoadLooseMenu()
