@@ -111,8 +111,16 @@ public class PanelManager : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		int toLoad = Application.loadedLevel;
-		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
+		Application.LoadLevel(LevelToLoad ()); //here is where level selection will go;
+	}
+
+	public int LevelToLoad()
+	{
+		int currentLevel = Application.loadedLevel;
+		if (currentLevel > 2 && currentLevel < 7)
+			return 1;
+		if (currentLevel > 10)
+			return 8;
 	}
 
 }
