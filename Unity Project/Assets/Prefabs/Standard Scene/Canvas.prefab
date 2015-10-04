@@ -52,7 +52,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &120468
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -68,9 +68,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &145182
+--- !u!1 &121800
 GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 490782}
+  m_Layer: 0
+  m_Name: Options buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &145182
+GameObject:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -123,7 +138,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &159852
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -159,7 +174,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &186684
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -203,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22417562}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!4 &489038
 Transform:
   m_ObjectHideFlags: 1
@@ -215,7 +230,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22417562}
-  m_RootOrder: 5
+  m_RootOrder: 2
+--- !u!4 &490782
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -273, y: -164, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 22463680}
+  - {fileID: 22442982}
+  - {fileID: 22474958}
+  - {fileID: 22410676}
+  m_Father: {fileID: 22417562}
+  m_RootOrder: 0
 --- !u!114 &11407880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -783,11 +814,11 @@ RectTransform:
   m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 22418802}
-  m_Father: {fileID: 22417562}
+  m_Father: {fileID: 490782}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 235, y: 215}
+  m_AnchoredPosition: {x: 508, y: 379}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22417562
@@ -800,10 +831,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 22463680}
-  - {fileID: 22442982}
-  - {fileID: 22474958}
-  - {fileID: 22410676}
+  - {fileID: 490782}
   - {fileID: 418858}
   - {fileID: 489038}
   m_Father: {fileID: 0}
@@ -875,11 +903,11 @@ RectTransform:
   m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 22465762}
-  m_Father: {fileID: 22417562}
+  m_Father: {fileID: 490782}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 325, y: 215}
+  m_AnchoredPosition: {x: 598, y: 379}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22463680
@@ -893,11 +921,11 @@ RectTransform:
   m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 22437590}
-  m_Father: {fileID: 22417562}
+  m_Father: {fileID: 490782}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 370, y: 215}
+  m_AnchoredPosition: {x: 643, y: 379}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22465762
@@ -928,11 +956,11 @@ RectTransform:
   m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 22440646}
-  m_Father: {fileID: 22417562}
+  m_Father: {fileID: 490782}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 280, y: 215}
+  m_AnchoredPosition: {x: 553, y: 379}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

@@ -60,10 +60,10 @@ public class GameStateMachine : MonoBehaviour
                 EndEnemiesTurn();
                 break;
             case GameStates.MENU_WIN:
-                LoadLevelSelection();
-                break;
+                LoadWinMenu();
+			break;
             case GameStates.MENU_LOOSE:
-                EndLoose();
+               	LoadLooseMenu();
                 break;
             case GameStates.RESET:
 				ResetGame();
@@ -207,7 +207,7 @@ public class GameStateMachine : MonoBehaviour
 		}
 	}
 
-	void LoadLevelSelection()
+	void LoadWinMenu()
 	{
 		if (GameControl.control.unlockedLevel == level)
 		{
@@ -217,7 +217,7 @@ public class GameStateMachine : MonoBehaviour
        		Application.LoadLevel(toLoad + 1); //here is where level selection will go;
     }
 
-	void EndLoose()
+	void LoadLooseMenu()
 	{
 
     	state = GameStates.RESET;
