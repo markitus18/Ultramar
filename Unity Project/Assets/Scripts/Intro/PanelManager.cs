@@ -87,6 +87,7 @@ public class PanelManager : MonoBehaviour {
 	{
 		CloseLoosePanel();
 		CloseWinPanel();
+        ClosePanel();
 		gameStateMachine.state = GameStateMachine.GameStates.RESET;
 	}
 
