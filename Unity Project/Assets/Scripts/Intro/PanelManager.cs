@@ -30,7 +30,7 @@ public class PanelManager : MonoBehaviour {
 		if (replayButton)
 			replayButton.SetActive (false);
 		if (backButton)
-			backButton.SetActive (true);
+			backButton.SetActive (false);
 		panelOpened = false;
 	}
 
