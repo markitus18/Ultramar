@@ -239,6 +239,7 @@ public class GameStateMachine : MonoBehaviour
 				enemies[i].GetComponent<Entity>().Reset();
 			}
 			playerController.GetComponent<Entity>().Reset();
+			playerScript.ended = false;
 			state = GameStates.PLAYER_TURN;
 			playerScript.paused = false;
 		}
