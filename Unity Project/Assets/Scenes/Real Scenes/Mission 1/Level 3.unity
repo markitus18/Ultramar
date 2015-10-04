@@ -3829,33 +3829,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11435478, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-      propertyPath: musicButton
-      value: 
-      objectReference: {fileID: 1957603209}
-    - target: {fileID: 11435478, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-      propertyPath: replayButton
-      value: 
-      objectReference: {fileID: 1957603211}
-    - target: {fileID: 11435478, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-      propertyPath: backButton
-      value: 
-      objectReference: {fileID: 1957603210}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1957603209 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 145182, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-  m_PrefabInternal: {fileID: 1957603208}
---- !u!1 &1957603210 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 159852, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-  m_PrefabInternal: {fileID: 1957603208}
---- !u!1 &1957603211 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 186684, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
-  m_PrefabInternal: {fileID: 1957603208}
 --- !u!1 &1971271037
 GameObject:
   m_ObjectHideFlags: 0
