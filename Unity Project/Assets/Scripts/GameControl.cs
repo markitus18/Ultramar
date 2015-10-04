@@ -9,7 +9,10 @@ public class GameControl : MonoBehaviour
 	public static GameControl control;
 
 	public int unlockedLevel = 1;
-	public bool firstTime = true;
+	public bool firstKinematic = true;
+	public bool secondKinematic = true;
+	public int currentSelectionLevel;
+	public bool levelSelectionMovement = false;
 
 	void Awake ()
 	{
@@ -41,8 +44,8 @@ public class GameControl : MonoBehaviour
 
 		GameData data = new GameData();
 		data.unlockedLevel = unlockedLevel;
-		data.firstTime = firstTime;
-
+		data.firstKinematic = firstKinematic;
+		data.secondKinematic = secondKinematic;
 		bf.Serialize (file, data);
 		file.Close ();
 	}
@@ -57,7 +60,8 @@ public class GameControl : MonoBehaviour
 			file.Close ();
 
 			unlockedLevel = data.unlockedLevel;
-			firstTime = data.firstTime;
+			firstKinematic = data.firstKinematic;
+			secondKinematic = data.secondKinematic;
 		}
 	}
 
@@ -65,7 +69,7 @@ public class GameControl : MonoBehaviour
 	{
 		if (File.Exists (Application.persistentDataPath + "/gameData.dat"))
 			File.Delete (Application.persistentDataPath + "/gameData.dat");
-		firstTime = false;
+		firstKinematic = false;
 		unlockedLevel = 1;
 		Application.LoadLevel (0);
 	}
@@ -74,6 +78,7 @@ public class GameControl : MonoBehaviour
 	class GameData
 	{
 		public int unlockedLevel;
-		public bool firstTime;
+		public bool firstKinematic;
+		public bool secondKinematic;
 	}
 }

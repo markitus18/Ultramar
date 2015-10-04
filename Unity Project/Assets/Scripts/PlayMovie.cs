@@ -34,7 +34,7 @@ public class PlayMovie : MonoBehaviour {
         {
             int toLoad = Application.loadedLevel;
 			if (toLoad == 1)
-				GameControl.control.firstTime = false;
+				GameControl.control.firstKinematic = false;
 			GameControl.control.Save ();
             Application.LoadLevel(toLoad+1);
         }

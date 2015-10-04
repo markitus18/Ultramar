@@ -58,10 +58,15 @@ public class PanelManager : MonoBehaviour {
 
 	public void Play()
 	{
-		if (GameControl.control.firstTime)
+		if (GameControl.control.firstKinematic)
 			Application.LoadLevel (2);
 		else
-			Application.LoadLevel (1);
+		{
+			if (GameControl.control.unlockedLevel < 6)
+				Application.LoadLevel (1);
+			else
+				Application.LoadLevel(8);
+		}
 
 	}
 
@@ -116,7 +121,27 @@ public class PanelManager : MonoBehaviour {
 
 	public int LevelToLoad()
 	{
+		int levelsUnlocked = GameControl.control.unlockedLevel;
 		int currentLevel = Application.loadedLevel;
+		if (currentLevel == levelsUnlocked)
+		{
+			GameControl.control.unlockedLevel = ++levelsUnlocked;
+			if (currentLevel != 5)
+			{
+				if (currentLevel < 5)
+					return 12;
+				else
+					return 14;
+			}
+			else
+			{
+				if (GameControl.control.secondKinematic)
+					return 13;
+				else
+					return 12;
+			}
+		}
+
 		if (currentLevel > 2 && currentLevel < 7)
 			return 1;
 		if (currentLevel > 10)
