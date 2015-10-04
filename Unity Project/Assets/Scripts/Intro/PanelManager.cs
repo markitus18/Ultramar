@@ -121,6 +121,7 @@ public class PanelManager : MonoBehaviour {
 			return 1;
 		if (currentLevel > 10)
 			return 8;
+		return 0;
 	}
 
 }
