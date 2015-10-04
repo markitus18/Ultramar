@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PanelManager : MonoBehaviour {
 
+    public GameObject deployButton;
 	public GameObject musicButton;
 	public GameObject replayButton;
 	public GameObject backButton;
@@ -15,7 +16,19 @@ public class PanelManager : MonoBehaviour {
 	{
 		if (GameObject.Find("Game Manager"))
 		gameStateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
-	}
+        Vector3 pos;
+        pos.x = Screen.width - 75;
+        pos.y = Screen.height - 75;
+        pos.z = 0;
+        deployButton.transform.position = pos;
+        pos.x -= 100;
+        musicButton.transform.position = pos;
+        pos.x -= 100;
+        replayButton.transform.position = pos;
+        pos.x -= 100;
+        backButton.transform.position = pos;
+
+    }
 	public void OpenPanel()
 	{
 		musicButton.SetActive (true);
