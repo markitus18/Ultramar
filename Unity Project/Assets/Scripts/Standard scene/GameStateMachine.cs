@@ -223,8 +223,8 @@ public class GameStateMachine : MonoBehaviour
 
 	void LoadLooseMenu()
 	{
-
-    	state = GameStates.RESET;
+		panelManager.OpenLoosePanel();
+    //	state = GameStates.RESET;
         
 	}
 

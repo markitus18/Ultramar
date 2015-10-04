@@ -67,6 +67,8 @@ public class PanelManager : MonoBehaviour {
 
 	public void Reset()
 	{
+		CloseLoosePanel();
+		CloseWinPanel();
 		gameStateMachine.state = GameStateMachine.GameStates.RESET;
 	}
 
@@ -84,6 +86,22 @@ public class PanelManager : MonoBehaviour {
 	}
 
 	public void OpenLoosePanel()
+	{
+		if (!loosePanel.activeSelf)
+		{
+			loosePanel.SetActive(true);
+		}
+	}
+
+	public void CloseWinPanel()
+	{
+		if (!winPanel.activeSelf)
+		{
+			winPanel.SetActive(true);
+		}
+	}
+
+	public void CloseLoosePanel()
 	{
 		if (!loosePanel.activeSelf)
 		{
