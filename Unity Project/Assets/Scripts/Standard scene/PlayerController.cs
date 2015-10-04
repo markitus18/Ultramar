@@ -12,8 +12,6 @@ public enum enemiesEnum
 public class PlayerController : MonoBehaviour
 {
 	Entity entity;
-	public GameObject loseText;
-	public GameObject winText;
     public bool paused;
 	GameStateMachine stateMachine;
     public CameraOrbit CameraScript;
@@ -23,13 +21,14 @@ public class PlayerController : MonoBehaviour
 	public bool touching;
     public bool lockCam;
     public bool ended;
+    public bool dead;
 
     int direction;
     int directionVariation;
     // Use this for initialization
 
     public AudioSource swordKill;
-    public AudioSource arrwoKill;
+    public AudioSource arrowKill;
 
     void Awake()
 	{
@@ -38,6 +37,7 @@ public class PlayerController : MonoBehaviour
     }
 	void Start()
 	{
+        dead = false;
         ended = false;
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 		if (!CameraScript)
@@ -55,6 +55,14 @@ public class PlayerController : MonoBehaviour
         else if (CameraScript.startingY > 225 && CameraScript.startingY < 315) { directionVariation = 3; }
         else { directionVariation = 0; }
 
+
+        if (dead == true)
+        {
+            if (!arrowKill.isPlaying && !swordKill.isPlaying)
+            {
+                stateMachine.state = GameStateMachine.GameStates.MENU_LOOSE;
+            }
+        }
         if (Input.touchCount== 0 && Input.touchSupported)
 		{
 			touching = false;
@@ -275,18 +283,20 @@ public class PlayerController : MonoBehaviour
 
 	public void Kill(enemiesEnum enemyWhoKilled)
 	{
-		Debug.Log("Killing player");
-        if (enemyWhoKilled == enemiesEnum.archerEnemy)
+        if (dead == false)
         {
-            arrwoKill.Play();
+            Debug.Log("Killing player");
+            if (enemyWhoKilled == enemiesEnum.archerEnemy)
+            {
+                arrowKill.Play();
+            }
+            else
+            {
+                swordKill.Play();
+            }
+            dead = true;
+            paused = true;
         }
-        else
-        {
-            swordKill.Play();
-        }
-		//loseText.GetComponent<Renderer>().enabled = true;
-		stateMachine.state = GameStateMachine.GameStates.MENU_LOOSE;
-		paused = true;
 	}
 
 	public void CheckEnemy()

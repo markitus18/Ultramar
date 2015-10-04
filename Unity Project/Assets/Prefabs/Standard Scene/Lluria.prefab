@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.49300003, y: .280000001, z: -14.8999996}
+  m_LocalPosition: {x: 9.89999962, y: .370000005, z: -4.94999981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466068}
@@ -386,7 +386,7 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   active: 0
-  startingDirection: 3
+  startingDirection: 2
   direction: 0
   ret: 0
 --- !u!114 &11463734
@@ -409,8 +409,9 @@ MonoBehaviour:
   touching: 0
   lockCam: 0
   ended: 0
+  dead: 0
   swordKill: {fileID: 8250170}
-  arrwoKill: {fileID: 8220582}
+  arrowKill: {fileID: 8220582}
 --- !u!135 &13556402
 SphereCollider:
   m_ObjectHideFlags: 1

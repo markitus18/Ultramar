@@ -157,7 +157,6 @@ public class GameStateMachine : MonoBehaviour
 			if (CheckPlayerKill ())
 			{
 				delayTime = Time.time;
-				state = GameStates.MENU_LOOSE;
 			}
 			else
 				state = GameStates.ENEMY_END;
@@ -222,15 +221,19 @@ public class GameStateMachine : MonoBehaviour
 		{
             playerController.GetComponent<Entity>().Reset();
             int enemiesMax = enemies.Count;
-			for (int i = 0; i < enemiesMax; i++)
-			{
-				enemies[i].SetActive(true);
-				enemies[i].GetComponent<Entity>().Reset();
+            for (int i = 0; i < enemiesMax; i++)
+            {
+                enemies[i].SetActive(true);
+                enemies[i].GetComponent<Entity>().Reset();
+            }
+            for (int i = 0; i < enemiesMax; i++)
+            {
                 if (enemies[i].GetComponent<ArcherEnemyC>())
                 {
                     enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
                 }
             }
+            playerScript.dead = false;
 			playerScript.ended = false;
 			state = GameStates.PLAYER_TURN;
 			playerScript.paused = false;
