@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource swordKill;
     public AudioSource arrowKill;
+    public AudioSource KillSound;
 
     void Awake()
 	{
@@ -309,7 +310,8 @@ public class PlayerController : MonoBehaviour
 				if (entity.currentBox.GetComponent<Box>().enemies[i].tag != "Player")
 				{
 					Debug.Log("Killing enemy");
-					entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<Entity>().active = false;
+                    KillSound.Play();
+                    entity.currentBox.GetComponent<Box>().enemies[i].GetComponent<Entity>().active = false;
 					entity.currentBox.GetComponent<Box>().enemies[i].SetActive(false);
 					entity.currentBox.GetComponent<Box>().enemies.Remove (entity.currentBox.GetComponent<Box>().enemies[i]);
 					i--;

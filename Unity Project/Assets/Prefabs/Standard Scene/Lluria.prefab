@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 473140}
+  - 82: {fileID: 8278622}
+  m_Layer: 0
+  m_Name: Sound_Effects_EnemyAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &162122
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +63,7 @@ GameObject:
   - 4: {fileID: 469200}
   - 82: {fileID: 8250170}
   m_Layer: 0
-  m_Name: Sound_Effects_EnemyAttack
+  m_Name: Sound_Effects_Player_attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +96,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466068}
-  - {fileID: 469200}
+  - {fileID: 473140}
   - {fileID: 456650}
+  - {fileID: 469200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &456650
@@ -114,6 +131,18 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0699996948, y: .430000007, z: -.0900001526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454182}
+  m_RootOrder: 3
+--- !u!4 &473140
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0700000003, y: .430000007, z: -.0900000036}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -365,6 +394,75 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8278622
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137092}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 54ebc5b438dce6d4ba6567ca6e7ea18a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: .00200000009
+      value: 1
+      inSlope: .0172945242
+      outSlope: .0172945242
+      tangentMode: 0
+    - time: 1
+      value: .997252762
+      inSlope: -.0453760512
+      outSlope: -.0453760512
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11425898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,8 +498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c764e6eeec43d114ab9cbc119241793c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseText: {fileID: 0}
-  winText: {fileID: 0}
   paused: 0
   CameraScript: {fileID: 0}
   passTurn: 0
@@ -410,8 +506,9 @@ MonoBehaviour:
   lockCam: 0
   ended: 0
   dead: 0
-  swordKill: {fileID: 8250170}
+  swordKill: {fileID: 8278622}
   arrowKill: {fileID: 8220582}
+  KillSound: {fileID: 8250170}
 --- !u!135 &13556402
 SphereCollider:
   m_ObjectHideFlags: 1
