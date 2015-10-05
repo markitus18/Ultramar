@@ -158,33 +158,32 @@ public class PanelManager : MonoBehaviour {
 		int levelsUnlocked = GameControl.control.unlockedLevel;
 		int currentLevel = Application.loadedLevel;
 
-		if (currentLevel == 10 && !GameControl.control.gameFinished)
-			return 15;
-
-		if (currentLevel == levelsUnlocked)
+		if (currentLevel == 10)
 		{
-			GameControl.control.unlockedLevel = ++levelsUnlocked;
-			if (currentLevel == 5 && GameControl.control.secondKinematic)
-					return 13;
-			else
-				GameControl.control.levelSelectionMovement = true;
+			return 15;
 		}
-			
-			GameControl.control.currentSelectionLevel = currentLevel;
+		if (currentLevel > levelsUnlocked)
+		{
+			GameControl.control.unlockedLevel = levelsUnlocked = currentLevel + 1;
 			if (currentLevel != 5)
 			{
-				if (currentLevel < 5)
-					return 12;
-				else
-					return 14;
+				GameControl.control.levelSelectionMovement = true;
+				GameControl.control.currentSelectionLevel = currentLevel;
 			}
 			else
 			{
-				if (GameControl.control.secondKinematic)
-					return 13;
-				else
-					return 12;
+				GameControl.control.currentSelectionLevel = currentLevel++;
+				return 0;
 			}
+		}
+		else
+			GameControl.control.currentSelectionLevel = currentLevel;
+		if (currentLevel <= 5)
+			return 12;
+		if (currentLevel > 5)
+		    return 14;
+		return 0;
+
 	}
 
 
