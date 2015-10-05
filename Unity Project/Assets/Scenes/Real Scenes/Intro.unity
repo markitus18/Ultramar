@@ -114,7 +114,7 @@ RectTransform:
   m_GameObject: {fileID: 29295025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 81429625}
   m_Father: {fileID: 952042193}
@@ -122,7 +122,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 370, y: 215}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &29295027
 MonoBehaviour:
@@ -941,9 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995349290363c084ab06f149b29b7231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deployButton: {fileID: 29295025}
   musicButton: {fileID: 1901058294}
   replayButton: {fileID: 0}
   backButton: {fileID: 0}
+  winPanel: {fileID: 0}
+  loosePanel: {fileID: 0}
 --- !u!1 &1198275170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,15 +1230,15 @@ RectTransform:
   m_GameObject: {fileID: 1625802858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1.20000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 904036841}
   m_Father: {fileID: 952042193}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1625802860
 MonoBehaviour:
@@ -1679,7 +1682,7 @@ RectTransform:
   m_GameObject: {fileID: 1901058294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 677121689}
   m_Father: {fileID: 952042193}
@@ -1687,7 +1690,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 325, y: 215}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1901058296
 MonoBehaviour:
