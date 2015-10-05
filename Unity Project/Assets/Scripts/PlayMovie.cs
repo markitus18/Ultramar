@@ -7,16 +7,36 @@ public class PlayMovie : MonoBehaviour {
     public MovieTexture movie;
 #endif
     public System.String Title;
+    public int cinematicNumber;
 
     // Use this for initialization
     void Start()
     {
         //public string  Path;
-#if !UNITY_EDITOR
-        Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+//#if !UNITY_EDITOR
+        if (cinematicNumber == 1)
+        {
+            if (GameControl.control.firstKinematic)
+            {
+                Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+                GameControl.control.firstKinematic = false;
+            }
+        }
+        else if (cinematicNumber == 2)
+        {
+            if (GameControl.control.firstKinematic)
+            {
+                Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+                GameControl.control.secondKinematic = false;
+            }
+        }
+        else
+        {
+            Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+        }
          int toLoad = Application.loadedLevel;
             Application.LoadLevel(toLoad+1);
-#endif
+//#endif
 #if UNITY_EDITOR
         GetComponent<Renderer>().material.mainTexture = movie;
         GetComponent<AudioSource>().Play();
@@ -35,13 +55,11 @@ public class PlayMovie : MonoBehaviour {
             int toLoad = Application.loadedLevel;
 			if (toLoad == 11)
 			{
-				GameControl.control.firstKinematic = false;
 				GameControl.control.Save ();
            		Application.LoadLevel(1);
 			}
 			if (toLoad == 13)
 			{
-				GameControl.control.secondKinematic = false;
 				GameControl.control.Save ();
 				Application.LoadLevel(6);
 			}

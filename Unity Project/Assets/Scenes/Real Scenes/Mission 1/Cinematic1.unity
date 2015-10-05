@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movie: {fileID: 15200000, guid: 36edbe950df15c44d805d94a49cd1ee3, type: 3}
   Title: Cinematica01.mp4
+  cinematicNumber: 1
 --- !u!82 &1199314848
 AudioSource:
   m_ObjectHideFlags: 0
