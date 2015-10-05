@@ -17,7 +17,6 @@ public class GameControl : MonoBehaviour
 
 	void Awake ()
 	{
-        ResetGame();
 		if (control == null)
 		{
 			DontDestroyOnLoad(gameObject);
