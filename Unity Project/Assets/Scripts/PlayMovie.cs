@@ -13,7 +13,7 @@ public class PlayMovie : MonoBehaviour {
     void Start()
     {
         //public string  Path;
-//#if !UNITY_EDITOR
+#if !UNITY_EDITOR
         if (cinematicNumber == 1)
         {
             if (GameControl.control.firstKinematic)
@@ -32,11 +32,11 @@ public class PlayMovie : MonoBehaviour {
         }
         else
         {
-            Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
+            Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
         }
          int toLoad = Application.loadedLevel;
             Application.LoadLevel(toLoad+1);
-//#endif
+#endif
 #if UNITY_EDITOR
         GetComponent<Renderer>().material.mainTexture = movie;
         GetComponent<AudioSource>().Play();
