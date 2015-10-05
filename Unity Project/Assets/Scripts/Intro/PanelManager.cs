@@ -175,7 +175,7 @@ public class PanelManager : MonoBehaviour {
 		{
 			return 15;
 		}
-		if (currentLevel > levelsUnlocked)
+		if (currentLevel >= levelsUnlocked)
 		{
 			GameControl.control.unlockedLevel = levelsUnlocked = currentLevel + 1;
 			if (currentLevel != 5)
