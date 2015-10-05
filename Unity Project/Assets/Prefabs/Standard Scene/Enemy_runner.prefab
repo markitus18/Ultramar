@@ -101,7 +101,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 54ebc5b438dce6d4ba6567ca6e7ea18a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126a62d035b4ea04fa9d020106c941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingBox: {fileID: 0}
   currentBox: {fileID: 0}
   targetBox: {fileID: 0}
   movementSpeed: 8
@@ -191,6 +192,7 @@ MonoBehaviour:
   targetAssigned: 0
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
+  active: 0
   startingDirection: 1
   direction: 3
   ret: 0
@@ -229,6 +231,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: movementSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
