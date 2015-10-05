@@ -1,17 +1,24 @@
 fileFormatVersion: 2
-guid: fb26d85af5c517b418f4c0960d9b473e
-timeCreated: 1435514635
+guid: 634f22516d8d6e84780d4b29a68f1a46
+timeCreated: 1444061083
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: tRex
-    400000: //RootNode
-    400002: tRex
-    2300000: tRex
-    3300000: tRex
-    4300000: tRex
+    100000: Block:block 2
+    100002: Line006
+    100004: //RootNode
+    100006: Plane001
+    400000: Block:block 2
+    400002: Line006
+    400004: //RootNode
+    400006: Plane001
+    2300000: Line006
+    2300002: Plane001
+    3300000: Line006
+    3300002: Plane001
+    4300000: Line006
+    4300002: Plane001
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,9 +58,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
