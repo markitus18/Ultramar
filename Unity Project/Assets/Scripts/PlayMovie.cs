@@ -33,10 +33,18 @@ public class PlayMovie : MonoBehaviour {
         if (!movie.isPlaying)
         {
             int toLoad = Application.loadedLevel;
-			if (toLoad == 1)
+			if (toLoad == 11)
+			{
 				GameControl.control.firstKinematic = false;
-			GameControl.control.Save ();
-            Application.LoadLevel(toLoad+1);
+				GameControl.control.Save ();
+           		Application.LoadLevel(1);
+			}
+			if (toLoad == 13)
+			{
+				GameControl.control.secondKinematic = false;
+				GameControl.control.Save ();
+				Application.LoadLevel(6);
+			}
         }
 #endif
     }

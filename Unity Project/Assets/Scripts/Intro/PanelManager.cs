@@ -4,11 +4,14 @@ using System.Collections;
 public class PanelManager : MonoBehaviour {
 
     public GameObject deployButton;
+	public GameObject playButton;
 	public GameObject musicButton;
+	public GameObject musicButton2;
 	public GameObject replayButton;
 	public GameObject backButton;
 	public GameObject winPanel;
 	public GameObject loosePanel;
+	public GameObject title;
 	GameStateMachine gameStateMachine;
 	bool panelOpened = false;
 
@@ -24,6 +27,8 @@ public class PanelManager : MonoBehaviour {
         pos.x -= 100;
 		if (musicButton)
       	  musicButton.transform.position = pos;
+		if (musicButton2)
+			musicButton2.transform.position = pos;
         pos.x -= 100;
 		if (replayButton)
         	replayButton.transform.position = pos;
@@ -34,7 +39,10 @@ public class PanelManager : MonoBehaviour {
     }
 	public void OpenPanel()
 	{
-		musicButton.SetActive (true);
+		if (AudioListener.volume == 1)
+			musicButton.SetActive (true);
+		if (AudioListener.volume == 2)
+			musicButton2.SetActive (true);
 		if (replayButton)
 			replayButton.SetActive (true);
 		if (backButton)
@@ -65,23 +73,32 @@ public class PanelManager : MonoBehaviour {
 		if (AudioListener.volume == 1)
 		{
 			AudioListener.volume = 0;
+			musicButton2.SetActive (true);
+			musicButton.SetActive (false);
 		}
 		else
 		{
 			AudioListener.volume = 1;
+			musicButton.SetActive (true);
+			musicButton2.SetActive (false);
 		}
+
 	}
 
 	public void Play()
 	{
 		if (GameControl.control.firstKinematic)
-			Application.LoadLevel (2);
+			Application.LoadLevel (11);
 		else
 		{
+			title.SetActive (false);
+			playButton.SetActive (false);
+			/*
 			if (GameControl.control.unlockedLevel < 6)
 				Application.LoadLevel (1);
 			else
 				Application.LoadLevel(8);
+			*/
 		}
 
 	}
@@ -141,7 +158,7 @@ public class PanelManager : MonoBehaviour {
 		int levelsUnlocked = GameControl.control.unlockedLevel;
 		int currentLevel = Application.loadedLevel;
 
-		if (currentLevel == 10)
+		if (currentLevel == 10 && !GameControl.control.gameFinished)
 			return 15;
 
 		if (currentLevel == levelsUnlocked)
@@ -168,7 +185,6 @@ public class PanelManager : MonoBehaviour {
 				else
 					return 12;
 			}
-		return 0;
 	}
 
 
