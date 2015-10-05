@@ -25,16 +25,24 @@ public class PanelManager : MonoBehaviour {
         pos.z = 0;
         deployButton.transform.position = pos;
         pos.x -= 100;
-		if (musicButton)
-      	  musicButton.transform.position = pos;
-		if (musicButton2)
-			musicButton2.transform.position = pos;
-        pos.x -= 100;
-		if (replayButton)
-        	replayButton.transform.position = pos;
-        pos.x -= 100;
-		if (backButton)
-        	backButton.transform.position = pos;
+        if (musicButton)
+        {
+            musicButton.transform.position = pos;
+        }
+        if (musicButton2)
+        {
+            musicButton2.transform.position = pos;
+            pos.x -= 100;
+        }
+        if (replayButton)
+        {
+            replayButton.transform.position = pos;
+            pos.x -= 100;
+        }
+        if (backButton)
+        {
+            backButton.transform.position = pos;
+        }
 
     }
 	public void OpenPanel()
