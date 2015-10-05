@@ -14,28 +14,22 @@ public class PlayMovie : MonoBehaviour {
     {
         //public string  Path;
 #if !UNITY_EDITOR
-        if (cinematicNumber == 1)
+        if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
         {
-            if (GameControl.control.firstKinematic)
-            {
                 Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
                 GameControl.control.firstKinematic = false;
-            }
         }
-        else if (cinematicNumber == 2)
+        else if (cinematicNumber == 2 && GameControl.control.secondKinematic == true)
         {
-            if (GameControl.control.firstKinematic)
-            {
                 Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFit);
                 GameControl.control.secondKinematic = false;
-            }
         }
         else
         {
             Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
         }
          int toLoad = Application.loadedLevel;
-            Application.LoadLevel(toLoad+1);
+         Application.LoadLevel(toLoad+1);
 #endif
 #if UNITY_EDITOR
         GetComponent<Renderer>().material.mainTexture = movie;
