@@ -121,7 +121,12 @@ public class PanelManager : MonoBehaviour {
 
 	public void Back()
 	{
-		Application.LoadLevel ("Level Selection");
+		if (Application.loadedLevel == 12 || Application.loadedLevel == 14)
+			Application.LoadLevel (0);
+		else if (Application.loadedLevel < 6)
+			Application.LoadLevel ("Level Selection");
+		else if (Application.loadedLevel >= 6)
+			Application.LoadLevel ("Level Selection2");
 	}
 
 	public void OpenWinPanel()
