@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StandartLevel : MonoBehaviour {
+public class StandartLevel : MonoBehaviour
+{
+	public PanelManager panelManager;
+	public int levelToLoad;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnTouchUp()
+	{
+		if (!panelManager.playButton.activeSelf)
+			Application.LoadLevel (levelToLoad);
 	}
 }
