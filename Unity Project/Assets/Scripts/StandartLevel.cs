@@ -8,7 +8,9 @@ public class StandartLevel : MonoBehaviour
 
 	void OnTouchUp()
 	{
-		if (!panelManager.playButton.activeSelf)
+		if (panelManager.playButton && !panelManager.playButton.activeSelf)
 			Application.LoadLevel (levelToLoad);
+        else if (!panelManager.playButton)
+            Application.LoadLevel(levelToLoad);
 	}
 }
