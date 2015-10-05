@@ -17,6 +17,7 @@ public class GameControl : MonoBehaviour
 
 	void Awake ()
 	{
+        ResetGame();
 		if (control == null)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -32,7 +33,7 @@ public class GameControl : MonoBehaviour
 	void OnGUI()
 	{
 		if(GUI.Button (new Rect(10, 40, 100, 30), "Reset Game"))
-			Reset ();
+			ResetGame ();
 		GUI.Label (new Rect(10, 80, 120, 50), "Unlocked levels: " + unlockedLevel.ToString ());
 	}
 
@@ -66,7 +67,7 @@ public class GameControl : MonoBehaviour
 		}
 	}
 
-	public void Reset()
+	public void ResetGame()
 	{
 		if (File.Exists (Application.persistentDataPath + "/gameData.dat"))
 			File.Delete (Application.persistentDataPath + "/gameData.dat");
@@ -74,7 +75,8 @@ public class GameControl : MonoBehaviour
 		secondKinematic = true;
 		unlockedLevel = 1;
 		gameFinished = false;
-		Application.LoadLevel (0);
+        if (Application.loadedLevel != 0)
+		    Application.LoadLevel (0);
 	}
 
 	[Serializable]
