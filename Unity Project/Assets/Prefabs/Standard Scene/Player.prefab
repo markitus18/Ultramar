@@ -400,8 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c764e6eeec43d114ab9cbc119241793c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseText: {fileID: 0}
-  winText: {fileID: 0}
   paused: 0
   CameraScript: {fileID: 0}
   passTurn: 0
@@ -412,6 +410,7 @@ MonoBehaviour:
   dead: 0
   swordKill: {fileID: 8250170}
   arrowKill: {fileID: 8220582}
+  KillSound: {fileID: 0}
 --- !u!135 &13556402
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -435,6 +434,10 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: fb26d85af5c517b418f4c0960d9b473e, type: 3}
+    - target: {fileID: 0}
+      propertyPath: dead
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170560}
