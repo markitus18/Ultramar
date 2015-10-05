@@ -12,7 +12,6 @@ public class StaticEnemyC : MonoBehaviour
 		playerEntity = GameObject.FindWithTag ("Player").GetComponent<Entity>();
 		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		entity = gameObject.GetComponent<Entity>();
-		entity.currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
 	public void SetNewBox ()
 	{

@@ -60,6 +60,7 @@ public class Entity : MonoBehaviour
 		currentBox = startingBox;
 		gameObject.GetComponent<Collider>().enabled = true;
 		moving = false;
+		currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
 
 	public GameStateMachine.UpdateStates UpdateEntity ()

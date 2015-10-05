@@ -217,6 +217,8 @@ public class GameStateMachine : MonoBehaviour
 
 	void ResetGame()
 	{
+		Debug.Log("Reseting Game");
+		ResetBoxes ();
 		if (Time.time >= delayTime + 1)
 		{
             playerController.GetComponent<Entity>().Reset();
@@ -238,6 +240,15 @@ public class GameStateMachine : MonoBehaviour
 			state = GameStates.PLAYER_TURN;
 			playerScript.paused = false;
 		}
+	}
+
+	void ResetBoxes()
+	{
+		go = GameObject.FindGameObjectsWithTag("Box");
+		foreach (GameObject box in go)
+		{
+			box.GetComponent<Box>().enemies.Clear();
+		}	
 	}
 
 }
