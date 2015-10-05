@@ -533,7 +533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454182, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11425898, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
       propertyPath: currentBox
@@ -543,42 +543,6 @@ Prefab:
       propertyPath: m_Name
       value: Lluria (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 469200, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 456650, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 466068, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466068, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 4.38341808
-      objectReference: {fileID: 0}
-    - target: {fileID: 466068, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4.38341808
-      objectReference: {fileID: 0}
-    - target: {fileID: 466068, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 4.38341761
-      objectReference: {fileID: 0}
-    - target: {fileID: 11425898, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: startingDirection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250170, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a32170ce7a78a4b42b0c3a576ae76199, type: 3}
-    - target: {fileID: 8278622, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a32170ce7a78a4b42b0c3a576ae76199, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
   m_IsPrefabParent: 0
