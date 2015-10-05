@@ -12,7 +12,7 @@ public class PanelManager : MonoBehaviour {
 	public GameObject winPanel;
 	public GameObject loosePanel;
 	public GameObject title;
-	GameStateMachine gameStateMachine;
+	public GameStateMachine gameStateMachine;
 	bool panelOpened = false;
 
 	void Start()
@@ -113,10 +113,14 @@ public class PanelManager : MonoBehaviour {
 
 	public void Reset()
 	{
+		gameStateMachine.state = GameStateMachine.GameStates.RESET;
+		Debug.Log (gameStateMachine.state);
+		Debug.Log("Reset button pressed");
+		int i = 0;
 		CloseLoosePanel();
 		CloseWinPanel();
         ClosePanel();
-		gameStateMachine.state = GameStateMachine.GameStates.RESET;
+		Debug.Log("Changing state to reset");
 	}
 
 	public void Back()

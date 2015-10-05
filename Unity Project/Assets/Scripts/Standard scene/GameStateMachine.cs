@@ -30,7 +30,6 @@ public class GameStateMachine : MonoBehaviour
 	float delayTime;
 	public bool FullGame = false;
 	public int level;
-
 	void Start ()
 	{
 		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
@@ -60,10 +59,16 @@ public class GameStateMachine : MonoBehaviour
                 EndEnemiesTurn();
                 break;
             case GameStates.MENU_WIN:
+		{
+			Debug.Log("Menu Win stage");
                 LoadWinMenu();
+		}
 			break;
             case GameStates.MENU_LOOSE:
+		{
+			Debug.Log("Menu Loose stage");
                	LoadLooseMenu();
+		}
                 break;
             case GameStates.RESET:
 				ResetGame();
@@ -212,33 +217,17 @@ public class GameStateMachine : MonoBehaviour
 	void LoadLooseMenu()
 	{
 		panelManager.OpenLoosePanel();
-        
 	}
 
 	void ResetGame()
 	{
 		Debug.Log("Reseting Game");
-		ResetBoxes ();
 		if (Time.time >= delayTime + 1)
 		{
-            playerController.GetComponent<Entity>().Reset();
-            int enemiesMax = enemies.Count;
-            for (int i = 0; i < enemiesMax; i++)
-            {
-                enemies[i].SetActive(true);
-                enemies[i].GetComponent<Entity>().Reset();
-            }
-            for (int i = 0; i < enemiesMax; i++)
-            {
-                if (enemies[i].GetComponent<ArcherEnemyC>())
-                {
-                    enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
-                }
-            }
-            playerScript.dead = false;
-			playerScript.ended = false;
+			ResetBoxes ();
+			ResetEnemies();
+			ResetPlayer ();
 			state = GameStates.PLAYER_TURN;
-			playerScript.paused = false;
 		}
 	}
 
@@ -251,4 +240,31 @@ public class GameStateMachine : MonoBehaviour
 		}	
 	}
 
-}
+	void ResetPlayer()
+	{
+		playerScript.ended = false;
+		playerScript.dead = false;
+		playerScript.looseChanged = false;
+		playerScript.winChanged = false;
+		playerScript.paused = false;
+		playerController.GetComponent<Entity>().Reset();
+	}
+
+	void ResetEnemies()
+	{
+		int enemiesMax = enemies.Count;
+		for (int i = 0; i < enemiesMax; i++)
+		{
+			enemies[i].SetActive(true);
+			enemies[i].GetComponent<Entity>().Reset();
+		}
+		for (int i = 0; i < enemiesMax; i++)
+		{
+			if (enemies[i].GetComponent<ArcherEnemyC>())
+			{
+				enemies[i].GetComponent<ArcherEnemyC>().CheckPlayer();
+			}
+		}
+	}
+		
+	}

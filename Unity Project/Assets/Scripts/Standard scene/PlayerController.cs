@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public bool lockCam;
     public bool ended;
     public bool dead;
+	public bool winChanged = false;
+	public bool looseChanged = false;
 
     int direction;
     int directionVariation;
@@ -59,9 +61,10 @@ public class PlayerController : MonoBehaviour
 
         if (dead == true)
         {
-            if (!arrowKill.isPlaying && !swordKill.isPlaying)
+            if (!arrowKill.isPlaying && !swordKill.isPlaying && !looseChanged)
             {
                 stateMachine.state = GameStateMachine.GameStates.MENU_LOOSE;
+				looseChanged = true;
             }
         }
         if (Input.touchCount== 0 && Input.touchSupported)
@@ -70,9 +73,10 @@ public class PlayerController : MonoBehaviour
             lockCam = false;
         }
 
-        if(ended == true)
+        if(ended == true && !winChanged)
         {
             stateMachine.state = GameStateMachine.GameStates.MENU_WIN; 
+			winChanged = true;
         }
 
 #if UNITY_EDITOR
