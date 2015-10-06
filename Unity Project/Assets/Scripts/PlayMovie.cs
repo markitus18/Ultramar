@@ -35,6 +35,14 @@ public class PlayMovie : MonoBehaviour {
         GetComponent<Renderer>().material.mainTexture = movie;
         GetComponent<AudioSource>().Play();
         movie.Play();
+		if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
+		{
+			GameControl.control.firstKinematic = false;
+		}
+		else if (cinematicNumber == 2 && GameControl.control.secondKinematic == true)
+		{
+			GameControl.control.secondKinematic = false;
+		}
 
 #endif
 
@@ -44,7 +52,7 @@ public class PlayMovie : MonoBehaviour {
     void Update()
     {
 #if UNITY_EDITOR
-        if (!movie.isPlaying)
+        if (!movie.isPlaying || (Input.GetMouseButtonDown(0) && GameControl.control.firstKinematic == false))
         {
             int toLoad = Application.loadedLevel;
 			if (toLoad == 11)
