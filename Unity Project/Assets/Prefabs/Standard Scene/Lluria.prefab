@@ -196,7 +196,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7998c620bdaac5a459518040af996617, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 892d9ff362733314493a57b40597fdc4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -506,6 +506,8 @@ MonoBehaviour:
   lockCam: 0
   ended: 0
   dead: 0
+  winChanged: 0
+  looseChanged: 0
   swordKill: {fileID: 8278622}
   arrowKill: {fileID: 8220582}
   KillSound: {fileID: 8250170}

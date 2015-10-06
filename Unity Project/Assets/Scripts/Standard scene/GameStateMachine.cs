@@ -34,8 +34,9 @@ public class GameStateMachine : MonoBehaviour
 	{
 		playerController = GameObject.FindWithTag("Player").GetComponent<Entity>();
         playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        state = GameStates.PLAYER_TURN;
-		go = GameObject.FindGameObjectsWithTag("Enemy");
+        //state = GameStates.PLAYER_TURN;
+        state = GameStates.RESET;
+        go = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject enemy in go)
 		{
 			enemies.Add(enemy);
