@@ -188,6 +188,7 @@ public class PanelManager : MonoBehaviour {
 			}
 			else
 			{
+				GameControl.control.introZoom = false;
 				GameControl.control.currentSelectionLevel = currentLevel++;
 				return 0;
 			}
