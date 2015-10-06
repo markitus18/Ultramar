@@ -116,7 +116,6 @@ public class PanelManager : MonoBehaviour {
 		gameStateMachine.state = GameStateMachine.GameStates.RESET;
 		Debug.Log (gameStateMachine.state);
 		Debug.Log("Reset button pressed");
-		int i = 0;
 		CloseLoosePanel();
 		CloseWinPanel();
         ClosePanel();
