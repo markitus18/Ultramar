@@ -343,11 +343,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: SecondMissionUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: gameFinished
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 875a585189ac76f40b53dc959650f618, type: 2}
@@ -969,7 +969,7 @@ Transform:
   - {fileID: 2060348210}
   - {fileID: 1370792002}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1142444805
 GameObject:
   m_ObjectHideFlags: 0
