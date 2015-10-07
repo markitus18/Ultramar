@@ -44,6 +44,16 @@ public class PanelManager : MonoBehaviour {
             backButton.transform.position = pos;
         }
 
+		if (AudioListener.volume == 1)
+		{
+			musicButton2.SetActive (false);
+			musicButton.SetActive (true);
+		}
+		else if (AudioListener.volume == 0)
+		{
+			musicButton2.SetActive (true);
+			musicButton.SetActive (false);
+		}
     }
 	public void OpenPanel()
 	{
