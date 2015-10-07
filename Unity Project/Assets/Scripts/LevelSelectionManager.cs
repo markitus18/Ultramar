@@ -6,8 +6,7 @@ public class LevelSelectionManager : MonoBehaviour {
 
 	// Use this for initialization
 	public List<GameObject> boxes;
-
-	void Start ()
+	void Awake()
 	{
 		GameObject[] go;
 		go = GameObject.FindGameObjectsWithTag("Box");
@@ -15,6 +14,10 @@ public class LevelSelectionManager : MonoBehaviour {
 		{
 			boxes.Add(box);
 		}	
+	}
+	void Start ()
+	{
+
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,9 @@ public class LevelSelectionManager : MonoBehaviour {
 
 	public GameObject GetBox(int level)
 	{
-		for(int i = 0; i < boxes.Count; i++)
+		int c = boxes.Count;
+		Debug.Log (c);
+		for(int i = 0; i < c; i++)
 		{
 			if (boxes[i].GetComponent<Box>().LevelToLoad == level)
 				return boxes[i];
