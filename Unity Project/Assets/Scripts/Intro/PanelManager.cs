@@ -193,7 +193,6 @@ public class PanelManager : MonoBehaviour {
 			GameControl.control.unlockedLevel = levelsUnlocked = currentLevel + 1;
 			if (currentLevel != 5)
 			{
-				GameControl.control.levelSelectionMovement = true;
 				GameControl.control.currentSelectionLevel = currentLevel;
 			}
 			else

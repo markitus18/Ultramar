@@ -12,13 +12,13 @@ public class GameControl : MonoBehaviour
 	public bool firstKinematic = true;
 	public bool secondKinematic = true;
 	public int currentSelectionLevel;
-	public bool levelSelectionMovement = false;
 	public bool gameFinished = false;
 	public bool introZoom = true;
 	public bool SecondMissionUnlocked = false;
 
 	void Awake ()
 	{
+
 		if (control == null)
 		{
 			DontDestroyOnLoad(gameObject);
