@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public bool dead;
 	public bool winChanged = false;
 	public bool looseChanged = false;
-
+	public int currentLevel;
     int direction;
     int directionVariation;
     // Use this for initialization
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource swordKill;
     public AudioSource arrowKill;
     public AudioSource KillSound;
+	
 
     void Awake()
 	{
@@ -47,8 +48,7 @@ public class PlayerController : MonoBehaviour
      	   CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 
         paused = false;
-       
-    }
+	}
 
 	void Update ()
 	{
@@ -304,6 +304,10 @@ public class PlayerController : MonoBehaviour
 		}
 		if (available)
 		{
+			if (Application.loadedLevel == 12 || Application.loadedLevel == 14)
+			{
+				currentLevel = newBox.GetComponent<Box>().LevelToLoad;
+			}
 			//transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
 			Debug.Log ("Assigned");
 			entity.targetPosition = newBox.transform.position;

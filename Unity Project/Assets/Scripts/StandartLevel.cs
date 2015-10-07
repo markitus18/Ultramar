@@ -3,14 +3,27 @@ using System.Collections;
 
 public class StandartLevel : MonoBehaviour
 {
-	public PanelManager panelManager;
 	public int levelToLoad;
 
-	void OnTouchUp()
+	public Material locked;
+	public Material unlocked;
+	public Material current;
+
+	void Update()
 	{
-		if (panelManager.playButton && !panelManager.playButton.activeSelf)
-			Application.LoadLevel (levelToLoad);
-        else if (!panelManager.playButton)
-            Application.LoadLevel(levelToLoad);
+		if(levelToLoad == GameControl.control.unlockedLevel)
+		{
+			gameObject.GetComponent<Renderer>().material = current;
+		}
+
+		if(levelToLoad < GameControl.control.unlockedLevel)
+		{
+			gameObject.GetComponent<Renderer>().material = unlocked;
+		}
+
+		if(levelToLoad > GameControl.control.unlockedLevel)
+		{
+			gameObject.GetComponent<Renderer>().material = locked;
+		}
 	}
 }
