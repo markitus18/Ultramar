@@ -3263,7 +3263,7 @@ MonoBehaviour:
   rotationDamping: 2
   heightDamping: 1
   distance: 26
-  startingY: 358
+  startingY: 4
   yMovementLimit: 50
   xMinLimit: 15
   xMaxLimit: 80
