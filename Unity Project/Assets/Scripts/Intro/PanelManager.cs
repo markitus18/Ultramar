@@ -43,7 +43,7 @@ public class PanelManager : MonoBehaviour {
         {
             backButton.transform.position = pos;
         }
-
+/*
 		if (AudioListener.volume == 1)
 		{
 			musicButton2.SetActive (false);
@@ -54,12 +54,13 @@ public class PanelManager : MonoBehaviour {
 			musicButton2.SetActive (true);
 			musicButton.SetActive (false);
 		}
+		*/
     }
 	public void OpenPanel()
 	{
 		if (AudioListener.volume == 1)
 			musicButton.SetActive (true);
-		if (AudioListener.volume == 2)
+		if (AudioListener.volume == 0)
 			musicButton2.SetActive (true);
 		if (replayButton)
 			replayButton.SetActive (true);
@@ -71,6 +72,7 @@ public class PanelManager : MonoBehaviour {
 	public void ClosePanel()
 	{
 		musicButton.SetActive (false);
+		musicButton2.SetActive (false);
 		if (replayButton)
 			replayButton.SetActive (false);
 		if (backButton)

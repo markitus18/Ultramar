@@ -38,6 +38,7 @@ public class Entity : MonoBehaviour
 			targetBox = null;
         }
 		active = true;
+		if (Application.loadedLevel != 12 && Application.loadedLevel != 14)
         moving = false;
         currentBox = startingBox;
         direction = (int)startingDirection;
