@@ -245,42 +245,73 @@ public class PlayerController : MonoBehaviour
 
 	public void SetNewBox (GameObject newBox)
 	{
-    
-        if (!entity.moving && !paused && newBox)
+		bool available = false;
+		//Outside the level selection scenes
+		if (Application.loadedLevel != 12 && Application.loadedLevel != 14)
 		{
-			Debug.Log ("Checking new box");
-			bool available = false;
-			if (entity.currentBox.GetComponent<Box> ().upBox == newBox)
+	        if (!entity.moving && !paused && newBox)
 			{
-				available = true;
-				entity.direction = 1;
+				Debug.Log ("Checking new box");
+				if (entity.currentBox.GetComponent<Box> ().upBox == newBox)
+				{
+					available = true;
+					entity.direction = 1;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().downBox == newBox)
+				{
+					available = true;
+					entity.direction = 3;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().rightBox == newBox)
+				{
+					available = true;
+					entity.direction = 2;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().leftBox == newBox)
+				{
+					available = true;
+					entity.direction = 4;
+				}
 			}
-			else if (entity.currentBox.GetComponent<Box> ().downBox == newBox)
+		}
+		//In level selection scenes
+		else
+		{
+			if (!entity.moving && !paused && newBox)
 			{
-				available = true;
-				entity.direction = 3;
+				Debug.Log ("Checking new box -- Level Selection");
+				if (entity.currentBox.GetComponent<Box> ().upBox == newBox && newBox.GetComponent<Box>().LevelToLoad <= GameControl.control.unlockedLevel)
+				{
+					available = true;
+					entity.direction = 1;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().downBox == newBox && newBox.GetComponent<Box>().LevelToLoad <= GameControl.control.unlockedLevel)
+				{
+					available = true;
+					entity.direction = 3;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().rightBox == newBox && newBox.GetComponent<Box>().LevelToLoad <= GameControl.control.unlockedLevel)
+				{
+					available = true;
+					entity.direction = 2;
+				}
+				else if (entity.currentBox.GetComponent<Box> ().leftBox == newBox && newBox.GetComponent<Box>().LevelToLoad <= GameControl.control.unlockedLevel)
+				{
+					available = true;
+					entity.direction = 4;
+				}
 			}
-			else if (entity.currentBox.GetComponent<Box> ().rightBox == newBox)
-			{
-				available = true;
-				entity.direction = 2;
-			}
-			else if (entity.currentBox.GetComponent<Box> ().leftBox == newBox)
-			{
-				available = true;
-				entity.direction = 4;
-			}
-			if (available)
-			{
-				//transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
-				Debug.Log ("Assigned");
-				entity.targetPosition = newBox.transform.position;
-				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
-				entity.targetBox = newBox;
-				entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
-				entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
-				entity.moving = true;
-			}
+		}
+		if (available)
+		{
+			//transform.eulerAngles = new Vector3(0, 90 * (entity.direction - 1), 0);
+			Debug.Log ("Assigned");
+			entity.targetPosition = newBox.transform.position;
+			entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
+			entity.targetBox = newBox;
+			entity.targetBox.GetComponent<Box>().enemies.Add(gameObject);
+			entity.currentBox.GetComponent<Box>().enemies.Remove (gameObject);
+			entity.moving = true;
 		}
 	}
 

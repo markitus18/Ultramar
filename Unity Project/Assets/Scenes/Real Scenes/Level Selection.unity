@@ -2124,6 +2124,7 @@ MonoBehaviour:
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
+  LevelToLoad: 2
   enemies: []
   originalMaterial: {fileID: 0}
 --- !u!23 &1045625995
@@ -2397,6 +2398,7 @@ MonoBehaviour:
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
+  LevelToLoad: 1
   enemies: []
   originalMaterial: {fileID: 0}
 --- !u!23 &1137926706
@@ -3533,6 +3535,7 @@ MonoBehaviour:
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
+  LevelToLoad: 4
   enemies: []
   originalMaterial: {fileID: 0}
 --- !u!23 &1677531987
@@ -3635,6 +3638,7 @@ MonoBehaviour:
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
+  LevelToLoad: 3
   enemies: []
   originalMaterial: {fileID: 0}
 --- !u!23 &1727451724
@@ -4076,6 +4080,7 @@ MonoBehaviour:
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
+  LevelToLoad: 5
   enemies: []
   originalMaterial: {fileID: 0}
 --- !u!23 &1843147257

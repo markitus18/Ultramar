@@ -17,6 +17,8 @@ public class Box : MonoBehaviour {
 	public int boxDistance;
 	public float entityDistanceX;
 	public float entityDistanceZ;
+
+	public int LevelToLoad = 0;
 //	PlayerController playerController;
 
 	/*[HideInInspector]*/ public List<GameObject> enemies;
