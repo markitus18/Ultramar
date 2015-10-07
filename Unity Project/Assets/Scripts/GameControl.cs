@@ -32,9 +32,9 @@ public class GameControl : MonoBehaviour
 
 	void OnGUI()
 	{
-		if(GUI.Button (new Rect(10, 40, 100, 30), "Reset Game"))
+		/*if(GUI.Button (new Rect(10, 40, 100, 30), "Reset Game"))
 			ResetGame ();
-		GUI.Label (new Rect(10, 80, 120, 50), "Unlocked levels: " + unlockedLevel.ToString ());
+		GUI.Label (new Rect(10, 80, 120, 50), "Unlocked levels: " + unlockedLevel.ToString ());*/
 	}
 
 	public void Save()
