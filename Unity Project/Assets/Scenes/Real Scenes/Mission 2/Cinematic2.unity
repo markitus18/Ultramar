@@ -263,7 +263,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 21a66649e0e044b488ee05579e4d0b84, type: 2}
+  - {fileID: 2100000, guid: 067653ccdc38f284cb0496bb5aafdd76, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -319,8 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dcef649386ba2458e73123c68a4c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movie: {fileID: 15200000, guid: f9c1f2525738fb642bca5910055356fa, type: 3}
-  Title: cinematica2_480p.mp4
+  movie: {fileID: 15200000, guid: acfd72860c3e2804881b65c743a0d812, type: 3}
+  Title: C2.mp4
   cinematicNumber: 2
 --- !u!82 &1199314848
 AudioSource:
