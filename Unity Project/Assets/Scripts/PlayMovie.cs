@@ -29,7 +29,14 @@ public class PlayMovie : MonoBehaviour {
             Handheld.PlayFullScreenMovie(Title, Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFit);
         }
          int toLoad = Application.loadedLevel;
-         Application.LoadLevel(toLoad+1);
+        if (cinematicNumber == 1)
+        {
+            Application.LoadLevel(1);
+        }
+        else
+        {
+            Application.LoadLevel(6);
+        }
 #endif
 #if UNITY_EDITOR
         GetComponent<Renderer>().material.mainTexture = movie;
