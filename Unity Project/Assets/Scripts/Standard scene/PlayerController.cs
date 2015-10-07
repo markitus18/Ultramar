@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
 		{
 			entity.targetBox = levelSelectionManager.GetBox (levelToStart + 1);
 			entity.moving = true;
+			entity.targetPosition = entity.targetBox.transform.position;
+			entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
+
 		}
 
 	}

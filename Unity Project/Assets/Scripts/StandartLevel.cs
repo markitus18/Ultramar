@@ -16,12 +16,12 @@ public class StandartLevel : MonoBehaviour
 			gameObject.GetComponent<Renderer>().material = current;
 		}
 
-		if(levelToLoad < GameControl.control.unlockedLevel)
+		else if(levelToLoad < GameControl.control.unlockedLevel)
 		{
 			gameObject.GetComponent<Renderer>().material = unlocked;
 		}
 
-		if(levelToLoad > GameControl.control.unlockedLevel)
+		else if(levelToLoad > GameControl.control.unlockedLevel)
 		{
 			gameObject.GetComponent<Renderer>().material = locked;
 		}

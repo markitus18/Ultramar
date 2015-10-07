@@ -1110,7 +1110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: currentSelectionLevel
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: levelSelectionMovement
