@@ -212,6 +212,12 @@ public class GameStateMachine : MonoBehaviour
 
 	void LoadWinMenu()
 	{
+		if (Application.loadedLevel >= GameControl.control.unlockedLevel)
+		{
+			GameControl.control.unlockedLevel = Application.loadedLevel + 1;
+			GameControl.control.Save();
+			GameControl.control.unlockedLevel--;
+		}
 		panelManager.OpenWinPanel();
     }
 

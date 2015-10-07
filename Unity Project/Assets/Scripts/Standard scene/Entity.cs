@@ -53,13 +53,14 @@ public class Entity : MonoBehaviour
 		currentPosition = currentBox.transform.position;
 		transform.position = currentPosition;
 		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
+		moving = false;
 	}
 	void Start ()
 	{
 		active = true;
 		currentBox = startingBox;
 		gameObject.GetComponent<Collider>().enabled = true;
-		moving = false;
+
 		currentBox.GetComponent<Box>().enemies.Add(gameObject);
 	}
 
