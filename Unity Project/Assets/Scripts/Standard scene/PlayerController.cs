@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
 	void StartLevelSelection()
 	{
+		currentLevel = GameControl.control.currentSelectionLevel;
 		int levelToStart = GameControl.control.currentSelectionLevel;
 		entity.currentBox = entity.startingBox = levelSelectionManager.GetBox (levelToStart);
 		entity.currentPosition = entity.currentBox.transform.position;
