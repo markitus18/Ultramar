@@ -54,17 +54,20 @@ public class PlayerController : MonoBehaviour
 
 	void StartLevelSelection()
 	{
-		currentLevel = GameControl.control.currentSelectionLevel;
-		int levelToStart = GameControl.control.currentSelectionLevel;
-		entity.currentBox = entity.startingBox = levelSelectionManager.GetBox (levelToStart);
-		entity.currentPosition = entity.currentBox.transform.position;
-		if (GameControl.control.levelSelectionMovement)
+		if (GameControl.control.currentSelectionLevel != 0)
 		{
-			entity.targetBox = levelSelectionManager.GetBox (levelToStart + 1);
-			entity.moving = true;
-			entity.targetPosition = entity.targetBox.transform.position;
-			entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
+			currentLevel = GameControl.control.currentSelectionLevel;
+			int levelToStart = GameControl.control.currentSelectionLevel;
+			entity.currentBox = entity.startingBox = levelSelectionManager.GetBox (levelToStart);
+			entity.currentPosition = entity.currentBox.transform.position;
+			if (GameControl.control.levelSelectionMovement)
+			{
+				entity.targetBox = levelSelectionManager.GetBox (levelToStart + 1);
+				entity.moving = true;
+				entity.targetPosition = entity.targetBox.transform.position;
+				entity.distanceToMove = entity.targetPosition - gameObject.transform.position;
 
+			}
 		}
 
 	}
