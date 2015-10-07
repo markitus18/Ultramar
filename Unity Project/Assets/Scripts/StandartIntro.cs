@@ -17,7 +17,7 @@ public class StandartIntro : MonoBehaviour
 		}
 		else if(GameControl.control.SecondMissionUnlocked)
 		{
-			if (levelToLoad == 1)
+			if (levelToLoad == 12)
 				gameObject.GetComponent<Renderer>().material = unlocked;
 			else
 				gameObject.GetComponent<Renderer>().material = current;
@@ -25,7 +25,7 @@ public class StandartIntro : MonoBehaviour
 
 		else
 		{
-			if (levelToLoad == 1)
+			if (levelToLoad == 12)
 				gameObject.GetComponent<Renderer>().material = current;
 			else
 				gameObject.GetComponent<Renderer>().material = locked;
@@ -34,7 +34,7 @@ public class StandartIntro : MonoBehaviour
 
 	void OnTouchDown()
 	{
-		if (levelToLoad == 1)
+		if (levelToLoad == 12)
 			Application.LoadLevel (12);
 		else if (GameControl.control.SecondMissionUnlocked)
 			Application.LoadLevel (14);
