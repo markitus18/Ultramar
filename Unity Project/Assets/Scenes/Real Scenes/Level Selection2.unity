@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  levelToLoad: 6
+  levelToLoad: 13
 --- !u!23 &820058052
 MeshRenderer:
   m_ObjectHideFlags: 0

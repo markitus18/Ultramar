@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour
 	public bool levelSelectionMovement = false;
 	public bool gameFinished = false;
 	public bool introZoom = true;
+	public bool SecondMissionUnlocked = false;
 
 	void Awake ()
 	{

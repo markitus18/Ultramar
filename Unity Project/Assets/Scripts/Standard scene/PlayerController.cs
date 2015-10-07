@@ -50,6 +50,20 @@ public class PlayerController : MonoBehaviour
         paused = false;
 	}
 
+	void StartLevelSelection()
+	{
+		int levelToStart = GameControl.control.currentSelectionLevel;
+	}
+	/*
+	void Awake()
+	{
+		startingBox = currentBox;
+		direction = (int)startingDirection;
+		currentPosition = currentBox.transform.position;
+		transform.position = currentPosition;
+		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
+	}
+	*/
 	void Update ()
 	{
         //Setting the variation amount for the player controller drag
