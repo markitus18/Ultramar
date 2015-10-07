@@ -506,9 +506,9 @@ MonoBehaviour:
   down: 0
   left: 0
   upBox: {fileID: 0}
-  downBox: {fileID: 0}
-  rightBox: {fileID: 820320579}
-  leftBox: {fileID: 1265205480}
+  downBox: {fileID: 820320579}
+  rightBox: {fileID: 1265205480}
+  leftBox: {fileID: 820320579}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -1104,6 +1104,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
+      propertyPath: unlockedLevel
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
+      propertyPath: currentSelectionLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
+      propertyPath: levelSelectionMovement
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 875a585189ac76f40b53dc959650f618, type: 2}
   m_IsPrefabParent: 0
@@ -1394,8 +1406,8 @@ MonoBehaviour:
   left: 0
   upBox: {fileID: 0}
   downBox: {fileID: 258201029}
-  rightBox: {fileID: 0}
-  leftBox: {fileID: 258201029}
+  rightBox: {fileID: 258201029}
+  leftBox: {fileID: 0}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -1686,10 +1698,10 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1265205480}
-  downBox: {fileID: 1196586910}
-  rightBox: {fileID: 1265205480}
-  leftBox: {fileID: 0}
+  upBox: {fileID: 0}
+  downBox: {fileID: 0}
+  rightBox: {fileID: 1196586910}
+  leftBox: {fileID: 1265205480}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -2044,10 +2056,10 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 1077657948}
+  upBox: {fileID: 0}
   downBox: {fileID: 0}
   rightBox: {fileID: 0}
-  leftBox: {fileID: 0}
+  leftBox: {fileID: 1077657948}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -2213,10 +2225,10 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 0}
-  downBox: {fileID: 1077657948}
-  rightBox: {fileID: 258201029}
-  leftBox: {fileID: 1077657948}
+  upBox: {fileID: 258201029}
+  downBox: {fileID: 0}
+  rightBox: {fileID: 1077657948}
+  leftBox: {fileID: 258201029}
   boxDistance: 5
   entityDistanceX: 0
   entityDistanceZ: 0
@@ -2695,6 +2707,10 @@ Prefab:
       propertyPath: targetBox
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11463734, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
+      propertyPath: levelSelectionManager
+      value: 
+      objectReference: {fileID: 2146730253}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ae8369d1d4677d4096f5d9f112c64e0, type: 2}
   m_IsPrefabParent: 0
@@ -3923,3 +3939,43 @@ Transform:
   - {fileID: 1196586911}
   m_Father: {fileID: 1683977799}
   m_RootOrder: 4
+--- !u!1 &2146730252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2146730254}
+  - 114: {fileID: 2146730253}
+  m_Layer: 0
+  m_Name: LevelSelectionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2146730253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146730252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756079ab625cf40469c38778057b7aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxes: []
+--- !u!4 &2146730254
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146730252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10

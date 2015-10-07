@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 	public bool winChanged = false;
 	public bool looseChanged = false;
 	public int currentLevel;
+	public LevelSelectionManager levelSelectionManager;
     int direction;
     int directionVariation;
     // Use this for initialization
@@ -46,24 +47,24 @@ public class PlayerController : MonoBehaviour
 		stateMachine = GameObject.Find("Game Manager").GetComponent<GameStateMachine>();
 		if (!CameraScript)
      	   CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
-
+		if (Application.loadedLevel == 12 || Application.loadedLevel == 14)
+			StartLevelSelection ();
         paused = false;
 	}
 
 	void StartLevelSelection()
 	{
 		int levelToStart = GameControl.control.currentSelectionLevel;
+		entity.currentBox = entity.startingBox = levelSelectionManager.GetBox (levelToStart);
+		entity.currentPosition = entity.currentBox.transform.position;
+		if (GameControl.control.levelSelectionMovement)
+		{
+			entity.targetBox = levelSelectionManager.GetBox (levelToStart + 1);
+			entity.moving = true;
+		}
+
 	}
-	/*
-	void Awake()
-	{
-		startingBox = currentBox;
-		direction = (int)startingDirection;
-		currentPosition = currentBox.transform.position;
-		transform.position = currentPosition;
-		transform.eulerAngles = new Vector3(0, 90 * (direction - 1), 0);
-	}
-	*/
+
 	void Update ()
 	{
         //Setting the variation amount for the player controller drag

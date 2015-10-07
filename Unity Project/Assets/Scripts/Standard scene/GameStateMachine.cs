@@ -25,7 +25,6 @@ public class GameStateMachine : MonoBehaviour
     public PlayerController playerScript;
 	public List<GameObject> enemies;
 	public PanelManager panelManager;
-	GameObject[] go;
 	public GameStates state;
 	float delayTime;
 	public bool FullGame = false;
@@ -36,6 +35,7 @@ public class GameStateMachine : MonoBehaviour
         playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         //state = GameStates.PLAYER_TURN;
         state = GameStates.RESET;
+		GameObject[] go;
         go = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject enemy in go)
 		{
@@ -234,11 +234,12 @@ public class GameStateMachine : MonoBehaviour
 
 	void ResetBoxes()
 	{
+		GameObject[] go;
 		go = GameObject.FindGameObjectsWithTag("Box");
 		foreach (GameObject box in go)
 		{
 			box.GetComponent<Box>().enemies.Clear();
-		}	
+		}
 	}
 
 	void ResetPlayer()
