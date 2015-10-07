@@ -21,7 +21,7 @@ public class FadeGui : MonoBehaviour {
     void Update()
     {
 
-        if (start==false && tickCount > ticksToWait && fadeOnInput == true)
+        if (start==false && tickCount > ticksToWait/2 && fadeOnInput == true)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.touchCount > 0)
             {
@@ -32,7 +32,7 @@ public class FadeGui : MonoBehaviour {
                 start = true;
             }
         }
-        if (start == false && tickCount > ticksToWait && fadeOnInput == false)
+        if (start == false && tickCount > ticksToWait / 2 && fadeOnInput == false)
         {
                 start = true;
         }

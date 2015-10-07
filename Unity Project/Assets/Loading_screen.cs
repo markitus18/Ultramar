@@ -21,7 +21,7 @@ public class Loading_screen : MonoBehaviour {
     void Update()
     {
 
-        if (start==false && tickCount > 100)
+        if (start==false && tickCount > 40)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.touchCount > 0)
             {
