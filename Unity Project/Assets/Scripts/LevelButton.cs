@@ -17,17 +17,41 @@ public class LevelButton : MonoBehaviour
 	
 	void Update ()
 	{
-		if (playerController.currentLevel == levelToLoad)
+		if (levelToLoad == 11)
 		{
-//			if (!gameObject.activeSelf)
+			if (playerController.currentLevel == 1)
+			{
 				gameObject.GetComponent<Renderer>().enabled = true;
 				gameObject.GetComponent<Collider>().enabled = true;
+			}
+			else
+			{
+				gameObject.GetComponent<Renderer>().enabled = false;
+				gameObject.GetComponent<Collider>().enabled = false;
+			}
+		}
+		else if (levelToLoad == 13)
+		{
+			if (playerController.currentLevel == 6)
+			{
+				gameObject.GetComponent<Renderer>().enabled = true;
+				gameObject.GetComponent<Collider>().enabled = true;
+			}
+			else
+			{
+				gameObject.GetComponent<Renderer>().enabled = false;
+				gameObject.GetComponent<Collider>().enabled = false;
+			}
+		}
+		else if (playerController.currentLevel == levelToLoad)
+		{
+			gameObject.GetComponent<Renderer>().enabled = true;
+			gameObject.GetComponent<Collider>().enabled = true;
 		}
 		else
 		{
-		//	if (gameObject.activeSelf)
-				gameObject.GetComponent<Renderer>().enabled = false;
-				gameObject.GetComponent<Collider>().enabled = false;
+			gameObject.GetComponent<Renderer>().enabled = false;
+			gameObject.GetComponent<Collider>().enabled = false;
 		}
 	}
 
