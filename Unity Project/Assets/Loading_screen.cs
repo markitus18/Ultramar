@@ -4,6 +4,7 @@ using System.Collections;
 public class Loading_screen : MonoBehaviour {
 
     public Texture image;
+    public int tickCount;
     public float tickOpacityLoose = 0.01f;
     CameraOrbit CameraScript;
     Color GuiColor;
@@ -11,6 +12,7 @@ public class Loading_screen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        tickCount = 0;
         GuiColor.a = 1.0f;
         CameraScript = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
     }
@@ -18,7 +20,8 @@ public class Loading_screen : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (start==false)
+
+        if (start==false && tickCount > 100)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.touchCount > 0)
             {
@@ -26,7 +29,7 @@ public class Loading_screen : MonoBehaviour {
                 CameraScript.loading = false;
             }
         }
-        if (start == true)
+        else if (start == true)
         {
             if (GuiColor.a > 0)
             {
@@ -36,6 +39,10 @@ public class Loading_screen : MonoBehaviour {
             {
                 GuiColor.a = 0.0f;
             }
+        }
+        else
+        {
+            tickCount++;
         }
     }
 
