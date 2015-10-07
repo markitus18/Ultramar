@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayMovie : MonoBehaviour {
 
 #if UNITY_EDITOR
-    public MovieTexture movie;
+   // public MovieTexture movie;
 #endif
     public System.String Title;
     public int cinematicNumber;
@@ -39,7 +39,7 @@ public class PlayMovie : MonoBehaviour {
         }
 #endif
 #if UNITY_EDITOR
-        GetComponent<Renderer>().material.mainTexture = movie;
+       /* GetComponent<Renderer>().material.mainTexture = movie;
         GetComponent<AudioSource>().Play();
         movie.Play();
 		if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
@@ -49,7 +49,7 @@ public class PlayMovie : MonoBehaviour {
 		else if (cinematicNumber == 2 && GameControl.control.secondKinematic == true)
 		{
 			GameControl.control.secondKinematic = false;
-		}
+		}*/
 
 #endif
 
@@ -59,7 +59,7 @@ public class PlayMovie : MonoBehaviour {
     void Update()
     {
 #if UNITY_EDITOR
-        if (!movie.isPlaying || (Input.GetMouseButtonDown(0) && GameControl.control.firstKinematic == false))
+       /* if (!movie.isPlaying || (Input.GetMouseButtonDown(0) && GameControl.control.firstKinematic == false))
         {
             int toLoad = Application.loadedLevel;
 			if (toLoad == 11)
@@ -72,7 +72,7 @@ public class PlayMovie : MonoBehaviour {
 				GameControl.control.Save ();
 				Application.LoadLevel(6);
 			}
-        }
+        }*/
 #endif
     }
 }
