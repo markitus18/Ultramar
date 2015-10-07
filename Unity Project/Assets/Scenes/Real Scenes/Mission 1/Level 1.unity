@@ -630,7 +630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: 496380122a2bc334db6c6e008754471f, type: 3}
-  tickCount: 0
   tickOpacityLoose: .0199999996
 --- !u!4 &596194551 stripped
 Transform:
