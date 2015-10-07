@@ -31,25 +31,33 @@ public class PlayMovie : MonoBehaviour {
          int toLoad = Application.loadedLevel;
         if (cinematicNumber == 1)
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel(11);
         }
         else
         {
-            Application.LoadLevel(6);
+            Application.LoadLevel(13);
         }
 #endif
 #if UNITY_EDITOR
-       /* GetComponent<Renderer>().material.mainTexture = movie;
-        GetComponent<AudioSource>().Play();
-        movie.Play();
-		if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
-		{
-			GameControl.control.firstKinematic = false;
-		}
-		else if (cinematicNumber == 2 && GameControl.control.secondKinematic == true)
-		{
-			GameControl.control.secondKinematic = false;
-		}*/
+        if (cinematicNumber == 1)
+        {
+            Application.LoadLevel(11);
+        }
+        else
+        {
+            Application.LoadLevel(13);
+        }
+        /* GetComponent<Renderer>().material.mainTexture = movie;
+         GetComponent<AudioSource>().Play();
+         movie.Play();
+         if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
+         {
+             GameControl.control.firstKinematic = false;
+         }
+         else if (cinematicNumber == 2 && GameControl.control.secondKinematic == true)
+         {
+             GameControl.control.secondKinematic = false;
+         }*/
 
 #endif
 
