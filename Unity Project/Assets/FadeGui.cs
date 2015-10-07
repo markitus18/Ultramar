@@ -32,7 +32,7 @@ public class FadeGui : MonoBehaviour {
                 start = true;
             }
         }
-        if (start == false && tickCount > ticksToWait / 2 && fadeOnInput == false)
+        if (start == false && tickCount > ticksToWait / 4 && fadeOnInput == false)
         {
                 start = true;
         }
