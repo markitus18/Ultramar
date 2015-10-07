@@ -215,6 +215,10 @@ public class GameStateMachine : MonoBehaviour
 		if (Application.loadedLevel >= GameControl.control.unlockedLevel)
 		{
 			GameControl.control.unlockedLevel = Application.loadedLevel + 1;
+			if (GameControl.control.unlockedLevel == 6)
+				GameControl.control.SecondMissionUnlocked = true;
+			if (GameControl.control.unlockedLevel == 11)
+				GameControl.control.gameFinished = true;
 			GameControl.control.Save();
 			GameControl.control.unlockedLevel--;
 		}
