@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 			entity.currentPosition = entity.currentBox.transform.position;
 			if (GameControl.control.levelSelectionMovement)
 			{
+				currentLevel ++;
 				entity.targetBox = levelSelectionManager.GetBox (levelToStart + 1);
 				entity.moving = true;
 				entity.targetPosition = entity.targetBox.transform.position;
