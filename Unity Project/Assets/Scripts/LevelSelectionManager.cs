@@ -9,9 +9,9 @@ public class LevelSelectionManager : MonoBehaviour {
 	void Awake()
 	{
 		if(Application.loadedLevel == 12)
-			GameObject.FindWithTag("Player").GetComponent<PlayerController>().currentLevel = 1;
-		else if(Application.loadedLevel == 14)
-			GameObject.FindWithTag("Player").GetComponent<PlayerController>().currentLevel = 6;
+			GameControl.control.currentSelectionLevel = GameObject.FindWithTag("Player").GetComponent<PlayerController>().currentLevel = 1;
+		if(Application.loadedLevel == 14)
+			GameControl.control.currentSelectionLevel = GameObject.FindWithTag("Player").GetComponent<PlayerController>().currentLevel = 6;
 		GameObject[] go;
 		go = GameObject.FindGameObjectsWithTag("Box");
 		foreach (GameObject box in go)
