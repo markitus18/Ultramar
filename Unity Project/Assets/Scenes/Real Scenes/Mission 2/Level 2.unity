@@ -1450,6 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: 404afded096ef9142b8860e2bf33e0c7, type: 3}
+  tickCount: 0
   tickOpacityLoose: .0199999996
 --- !u!4 &915547530 stripped
 Transform:
@@ -3074,17 +3075,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: m_Name
-      value: Lluria (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 11425898, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
       propertyPath: currentBox
       value: 
       objectReference: {fileID: 136728467}
-    - target: {fileID: 11425898, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: startingDirection
-      value: 1
+    - target: {fileID: 170560, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
+      propertyPath: m_Name
+      value: Lluria (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
