@@ -348,8 +348,8 @@ MonoBehaviour:
   right: 0
   down: 0
   left: 0
-  upBox: {fileID: 0}
-  downBox: {fileID: 820320579}
+  upBox: {fileID: 820320579}
+  downBox: {fileID: 1265205480}
   rightBox: {fileID: 1265205480}
   leftBox: {fileID: 820320579}
   boxDistance: 5
@@ -1068,7 +1068,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: unlockedLevel
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11405224, guid: 875a585189ac76f40b53dc959650f618, type: 2}
       propertyPath: currentSelectionLevel
