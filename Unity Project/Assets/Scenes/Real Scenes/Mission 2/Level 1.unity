@@ -543,10 +543,6 @@ Prefab:
       propertyPath: m_Name
       value: Lluria (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 11425898, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
-      propertyPath: startingDirection
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd348448b9ff7c243bc9635f9b2df517, type: 2}
   m_IsPrefabParent: 0
@@ -1597,6 +1593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2800000, guid: 6c72cca13fa453b4e99ecceb079006d1, type: 3}
+  tickCount: 0
   tickOpacityLoose: .0199999996
 --- !u!1 &923846178
 GameObject:

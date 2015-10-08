@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03000021, y: .0250000004, z: -7.5270257}
+  m_LocalPosition: {x: -10.0299997, y: .0250000004, z: -7.5270257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466068}
@@ -265,7 +265,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 17a47e7dc6100f647969e47091d3cf50, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b414858480cdcd84cb797ba0f01e0f03, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -484,7 +484,7 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   active: 0
-  startingDirection: 2
+  startingDirection: 3
   direction: 0
   ret: 0
 --- !u!114 &11463734
@@ -508,6 +508,8 @@ MonoBehaviour:
   dead: 0
   winChanged: 0
   looseChanged: 0
+  currentLevel: 0
+  levelSelectionManager: {fileID: 0}
   swordKill: {fileID: 8278622}
   arrowKill: {fileID: 8220582}
   KillSound: {fileID: 8250170}
