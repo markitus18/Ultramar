@@ -34,8 +34,8 @@ public class ArcherEnemyC : MonoBehaviour
 		RaycastHit hit;
 		if (Physics.Raycast(shootRay, out hit, archerRange))
 		{
-			redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
-			redLineRenderer.SetPosition(1, hit.point + vectorHeight - new Vector3(0, hit.point.y, 0));
+			//redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
+			//redLineRenderer.SetPosition(1, hit.point + vectorHeight - new Vector3(0, hit.point.y, 0));
 			if(hit.collider.tag == "Player")
 			{
 				Debug.Log ("Player Hit");
@@ -51,8 +51,8 @@ public class ArcherEnemyC : MonoBehaviour
 		}
 		else
 		{
-			redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
-			redLineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + vectorHeight);
+			//redLineRenderer.SetPosition(0, gameObject.transform.position + vectorHeight);
+			//redLineRenderer.SetPosition(1, gameObject.transform.position + transform.forward * archerRange + vectorHeight);
 		}
 
 
