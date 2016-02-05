@@ -39,7 +39,7 @@ public class PlayMovie : MonoBehaviour {
         }
 #endif
 #if UNITY_EDITOR
-       /* GetComponent<Renderer>().material.mainTexture = movie;
+      /*  GetComponent<Renderer>().material.mainTexture = movie;
         GetComponent<AudioSource>().Play();
         movie.Play();
 		if (cinematicNumber == 1 && GameControl.control.firstKinematic == true)
