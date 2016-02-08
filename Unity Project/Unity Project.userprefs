@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Standard scene\GameStateMachine.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Intro\PanelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\Entity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\GameStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StandartLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Standard scene\Enemy Controllers\ArcherEnemyC.cs" Line="55" Column="115" />
+      <File FileName="Assets\Scripts\Standard scene\GameStateMachine.cs" Line="236" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
