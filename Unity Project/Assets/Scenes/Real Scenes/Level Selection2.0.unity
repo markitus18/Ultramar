@@ -1085,6 +1085,7 @@ GameObject:
   - 222: {fileID: 507315200}
   - 114: {fileID: 507315199}
   - 114: {fileID: 507315198}
+  - 114: {fileID: 507315202}
   m_Layer: 5
   m_Name: Jugar
   m_TagString: Untagged
@@ -1200,6 +1201,21 @@ RectTransform:
   m_AnchoredPosition: {x: 260, y: 16}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0, y: .5}
+--- !u!114 &507315202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 507315197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51a7b5faa7db5845839bcab3b68a3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: 1
+  start: 1
+  delayTime: 1
+  duration: 2
 --- !u!1 &549118260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,6 +2497,7 @@ GameObject:
   - 222: {fileID: 1490734340}
   - 114: {fileID: 1490734339}
   - 114: {fileID: 1490734338}
+  - 114: {fileID: 1490734341}
   m_Layer: 5
   m_Name: Opcions
   m_TagString: Untagged
@@ -2585,6 +2602,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1490734336}
+--- !u!114 &1490734341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490734336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51a7b5faa7db5845839bcab3b68a3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: 1
+  start: 1
+  delayTime: 1
+  duration: 2
 --- !u!1 &1550484834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2725,7 @@ GameObject:
   - 224: {fileID: 1705220356}
   - 222: {fileID: 1705220358}
   - 114: {fileID: 1705220357}
+  - 114: {fileID: 1705220359}
   m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
@@ -2749,6 +2782,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705220355}
+--- !u!114 &1705220359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1705220355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: 1
+  start: 1
+  delayTime: 1.5
+  duration: 1.5
 --- !u!1 &1748156222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,6 +3382,7 @@ GameObject:
   - 224: {fileID: 1933433204}
   - 222: {fileID: 1933433206}
   - 114: {fileID: 1933433205}
+  - 114: {fileID: 1933433207}
   m_Layer: 5
   m_Name: JugarText
   m_TagString: Untagged
@@ -3390,6 +3439,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933433203}
+--- !u!114 &1933433207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1933433203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: 1
+  start: 1
+  delayTime: 1.5
+  duration: 1.5
 --- !u!1 &2013721455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,5 +3950,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeIn: 1
   start: 1
-  delayTime: 3
-  duration: 2
+  delayTime: 1.5
+  duration: 1.5

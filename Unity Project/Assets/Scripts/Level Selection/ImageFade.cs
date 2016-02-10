@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Fade : MonoBehaviour
+public class ImageFade : MonoBehaviour
 {
 	public bool fadeIn = true;
 	public bool start = true;
@@ -19,15 +19,15 @@ public class Fade : MonoBehaviour
 		{
 			if(fadeIn)
 			{
-				Color myColor = gameObject.GetComponent<Text>().color;
+				Color myColor = gameObject.GetComponent<Image>().color;
 				myColor.a = 0;
-				gameObject.GetComponent<Text>().color = myColor;
+				gameObject.GetComponent<Image>().color = myColor;
 			}
 			else
 			{
 				Color myColor = gameObject.GetComponent<Text>().color;
 				myColor.a = 1;
-				gameObject.GetComponent<Text>().color = myColor;
+				gameObject.GetComponent<Image>().color = myColor;
 			}
 		}
 	}
@@ -39,7 +39,7 @@ public class Fade : MonoBehaviour
 		{
 			if (Time.time - startTime > delayTime)
 			{
-				Color myColor = gameObject.GetComponent<Text>().color;
+				Color myColor = gameObject.GetComponent<Image>().color;
 				float ratio = (Time.time - startTime - delayTime)/duration;
 				
 				if (fadeIn)
@@ -54,7 +54,7 @@ public class Fade : MonoBehaviour
 				{
 					//		Destroy (gameObject);
 				}
-				gameObject.GetComponent<Text>().color = myColor;
+				gameObject.GetComponent<Image>().color = myColor;
 			}
 		}
 	}
