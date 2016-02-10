@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level Selection\ImageFade.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level Selection\TextFade.cs" Line="5" Column="14" />
-      <File FileName="Assets\Scripts\Level Selection\ImageFade.cs" Line="30" Column="54" />
+      <File FileName="Assets\Scripts\Level Selection\TextFade.cs" Line="50" Column="9" />
+      <File FileName="Assets\Scripts\Level Selection\ImageFade.cs" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\Level Selection\UI_Controller.cs" Line="70" Column="1" />
+      <File FileName="Assets\Scripts\Level Selection\LoadOnClick.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

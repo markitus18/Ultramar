@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .850980461, g: .850980461, b: .850980461, a: .588235319}
+  m_Color: {r: 0, g: 1, b: .213793039, a: .392156869}
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .850980461, g: .850980461, b: .850980461, a: .588235319}
+  m_Color: {r: 1, g: 0, b: 0, a: .392156869}
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5009,7 +5009,7 @@ MonoBehaviour:
   mission_2_image: {fileID: 654863542}
   mission_2_text: {fileID: 190327060}
   intro_fadeOut_time: .5
-  missions_fadeIn_time: 1
+  missions_fadeIn_time: .5
 --- !u!4 &2059414519
 Transform:
   m_ObjectHideFlags: 0

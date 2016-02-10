@@ -16,7 +16,7 @@ public class ImageFade : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		float maxAlpha = gameObject.GetComponent<Image>().color.a / 255;
+		maxAlpha = gameObject.GetComponent<Image>().color.a;
 		if (start)
 		{
 			if(fadeIn)
