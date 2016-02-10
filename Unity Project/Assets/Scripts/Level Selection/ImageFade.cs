@@ -11,10 +11,12 @@ public class ImageFade : MonoBehaviour
 	public float duration = 2.0f;
 	
 	float startTime = 0.0f;
-	
+	float maxAlpha;
+
 	// Use this for initialization
 	void Start ()
 	{
+		float maxAlpha = gameObject.GetComponent<Image>().color.a / 255;
 		if (start)
 		{
 			if(fadeIn)
@@ -26,7 +28,7 @@ public class ImageFade : MonoBehaviour
 			else
 			{
 				Color myColor = gameObject.GetComponent<Text>().color;
-				myColor.a = 1;
+				myColor.a = maxAlpha;
 				gameObject.GetComponent<Image>().color = myColor;
 			}
 		}
@@ -44,15 +46,15 @@ public class ImageFade : MonoBehaviour
 				
 				if (fadeIn)
 				{
-					myColor.a = Mathf.Lerp(0, 1, ratio);
+					myColor.a = Mathf.Lerp(0, maxAlpha, ratio);
 				}
 				else
 				{
-					myColor.a = Mathf.Lerp(1, 0, ratio);
+					myColor.a = Mathf.Lerp(maxAlpha, 0, ratio);
 				}
-				if (Time.time > duration)
+				if (!fadeIn && Time.time - startTime > duration + delayTime)
 				{
-					//		Destroy (gameObject);
+					gameObject.SetActive(false);
 				}
 				gameObject.GetComponent<Image>().color = myColor;
 			}
@@ -60,9 +62,15 @@ public class ImageFade : MonoBehaviour
 	}
 	
 	// Used to start fade transition
-	void StartFade()
+	public void StartFade(bool fadIn, float timeDelay, float timeDuration)
 	{
+		fadeIn = fadIn;
+		delayTime = timeDelay;
+		duration = timeDuration;
 		start = true;
 		startTime = Time.time;
+		
+		if (fadeIn)
+			gameObject.SetActive (true);
 	}
 }

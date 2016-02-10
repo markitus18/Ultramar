@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Level Selection\ImageFade.cs" />
      <Compile Include="Assets\Scripts\Level Selection\LoadOnClick.cs" />
      <Compile Include="Assets\Scripts\Level Selection\TextFade.cs" />
+     <Compile Include="Assets\Scripts\Level Selection\UI_Controller.cs" />
      <Compile Include="Assets\Scripts\LevelButton.cs" />
      <Compile Include="Assets\Scripts\LevelSelectionManager.cs" />
      <Compile Include="Assets\Scripts\PlayMovie.cs" />
