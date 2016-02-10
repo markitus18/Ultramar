@@ -12,6 +12,7 @@ public class TextFade : MonoBehaviour
 	
 	float startTime = 0.0f;
 	float maxAlpha;
+
 	// Use this for initialization
 	void Start ()
 	{
