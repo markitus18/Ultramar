@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Intro\SceneControl.cs" />
     <Compile Include="Assets\Scripts\Level Selection\De_Activate.cs" />
     <Compile Include="Assets\Scripts\Level Selection\FadeChilds.cs" />
+    <Compile Include="Assets\Scripts\Level Selection\FadeGeneral.cs" />
     <Compile Include="Assets\Scripts\Level Selection\ImageFade.cs" />
     <Compile Include="Assets\Scripts\Level Selection\LoadOnClick.cs" />
     <Compile Include="Assets\Scripts\Level Selection\TextFade.cs" />

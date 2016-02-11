@@ -32,7 +32,8 @@ public class UI_Controller : MonoBehaviour {
 		if (Time.time - timeStart > startFadeDelay && !firstFade)
 		{
             firstFade = true;
-			InitialUI.GetComponent<FadeChilds>().DoFade(true);
+            InitialUI.SetActive(true);
+            InitialUI.GetComponent<FadeGeneral>().DoFade(true);
 		}
 
 		if(playStarted)
@@ -47,7 +48,7 @@ public class UI_Controller : MonoBehaviour {
 
 	public void OnPlayDown()
 	{
-		InitialUI.GetComponent<FadeChilds> ().DoFade (true);
+		InitialUI.GetComponent<FadeGeneral>().DoFade (true);
 		playTime = Time.time;
 		playStarted = true;
 	}

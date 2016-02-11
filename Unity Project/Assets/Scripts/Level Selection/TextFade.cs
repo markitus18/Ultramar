@@ -77,7 +77,8 @@ public class TextFade : MonoBehaviour
 
 		if(fadeIn)
 		{
-			gameObject.SetActive (true);
+            if (!gameObject.activeSelf)
+                gameObject.SetActive (true);
 		}
         else
         {

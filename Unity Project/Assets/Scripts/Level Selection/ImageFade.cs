@@ -69,7 +69,8 @@ public class ImageFade : MonoBehaviour
 
 		if(fadeIn)
 		{
-			gameObject.SetActive (true);
+            if (!gameObject.activeSelf)
+                gameObject.SetActive (true);
 		}
 		else
 		{
