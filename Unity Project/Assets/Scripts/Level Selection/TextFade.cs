@@ -52,9 +52,13 @@ public class TextFade : MonoBehaviour
 			{
 				myColor.a = Mathf.Lerp(maxAlpha, 0, ratio);
             }
-			if (!fadeIn && Time.time - startTime > duration)
-			{
-				gameObject.SetActive(false);
+            if (Time.time - startTime > duration)
+            {
+                start = false;
+                if (!fadeIn)
+                {
+                   gameObject.SetActive(false);
+                }
 			}
 			gameObject.GetComponent<Text>().color = myColor;
             if (transform.name == "PlayText")
