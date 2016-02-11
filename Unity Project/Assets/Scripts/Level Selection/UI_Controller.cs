@@ -6,6 +6,7 @@ public class UI_Controller : MonoBehaviour {
 	// Use this for initialization
 	public float startFadeDelay = 1.5f;
 	public GameObject InitialUI;
+    public GameObject missions;
 
 	public GameObject mission_1_image;
 	public GameObject mission_1_text;
@@ -48,13 +49,14 @@ public class UI_Controller : MonoBehaviour {
 
 	public void OnPlayDown()
 	{
-		InitialUI.GetComponent<FadeGeneral>().DoFade (true);
+		InitialUI.GetComponent<FadeGeneral>().DoFade (false);
 		playTime = Time.time;
 		playStarted = true;
 	}
 
 	void FadeInMissions()
 	{
+        /*
 		//Mission I fade
 		//Image
 		ImageFade m1_i = mission_1_image.GetComponent<ImageFade>();
@@ -70,5 +72,8 @@ public class UI_Controller : MonoBehaviour {
 
 		TextFade m2_t = mission_2_text.GetComponent<TextFade>();
 		m2_t.StartFade (true);
+        */
+        missions.SetActive(true);
+        missions.GetComponent<FadeGeneral>().DoFade(true);
 	}
 }

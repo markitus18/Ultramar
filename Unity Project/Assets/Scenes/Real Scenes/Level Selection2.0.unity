@@ -95,7 +95,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 15536406}
-  - 114: {fileID: 15536407}
   - 114: {fileID: 15536408}
   m_Layer: 5
   m_Name: Initial UI
@@ -124,19 +123,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 16}
   m_SizeDelta: {x: -820, y: -416}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &15536407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 15536405}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e686a00c95a9a994582ee0f1c25053ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: 0
-  fadeIn: 1
 --- !u!114 &15536408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +268,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!1 &122320409
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +514,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!1 &134342208
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,11 +712,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 190327060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
+  m_Script: {fileID: 11500000, guid: ebfd4cde4af7869408a47d0d4e3a6aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   fadeIn: 1
-  start: 1
   FadeInDuration: 2
   FadeOutDuration: 2
 --- !u!1 &200572199
@@ -737,6 +727,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 200572200}
+  - 114: {fileID: 200572201}
   m_Layer: 0
   m_Name: Missions_selection
   m_TagString: Untagged
@@ -758,6 +749,21 @@ Transform:
   - {fileID: 654863543}
   m_Father: {fileID: 134342209}
   m_RootOrder: 1
+--- !u!114 &200572201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200572199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfd4cde4af7869408a47d0d4e3a6aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  fadeIn: 1
+  FadeInDuration: 2
+  FadeOutDuration: 2
 --- !u!1 &362212708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1138,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!1 &398084613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1190,8 @@ MonoBehaviour:
   start: 1
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!114 &398084616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1454,6 @@ GameObject:
   - 222: {fileID: 507315200}
   - 114: {fileID: 507315199}
   - 114: {fileID: 507315198}
-  - 114: {fileID: 507315202}
   - 114: {fileID: 507315203}
   m_Layer: 5
   m_Name: Play
@@ -1550,21 +1559,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -7.62939453e-06}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &507315202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 507315197}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51a7b5faa7db5845839bcab3b68a3eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeIn: 1
-  start: 0
-  FadeInDuration: 1.5
-  FadeOutDuration: 1.5
 --- !u!114 &507315203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,8 +1658,9 @@ GameObject:
   - 224: {fileID: 654863543}
   - 222: {fileID: 654863546}
   - 114: {fileID: 654863545}
-  - 114: {fileID: 654863544}
   - 114: {fileID: 654863547}
+  - 114: {fileID: 654863544}
+  - 114: {fileID: 654863548}
   m_Layer: 5
   m_Name: MissionII
   m_TagString: Untagged
@@ -1772,6 +1767,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeIn: 1
   start: 1
+  FadeInDuration: 2
+  FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
+--- !u!114 &654863548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654863542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfd4cde4af7869408a47d0d4e3a6aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  fadeIn: 1
   FadeInDuration: 2
   FadeOutDuration: 2
 --- !u!1 &716253541
@@ -3505,6 +3517,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!1 &1129143351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,11 +3731,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220033376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51a7b5faa7db5845839bcab3b68a3eb, type: 3}
+  m_Script: {fileID: 11500000, guid: ebfd4cde4af7869408a47d0d4e3a6aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   fadeIn: 1
-  start: 1
   FadeInDuration: 2
   FadeOutDuration: 2
 --- !u!1 &1330229299
@@ -3734,7 +3748,6 @@ GameObject:
   - 224: {fileID: 1330229300}
   - 222: {fileID: 1330229303}
   - 114: {fileID: 1330229302}
-  - 114: {fileID: 1330229301}
   - 114: {fileID: 1330229304}
   m_Layer: 5
   m_Name: CreditsText
@@ -3760,21 +3773,6 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: 17.4999847}
   m_SizeDelta: {x: 300, y: 75.5999985}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1330229301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330229299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeIn: 1
-  start: 0
-  FadeInDuration: 1.5
-  FadeOutDuration: 1.5
 --- !u!114 &1330229302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3833,7 +3831,6 @@ GameObject:
   - 222: {fileID: 1490734340}
   - 114: {fileID: 1490734339}
   - 114: {fileID: 1490734338}
-  - 114: {fileID: 1490734341}
   - 114: {fileID: 1490734342}
   m_Layer: 5
   m_Name: Credits
@@ -3939,21 +3936,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1490734336}
---- !u!114 &1490734341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1490734336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51a7b5faa7db5845839bcab3b68a3eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeIn: 1
-  start: 0
-  FadeInDuration: 1.5
-  FadeOutDuration: 1.5
 --- !u!114 &1490734342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,6 +4104,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!114 &1562619426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4400,6 +4384,8 @@ MonoBehaviour:
   start: 0
   FadeInDuration: 2
   FadeOutDuration: 2
+  startTime: 0
+  maxAlpha: 0
 --- !u!1 &1894814645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,11 +4513,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909760778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
+  m_Script: {fileID: 11500000, guid: ebfd4cde4af7869408a47d0d4e3a6aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   fadeIn: 1
-  start: 1
   FadeInDuration: 2
   FadeOutDuration: 2
 --- !u!1 &1960555093
@@ -4834,6 +4820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startFadeDelay: 1.5
   InitialUI: {fileID: 15536405}
+  missions: {fileID: 200572199}
   mission_1_image: {fileID: 1220033376}
   mission_1_text: {fileID: 1909760778}
   mission_2_image: {fileID: 654863542}
@@ -4891,7 +4878,6 @@ GameObject:
   - 224: {fileID: 2127359864}
   - 222: {fileID: 2127359867}
   - 114: {fileID: 2127359866}
-  - 114: {fileID: 2127359865}
   - 114: {fileID: 2127359868}
   m_Layer: 5
   m_Name: PlayText
@@ -4917,21 +4903,6 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -4.74996185}
   m_SizeDelta: {x: 160.660004, y: 85.7999954}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &2127359865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2127359863}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeIn: 1
-  start: 0
-  FadeInDuration: 1.5
-  FadeOutDuration: 1.5
 --- !u!114 &2127359866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,7 +4960,6 @@ GameObject:
   - 224: {fileID: 2127896717}
   - 222: {fileID: 2127896719}
   - 114: {fileID: 2127896718}
-  - 114: {fileID: 2127896720}
   - 114: {fileID: 2127896721}
   m_Layer: 5
   m_Name: Ultramar
@@ -5047,21 +5017,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2127896716}
---- !u!114 &2127896720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2127896716}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0681e3a62a9d7c9468cab2fc5808da5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeIn: 1
-  start: 0
-  FadeInDuration: 1.5
-  FadeOutDuration: 1.5
 --- !u!114 &2127896721
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,10 +136,25 @@ public class FadeGeneral : MonoBehaviour
         }
         else
         {
-            Color myColor = gameObject.GetComponent<Text>().color;
-            maxAlpha = myColor.a;
-            myColor.a = maxAlpha;
-            gameObject.GetComponent<Text>().color = myColor;
+            Color myColor = Color.white;
+
+            bool isText = false;
+            bool isImage = false;
+
+            if (gameObject.GetComponent<Text>())
+            {
+                isText = true;
+                myColor = gameObject.GetComponent<Text>().color;
+                maxAlpha = myColor.a;
+                gameObject.GetComponent<Text>().color = myColor;
+            }
+            else if (gameObject.GetComponent<Image>())
+            {
+                isImage = true;
+                myColor = gameObject.GetComponent<Image>().color;
+                maxAlpha = myColor.a;
+                gameObject.GetComponent<Image>().color = myColor;
+            }
         }
     }
 }
