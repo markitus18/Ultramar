@@ -114,7 +114,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: .340000004, z: 1}
   m_Children:
   - {fileID: 2127896717}
+  - {fileID: 1933433204}
   - {fileID: 507315201}
+  - {fileID: 1705220356}
   - {fileID: 1490734337}
   m_Father: {fileID: 134342209}
   m_RootOrder: 0
@@ -134,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e686a00c95a9a994582ee0f1c25053ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: 1
+  start: 0
   fadeIn: 1
 --- !u!1 &114265870
 GameObject:
@@ -1435,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &507315198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,10 +1526,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1933433204}
+  m_Children: []
   m_Father: {fileID: 15536406}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
   m_AnchoredPosition: {x: -100, y: -7.62939453e-06}
@@ -1545,7 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  start: 1
+  start: 0
   FadeInDuration: 1.5
   FadeOutDuration: 1.5
 --- !u!1 &549118260
@@ -3710,7 +3711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1490734337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3720,10 +3721,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1705220356}
+  m_Children: []
   m_Father: {fileID: 15536406}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
   m_AnchoredPosition: {x: -100, y: -273.529419}
@@ -3820,7 +3820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  start: 1
+  start: 0
   FadeInDuration: 1.5
   FadeOutDuration: 1.5
 --- !u!1 &1501503339
@@ -4141,7 +4141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1705220356
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4152,12 +4152,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2.94117641, z: 1}
   m_Children: []
-  m_Father: {fileID: 1490734337}
-  m_RootOrder: 0
+  m_Father: {fileID: 15536406}
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -175}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 55, y: -448.529419}
+  m_SizeDelta: {x: 320, y: 136}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1705220357
 MonoBehaviour:
@@ -4203,9 +4203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  start: 1
-  FadeInDuration: 2
-  FadeOutDuration: 2
+  start: 0
+  FadeInDuration: 1.5
+  FadeOutDuration: 1.5
 --- !u!1 &1845853730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,15 +4479,15 @@ GameObject:
   m_Component:
   - 224: {fileID: 1933433204}
   - 222: {fileID: 1933433206}
-  - 114: {fileID: 1933433205}
   - 114: {fileID: 1933433207}
+  - 114: {fileID: 1933433205}
   m_Layer: 5
   m_Name: PlayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1933433204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4498,12 +4498,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2.67647052, z: 1}
   m_Children: []
-  m_Father: {fileID: 507315201}
-  m_RootOrder: 0
+  m_Father: {fileID: 15536406}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -140}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 65, y: -140}
+  m_SizeDelta: {x: 320, y: 136}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1933433205
 MonoBehaviour:
@@ -4530,9 +4530,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Play
-
-'
+  m_Text: Play
 --- !u!222 &1933433206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4551,9 +4549,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  start: 1
-  FadeInDuration: 2
-  FadeOutDuration: 2
+  start: 0
+  FadeInDuration: 1.5
+  FadeOutDuration: 1.5
 --- !u!1 &1960555093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4852,11 +4850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f55fd87f0ef3d248b816714ed3f8e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 2127896716}
-  play_image: {fileID: 507315197}
-  play_text: {fileID: 1933433203}
-  credits_image: {fileID: 1490734336}
-  credits_text: {fileID: 1705220355}
+  startFadeDelay: 1.5
+  InitialUI: {fileID: 15536405}
   mission_1_image: {fileID: 1220033376}
   mission_1_text: {fileID: 1909760778}
   mission_2_image: {fileID: 654863542}
@@ -4921,7 +4916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2127896717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4983,6 +4978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  start: 1
+  start: 0
   FadeInDuration: 1.5
   FadeOutDuration: 1.5

@@ -16,41 +16,49 @@ public class ImageFade : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		maxAlpha = gameObject.GetComponent<Image>().color.a;
-		if (start)
-		{
-			StartFade (fadeIn);
-		}
-	}
+        if (fadeIn)
+        {
+            Color myColor = gameObject.GetComponent<Image>().color;
+            maxAlpha = myColor.a;
+            myColor.a = 0;
+            gameObject.GetComponent<Image>().color = myColor;
+        }
+        else
+        {
+            Color myColor = gameObject.GetComponent<Image>().color;
+            maxAlpha = myColor.a;
+            myColor.a = maxAlpha;
+            gameObject.GetComponent<Image>().color = myColor;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (start)
-		{
-			float duration = FadeInDuration;
-			if (!fadeIn)
-				duration = FadeOutDuration;
+        if (start)
+        {
+            float duration = FadeInDuration;
+            if (!fadeIn)
+                duration = FadeOutDuration;
 
+            Color myColor = gameObject.GetComponent<Image>().color;
+            float ratio = (Time.time - startTime) / duration;
 
-			Color myColor = gameObject.GetComponent<Image>().color;
-			float ratio = (Time.time - startTime)/duration;
-			
-			if (fadeIn)
-			{
-				myColor.a = Mathf.Lerp(0, maxAlpha, ratio);
-			}
-			else
-			{
-				myColor.a = Mathf.Lerp(maxAlpha, 0, ratio);
-			}
-			if (!fadeIn && Time.time - startTime > duration)
-			{
-				gameObject.SetActive(false);
-			}
-			gameObject.GetComponent<Image>().color = myColor;
-		}
-	}
+            if (fadeIn)
+            {
+                myColor.a = Mathf.Lerp(0, maxAlpha, ratio);
+            }
+            else
+            {
+                myColor.a = Mathf.Lerp(maxAlpha, 0, ratio);
+            }
+            if (!fadeIn && Time.time - startTime > duration)
+            {
+                gameObject.SetActive(false);
+            }
+            gameObject.GetComponent<Image>().color = myColor;
+        }
+    }
 	
 	// Used to start fade transition
 	public void StartFade(bool fadIn)
@@ -62,15 +70,12 @@ public class ImageFade : MonoBehaviour
 		if(fadeIn)
 		{
 			gameObject.SetActive (true);
-			Color myColor = gameObject.GetComponent<Text>().color;
-			myColor.a = 0;
-			gameObject.GetComponent<Text>().color = myColor;
 		}
 		else
 		{
-			Color myColor = gameObject.GetComponent<Text>().color;
+			Color myColor = gameObject.GetComponent<Image>().color;
 			myColor.a = maxAlpha;
-			gameObject.GetComponent<Text>().color = myColor;
+			gameObject.GetComponent<Image>().color = myColor;
 		}
 	}
 }

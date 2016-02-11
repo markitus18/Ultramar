@@ -13,16 +13,24 @@ public class TextFade : MonoBehaviour
 	float startTime = 0.0f;
 	float maxAlpha;
 
-	// Use this for initialization
-	void Start ()
-	{
-		maxAlpha = gameObject.GetComponent<Text>().color.a;
-		if (start)
-		{
-			StartFade (fadeIn);
-		}
-	}
-	
+    // Use this for initialization
+    void Start()
+    {
+        if (fadeIn)
+        {
+            Color myColor = gameObject.GetComponent<Text>().color;
+            maxAlpha = myColor.a;
+            myColor.a = 0;
+            gameObject.GetComponent<Text>().color = myColor;
+        }
+        else
+        {
+            Color myColor = gameObject.GetComponent<Text>().color;
+            maxAlpha = myColor.a;
+            myColor.a = maxAlpha;
+            gameObject.GetComponent<Text>().color = myColor;
+        }
+    }
 	// Update is called once per frame
 	void Update ()
 	{
@@ -38,17 +46,22 @@ public class TextFade : MonoBehaviour
 			if (fadeIn)
 			{
 				myColor.a = Mathf.Lerp(0, maxAlpha, ratio);
+  
 			}
 			else
 			{
 				myColor.a = Mathf.Lerp(maxAlpha, 0, ratio);
-			}
+            }
 			if (!fadeIn && Time.time - startTime > duration)
 			{
 				gameObject.SetActive(false);
 			}
 			gameObject.GetComponent<Text>().color = myColor;
-		}
+            if (transform.name == "PlayText")
+            {
+                Debug.Log("Play text alpha: " + gameObject.GetComponent<Text>().color.a);
+            }
+        }
 	}
 	
 	// Used to start fade transition
@@ -61,15 +74,13 @@ public class TextFade : MonoBehaviour
 		if(fadeIn)
 		{
 			gameObject.SetActive (true);
-			Color myColor = gameObject.GetComponent<Text>().color;
-			myColor.a = 0;
-			gameObject.GetComponent<Text>().color = myColor;
 		}
-		else
-		{
-			Color myColor = gameObject.GetComponent<Text>().color;
-			myColor.a = maxAlpha;
-			gameObject.GetComponent<Text>().color = myColor;
-		}
+        else
+        {
+            Color myColor = gameObject.GetComponent<Text>().color;
+            maxAlpha = myColor.a;
+            myColor.a = maxAlpha;
+            gameObject.GetComponent<Text>().color = myColor;
+        }
 	}
 }

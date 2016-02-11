@@ -15,6 +15,8 @@ public class UI_Controller : MonoBehaviour {
 	public float intro_fadeOut_time;
 	public float missions_fadeIn_time;
 
+    bool firstFade = false;
+
 	float timeStart;
 
 	bool playStarted = false;
@@ -27,8 +29,9 @@ public class UI_Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Time.time - timeStart > startFadeDelay)
+		if (Time.time - timeStart > startFadeDelay && !firstFade)
 		{
+            firstFade = true;
 			InitialUI.GetComponent<FadeChilds>().DoFade(true);
 		}
 
@@ -44,7 +47,7 @@ public class UI_Controller : MonoBehaviour {
 
 	public void OnPlayDown()
 	{
-		InitialUI.GetComponent<FadeChilds> ().DoFade (false);
+		InitialUI.GetComponent<FadeChilds> ().DoFade (true);
 		playTime = Time.time;
 		playStarted = true;
 	}

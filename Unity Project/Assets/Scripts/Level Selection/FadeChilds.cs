@@ -23,10 +23,11 @@ public class FadeChilds : MonoBehaviour {
 	{
 		foreach (Transform child in transform)
 		{
+			child.gameObject.SetActive(true);
 			ImageFade imageF = child.GetComponent<ImageFade>();
 			if (imageF)
 			{
-		//		imageF.StartFade(fadeIn);
+				imageF.StartFade(fadeIn);
 			}
 			TextFade textF = child.GetComponent<TextFade>();
 			if (textF)
