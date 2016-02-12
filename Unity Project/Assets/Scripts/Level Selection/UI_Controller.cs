@@ -56,23 +56,6 @@ public class UI_Controller : MonoBehaviour {
 
 	void FadeInMissions()
 	{
-        /*
-		//Mission I fade
-		//Image
-		ImageFade m1_i = mission_1_image.GetComponent<ImageFade>();
-		m1_i.StartFade (true);
-		//Text
-		TextFade m1_t = mission_1_text.GetComponent<TextFade>();
-		m1_t.StartFade (true);
-
-		//Mission II fade
-		//Image
-		ImageFade m2_i = mission_2_image.GetComponent<ImageFade>();
-		m2_i.StartFade (true);
-
-		TextFade m2_t = mission_2_text.GetComponent<TextFade>();
-		m2_t.StartFade (true);
-        */
         missions.SetActive(true);
         missions.GetComponent<FadeGeneral>().DoFade(true);
 	}
