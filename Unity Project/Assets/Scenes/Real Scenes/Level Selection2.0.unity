@@ -707,7 +707,7 @@ MonoBehaviour:
   start: 0
   fadeIn: 1
   FadeInDuration: 2
-  FadeOutDuration: 2
+  FadeOutDuration: 1
 --- !u!1 &200572199
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &200572200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   start: 0
   fadeIn: 1
   FadeInDuration: 2
-  FadeOutDuration: 2
+  FadeOutDuration: 1
 --- !u!1 &362212708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1737,7 @@ MonoBehaviour:
   start: 0
   fadeIn: 1
   FadeInDuration: 2
-  FadeOutDuration: 2
+  FadeOutDuration: 1
 --- !u!1 &716253541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,7 +3639,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1220033379}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2059414518}
+        m_MethodName: OnMission1Down
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1220033379
@@ -3683,7 +3694,7 @@ MonoBehaviour:
   start: 0
   fadeIn: 1
   FadeInDuration: 2
-  FadeOutDuration: 2
+  FadeOutDuration: 1
 --- !u!1 &1330229299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,7 +4462,7 @@ MonoBehaviour:
   start: 0
   fadeIn: 1
   FadeInDuration: 2
-  FadeOutDuration: 2
+  FadeOutDuration: 1
 --- !u!1 &1960555093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,10 +4764,7 @@ MonoBehaviour:
   startFadeDelay: 1.5
   InitialUI: {fileID: 15536405}
   missions: {fileID: 200572199}
-  mission_1_image: {fileID: 1220033376}
-  mission_1_text: {fileID: 1909760778}
-  mission_2_image: {fileID: 654863542}
-  mission_2_text: {fileID: 190327060}
+  levels_m1: {fileID: 0}
   intro_fadeOut_time: .5
   missions_fadeIn_time: .5
 --- !u!4 &2059414519
@@ -4907,7 +4915,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2127896716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -547}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 15536406}

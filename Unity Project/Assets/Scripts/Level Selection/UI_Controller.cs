@@ -5,13 +5,11 @@ public class UI_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	public float startFadeDelay = 1.5f;
+
 	public GameObject InitialUI;
     public GameObject missions;
-
-	public GameObject mission_1_image;
-	public GameObject mission_1_text;
-	public GameObject mission_2_image;
-	public GameObject mission_2_text;
+    public GameObject levels_m1;
+    public GameObject levels_m2;
 
 	public float intro_fadeOut_time;
 	public float missions_fadeIn_time;
@@ -22,9 +20,11 @@ public class UI_Controller : MonoBehaviour {
 
 	bool playStarted = false;
 	float playTime;
+
 	void Start ()
 	{
 		timeStart = Time.time;
+        intro_fadeOut_time = InitialUI.GetComponent<FadeGeneral>().FadeOutDuration;
 	}
 	
 	// Update is called once per frame
@@ -54,6 +54,11 @@ public class UI_Controller : MonoBehaviour {
 		playStarted = true;
 	}
 
+    public void OnMission1Down()
+    {
+        missions.GetComponent<FadeGeneral>().DoFade(false);
+        levels_m1.GetComponent<FadeGeneral>().DoFade(true);
+    }
 	void FadeInMissions()
 	{
         missions.SetActive(true);
