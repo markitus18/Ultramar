@@ -35,14 +35,18 @@ public class FadeGeneral : MonoBehaviour
         if(colorFound)
         {
             maxAlpha = myColor.a;
-            if (fadeIn)
-                myColor.a = 0;
-            else
-                myColor.a = maxAlpha;
-            if (isText)
-                gameObject.GetComponent<Text>().color = myColor;
-            else if(isImage)
-                gameObject.GetComponent<Image>().color = myColor;
+            if (start)
+            {
+                if (fadeIn)
+                    myColor.a = 0;
+                else
+                    myColor.a = maxAlpha;
+                if (isText)
+                    gameObject.GetComponent<Text>().color = myColor;
+                else if(isImage)
+                    gameObject.GetComponent<Image>().color = myColor;
+            }
+
         }
         else
         {
@@ -138,19 +142,14 @@ public class FadeGeneral : MonoBehaviour
         {
             Color myColor = Color.white;
 
-            bool isText = false;
-            bool isImage = false;
-
             if (gameObject.GetComponent<Text>())
             {
-                isText = true;
                 myColor = gameObject.GetComponent<Text>().color;
                 maxAlpha = myColor.a;
                 gameObject.GetComponent<Text>().color = myColor;
             }
             else if (gameObject.GetComponent<Image>())
             {
-                isImage = true;
                 myColor = gameObject.GetComponent<Image>().color;
                 maxAlpha = myColor.a;
                 gameObject.GetComponent<Image>().color = myColor;

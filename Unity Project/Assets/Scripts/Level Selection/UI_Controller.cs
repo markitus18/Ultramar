@@ -7,7 +7,10 @@ public class UI_Controller : MonoBehaviour {
 	public float startFadeDelay = 1.5f;
 
 	public GameObject InitialUI;
+    public GameObject bgColor;
+
     public GameObject missions;
+
     public GameObject levels_m1;
     public GameObject levels_m2;
 
@@ -41,7 +44,8 @@ public class UI_Controller : MonoBehaviour {
 		{
 			if (Time.time - playTime > intro_fadeOut_time)
 			{
-				FadeInMissions();
+                bgColor.GetComponent<FadeGeneral>().DoFade(false);
+                FadeInMissions();
 				playStarted = false;
 			}
 		}
@@ -59,7 +63,14 @@ public class UI_Controller : MonoBehaviour {
         missions.GetComponent<FadeGeneral>().DoFade(false);
         levels_m1.GetComponent<FadeGeneral>().DoFade(true);
     }
-	void FadeInMissions()
+
+    public void OnMission2Down()
+    {
+        missions.GetComponent<FadeGeneral>().DoFade(false);
+        levels_m2.GetComponent<FadeGeneral>().DoFade(true);
+    }
+
+    void FadeInMissions()
 	{
         missions.SetActive(true);
         missions.GetComponent<FadeGeneral>().DoFade(true);
