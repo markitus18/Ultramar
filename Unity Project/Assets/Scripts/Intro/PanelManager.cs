@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PanelManager : MonoBehaviour {
 
@@ -212,6 +213,18 @@ public class PanelManager : MonoBehaviour {
 
 	}
 
+    public void LoadSt_2()
+    {
+        SceneManager.LoadScene("StJ_2");
+    }
 
+    public void LoadSt_3()
+    {
+        SceneManager.LoadScene("StJ_3");
+    }
 
+    public void LoadSt_Start()
+    {
+        SceneManager.LoadScene("StJ_Start");
+    }
 }

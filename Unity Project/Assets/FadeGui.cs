@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class FadeGui : MonoBehaviour {
 
     public Texture image;
@@ -20,16 +20,11 @@ public class FadeGui : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
         if (start==false && tickCount > ticksToWait/2 && fadeOnInput == true)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.touchCount > 0)
             {
-                if (GameControl.control.firstKinematic)
-                {
-                    Application.LoadLevel(11);
-                }
-                start = true;
+                    SceneManager.LoadScene("StJ_1");
             }
         }
         if (start == false && tickCount > ticksToWait / 4 && fadeOnInput == false)

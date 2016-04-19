@@ -34,7 +34,7 @@ public class CameraOrbit : MonoBehaviour
 
 	void Start()
 	{
-        loading = true;
+        loading = false;
         readyToStart = false;
         movingCamera = true;
 		var angles = gameObject.transform.eulerAngles;
