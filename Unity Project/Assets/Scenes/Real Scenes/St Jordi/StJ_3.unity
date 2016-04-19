@@ -305,6 +305,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadSt_Start
       objectReference: {fileID: 0}
+    - target: {fileID: 11466270, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3eee2873620a9b04fb020f6a25ef035f,
+        type: 3}
+    - target: {fileID: 11438968, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSt_Start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 334a34e42809fe148b2b7df38f649f66, type: 2}
   m_IsPrefabParent: 0
