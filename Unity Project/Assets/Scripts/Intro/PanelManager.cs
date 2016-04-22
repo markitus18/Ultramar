@@ -223,6 +223,11 @@ public class PanelManager : MonoBehaviour {
         SceneManager.LoadScene("StJ_3");
     }
 
+    public void LoadSt_4()
+    {
+        SceneManager.LoadScene("StJ_4");
+    }
+
     public void LoadSt_Start()
     {
         SceneManager.LoadScene("StJ_Start");

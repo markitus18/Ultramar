@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class endGame : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class endGame : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.touchCount > 0)
             {
-                Application.LoadLevel(0);
+                SceneManager.LoadScene(0);
             }
         }
         else
