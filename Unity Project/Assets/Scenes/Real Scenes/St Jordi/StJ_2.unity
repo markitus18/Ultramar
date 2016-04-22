@@ -1711,7 +1711,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: introCameraSlowness
-      value: 500
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 421918, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1747,11 +1747,31 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 94e437142ee4b9e408b3824a3644486a, type: 3}
     - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Volume
-      value: .0500000007
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Volume
-      value: .300000012
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: rotationDamping
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}

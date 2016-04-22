@@ -791,15 +791,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: introCameraSlowness
-      value: 750
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Volume
-      value: .0700000003
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
       propertyPath: m_Volume
-      value: .300000012
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244530, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276648, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: loading
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432742, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
+      propertyPath: rotationDamping
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177cdf6dbe66e144993ce56a0020e472, type: 2}
@@ -814,7 +838,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 287916571}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd1cce58193c87845b3a231a466b9c1b, type: 3}
   m_Name: 
